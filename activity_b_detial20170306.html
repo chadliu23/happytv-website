@@ -49,77 +49,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><img src="images/logo_white.png"></a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="index.html"><i class="fa fa-1x fa-smile-o" aria-hidden="true"></i> 首頁</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-1x fa-bullhorn" aria-hidden="true"></i> 活動/最新資訊<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="news.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> 系統公告</a>
-                            </li>
-                            <li>
-                                <a href="darts.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> 鏢心立翼</a>
-                            </li>
-                            <li>
-                                <a href="activity_a.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> HBL甲級賽事</a>
-                            </li>
-                            <li>
-                                <a href="activity_b.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> HBL乙級賽事</a>
-                            </li>
-                            <li>
-                                <a href="activity_c.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> HBL微電影活動</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-1x fa-users" aria-hidden="true"></i> 合作專區 <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="cooperation_a.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> 資策會</a>
-                            </li>
-                            <li>
-                                <a href="phoenix.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> Phoenix Taiwan</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-1x fa-pencil" aria-hidden="true"></i> 文章專區 <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="article_a.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> 校園走透透</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="playInfo.html"><i class="fa fa-1x fa-youtube-play" aria-hidden="true"></i> 快樂播放</a>
-                    </li>
-                    <li>
-                        <a href="contactUs.html"><i class="fa fa-1x fa-compass" aria-hidden="true"></i> 聯絡資訊</a>
-                    </li>
-                    <li><a href="https://www.facebook.com/happytv.com.tw/?fref=ts" target="_blank"><i class="fa fa-1x fa-facebook-square" aria-hidden="true"></i> 加入快樂粉絲</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    <div id='navigation'></div>
 
     <!-- Page Content -->
     <div class="container">
@@ -216,6 +146,9 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        $("#navigation").load("navigation.html"); 
+    </script>
 
 </body>
 
