@@ -69,6 +69,7 @@
                             </li>
                         </ul>
                     </li>
+
                     <li id='playInfo-tag' >
                         <a href="playInfo.html"><i class="fa fa-1x fa-youtube-play" aria-hidden="true"></i> 快樂播放</a>
                     </li>
@@ -79,6 +80,9 @@
                     </li>
                     <li id='timetable-tag' >
                         <a href="timetable-2017uni-cts1.html"><i class="fa fa-1x fa-youtube-play" aria-hidden="true"></i> 世大運節目表</a>
+
+                    <li id='login-tag'>
+                        <a href="login-test.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i> 會員登入</a>
                     </li>
                 </ul>
             </div>
@@ -106,6 +110,9 @@
         }
         else if (pathname === '/' || pathname.includes('index.html')) {
             $('#index-tag').addClass('active');
+        }
+        else if (pathname.includes('login')) {
+            $('#login-tag').addClass('active');
         }
 
         else if (pathname === '/' || pathname.includes('timetable-')) {
