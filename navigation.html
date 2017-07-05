@@ -122,7 +122,7 @@
 
 
     </script>
-
+    <script src="/js/js.cookie.js" ></script>
     <script>
       // This is called with the results from from FB.getLoginStatus().
       function statusChangeCallback(response) {
@@ -136,7 +136,15 @@
           // Logged into your app and Facebook.
           testAPI();
         } else {
-          
+          if (Cookies.get("facebook_access_token") !== undefined){
+            $.get('https://graph.facebook.com/me?access_token='+ Cookies.get("facebook_access_token"), function(data){
+                if (data.name !== undefined){
+                    testAPI();
+                    return;
+                }
+            });
+          }
+          console.log('not log in');
         }
       }
 
@@ -173,7 +181,7 @@
 
       FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
-      });
+      }, true);
 
       };
 
@@ -188,6 +196,7 @@
 
       function loginFacebook() {
         FB.login(function(response){
+            Cookies.set("facebook_access_token", response.authResponse.accessToken);
             window.location.replace("/");
         });
       }
