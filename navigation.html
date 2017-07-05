@@ -85,8 +85,10 @@
                         <a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i> 會員登入</a>
                     </li>
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
+
         </div>
         <!-- /.container -->
     </nav>
@@ -139,7 +141,7 @@
           if (Cookies.get("facebook_access_token") !== undefined){
             $.get('https://graph.facebook.com/me?access_token='+ Cookies.get("facebook_access_token"), function(data){
                 if (data.name !== undefined){
-                    testAPI();
+                    testAPI(Cookies.get("facebook_access_token"));
                     return;
                 }
             });
@@ -160,6 +162,7 @@
       window.fbAsyncInit = function() {
       FB.init({
         appId      : '1737378749850147',
+        status     : true,
         cookie     : true,  // enable cookies to allow the server to access 
                             // the session
         xfbml      : true,  // parse social plugins on this page
@@ -202,17 +205,29 @@
       }
 
       function logout() {
-        FB.logout(function(response) {
-           $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i> 會員登入</a>');
+        FB.getLoginStatus(function(response) {
+          if (response.status === 'connected') {
+            FB.logout(function(response) {
+               $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i> 會員登入</a>');
+                Cookies.remove('facebook_access_token');
+            });
+          }else{
+            $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i> 會員登入</a>');
+            Cookies.remove('facebook_access_token');
+          }
         });
+            
       }
 
       // Here we run a very simple test of the Graph API after login is
       // successful.  See statusChangeCallback() for when this call is made.
-      function testAPI() {
+      function testAPI(accessToken) {
         console.log('Welcome!  Fetching your information.... ');
-
-        FB.api('/me', function(response) {
+        param = {}
+        if (accessToken) {
+            param.access_token = accessToken;
+        }
+        FB.api('/me', param, function(response) {
           console.log('Successful login for: ' + response.name);
           var avatar =  "https://graph.facebook.com/" + response.id + "/picture";
 
