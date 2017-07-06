@@ -126,66 +126,18 @@
     </script>
     <script src="/js/js.cookie.js" ></script>
     <script>
-      // This is called with the results from from FB.getLoginStatus().
-      function statusChangeCallback(response) {
-        console.log('statusChangeCallback');
-        console.log(response);
-        // The response object is returned with a status field that lets the
-        // app know the current login status of the person.
-        // Full docs on the response object can be found in the documentation
-        // for FB.getLoginStatus().
-        if (response.status === 'connected') {
-          // Logged into your app and Facebook.
-          testAPI();
-        } else {
-          if (Cookies.get("facebook_access_token") !== undefined){
-            $.get('https://graph.facebook.com/me?access_token='+ Cookies.get("facebook_access_token"), function(data){
-                if (data.name !== undefined){
-                    testAPI(Cookies.get("facebook_access_token"));
-                    return;
-                }
-            });
-          }
-          console.log('not log in');
-        }
-      }
 
-      // This function is called when someone finishes with the Login
-      // Button.  See the onlogin handler attached to it in the sample
-      // code below.
-      function checkLoginState() {
-        FB.getLoginStatus(function(response) {
-          statusChangeCallback(response);
-        });
-      }
-
+      var facebook_api_version = 'v2.9';
+      
       window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '1737378749850147',
-        status     : true,
-        cookie     : true,  // enable cookies to allow the server to access 
-                            // the session
-        xfbml      : true,  // parse social plugins on this page
-        version    : 'v2.8' // use graph api version 2.8
-      });
-
-      // Now that we've initialized the JavaScript SDK, we call 
-
-      // FB.getLoginStatus().  This function gets the state of the
-      // person visiting this page and can return one of three states to
-      // the callback you provide.  They can be:
-      //
-      // 1. Logged into your app ('connected')
-      // 2. Logged into Facebook, but not your app ('not_authorized')
-      // 3. Not logged into Facebook and can't tell if they are logged into
-      //    your app or not.
-      //
-      // These three cases are handled in the callback function.
-
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-      }, true);
-
+          FB.init({
+            appId      : '1737378749850147',
+            status     : true,
+            cookie     : true,  // enable cookies to allow the server to access 
+                                // the session
+            xfbml      : true,  // parse social plugins on this page
+            version    : 'v2.8' // use graph api version 2.8
+          });
       };
 
       // Load the SDK asynchronously
@@ -195,45 +147,52 @@
         js = d.createElement(s); js.id = id;
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
+        if (Cookies.get("facebook_access_token") !== undefined){
+            testAPI(Cookies.get("facebook_access_token"));
+        }
       }(document, 'script', 'facebook-jssdk'));
+
+
 
       function loginFacebook() {
         FB.login(function(response){
-            Cookies.set("facebook_access_token", response.authResponse.accessToken);
+            Cookies.set("facebook_access_token", response.authResponse.accessToken, 
+               { expires: response.authResponse.expiresIn / (24* 60 *60) });
             window.location.replace("/");
         });
-      }
+    }
 
-      function logout() {
+    function logout() {
         FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
             FB.logout(function(response) {
-               $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i> 會員登入</a>');
-                Cookies.remove('facebook_access_token');
+             $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i> 會員登入</a>');
+             Cookies.remove('facebook_access_token');
             });
-          }else{
+          } else{
             $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i> 會員登入</a>');
             Cookies.remove('facebook_access_token');
           }
-        });
-            
-      }
+    });
+
+    }
+
 
       // Here we run a very simple test of the Graph API after login is
       // successful.  See statusChangeCallback() for when this call is made.
       function testAPI(accessToken) {
-        console.log('Welcome!  Fetching your information.... ');
-        param = {}
-        if (accessToken) {
-            param.access_token = accessToken;
+        if (!accessToken) {
+            return;
         }
-        FB.api('/me', param, function(response) {
-          console.log('Successful login for: ' + response.name);
-          var avatar =  "https://graph.facebook.com/" + response.id + "/picture";
 
-          $('#login-tag').html( '<a onclick="logout()"><img height="18" src= '+avatar + '/> '+ response.name + '登出</a>');
-          //  'Thanks for logging in, ' + response.name + '!';
+        $.get('https://graph.facebook.com/'+facebook_api_version+'/me?access_token='+ accessToken, function(data){
+            if (data.name === undefined){
+                console.log('access token expired @ testAPI : ' + data);
+                return;
+            }
+            var avatar =  "https://graph.facebook.com/" + data.id + "/picture";
+            $('#login-tag').html( '<a onclick="logout()"><img height="18" src= '+avatar + '/> '+ data.name + '登出</a>');
         });
-      }
+    }
     </script>
 </html>
