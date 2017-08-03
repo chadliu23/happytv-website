@@ -150,3 +150,74 @@ h5{
  height: 100%;
 
 }
+
+/*timetable-css*/
+.table-title {
+	background-color: #ef984f;
+	color: #fff;
+	padding:10px;
+	margin-bottom: 20px;
+}
+.panel-timetable {
+  padding: 0px 0px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.panel-t { 
+border: 1px solid #2c343c;
+background-color: #424242;
+text-align: left; 
+height: 22.4em;
+
+}
+
+.media-t {
+	text-align: left;
+	font-size: 18px;
+	margin-top: 0;
+	margin-bottom: 5px;
+	color: #fff;
+
+}
+.media-st {
+	text-align: left;
+	font-size: 16px;
+	margin-top: 0;
+	margin-bottom: 5px;
+	color: #fff;
+
+}
+.text-t {
+	color: #f4bf11;
+	font-size: 16px;
+	text-align: left;
+}
+.panel-tbody {
+	padding:10px;
+
+}
+
+.row-t {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+
+
+@media (max-width: 768px) {
+  .text-t {
+  	font-size: 16px;
+  }
+ .media-st {
+ 	font-size: 14px;
+ } 
+ .media-t{
+ 	font-size: 14px;
+ }
+
+ .panel-t {
+ 	height: 20em;
+ }
+}
