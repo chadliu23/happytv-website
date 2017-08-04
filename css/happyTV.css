@@ -6,7 +6,7 @@ body{
 header.carousel {height:auto}
 .navbar-inverse{
 	background-color: #f5a21b;
-    
+
     box-shadow:3px 3px 4px rgba(20%,20%,40%,0.3);
 }
 a {
@@ -54,7 +54,7 @@ h5{
     /*width: 100%;*/
     margin: auto;
 }
- .txtBox{   
+ .txtBox{
     background-color: #fff;
     padding: 10px 15px;
     border: 1px solid #cfcfcf;
@@ -122,7 +122,7 @@ h5{
 	.articleBOX{display: none;}
 }
 .dropdown-menu {
-	min-width: auto; 
+	min-width: auto;
 }
 .articleDATE{background-color: #f6f6f6; padding: 5px; text-align: right;}
 .tab-content{background-color: #fff; height: auto; float: left; padding: 20px 10px; border-left: 1px solid #ddd;border-right: 1px solid #ddd;border-bottom: 1px solid #ddd; border-radius: 5px;}
@@ -165,10 +165,10 @@ h5{
   border-top-right-radius: 3px;
 }
 
-.panel-t { 
+.panel-t {
 border: 1px solid #2c343c;
 background-color: #424242;
-text-align: left; 
+text-align: left;
 height: 22.4em;
 
 }
@@ -212,12 +212,12 @@ height: 22.4em;
   }
  .media-st {
  	font-size: 14px;
- } 
+ }
  .media-t{
  	font-size: 14px;
  }
 
  .panel-t {
- 	height: 20em;
+ 	height: 21em;
  }
 }
