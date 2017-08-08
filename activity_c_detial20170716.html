@@ -49,8 +49,9 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+    <div id='navigation'></div>
+
+    <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -156,7 +157,7 @@
                         </div>
                     </div>
 
-                    <!-- Controls 
+                    <!-- Controls
                     <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
@@ -173,7 +174,7 @@
                 <p>成軍僅三年，大型比賽經驗很少的能仁女籃，劉靜明教練用關愛、鼓勵和陪伴帶領她們成長，從最一開始校內像社團一樣喜歡打籃球就來打，一直到意外摘下女子組后冠…</p>
                 <p>「從沒有，到得到冠軍(最高榮譽)，這中間我們也很辛苦」，劉教練表示，幸好得到了很多幫助。球隊的下一步因為高三有主力離隊，因應人員陣型做戰術和訓練上的改變，是接下來的重點。</p>
                 <p>三年的革命情感，我們充分感受到這支球隊的「快樂」、「一家人」，這就是她們的冠軍之路，這條路還在繼續前進…</p>
-                
+
             </div>
 
         </div>
@@ -188,13 +189,13 @@
 
             </div>
 
-            
-             
 
 
-                
-            
-                          
+
+
+
+
+
     </div>
 
         <!-- /.row -->
@@ -202,7 +203,7 @@
                     <a class="btn btn-lg btn-default btn-block" href="activity_c.html" >返回列表</a>
                 </div>
 
-        <!-- Related Projects Row 
+        <!-- Related Projects Row
         <div class="row txtBox">
 
             <div class="col-lg-12">
@@ -289,7 +290,7 @@
                             <td>周芷芸</td>
                           </tr>
                         </tbody>
-                      </table>            
+                      </table>
                  </div>
              </div>
         </div>
@@ -318,6 +319,11 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!--Navbar-->
+    <script>
+        $("#navigation").load("navigation.html");
+    </script>
 
 </body>
 
