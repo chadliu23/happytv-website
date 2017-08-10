@@ -309,10 +309,10 @@ body.universiade {
   border: none;
   outline: none;
   background-color:  rgba(226, 226, 226, 0.9);
-  color: #2c343c;
+  color: #454545;
   cursor: pointer;
-  padding: 18px 15px;
-  border-radius: 28px;
+  padding: 13px 17px;
+  border-radius: 8px;
 	font-weight: 800;
 }
 
