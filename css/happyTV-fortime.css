@@ -138,10 +138,10 @@ h5{
 	min-width: auto;
 }
 .articleDATE{background-color: #f6f6f6; padding: 5px; text-align: right;}
-.tab-content{background-color: #fff; height: auto; float: left; padding: 20px 10px; border-left: 1px solid #ddd;border-right: 1px solid #ddd;border-bottom: 1px solid #ddd; border-radius: 5px;}
-.tab-content h3{color: #ff6c00;font-size: 1.3em; line-height: 30px; padding: 0; margin:0;}
-.tab-content img{border-radius: 5px; border: 1px #ff6c00 solid; opacity: .9;}
-.tab-content img:hover{opacity:1;}
+.tab-content{ height: auto; float: left; padding: 20px 0px; border-radius: 5px;}
+
+.tab-content .panel-t{border-radius: 5px; opacity: .9;}
+.tab-content .panel-t:hover{opacity:1;}
 .tab-content span{position: absolute; top: 10px; right: 20px; background-color: #ff6c00; font-size: 14px;}
 
 /*video*/
@@ -298,6 +298,24 @@ body.universiade {
 	margin-top: 0px;
 }
 
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+	background-color: #ef984f;
+	color:#fff;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+	background-color: #ef984f;
+	color:#fff;
+}
+
+.menu-t {
+	color:#bfbfbf;
+	font-size: 15px;
+}
+.menu-t:hover{
+	color:#fff;
+}
+
 /*back to top*/
 
 #myBtn {
@@ -320,3 +338,9 @@ body.universiade {
   background-color: #ec8126;
 	color: #fff;
 }
+/*dark*/
+.tab-content1{background-color: #454545; height: auto; float: left; padding: 20px 0px;  border-radius: 5px;}
+
+.tab-content1 .panel-t{border-radius: 5px; opacity: .9;}
+.tab-content1 .panel-t:hover{opacity:1;}
+.tab-content1 span{position: absolute; top: 10px; right: 20px; background-color: #ff6c00; font-size: 14px;}
