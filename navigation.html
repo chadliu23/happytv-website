@@ -2,16 +2,6 @@
 <html>
     <head>
         <meta http-equiv="Cache-control" content="public">
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-          ga('create', 'UA-84079620-2', 'auto');
-          ga('send', 'pageview');
-
-        </script>
     </head>
 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -36,7 +26,7 @@
                     <li id='activity-tag' class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-1x fa-bullhorn" aria-hidden="true"></i> 活動/最新資訊<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            
+
                             <li>
                                 <a href="news.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> 系統公告</a>
                             </li>
@@ -87,6 +77,9 @@
                     </li>
                     <li><a href="https://www.facebook.com/happytv.com.tw/?fref=ts" target="_blank"><i class="fa fa-1x fa-facebook-square" aria-hidden="true"></i> 加入快樂粉絲</a>
                     </li>
+                    <li id='timetable-tag' >
+                        <a href="timetable-2017uni-cts1.html"><i class="fa fa-1x fa-youtube-play" aria-hidden="true"></i> 世大運節目表</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -114,6 +107,12 @@
         else if (pathname === '/' || pathname.includes('index.html')) {
             $('#index-tag').addClass('active');
         }
+
+        else if (pathname === '/' || pathname.includes('timetable')) {
+            $('#timetable-tag').addClass('active');
+        }
+
+
 
     </script>
 </html>

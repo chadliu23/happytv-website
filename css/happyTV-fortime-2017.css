@@ -1,0 +1,353 @@
+body{
+	position: relative;
+	font-family: "儷黑 Pro", "微軟正黑體";
+	background: #454545 url(../images/bg2.png) repeat;
+}
+
+
+
+header.carousel {height:auto}
+.navbar-inverse{
+	background-color: #f5a21b;
+
+    box-shadow:3px 3px 4px rgba(20%,20%,40%,0.3);
+}
+a {
+    color: #ff7800;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+hr{
+	border-top: 1px solid #d2d2d2;
+}
+h3{
+	color: #f17100;
+	padding-bottom: 0px;
+}
+h4{
+	color: #666;
+	font-weight: bold;
+	padding-top: 20px;
+}
+h5{
+	font-size: 16px;
+	line-height: 22px;
+	color: #ff7800;
+	font-weight: bold;
+}
+.text-primary {
+    color: #ff7800;
+}
+
+.page-header {
+	padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #d2d2d2;
+		color: #f5a21b;
+}
+
+.time-header {
+	padding-bottom: 9px;
+    margin: 40px 0 0px;
+    border-bottom: 0px solid;
+		color: #f5a21b;
+}
+
+.navbar-inverse .navbar-nav>li>a
+{
+	color: #080808;
+}
+.navbar-brand{
+    padding: 3px 15px;
+}
+.carousel-inner img {
+    /*width: 100%;*/
+    margin: auto;
+}
+ .txtBox{
+
+    padding: 10px 15px;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+		background-color: #454545;
+}
+
+.img-hover{
+	border: 4px #fff solid;
+	border-radius: 8px;
+}
+
+.img-hover:hover {
+	border: 4px #f08000 solid;
+}
+
+.carousel-control {
+	width: 3%;
+	font-size: 30px;
+	color: #ea7400;
+	opacity: 1;
+}
+
+.carousel-control.left {
+	background: transparent;
+}
+
+.carousel-control.right {
+	background: transparent;
+}
+
+.container {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: #ff9000;
+    border-color: #ff9000;
+}
+.articleBOX{background-color: #f6f6f6; padding: 10px; border-radius: 5px; margin: 20px 0;}
+.articleBOX ul{ margin: 30px 0 0 0; padding: 0;}
+.articleBOX h6{ height: 40px; text-align: center; color: #fff; background-color: #ff7e00; line-height: 40px; font-size: 16px;border-radius: 5px; }
+.articleBOX li{list-style: none; border-bottom: 1px dotted #ff7e00; line-height: 30px; height: 30px; margin: 0; padding: 0; text-align: center; }
+.articleBOX li:hover{display: block; background-color: #fff; }
+.articleBOX a{color: #3f3f3f;}
+.articleBOX a:hover{color: #ff7e00; text-decoration: none; }
+
+
+
+
+
+
+@media (max-width: 767px){
+	.navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
+		color: #000;
+	}
+	.nav>li>a:focus, .nav>li>a:hover {
+		background-color: #000;
+	}
+	.articleBOX{display: none;}
+}
+.dropdown-menu {
+	min-width: auto;
+}
+.articleDATE{background-color: #f6f6f6; padding: 5px; text-align: right;}
+.tab-content{background-color: #fff; height: auto; float: left; padding: 20px 10px; border-left: 1px solid #ddd;border-right: 1px solid #ddd;border-bottom: 1px solid #ddd; border-radius: 5px;}
+
+.tab-content .panel-t{border-radius: 5px; opacity: .9;}
+.tab-content .panel-t:hover{opacity:1;}
+.tab-content span{position: absolute; top: 10px; right: 20px; background-color: #ff6c00; font-size: 14px;}
+
+/*video*/
+.video-container {
+ position: relative;
+ padding-bottom: 56.25%;
+ padding-top: 30px;
+ height: 0;
+ overflow: hidden;
+ margin-bottom: 20px;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+
+}
+
+/*timetable-css*/
+.table-title {
+	background-color: #ef984f;
+	color: #fff;
+	padding:10px;
+	margin-bottom: 20px;
+}
+.panel-timetable {
+  padding: 0px 0px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.panel-t {
+border: 1px solid #2c343c;
+background-color: #211f1f;
+text-align: left;
+padding: 10px;
+border-radius: 5px;
+box-shadow: 2px 3px 10px 0px;
+
+}
+
+.media-t {
+	text-align: left;
+	font-size: 18px;
+	margin-top: 0;
+	margin-bottom: 5px;
+	color: #fff;
+
+}
+.media-st {
+	text-align: left;
+	font-size: 16px;
+	margin-top: 0;
+	margin-bottom: 5px;
+	color: #fff;
+
+}
+.text-t {
+	color: #f4bf11;
+	font-size: 16px;
+	text-align: left;
+}
+.panel-tbody {
+
+	padding-left: 15px;
+	padding-right:0px;
+	padding-top: 5px;
+
+
+}
+
+.img-responsive {
+	display: block;
+max-width: 100%;
+height: auto;
+border-radius: 5px;
+}
+
+.row-t {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.line-t {
+	border-top: 1px solid #a96b38;
+	margin-top: 0px;
+}
+
+
+
+@media (max-width: 768px) {
+  .text-t {
+  	font-size: 16px;
+  }
+ .media-st {
+ 	font-size: 14px;
+ }
+ .media-t{
+ 	font-size: 14px;
+ }
+
+ .panel-t {
+
+ }
+ .line-t {
+ 	border-top: 0px solid #a96b38;
+ 	margin-top: 0px;
+ }
+
+ .line-2 {
+ 	border-top: 0px solid #63badc;
+ 	margin-top: 0px;
+ }
+
+
+}
+
+.img-responsive2 {
+	display: block;
+max-width: 100%;
+height: auto;
+border-radius: 5px;
+}
+
+/*2017-for UNI*/
+.txtBox2 {
+	padding: 10px 15px;
+	border: 1px solid #cfcfcf;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+	background-color: #f5f5f5;
+}
+
+body.universiade {
+	background: #0e98a7 url(../images/bg2.png) repeat;
+}
+
+.page-header2 {
+	padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #d2d2d2;
+		color: #fff;
+}
+
+.line-2 {
+	border-top: 1px solid #63badc;
+	margin-top: 0px;
+}
+
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+	background-color: #ef984f;
+	color:#fff;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+	background-color: #ef984f;
+	color:#fff;
+}
+
+.menu-t {
+	color:#f4bf11;
+}
+.menu-t:hover{
+	color:#fff;
+}
+.btn-warning,.btn-s {
+	margin-bottom: 10px;
+}
+.btn-warning:active,
+.btn-warning:hover,
+.btn-s {
+	  color: #ec8126;
+    background-color: #24757d;
+    border-color: #24757d;
+
+}
+
+
+
+
+/*back to top*/
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color:  rgba(226, 226, 226, 0.9);
+  color: #454545;
+  cursor: pointer;
+  padding: 13px 17px;
+  border-radius: 8px;
+	font-weight: 800;
+}
+
+#myBtn:hover {
+  background-color: #ec8126;
+	color: #fff;
+}
