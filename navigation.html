@@ -80,7 +80,9 @@
                     </li>
                     <li id='timetable-tag' >
                         <a href="timetable-2017uni-cts1.html"><i class="fa fa-1x fa-youtube-play" aria-hidden="true"></i> 世大運節目表</a>
-
+                    <li id='member-tag' style="display: none">
+                        <a href="member.html"><i class="fa fa-1x " aria-hidden="true"></i> </a>
+                    </li>
                     <li id='login-tag'>
                         <a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i> 登入</a>
                     </li>
@@ -112,6 +114,9 @@
         }
         else if (pathname === '/' || pathname.includes('index.html')) {
             $('#index-tag').addClass('active');
+        }
+        else if (pathname.includes('member')) {
+            $('#member-tag').addClass('active');
         }
         else if (pathname.includes('login')) {
             $('#login-tag').addClass('active');
@@ -166,11 +171,15 @@
         FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
             FB.logout(function(response) {
+             $('#member-tag').html('');
+             $('#member-tag').css('display', 'none');
              $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i>登入</a>');
              Cookies.remove('facebook_access_token');
             });
           } else{
             $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i>登入</a>');
+            $('#member-tag').html('');
+            $('#member-tag').css('display', 'none');
             Cookies.remove('facebook_access_token');
           }
     });
@@ -191,7 +200,8 @@
                 return;
             }
             var avatar =  "https://graph.facebook.com/" + data.id + "/picture";
-            $('#login-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + '/> </a>'+ data.name +'<a onclick="logout()">' + '登出</a>');
+            $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + '/> '+ data.name +'</a>');
+            $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
         });
     }
     </script>
