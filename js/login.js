@@ -195,11 +195,14 @@ function validateEmail(email) {
 }
 
 
-function loginEmail(){
-  var email = $('email').val();
-  var password = $('password').val();
-  if (!validateEmail(email)){
-    $('#emailNotValid').alert();
-    return;
-  }
+if ($('#loginbutton')){
+  $('#loginbutton').addEventListener('click', function(event){
+    event.preventDefault();
+    var email = $('email').val();
+    var password = $('password').val();
+    if (!validateEmail(email)){
+      $('#emailNotValid').alert();
+      return;
+    }
+  });
 }
