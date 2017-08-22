@@ -86,23 +86,24 @@
                     <form role="form">
                         <div class="form-group">
                             <label>E-mail:</label>
-                            <input type="text" class="form-control" placeholder="請輸E-mail">
+                            <input id='email' type="text" class="form-control" placeholder="請輸E-mail" required>
                         </div>
                         <div class="form-group">
                             <label>密碼:</label>
-                            <input type="text" class="form-control" placeholder="請輸入密碼">
+                            <input id='password' type="password" class="form-control" placeholder="請輸入密碼" required>
                         </div>
                         <div class="form-group">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox">已閱讀<<服務條款>>
-                                </label>                                
+                                    <input type="checkbox" required>已閱讀
+                                </label> 
+                                <a href='server.html' target="_blank"><<服務條款>></a>                               
                             </div>
                            
                         </div>
                         <div class="form-group">
                             
-                                <input type='submit' value='登入' class="btn btn-log"> 
+                                <input type='submit' value='登入' class="btn btn-log" onclick='loginEmail()'> 
                                 <a href="#"><p class="login-pw">忘記密碼?</p></a>  
                         </div>
 
