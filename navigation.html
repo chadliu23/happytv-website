@@ -205,6 +205,9 @@
             var avatar =  "https://graph.facebook.com/" + data.id + "/picture";
             $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + '/> '+ data.name +'</a>');
             $('#login-tag').html( '<button onclick="logout()">' + '登出</button>');
+            if ($('#username') !== undefined){
+                $('#username').html(data.name);
+            }
         });
     }
     </script>
