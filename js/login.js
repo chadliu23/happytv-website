@@ -50,14 +50,16 @@ function logout() {
              $('#member-tag').css('display', 'none');
              $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i>登入</a>');
              Cookies.remove('facebook_access_token');
+             window.location.replace("/index.html");
             });
           } else{
             $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i>登入</a>');
             $('#member-tag').html('');
             $('#member-tag').css('display', 'none');
             Cookies.remove('facebook_access_token');
+            window.location.replace("/index.html");
           }
-          window.location.replace("/index.html");
+          
             
         });
 
