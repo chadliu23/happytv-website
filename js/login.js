@@ -162,9 +162,17 @@ function logout() {
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     } else {
-        $('#member-tag').html('');
-        $('#member-tag').css('display', 'none');
-        $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i>登入</a>');
+
+      FB.getLoginStatus(function(response) {
+          if (response.status === 'connected') {
+          }
+          else{
+            $('#member-tag').html('');
+            $('#member-tag').css('display', 'none');
+            $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i>登入</a>');
+          }
+        });
+        
     }
   }
 
