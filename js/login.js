@@ -80,7 +80,7 @@ function logout() {
         }
         $('#member-tag').css('display', 'block');
         var avatar =  "https://graph.facebook.com/" + data.id + "/picture";
-        $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + '/> '+ data.name +'</a>');
+        $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + ' /> '+ data.name +'</a>');
         $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
         if ($('#username') !== undefined){
             $('#username').html(data.name);
@@ -157,7 +157,7 @@ function logout() {
         $('#member-tag').css('display', 'block');
         var profile = user.getBasicProfile();
         var avatar =  profile.getImageUrl();
-        $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + '/> '+ profile.getName() +'</a>');
+        $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + ' /> '+ profile.getName() +'</a>');
         $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
         if ($('#username') !== undefined){
             $('#username').html(profile.getName());
