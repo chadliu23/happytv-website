@@ -6,7 +6,7 @@ body{
 header.carousel {height:auto}
 .navbar-container{
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 50px;
 }
 .navbar-inverse{
 	background-color: #f5a21b;
@@ -116,7 +116,7 @@ h5{
 
 
 
-@media (max-width: 767px){
+@media (max-width: 1180px){
 	.navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
 		color: #000;
 	}
