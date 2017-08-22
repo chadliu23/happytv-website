@@ -41,6 +41,7 @@ function logout() {
     if (GoogleAuth.isSignedIn.get()) {
       // User is authorized and has clicked 'Sign out' button.
       GoogleAuth.signOut();
+      window.location.replace("/index.html");
     }else{
         FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
@@ -56,6 +57,7 @@ function logout() {
             $('#member-tag').css('display', 'none');
             Cookies.remove('facebook_access_token');
           }
+          window.location.replace("/index.html");
             
         });
 
@@ -127,6 +129,7 @@ function logout() {
       // }); 
     });
   }
+  var onSignIn = false;
 
   function handleAuthClick() {
     if (GoogleAuth.isSignedIn.get()) {
@@ -134,6 +137,7 @@ function logout() {
       GoogleAuth.signOut();
     } else {
       // User is not signed in. Start Google auth flow.
+      onSignIn = true;
       GoogleAuth.signIn();
     }
   }
@@ -145,7 +149,11 @@ function logout() {
   function setSigninStatus(isSignedIn) {
     var user = GoogleAuth.currentUser.get();
     var isAuthorized = user.hasGrantedScopes(SCOPE);
-    if (isAuthorized) {
+    if (isAuthorized && onSignIn){
+      window.location.replace("/member.html");
+    }
+    else if (isAuthorized) {
+
         $('#member-tag').css('display', 'block');
         var profile = user.getBasicProfile();
         var avatar =  profile.getImageUrl();
