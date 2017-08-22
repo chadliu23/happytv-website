@@ -189,6 +189,11 @@ function logout() {
   function updateSigninStatus(isSignedIn) {
     setSigninStatus();
   }
+
+bootstrap_alert = function() {}
+bootstrap_alert.warning = function(message) {
+            $('#alert_placeholder').html('<div id="alertEmail" class="alert alert-danger fade"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
+        }
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
@@ -196,13 +201,39 @@ function validateEmail(email) {
 
 
 if ($('#loginbutton')){
-  $('#loginbutton').addEventListener('click', function(event){
-    event.preventDefault();
-    var email = $('email').val();
-    var password = $('password').val();
-    if (!validateEmail(email)){
-      $('#emailNotValid').alert();
+  $('#loginbutton').on('click', function(event){
+    var email = $('#email').val();
+    if (email == ''){
       return;
     }
+    var password = $('#password').val();
+    if (!validateEmail(email)){
+      bootstrap_alert.warning('Please input correct email');
+      $("#alertEmail").addClass("in")
+      $("#alertEmail").fadeTo(2000, 500).slideUp(500, function(){
+          $("#alertEmail").slideUp(500);
+      });
+      event.preventDefault();
+      return;
+    }
+    if (password === '' | password === undefined){
+      bootstrap_alert.warning('Please input password');
+      $("#alertEmail").addClass("in")
+      $("#alertEmail").fadeTo(2000, 500).slideUp(500, function(){
+          $("#alertEmail").slideUp(500);
+      });
+      event.preventDefault();
+      return;
+    }
+    if (!$('#readChecked').is(":checked")){
+      bootstrap_alert.warning('Please Check the checkbox');
+      $("#alertEmail").addClass("in")
+      $("#alertEmail").fadeTo(2000, 500).slideUp(500, function(){
+          $("#alertEmail").slideUp(500);
+      });
+      event.preventDefault();
+      return;
+    }
+
   });
 }

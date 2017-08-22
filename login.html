@@ -86,16 +86,16 @@
                     <form role="form">
                         <div class="form-group">
                             <label>E-mail:</label>
-                            <input id='email' type="text" class="form-control" placeholder="請輸E-mail" required>
+                            <input id='email' type="text" class="form-control" placeholder="請輸E-mail" required />
                         </div>
                         <div class="form-group">
                             <label>密碼:</label>
-                            <input id='password' type="password" class="form-control" placeholder="請輸入密碼" required>
+                            <input id='password' type="password" class="form-control" placeholder="請輸入密碼" required />
                         </div>
                         <div class="form-group">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" required>已閱讀
+                                    <input id='readChecked' type="checkbox" required />已閱讀
                                 </label> 
                                 <a href='server.html' target="_blank"><<服務條款>></a>                               
                             </div>
@@ -103,8 +103,9 @@
                         </div>
                         <div class="form-group">
                             
-                                <input type='button' id='loginbutton' value='登入' class="btn btn-log" > 
+                                <input type='submit' id='loginbutton' value='登入' class="btn btn-log" /> 
                                 <a href="#"><p class="login-pw">忘記密碼?</p></a>  
+                                <div id = "alert_placeholder"></div>
                         </div>
 
                         <!--*test-line*-->
@@ -144,9 +145,7 @@
  
 
         </div>
-        <div id='emailNotValid' class="alert alert-danger close fade show" role="alert">
-          <strong>Oh snap!</strong> E-mail not correct.
-        </div>
+        
 
           <!-- jQuery -->
     <script
