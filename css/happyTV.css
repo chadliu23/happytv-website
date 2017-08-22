@@ -4,6 +4,10 @@ body{
 	background: #e8e8e8 url(../images/bg.png) repeat;
 }
 header.carousel {height:auto}
+.navbar-container{
+    padding-left: 10px;
+    padding-right: 10px;
+}
 .navbar-inverse{
 	background-color: #f5a21b;
     background-image: none;
