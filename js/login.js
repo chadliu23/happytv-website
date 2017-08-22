@@ -189,4 +189,17 @@ function logout() {
   function updateSigninStatus(isSignedIn) {
     setSigninStatus();
   }
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
 
+
+function loginEmail(){
+  var email = $('email').val();
+  var password = $('password').val();
+  if (!validateEmail(email)){
+    $('#emailNotValid').alert();
+    return;
+  }
+}
