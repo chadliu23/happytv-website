@@ -60,8 +60,6 @@
 function logout() {
     if (Cookies.get("member_token") !== undefined){
       Cookies.remove('member_token');
-      window.location.replace("/index.html");
-      return;
     }
     FB.getLoginStatus(function(response) {
       if (response.status === 'connected') {
