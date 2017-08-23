@@ -37,6 +37,11 @@
 }
 
 function logout() {
+    if (Cookies.get("member_token") !== undefined){
+      Cookies.remove('member_token');
+      window.location.replace("/index.html");
+      return;
+    }
     GoogleAuth = gapi.auth2.getAuthInstance();
     if (GoogleAuth.isSignedIn.get()) {
       // User is authorized and has clicked 'Sign out' button.
@@ -149,6 +154,10 @@ function logout() {
   }
 
   function setSigninStatus(isSignedIn) {
+    if (Cookies.get("member_token") !== undefined){
+      // use self login
+      return ;
+    }
     var user = GoogleAuth.currentUser.get();
     var isAuthorized = user.hasGrantedScopes(SCOPE);
     if (isAuthorized && onSignIn){
@@ -172,6 +181,7 @@ function logout() {
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     } else {
+
 
       FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
@@ -234,6 +244,52 @@ if ($('#loginbutton')){
       event.preventDefault();
       return;
     }
+    password = CryptoJS.SHA256('h@ppytvXXX' + password);
+    console.log(password.toString(CryptoJS.enc.Hex));
+    $.ajax({
+      type: 'POST',
+      headers: {
+        "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
+        "Access-Control-Allow-Origin":"http://172.18.1.86:8000"
+      },
+      dataType: 'json',
+      data: { "email": email, "password": password.toString(CryptoJS.enc.Hex) },
+      url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=email'
+    }).done((data) => {
 
+       $('#member-tag').css('display', 'block');
+        var avatar =  data.result.member_image;
+        $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + ' /> '+ data.result.member_nickname +'</a>');
+        $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
+        if ($('#username') !== undefined){
+            $('#username').html(data.result.member_nickname);
+        }
+        Cookies.set("member_token", data.result.member_token, 
+           { expires: 1 });
+        Cookies.set("member_nickname", data.result.member_nickname, 
+           { expires: 1 });
+        Cookies.set("member_image", data.result.member_image, 
+           { expires: 1 });
+        window.location.replace("/member.html");
+
+    }).fail((data) =>{
+      bootstrap_alert.warning('Login fail');
+      $("#alertEmail").addClass("in")
+      $("#alertEmail").fadeTo(2000, 500).slideUp(500, function(){
+          $("#alertEmail").slideUp(500);
+      });
+    });
+    event.preventDefault();
   });
 }
+$(document).ready(function(){
+  if (Cookies.get("member_token") !== undefined){
+      $('#member-tag').css('display', 'block');
+        var avatar =  Cookies.get('member_image');
+        $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + ' /> '+ Cookies.get('member_nickname') +'</a>');
+        $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
+        if ($('#username') !== undefined){
+            $('#username').html(Cookies.get('member_nickname'));
+        }       
+  }
+});
