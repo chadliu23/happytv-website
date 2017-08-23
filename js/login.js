@@ -21,18 +21,35 @@
     js = d.createElement(s); js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
-    if (Cookies.get("facebook_access_token") !== undefined){
-        testAPI(Cookies.get("facebook_access_token"));
-    }
   }(document, 'script', 'facebook-jssdk'));
 
 
 
   function loginFacebook() {
     FB.login(function(response){
-        Cookies.set("facebook_access_token", response.authResponse.accessToken, 
-           { expires: response.authResponse.expiresIn / (24* 60 *60) });
-        window.location.replace("/member.html");
+        $.get('https://graph.facebook.com/'+facebook_api_version+'/me?access_token='+ accessToken, function(data){
+          if (data.name === undefined){
+              console.log('access token expired @ testAPI : ' + data);
+              bootstrap_alert.warning('Facebook login fail');
+              return;
+          }
+          $.ajax({
+            type: 'POST',
+            headers: {
+              "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
+              "Access-Control-Allow-Origin":"http://172.18.1.86:8000"
+            },
+            dataType: 'json',
+            data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
+            url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=facebook'
+          }).done((data) => {
+            succuessLogin(data);
+          }).fail((data) =>{
+            bootstrap_alert.warning('This Facebook account as not register.');
+            FB.logout(function(response) {
+            });
+          });
+        });
     });
 }
 
@@ -42,57 +59,20 @@ function logout() {
       window.location.replace("/index.html");
       return;
     }
+    FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+        FB.logout(function(response) {
+        });
+      }
+    });
+
     GoogleAuth = gapi.auth2.getAuthInstance();
     if (GoogleAuth.isSignedIn.get()) {
       // User is authorized and has clicked 'Sign out' button.
       GoogleAuth.signOut();
-      window.location.replace("/index.html");
-    }else{
-        FB.getLoginStatus(function(response) {
-          if (response.status === 'connected') {
-            FB.logout(function(response) {
-             $('#member-tag').html('');
-             $('#member-tag').css('display', 'none');
-             $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i>登入</a>');
-             Cookies.remove('facebook_access_token');
-             window.location.replace("/index.html");
-            });
-          } else{
-            $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i>登入</a>');
-            $('#member-tag').html('');
-            $('#member-tag').css('display', 'none');
-            Cookies.remove('facebook_access_token');
-            window.location.replace("/index.html");
-          }
-          
-            
-        });
-
+      
     }
-}
-
-
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI(accessToken) {
-    if (!accessToken) {
-        return;
-    }
-
-    $.get('https://graph.facebook.com/'+facebook_api_version+'/me?access_token='+ accessToken, function(data){
-        if (data.name === undefined){
-            console.log('access token expired @ testAPI : ' + data);
-            Cookies.remove("facebook_access_token");
-            return;
-        }
-        $('#member-tag').css('display', 'block');
-        var avatar =  "https://graph.facebook.com/" + data.id + "/picture";
-        $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + ' /> '+ data.name +'</a>');
-        $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
-        if ($('#username') !== undefined){
-            $('#username').html(data.name);
-        }
-    });
+    window.location.replace("/index.html");
 }
 
   var GoogleAuth;
@@ -202,13 +182,37 @@ function logout() {
 
 bootstrap_alert = function() {}
 bootstrap_alert.warning = function(message) {
-            $('#alert_placeholder').html('<div id="alertEmail" class="alert alert-danger fade"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
-        }
+  $('#alert_placeholder').html('<div id="alertEmail" class="alert alert-danger fade"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
+  $("#alertEmail").addClass("in");
+  $("#alertEmail").fadeTo(2000, 500).slideUp(500, function(){
+      $("#alertEmail").slideUp(500);
+  });
+}
+
+
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 }
 
+function succuessLogin(data){
+   $('#member-tag').css('display', 'block');
+  var avatar =  data.result.member_image;
+  $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + ' /> '+ data.result.member_nickname +'</a>');
+  $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
+  if ($('#username') !== undefined){
+      $('#username').html(data.result.member_nickname);
+  }
+  Cookies.set("member_id", data.result.member_id, 
+     { expires: 1 });
+  Cookies.set("member_token", data.result.member_token, 
+     { expires: 1 });
+  Cookies.set("member_nickname", data.result.member_nickname, 
+     { expires: 1 });
+  Cookies.set("member_image", data.result.member_image, 
+     { expires: 1 });
+  window.location.replace("/member.html");
+}
 
 if ($('#loginbutton')){
   $('#loginbutton').on('click', function(event){
@@ -219,28 +223,16 @@ if ($('#loginbutton')){
     var password = $('#password').val();
     if (!validateEmail(email)){
       bootstrap_alert.warning('Please input correct email');
-      $("#alertEmail").addClass("in")
-      $("#alertEmail").fadeTo(2000, 500).slideUp(500, function(){
-          $("#alertEmail").slideUp(500);
-      });
       event.preventDefault();
       return;
     }
     if (password === '' | password === undefined){
       bootstrap_alert.warning('Please input password');
-      $("#alertEmail").addClass("in")
-      $("#alertEmail").fadeTo(2000, 500).slideUp(500, function(){
-          $("#alertEmail").slideUp(500);
-      });
       event.preventDefault();
       return;
     }
     if (!$('#readChecked').is(":checked")){
       bootstrap_alert.warning('Please Check the checkbox');
-      $("#alertEmail").addClass("in")
-      $("#alertEmail").fadeTo(2000, 500).slideUp(500, function(){
-          $("#alertEmail").slideUp(500);
-      });
       event.preventDefault();
       return;
     }
@@ -256,28 +248,9 @@ if ($('#loginbutton')){
       data: { "email": email, "password": password.toString(CryptoJS.enc.Hex) },
       url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=email'
     }).done((data) => {
-
-       $('#member-tag').css('display', 'block');
-        var avatar =  data.result.member_image;
-        $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + ' /> '+ data.result.member_nickname +'</a>');
-        $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
-        if ($('#username') !== undefined){
-            $('#username').html(data.result.member_nickname);
-        }
-        Cookies.set("member_token", data.result.member_token, 
-           { expires: 1 });
-        Cookies.set("member_nickname", data.result.member_nickname, 
-           { expires: 1 });
-        Cookies.set("member_image", data.result.member_image, 
-           { expires: 1 });
-        window.location.replace("/member.html");
-
+      succuessLogin(data);
     }).fail((data) =>{
       bootstrap_alert.warning('Login fail');
-      $("#alertEmail").addClass("in")
-      $("#alertEmail").fadeTo(2000, 500).slideUp(500, function(){
-          $("#alertEmail").slideUp(500);
-      });
     });
     event.preventDefault();
   });
@@ -290,6 +263,9 @@ $(document).ready(function(){
         $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
         if ($('#username') !== undefined){
             $('#username').html(Cookies.get('member_nickname'));
-        }       
+        }
+        if ($('#userid') !== undefined){
+            $('#userid').html(Cookies.get('member_id'));
+        }      
   }
 });
