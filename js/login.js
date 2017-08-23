@@ -156,7 +156,7 @@ function logout() {
         succuessLogin(data);
       }).fail((data) =>{
         bootstrap_alert.warning('This Google account as not register.');
-        
+        GoogleAuth.signOut();
       });
     }else if(isAuthorized){
       // google sign on
