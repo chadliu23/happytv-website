@@ -27,10 +27,11 @@
 
   function loginFacebook() {
     FB.login(function(response){
-        $.get('https://graph.facebook.com/'+facebook_api_version+'/me?access_token='+ accessToken, function(data){
+      if (response.authResponse){
+        $.get('https://graph.facebook.com/'+facebook_api_version+'/me?access_token='+ response.authResponse.accessToken, function(data){
           if (data.name === undefined){
               console.log('access token expired @ testAPI : ' + data);
-              bootstrap_alert.warning('Facebook login fail');
+              bootstrap_alert.warning('Facebook login fail.');
               return;
           }
           $.ajax({
@@ -50,6 +51,9 @@
             });
           });
         });
+      }else {
+        bootstrap_alert.warning('Facebook login fail.');
+      }
     });
 }
 
