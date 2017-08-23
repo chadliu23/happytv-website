@@ -143,38 +143,25 @@ function logout() {
     var user = GoogleAuth.currentUser.get();
     var isAuthorized = user.hasGrantedScopes(SCOPE);
     if (isAuthorized && onSignIn){
-      window.location.replace("/member.html");
-    }
-    else if (isAuthorized) {
-
-        $('#member-tag').css('display', 'block');
-        var profile = user.getBasicProfile();
-        var avatar =  profile.getImageUrl();
-        $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + ' /> '+ profile.getName() +'</a>');
-        $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
-        if ($('#username') !== undefined){
-            $('#username').html(profile.getName());
-        }
-
-        //TODO send back to backend to get h money
-        console.log(user.getAuthResponse().id_token);
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    } else {
-
-
-      FB.getLoginStatus(function(response) {
-          if (response.status === 'connected') {
-          }
-          else{
-            $('#member-tag').html('');
-            $('#member-tag').css('display', 'none');
-            $('#login-tag').html('<a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i>登入</a>');
-          }
-        });
+      $.ajax({
+        type: 'POST',
+        headers: {
+          "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
+          "Access-Control-Allow-Origin":"http://172.18.1.86:8000"
+        },
+        dataType: 'json',
+        data: { "google_id_token": user.getAuthResponse().id_token  },
+        url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=google'
+      }).done((data) => {
+        succuessLogin(data);
+      }).fail((data) =>{
+        bootstrap_alert.warning('This Google account as not register.');
         
+      });
+    }else if(isAuthorized){
+      // google sign on
+    }else{
+      // google not sign in
     }
   }
 
