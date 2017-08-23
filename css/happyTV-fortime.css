@@ -47,10 +47,26 @@ h5{
 		color: #f5a21b;
 }
 
+.breadcrumb {
+	margin-top:10px;
+
+}
+.btn{
+	font-size: 16px;
+}
+.btn-s{
+	color: #f4bf11;
+}
+
+.btn-s:hover{
+	color: #fff;
+  background-color: #d27323;
+  border-color: #d27323;
+}
 .time-header {
 	padding-bottom: 9px;
-    margin: 40px 0 0px;
-    border-bottom: 0px solid;
+  border-bottom: 0px solid;
+	margin-top: 0px;
 		color: #f5a21b;
 }
 
