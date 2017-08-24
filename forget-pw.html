@@ -26,7 +26,8 @@
         <link rel="icon" href="images/favicon.ico" type="image/png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/modern-business.css" rel="stylesheet">
@@ -34,7 +35,7 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    
+    <link href="css/happyTV.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,20 +54,22 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">會員登入
+                <h1 class="page-header">忘記密碼
                     <small></small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="index.html">首頁</a>
                     </li>
-                    <li class="active">會員登入</li>
+                    <li><a href="login.html">會員登入</a></li>
+                  </li>
+                  <li class="active">忘記密碼</li>
                 </ol>
             </div>
         </div>
         <!-- /.row -->
         <div class="row newLogin">
          <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3">
-            <h2 class="log-title" >登入</h2>
+            <h2 class="log-title" >忘記密碼</h2>
          </div>
 
 
@@ -85,49 +88,24 @@
              <div class="col-sm-6 col-sm-offset-3">
                     <form role="form">
                         <div class="form-group">
-                            <label>E-mail:</label>
-                            <input id='email' type="text" class="form-control" placeholder="請輸E-mail" required />
+                            <label>電子信箱:</label>
+                            <input type="text" class="form-control" placeholder="請輸入您的電子信箱地址" >
                         </div>
-                        <div class="form-group">
-                            <label>密碼:</label>
-                            <input id='password' type="password" class="form-control" placeholder="請輸入密碼" required />
-                        </div>
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <div class="checkbox">
                                 <label>
-                                    <input id='readChecked' type="checkbox" required />已閱讀
-                                </label> 
-                                <a href='server.html' target="_blank"><<服務條款>></a>                               
+                                    <input type="checkbox">已閱讀<<服務條款>>
+                                </label>
                             </div>
 
-                        </div>
+                        </div>-->
                         <div class="form-group">
 
-                                <input type='submit' id='loginbutton' value='登入' class="btn btn-log" /> 
-                                <p class="login-pw"><a href="forget-pw.html">忘記密碼?</a> | <a href="change-pw.html">更改密碼</a> </p>
-
-                        </div>
-
-                        <!--*test-line*-->
-                        <div class="loginbox-separator-part">
-                            <div class="log-separator"></div>
-                            <div class="log-s-text">or</div>
-                            <div class="log-separator"></div>
+                                <input type='submit' value='送 出' class="btn btn-log" style="margin-bottom:8%">
 
                         </div>
 
 
-
-                        <div class="form-group">
-                            <a href="#" onclick='loginFacebook()'><ul class="facebook col-lg-6 col-xs-12 col-md-6"><span><i class="fa fa-1x fa-facebook-square" aria-hidden="true"></i></span>
-                             <li>Facebook</li>
-                            </ul></a>
-                        
-                            <a href="#" onclick='handleAuthClick()'><ul class="google-plus col-lg-6 col-xs-12 col-md-6"><span><i class="fa fa-1x fa-facebook-square" aria-hidden="true"></i></span>
-                             <li>Google +</li>
-                            </ul></a>
-
-                        </div>
 
 
 
@@ -159,34 +137,14 @@
 
     </div>
 
-
           <!-- jQuery -->
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+    <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link href="css/happyTV.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
 
     <script>
         $("#navigation").load("navigation.html");
-    </script>
-    <script src="/js/js.cookie.js" ></script>
-    <script src="/js/bower_components/crypto-js/crypto-js.js"></script>
-    <script type="text/javascript" src='/js/login.js'></script>
-    
-    <script async defer src="https://apis.google.com/js/api.js" 
-        onload="this.onload=function(){};handleClientLoad()" 
-        onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
 
     <!--input disappear javascript-->
