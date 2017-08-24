@@ -55,13 +55,13 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">會員登入
+                <h1 class="page-header">會員中心
                     <small></small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="index.html">首頁</a>
                     </li>
-                    <li class="active">會員登入</li>
+                    <li class="active">會員中心</li>
                 </ol>
             </div>
         </div>
@@ -265,8 +265,12 @@
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
 
+
     <!--input disappear javascript-->
      <script type="text/javascript">
+        if (Cookies.get("member_token") === undefined){
+            window.location.replace("/login.html");
+        }
        function resettext(id){
            //恢復文字
            if(id.value == "")
