@@ -251,10 +251,7 @@ $(document).ready(function(){
         $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + ' /> '+ Cookies.get('member_nickname') +'</a>');
         $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
         if ($('#username') !== undefined){
-            $('#username').html(Cookies.get('member_nickname'));
-        }
-        if ($('#userid') !== undefined){
-            $('#userid').html(Cookies.get('member_id'));
-        }      
+            $('#username').html(Cookies.get('member_nickname') + ' ( ID: ' + Cookies.get('member_id')+ ')');
+        }     
   }
 });
