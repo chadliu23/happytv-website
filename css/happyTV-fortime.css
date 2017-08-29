@@ -75,6 +75,27 @@ h5{
 	margin-top: 0px;
 		color: #f5a21b;
 }
+.btn-warning {
+  color: #fff;
+  background-color: #f0ad4e;
+	background-image: none;
+  border-color: #eea236;
+}
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning.focus,
+.btn-warning:active,
+.btn-warning.active,
+.open > .dropdown-toggle.btn-warning {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+.btn-warning:active,
+.btn-warning.active,
+.open > .dropdown-toggle.btn-warning {
+  background-image: none;
+}
 
 .navbar-inverse .navbar-nav>li>a
 {
