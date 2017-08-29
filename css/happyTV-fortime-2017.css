@@ -7,9 +7,13 @@ body{
 
 
 header.carousel {height:auto}
+.navbar-container{
+    padding-left: 10px;
+    padding-right: 50px;
+}
 .navbar-inverse{
 	background-color: #f5a21b;
-
+    background-image: none;
     box-shadow:3px 3px 4px rgba(20%,20%,40%,0.3);
 }
 a {
