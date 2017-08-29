@@ -216,13 +216,9 @@ if ($('#loginbutton')){
       return;
     }
     if (password === '' | password === undefined){
-      bootstrap_alert.warning('Please input password');
-      event.preventDefault();
       return;
     }
     if (!$('#readChecked').is(":checked")){
-      bootstrap_alert.warning('Please Check the checkbox');
-      event.preventDefault();
       return;
     }
     password = CryptoJS.SHA256('h@ppytvXXX' + password);
