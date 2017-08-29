@@ -2,11 +2,12 @@
 <html>
     <head>
         <meta http-equiv="Cache-control" content="public">
+        <link href="css/navigation.css" rel="stylesheet">
     </head>
 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
-        <div class="container">
+        <div class="navbar-container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -69,6 +70,7 @@
                             </li>
                         </ul>
                     </li>
+
                     <li id='playInfo-tag' >
                         <a href="playInfo.html"><i class="fa fa-1x fa-youtube-play" aria-hidden="true"></i> 快樂播放</a>
                     </li>
@@ -79,10 +81,19 @@
                     </li>
                     <li id='timetable-tag' >
                         <a href="timetable-2017uni-cts1.html"><i class="fa fa-1x fa-youtube-play" aria-hidden="true"></i> 世大運節目表</a>
+            <!--
+                    <li id='member-tag' style="display: none">
+                        <a href="member.html"><i class="fa fa-1x " aria-hidden="true"></i> </a>
                     </li>
+                    <li id='login-tag'>
+                        <a href="login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i> 登入</a>
+                    </li>
+            -->
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
+
         </div>
         <!-- /.container -->
     </nav>
@@ -107,6 +118,12 @@
         else if (pathname === '/' || pathname.includes('index.html')) {
             $('#index-tag').addClass('active');
         }
+        else if (pathname.includes('member')) {
+            $('#member-tag').addClass('active');
+        }
+        else if (pathname.includes('login')) {
+            $('#login-tag').addClass('active');
+        }
 
         else if (pathname === '/' || pathname.includes('timetable-')) {
             $('#timetable-tag').addClass('active');
@@ -115,4 +132,6 @@
 
 
     </script>
+
+
 </html>
