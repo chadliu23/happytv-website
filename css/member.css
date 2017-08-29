@@ -7,3 +7,121 @@
 .pay-left {
     display: inline;
 }
+
+
+/*pay-page*/
+/*pay-box*/
+.buying-content-list {
+    width: 100%;
+    padding-left: 0px;
+
+}
+.buying-content-list .pay-left {
+    float: left; 
+    /*background: url(../images/icons/point-8.png) no-repeat left 0.2rem; background-size: 0.6rem 0.6rem; padding-left: 0.7rem;*/
+    font-size: 1.2rem;
+
+}
+.buying-content-list li {
+    list-style: none;
+    height: 6rem;
+    border: #ffb373 solid 1px;
+    padding: 1rem 1rem;
+    margin-bottom: 20px
+}
+.icon-buy{
+    height: 60%;
+}
+
+.icon-buy:hover,
+.icon-buy:focus,
+.icon-buy:active, {
+    opacity: 0.8
+}
+
+.buying-content-list .happy-p {
+    float: left;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color:#e67514;
+}
+
+.buying-content-list .happy-discount {
+    float: left;
+    padding-top: 1.1rem;
+    padding-left: 0.8rem;
+    font-size: 1.3rem;
+    color: #737070;;
+    font-weight: 400;
+}
+
+
+.buying-content-list li:hover,
+.buying-content-list li:focus,
+.buying-content-list li.focus,
+.buying-content-list li:active,
+.buying-content-list li.active,
+.open > .dropdown-toggle.btn-log {
+  color: #fff;
+  border: #d60067 solid 2px;
+  border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+    transition: 0.1s all;
+    -webkit-transition: 0.1s all;
+    -moz-transition: 0.1s all;
+    -o-transition: 0.1s all;
+    opacity: 0.8
+}
+/*charging-btn*/
+
+.buying-content-list .charging {
+    float: right;
+    padding-top: 0.3rem;
+}
+.btn-charging {
+
+  display: inline-block;
+  padding: 0.5rem 0rem;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #bb065d;
+  color: #fff;
+  width: 8rem;
+}
+/*text*/
+.sub-title {
+    font-size: 16px;
+    color:#171717;
+    padding-top: 10px;
+    /*border-bottom: 1px solid #888;*/
+}
+.status {
+    /*margin-bottom: 2rem;*/
+}
+
+.point {
+    font-size: 24px;
+    font-weight: 600; 
+    color:#e25747;
+
+}
