@@ -226,6 +226,11 @@ height: 22.4em;
  .panel-t {
  	height: 21em;
  }
+ /*nav-bar*/
+ .navbar-container{
+ 	padding-left: 0px;
+ 	padding-right:  0px;
+ }
 }
 
 
@@ -398,4 +403,3 @@ ul.google-plus li img {
 	margin: 4px 0 10px;
 	text-align: -webkit-right;
 }
-
