@@ -9,10 +9,9 @@ $(document).ready((callback) =>{
         type: 'GET',
         headers: {
           "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
-          "Access-Control-Allow-Origin":"http://172.18.1.86:8000",
         },
         dataType: 'json',
-        url: 'https://api-stage.happytv.com.tw/billing/v1/provider/GASH/items'
+        url: 'https://api-stage.happytv.com.tw/api/v3/billing/provider/GASH/items'
       }).done((data) => {
         for ( let key in data.result){
             $('<div/>').loadTemplate($("#hpoint-template"), data.result[key]).appendTo("#item_list");
@@ -21,12 +20,11 @@ $(document).ready((callback) =>{
                     type: 'POST',
                     headers: {
                       "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
-                      "Access-Control-Allow-Origin":"http://172.18.1.86:8000",
                       "membertoken":Cookies.get('member_token'),
                       "memberid":Cookies.get('member_id')
                     },
                     dataType: 'json',
-                    url: 'https://api-stage.happytv.com.tw/billing/v1/provider/GASH/place_order/' + event.currentTarget.id
+                    url: 'https://api-stage.happytv.com.tw/api/v3/billing/provider/GASH/place_order/' + event.currentTarget.id
                   }).done((data) => {
                     var input = $("<input>")
                                    .attr("type", "hidden")
@@ -52,12 +50,11 @@ $(document).ready((callback) =>{
         type: 'GET',
         headers: {
           "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
-          "Access-Control-Allow-Origin":"http://172.18.1.86:8000",
           "membertoken":Cookies.get('member_token'),
           "memberid":Cookies.get('member_id')
         },
         dataType: 'json',
-        url: 'https://api-stage.happytv.com.tw/billing/v1/getBalance'
+        url: 'https://api-stage.happytv.com.tw/api/v3/billing/getBalance'
       }).done((data) => {
         $('#memberPoint').prepend(data.result);
       }).fail((data) =>{
