@@ -304,6 +304,11 @@ border-radius: 5px;
  	border-top: 0px solid #63badc;
  	margin-top: 0px;
  }
+ /*nav-bar*/
+ .navbar-container{
+ 	padding-left: 0px;
+ 	padding-right:  0px;
+ }
 
 
 }

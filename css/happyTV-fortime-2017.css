@@ -252,9 +252,13 @@ border-radius: 5px;
  	font-size: 14px;
  }
 
- .panel-t {
-
+ /*nav-bar*/
+ .navbar-container{
+ 	padding-left: 0px;
+ 	padding-right:  0px;
  }
+
+}
  .line-t {
  	border-top: 0px solid #a96b38;
  	margin-top: 0px;
