@@ -144,7 +144,7 @@ function checkstatus(){
       url: 'https://api-stage.happytv.com.tw/api/v3/promotion/event/' + searchParams.get("event")
     }).done((data) => {
       $('#promotion-code-area-'+ event).css('display', 'block');
-      $('#promtion-code-' + event).html(data.result.promotion_code);
+      $('#promotion-code-' + event).html(data.result.promotion_code);
     }).fail((data) =>{
       $('#no-more-promotion-code').css('display', 'block');
     });
