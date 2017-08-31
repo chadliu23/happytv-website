@@ -135,15 +135,20 @@ if ($('#loginbutton')){
     $.ajax({
       type: 'POST',
       headers: {
-        "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp"
+        "accesskey": "accessKey_eb3604bd21a3176806f29607d47b069f17956cba"
       },
       dataType: 'json',
       data: { "email": email, "password": password.toString(CryptoJS.enc.Hex) },
       url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=email'
     }).done((data) => {
-      succuessLogin(data);
+      if (data.retCode === 0){
+        succuessLogin(data);
+      }else{
+        console.log('log in fail ' + data.retMessage);
+      }
+      
     }).fail((data) =>{
-      bootstrap_alert.warning('Login fail');
+      console.log('log in fail');
     });
     event.preventDefault();
   });
