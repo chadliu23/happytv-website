@@ -138,7 +138,7 @@ function checkstatus(){
       headers: {
       },
       dataType: 'json',
-      data: { "email": email, "password": password.toString(CryptoJS.enc.Hex) },
+      data: { "memerid": Cookies.get("member_id"), "membertoken":  Cookies.get("member_token")},
       url: 'https://api-stage.happytv.com.tw/api/v3/promotion/event/' + searchParams.get("event")
     }).done((data) => {
       $('#promotion-code-area'+ event).css('display', 'block');
