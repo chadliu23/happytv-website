@@ -136,9 +136,11 @@ function checkstatus(){
     $.ajax({
       type: 'GET',
       headers: {
+        "memerid": Cookies.get("member_id"),
+        "membertoken":Cookies.get("member_token")
+
       },
       dataType: 'json',
-      data: { "memerid": Cookies.get("member_id"), "membertoken":  Cookies.get("member_token")},
       url: 'https://api-stage.happytv.com.tw/api/v3/promotion/event/' + searchParams.get("event")
     }).done((data) => {
       $('#promotion-code-area'+ event).css('display', 'block');
