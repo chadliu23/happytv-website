@@ -136,7 +136,7 @@ function checkstatus(){
     $.ajax({
       type: 'GET',
       headers: {
-        "memerid": Cookies.get("member_id"),
+        "memberid": Cookies.get("member_id"),
         "membertoken":Cookies.get("member_token")
 
       },
