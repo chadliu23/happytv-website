@@ -1,24 +1,12 @@
 body{
 	position: relative;
 	font-family: "儷黑 Pro", "微軟正黑體";
-	background-attachment: fixed;
-	background-image: url(../images/dt/1-bg.png);
-	background-color: #f8f0c2;
-	background-repeat: no-repeat;
-	-o-background-size     : 100%, auto;
-  -moz-background-size   : 100%, auto;
-  -webkit-background-size: 100%, auto;
-  background-size        : 100%, auto;
-
+	background: #e8e8e8 url(../images/bg.png) repeat;
 }
 header.carousel {height:auto}
-.navbar-container{
-    padding-left: 10px;
-    padding-right: 50px;
-}
 .navbar-inverse{
 	background-color: #f5a21b;
-    background-image: none;
+
     box-shadow:3px 3px 4px rgba(20%,20%,40%,0.3);
 }
 a {
@@ -31,9 +19,8 @@ hr{
 	border-top: 1px solid #d2d2d2;
 }
 h3{
-	color: #fd5c00;
+	color: #f17100;
 	padding-bottom: 0px;
-	font-weight: 400;
 }
 h4{
 	color: #666;
@@ -67,8 +54,7 @@ h5{
     /*width: 100%;*/
     margin: auto;
 }
-
-.txtBox{
+ .txtBox{
     background-color: #fff;
     padding: 10px 15px;
     border: 1px solid #cfcfcf;
@@ -126,7 +112,7 @@ h5{
 
 
 
-@media (max-width: 1180px){
+@media (max-width: 767px){
 	.navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
 		color: #000;
 	}
@@ -144,103 +130,6 @@ h5{
 .tab-content img{border-radius: 5px; border: 1px #ff6c00 solid; opacity: .9;}
 .tab-content img:hover{opacity:1;}
 .tab-content span{position: absolute; top: 10px; right: 20px; background-color: #ff6c00; font-size: 14px;}
-
-
-/*video*/
-.video-container {
- position: relative;
- padding-bottom: 56.25%;
- padding-top: 30px;
- height: 0;
- overflow: hidden;
- margin-bottom: 20px;
-}
-.video-container iframe,
-.video-container object,
-.video-container embed {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
-
-}
-
-/*timetable-css*/
-.table-title {
-	background-color: #ef984f;
-	color: #fff;
-	padding:10px;
-	margin-bottom: 20px;
-}
-.panel-timetable {
-  padding: 0px 0px;
-  border-bottom: 1px solid transparent;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
-
-.panel-t {
-border: 1px solid #2c343c;
-background-color: #424242;
-text-align: left;
-height: 22.4em;
-
-}
-
-.media-t {
-	text-align: left;
-	font-size: 18px;
-	margin-top: 0;
-	margin-bottom: 5px;
-	color: #fff;
-
-}
-.media-st {
-	text-align: left;
-	font-size: 16px;
-	margin-top: 0;
-	margin-bottom: 5px;
-	color: #fff;
-
-}
-.text-t {
-	color: #f4bf11;
-	font-size: 16px;
-	text-align: left;
-}
-.panel-tbody {
-	padding:10px;
-
-}
-
-.row-t {
-	margin-left: 0px;
-	margin-right: 0px;
-}
-
-
-
-@media (max-width: 768px) {
-  .text-t {
-  	font-size: 16px;
-  }
- .media-st {
- 	font-size: 14px;
- }
- .media-t{
- 	font-size: 14px;
- }
-
- .panel-t {
- 	height: 21em;
- }
- /*nav-bar*/
- .navbar-container{
- 	padding-left: 0px;
- 	padding-right:  0px;
- }
-}
 
 
 /*login-new-input*/
@@ -270,7 +159,6 @@ ul.facebook {
 	color: #fff;
 	padding: 12px 40px;
 	text-align: -webkit-center;
-	margin-top: 10px;
 }
 ul.facebook:hover {
 	background: #1E4078;
@@ -322,43 +210,16 @@ ul.google-plus li img {
 }
 
 .newLogin {
-	  background-color: rgba(255, 255, 255, 0.8);
+	 background-color: #fff;
     padding: 10px 15px;
-    border: 0px ;
+    border: 1px solid #cfcfcf;
     border-radius: 5px;
-    margin-top: 2%;
+    margin-top: 10px;
     margin-left: 0px;
     margin-right: 0px;
-
 }
-.newfb {
-	  background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px 15px;
-    border: 0px ;
-    border-radius: 5px;
-    margin-top: 40%;
-    margin-left: 0px;
-    margin-right: 0px;
-
-}
-.logo{
-	margin-top:32%;
-}
-
 .log-bottom {
 	margin-bottom: 20px
-}
-.log-title {
-	  padding-bottom: 9px;
-    margin: 40px 0 20px;
-    border-bottom: 1px solid #d2d2d2;
-		color: #ec8126;
-
-}
-.info {
-	font-size: 18px;
-	font-weight: 600;
-	margin-bottom: 8%;
 }
 
 /*btn-login*/
@@ -371,7 +232,6 @@ ul.google-plus li img {
   font-size: 18px;
   font-weight: 500;
   border-radius: 0px;
-	margin-top:10px;
 }
 .btn-log:hover,
 .btn-log:focus,
@@ -429,19 +289,22 @@ ul.google-plus li img {
 	text-align: -webkit-right;
 }
 
-.code-block{
-	float: left;
-	background: #b1241f;
-	color: #fff;
-	padding: 12px 40px;
-	text-align: -webkit-center;
-	margin-top: 10px;
-	border-radius: 5px;
-	font-size:1.3em;
+/*login-pay-icon*/
+.o-product__dollar-icon {
+    width: 2em;
+    height: 2em;
+    margin: 0 1.5em;
 }
-.code-info{
 
-	padding:18px 0 15px 5px;
-	font-size:1.1em;
+/*pay-page*/
+/*pay-box*/
+.buying-content-list {
+	width: 100%;
+
+}
+.buying-content-list .pay-left {
+	float: left;
+	background: url(../happytv/images/icons/point@2x-8.png) no-repeat left 0.2rem; background-size: 0.6rem 0.6rem; padding-left: 0.7rem;
+
 
 }
