@@ -130,7 +130,16 @@
         }
 
 
-
+        $(document).ready(function(){
+          if (Cookies.get("member_token") !== undefined){
+              $('#member-tag').css('display', 'block');
+                var avatar =  Cookies.get('member_image');
+                $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + ' /> '+ Cookies.get('member_nickname') +'</a>');
+                $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
+                if ($('#username') !== undefined){
+                    $('#username').html(Cookies.get('member_nickname') + ' ( ID: ' + Cookies.get('member_id')+ ')');
+                }     
+          }
     </script>
 
 
