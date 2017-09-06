@@ -2,8 +2,8 @@ body{
 	position: relative;
 	font-family: "儷黑 Pro", "微軟正黑體";
 	background-attachment: fixed;
-	background-image: url(../images/dt/17-bg.png);
-	background-color: #532e7e;
+	background-image: url(../images/dt/2-bg.png);
+	background-color: #fff;
 	background-repeat: no-repeat;
 	-o-background-size     : 100%, auto;
   -moz-background-size   : 100%, auto;
@@ -31,9 +31,10 @@ hr{
 	border-top: 1px solid #d2d2d2;
 }
 h3{
-	color: #551f94;
+	color: #991934;
 	padding-bottom: 0px;
 	font-weight: 400;
+	margin-top: 5px;
 }
 h4{
 	color: #666;
@@ -326,7 +327,7 @@ ul.google-plus li img {
     padding: 10px 15px;
     border: 0px ;
     border-radius: 5px;
-    margin-top: 40%;
+    margin-top: 44%;
     margin-left: 0px;
     margin-right: 0px;
 
@@ -336,7 +337,7 @@ ul.google-plus li img {
     padding: 10px 15px;
     border: 0px ;
     border-radius: 5px;
-    margin-top: 40%;
+    margin-top: 50%;
     margin-left: 0px;
     margin-right: 0px;
 
@@ -431,7 +432,7 @@ ul.google-plus li img {
 
 .code-block{
 	float: left;
-	background: #e6ad04;
+	background: #aa1e3c;
 	color: #fff;
 	padding: 12px 40px;
 	text-align: -webkit-center;
