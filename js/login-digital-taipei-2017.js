@@ -143,8 +143,8 @@ function checkstatus(){
       dataType: 'json',
       url: 'https://api-stage.happytv.com.tw/api/v3/promotion/event/' + searchParams.get("event")
     }).done((data) => {
-      $('#promotion-code-area-'+ event).css('display', 'block');
-      $('#promotion-code-' + event).html(data.result.promotion_code);
+      $('#promotion-code-area').css('display', 'block');
+      $('#promotion-code' ).html(data.result.promotion_code);
     }).fail((data) =>{
       $('#no-more-promotion-code').css('display', 'block');
     });
@@ -155,6 +155,24 @@ function checkstatus(){
   }
 }
 
+loadCSS = function(href) {
+
+  var cssLink = $("<link>");
+  $("head").append(cssLink); //IE hack: append before setting href
+
+  cssLink.attr({
+    rel:  "stylesheet",
+    type: "text/css",
+    href: href
+  });
+
+};
+
+
 $(document).ready(function(){
+  var searchParams = new URLSearchParams(window.location.search);
+  var event = searchParams.get("event");
+  loadCSS("/css/happyTV-digital-taipei-"+event+".css");
+  $('.logo-' + event).css('display', 'block');
   checkstatus();
 });
