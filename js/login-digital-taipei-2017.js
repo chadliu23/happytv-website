@@ -174,5 +174,6 @@ $(document).ready(function(){
   var event = searchParams.get("event");
   loadCSS("/css/happyTV-digital-taipei-"+event+".css");
   $('.logo-' + event).css('display', 'block');
+  $('.' + event).css('display', 'block');
   checkstatus();
 });
