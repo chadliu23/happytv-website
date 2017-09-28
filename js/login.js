@@ -42,7 +42,7 @@
             },
             dataType: 'json',
             data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
-            url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=facebook'
+            url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=facebook&mode=homepage'
           }).done((data) => {
             succuessLogin(data);
           }).fail((data) =>{
@@ -150,8 +150,8 @@ function logout() {
           "Access-Control-Allow-Origin":"http://172.18.1.86:8000"
         },
         dataType: 'json',
-        data: { "google_id_token": user.getAuthResponse().id_token  },
-        url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=google'
+        data: { "google_id_token": user.getAuthResponse().id_token, "google_access_token": user.getAuthResponse().access_token  },
+        url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=google&mode=homepage'
       }).done((data) => {
         succuessLogin(data);
       }).fail((data) =>{
@@ -231,7 +231,7 @@ if ($('#loginbutton')){
       },
       dataType: 'json',
       data: { "email": email, "password": password.toString(CryptoJS.enc.Hex) },
-      url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=email'
+      url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=email&mode=homepage'
     }).done((data) => {
       succuessLogin(data);
     }).fail((data) =>{
