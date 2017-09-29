@@ -1,4 +1,7 @@
-
+  function handleLineAuthClick(){
+    window.location = 'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1538014608&redirect_uri='+
+    encodeURIComponent('https://api-stage.happytv.com.tw/happytvmember/login/callback') + '&state=rEeTqQ6zmnt7vETM&scope=openid%20profile';
+  }
 
 
   var facebook_api_version = 'v2.9';
@@ -227,7 +230,6 @@ if ($('#loginbutton')){
       type: 'POST',
       headers: {
         "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
-        "Access-Control-Allow-Origin":"http://172.18.1.86:8000"
       },
       dataType: 'json',
       data: { "email": email, "password": password.toString(CryptoJS.enc.Hex) },
@@ -240,7 +242,29 @@ if ($('#loginbutton')){
     event.preventDefault();
   });
 }
+
+
 $(document).ready(function(){
+
+  var searchParams = new URLSearchParams(window.location.search);
+  var line_access_token = searchParams.get("line_access_token");
+  var line_id = searchParams.get("line_id");
+  if (line_access_token !== undefined && line_id != undefined){
+    $.ajax({
+      type: 'POST',
+      headers: {
+        "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
+      },
+      dataType: 'json',
+      data: { "line_access_token": line_access_token, "line_id": line_id },
+      url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=line&mode=homepage'
+    }).done((data) => {
+      succuessLogin(data);
+    }).fail((data) =>{
+      bootstrap_alert.warning('Login fail');
+    });
+  }
+
   if (Cookies.get("member_token") !== undefined){
       $('#member-tag').css('display', 'block');
         var avatar =  Cookies.get('member_image');
