@@ -20,32 +20,26 @@
     
     <script type="text/javascript" src="/js/qz.js"></script>
     <script>
+        function checkPhone( strPhone )
+        {
+            var cellphone = /^09[0-9]{8}$/;
+
+            if ( cellphone.test( strPhone ) ) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        };
+        function validateForm(){
+            return checkPhone($('#phone')[0].value);
+        }
         $( document ).ready( () => {
             $( "#location" ).change(function(event) {
                 if (event.target.value == 18){
                     $('#location-other').css('display', 'block');
                 }else{
                     $('#location-other').css('display', 'none');
-                }
-            });
-            function countChecked(list) {
-                var count = 0;
-
-                for (var i = 0; i < list.length; i++) {
-                  var el = list[i];
-                  if (el.checked) {
-                    count++;
-                  }
-                }
-                return count;
-              }
-            var limit = 3;
-            var NewCount = 0;
-            $('input.form-check-input').on('change', function(evt) {
-               var topping = document.getElementsByName("apk1");
-               NewCount = countChecked(topping);
-               if (NewCount > 3) {
-                    this.checked = false;
                 }
             });
             
@@ -70,7 +64,7 @@
     <div class="container">
 		 <div class="col-md-12 col-xs-12">
       <h1>HAPPY TV會員問卷 抽iPhone8等精美好禮</h1>
-			<h4 class="sub-t">活動截止：10/10 23:59</h4>
+			<h4 class="sub-t">活動截止：10/31 23:59</h4>
 	    </div>
 			<div class="col-md-12 col-xs-12">
 
@@ -124,7 +118,7 @@
 </div>
 
 <div id='promotion-code-area' style="display: none">
-<form action="https://api-stage.happytv.com.tw/201710qz" method='POST'>
+<form action="https://api-stage.happytv.com.tw/201710qz" onsubmit="return validateForm()" method='POST'>
     <input type="text" name='id' id='member-id' value='' hidden="true" />
 			<div class="col-md-12 col-xs-12">
 				<h3 class="title">性別</h3>
@@ -216,7 +210,7 @@
          </div>
 		 <!--favorites-->
 
-		 <h3 class="title">觀看手機視頻的喜好</h3>
+		 <h3 class="title">觀看手機視頻的喜好(可複選)</h3>
 		 <div class="form-group row">
 
 				<div class=" col-md-12">
