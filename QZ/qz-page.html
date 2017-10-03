@@ -20,6 +20,14 @@
     
     <script type="text/javascript" src="/js/qz.js"></script>
     <script>
+        bootstrap_alert = function() {}
+        bootstrap_alert.warning = function(message) {
+          $('#alert_placeholder').html('<div id="alertEmail" class="alert alert-danger fade"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
+          $("#alertEmail").addClass("in");
+          $("#alertEmail").fadeTo(2000, 500).slideUp(500, function(){
+              $("#alertEmail").slideUp(500);
+          });
+        }
         function checkPhone( strPhone )
         {
             var cellphone = /^09[0-9]{8}$/;
@@ -28,6 +36,7 @@
                 return true;
             }
             else {
+                bootstrap_alert.warning('手機號碼格式錯誤，範例0912345678');
                 return false;
             }
         };
@@ -480,6 +489,7 @@
  </div>
 
   <div class=" final col-md-12 col-xs-12">
+        <div id='alert_placeholder' ></div>
 		<input type="submit" id="submit" value="提交" class="btn btn-log">
 	</div>
 
