@@ -1,6 +1,6 @@
   function handleLineAuthClick(){
     window.location = 'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1538014608&redirect_uri='+
-    encodeURIComponent('https://api-stage.happytv.com.tw/happytvmember/login/callback') + '&state=rEeTqQ6zmnt7vETM&scope=openid%20profile';
+    encodeURIComponent('https://api-product.happytv.com.tw/happytvmember/login/callback') + '&state=rEeTqQ6zmnt7vETM&scope=openid%20profile';
   }
 
 
@@ -45,7 +45,7 @@
             },
             dataType: 'json',
             data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
-            url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=facebook&mode=homepage'
+            url: 'https://api-product.happytv.com.tw/happytvmember/login?source=facebook&mode=homepage'
           }).done((data) => {
             succuessLogin(data);
           }).fail((data) =>{
@@ -154,7 +154,7 @@ function logout() {
         },
         dataType: 'json',
         data: { "google_id_token": user.getAuthResponse().id_token, "google_access_token": user.getAuthResponse().access_token  },
-        url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=google&mode=homepage'
+        url: 'https://api-product.happytv.com.tw/happytvmember/login?source=google&mode=homepage'
       }).done((data) => {
         succuessLogin(data);
       }).fail((data) =>{
@@ -233,7 +233,7 @@ if ($('#loginbutton')){
       },
       dataType: 'json',
       data: { "email": email, "password": password.toString(CryptoJS.enc.Hex) },
-      url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=email&mode=homepage'
+      url: 'https://api-product.happytv.com.tw/happytvmember/login?source=email&mode=homepage'
     }).done((data) => {
       succuessLogin(data);
     }).fail((data) =>{
@@ -257,7 +257,7 @@ $(document).ready(function(){
       },
       dataType: 'json',
       data: { "line_access_token": line_access_token, "line_id": line_id },
-      url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=line&mode=homepage'
+      url: 'https://api-product.happytv.com.tw/happytvmember/login?source=line&mode=homepage'
     }).done((data) => {
       succuessLogin(data);
     }).fail((data) =>{
