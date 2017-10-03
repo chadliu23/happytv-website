@@ -129,7 +129,7 @@ function getParameterByName(name, url) {
 
 function checkstatus(){
   if (Cookies.get("member_token") !== undefined){
-    $('#member-id').value = Cookies.get("member_id");
+    $('#member-id')[0].value = Cookies.get("member_id");
     $('#loginArea').css('display', 'none');
     $('#promotion-code-area').css('display', 'block');
   }else{
