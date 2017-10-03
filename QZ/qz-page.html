@@ -18,42 +18,7 @@
     <script type="text/javascript" src="/js/js.cookie.js"></script>
 
    
-    <script>
-        bootstrap_alert = function() {}
-        bootstrap_alert.warning = function(message) {
-          $('#alert_placeholder').html('<div id="alertEmail" class="alert alert-danger fade"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
-          $("#alertEmail").addClass("in");
-          $("#alertEmail").fadeTo(2000, 500).slideUp(500, function(){
-              $("#alertEmail").slideUp(500);
-          });
-        }
-        function checkPhone( strPhone )
-        {
-            var cellphone = /^09[0-9]{8}$/;
 
-            if ( cellphone.test( strPhone ) ) {
-                return true;
-            }
-            else {
-                bootstrap_alert.warning('手機號碼格式錯誤，範例0912345678');
-                return false;
-            }
-        };
-        function validateForm(){
-            return checkPhone($('#phone')[0].value);
-        }
-        $( document ).ready( () => {
-            $( "#location" ).change(function(event) {
-                if (event.target.value == 18){
-                    $('#location-other').css('display', 'block');
-                }else{
-                    $('#location-other').css('display', 'none');
-                }
-            });
-            
-        });
-        
-    </script>
 		<!--google-analytics-->
 		 <script>
 					 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -125,7 +90,7 @@
         </div>
 </div>
 
-<div id='promotion-code-area' style="">
+<div id='promotion-code-area' style="display: none">
 <form action="https://api-stage.happytv.com.tw/201710qz" onsubmit="return validateForm()" method='POST'>
     <input type="text" name='id' id='member-id' value='' hidden="true" />
 			<div class="col-md-12 col-xs-12">
@@ -154,7 +119,7 @@
                 <i class="fa fa-calendar"></i>
                 </div>
                <input type="text" id='birthday' name='birthday' class="date-picker form-control" data-date-start-view="decade" 
-               data-date-format="yyyy/mmm/dd" data-date="1999/01/01"  name="birthday" placeholder="yyyy/mmm/dd" />
+               data-date-format="yyyy/mm/dd" data-date="1999/01/01"  name="birthday" placeholder="yyyy/mm/dd" />
 
 	    </div>
 		 </div>
@@ -508,6 +473,42 @@
     <script src="//cdn.rawgit.com/niftylettuce/bootstrap-datepicker-mobile/9999ca720ebf89600bda1659c96a291dc447ff39/bootstrap-datepicker-mobile.js"></script>
 
     <script type="text/javascript" src="/js/qz.js"></script>
+        <script>
+        bootstrap_alert = function() {}
+        bootstrap_alert.warning = function(message) {
+          $('#alert_placeholder').html('<div id="alertEmail" class="alert alert-danger fade"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
+          $("#alertEmail").addClass("in");
+          $("#alertEmail").fadeTo(2000, 500).slideUp(500, function(){
+              $("#alertEmail").slideUp(500);
+          });
+        }
+        function checkPhone( strPhone )
+        {
+            var cellphone = /^09[0-9]{8}$/;
+
+            if ( cellphone.test( strPhone ) ) {
+                return true;
+            }
+            else {
+                bootstrap_alert.warning('手機號碼格式錯誤，範例0912345678');
+                return false;
+            }
+        };
+        function validateForm(){
+            return checkPhone($('#phone')[0].value);
+        }
+        $( document ).ready( () => {
+            $( "#location" ).change(function(event) {
+                if (event.target.value == 18){
+                    $('#location-other').css('display', 'block');
+                }else{
+                    $('#location-other').css('display', 'none');
+                }
+            });
+            
+        });
+        
+    </script>
 
 	</body>
 </html>
