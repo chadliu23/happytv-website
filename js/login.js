@@ -127,11 +127,10 @@ function logout() {
     if (GoogleAuth.isSignedIn.get()) {
       // User is authorized and has clicked 'Sign out' button.
       GoogleAuth.signOut();
-    } else {
-      // User is not signed in. Start Google auth flow.
-      onSignIn = true;
-      GoogleAuth.signIn();
-    }
+    } 
+    onSignIn = true;
+    GoogleAuth.signIn();
+    
   }
 
   function revokeAccess() {
@@ -140,7 +139,6 @@ function logout() {
 
   function setSigninStatus(isSignedIn) {
     if (Cookies.get("member_token") !== undefined){
-      // use self login
       return ;
     }
     var user = GoogleAuth.currentUser.get();

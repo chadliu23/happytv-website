@@ -212,6 +212,12 @@
           id.value ="";
       d.className ="";
           }
+        $(document).ready(function(){
+            if (Cookies.get("member_token") !== undefined){
+                window.location.replace("/member.html");
+                return ;
+            }
+        });
       </script>
 
 </body>
