@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Quiz</title>
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="utf-8"/>
+		<!--for smartphone device-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0"/>
+		<!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href="/css/qz.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="/js/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="/js/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <script type="text/javascript" src="/js/js.cookie.js"></script>
+    
+    <script type="text/javascript" src="/js/qz.js"></script>
+    <script>
+        $( document ).ready( () => {
+            $( "#location" ).change(function(event) {
+                if (event.target.value == 18){
+                    $('#location-other').css('display', 'block');
+                }else{
+                    $('#location-other').css('display', 'none');
+                }
+            });
+            function countChecked(list) {
+                var count = 0;
+
+                for (var i = 0; i < list.length; i++) {
+                  var el = list[i];
+                  if (el.checked) {
+                    count++;
+                  }
+                }
+                return count;
+              }
+            var limit = 3;
+            var NewCount = 0;
+            $('input.form-check-input').on('change', function(evt) {
+               var topping = document.getElementsByName("apk1");
+               NewCount = countChecked(topping);
+               if (NewCount > 3) {
+                    this.checked = false;
+                }
+            });
+            
+        });
+        
+    </script>
+		<!--google-analytics-->
+		 <script>
+					 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+					 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+					 ga('create', 'UA-84079620-2', 'auto');
+					 ga('send', 'pageview');
+
+		 </script>
+	</head>
+	<body>
+
+
+    <div class="container">
+		 <div class="col-md-12 col-xs-12">
+      <h1>HAPPY TV會員問卷 抽iPhone8等精美好禮</h1>
+			<h4 class="sub-t">活動截止：10/10 23:59</h4>
+	    </div>
+			<div class="col-md-12 col-xs-12">
+
+			 <table class="table">
+				 <thead>
+					<tr><th class="title2" colspan="2">抽獎獎項</th></tr>
+				</thead>
+        <tbody>
+        	<tr>
+        		<td colspan="2" style=" text-align:center;font-size:16px;"><span style="font-weight:600; color:#de3323;">
+        			iPhone8（1名）</span>
+        		</td>
+        	</tr>
+					<tr>
+        		<td class="award">
+        			威秀影城電影票（10名）
+        		</td>
+						<td class="award">
+        			全家便利禮券（10名）
+        		</td>
+        	</tr>
+					<tr>
+        		<td >
+        			世大運紀念品熊讚陶瓷手杯墊（10名）
+        		</td>
+						<td>
+        			世大運證件帶（10名）
+        		</td>
+        	</tr>
+					<tr>
+        		<td class="award">
+        			Beebub T恤（3名）
+        		</td>
+						<td class="award">
+        			Beebub超人娃娃玩偶（1名）
+        		</td>
+        	</tr>
+        </tbody>
+			</table>
+		  </div>
+
+<div id='loginArea'>
+    <div class="row newLogin" >
+           <a href="#" onclick='loginFacebook()'>
+                <ul class="facebook col-lg-6 col-xs-12 col-md-6">
+                    <span><i class="fa fa-1x fa-facebook-square" aria-hidden="true"></i></span>
+                    <li>Facebook Login</li>
+                </ul>
+            </a>
+        </div>
+</div>
+
+<div id='promotion-code-area' style="display: none">
+<form action="https://api-stage.happytv.com.tw/201710qz" method='POST'>
+    <input type="text" name='id' id='member-id' value='' hidden="true" />
+			<div class="col-md-12 col-xs-12">
+				<h3 class="title">性別</h3>
+				<!--單選-->
+		<label class="checkbox-inline">
+		     <input type="radio" name="sex" id="male"
+				value="male" checked> 男
+	    </label>
+	    <label class="checkbox-inline">
+		     <input type="radio" name="sex" id="female"
+				value="female"> 女
+	     </label>
+
+			</div>
+
+			<div class="col-md-12 col-xs-12">
+				<h3 class="title">生日</h3>
+				<!--下拉式-->
+
+		<div class="form-group row">
+			<div class="col-xs-12">
+			<!--JS沒作用-->
+			 <div class="input-group" id="datetimepicker1">
+			  <input type="text" id='birthday' name='birthday' class="form-control" required="true" />
+			  <span class="input-group-addon">
+					 <span class="glyphicon glyphicon-calendar"></span>
+			  </span>
+	    </div>
+		 </div>
+
+		</div>
+     <h3 class="title">職業</h3>
+     <div class="form-group row">
+
+ 				<div class=" col-md-12">
+
+
+ 				  <select id="occupation" name='occupation' class="form-control" >
+          <option value= 1>學生</option>
+ 				  <option value= 2>家管</option>
+ 					<option value= 3>軍公教</option>
+  				  <option value= 4>自由業</option>
+ 					<option value= 5>服務業</option>
+  				  <option value= 6>製造業</option>
+  					<option value= 7>批發零售業</option>
+   				  <option value= 8>資訊科技通訊服務業</option>
+ 						<option value= 9>營造業</option>
+ 	 				  <option value= 10>運輸倉儲物流業</option>
+
+
+         </select>
+ 			  </div>
+     </div>
+		 <!--location-->
+		 <h3 class="title">居住地</h3>
+		 <div class="form-group row">
+
+				 <div class=" col-md-12">
+
+
+				<select id="location" name='location' class="form-control" >
+					<option value = 1>基隆</option>
+					<option value = 2>台北</option>
+					<option value = 3>新北</option>
+					<option value = 4>桃園</option>
+					<option value = 5>新竹</option>
+					<option value = 6>苗栗</option>
+					<option value = 7>台中</option>
+					<option value = 8>彰化</option>
+					<option value = 9>雲林</option>
+					<option value = 10>嘉義</option>
+					<option value = 11>台南</option>
+					<option value = 12>高雄</option>
+					<option value = 13>屏東</option>
+					<option value = 14>宜蘭</option>
+					<option value = 15>花蓮</option>
+					<option value = 16>台東</option>
+					<option value = 17>離島</option>
+					<option value = 18>其他</option>
+				</select>
+                
+                
+			</div>
+		 </div>
+         <div class="form-group row">
+            <div class=" col-md-12">
+            <input type="text" class="form-control" id="location-other" name='location-other' placeholder="居住地" style='display: none;'>
+            </div>
+         </div>
+		 <!--favorites-->
+
+		 <h3 class="title">觀看手機視頻的喜好</h3>
+		 <div class="form-group row">
+
+				<div class=" col-md-12">
+
+
+					<div class="form-check form-check-inline col-md-4">
+	          <label class="form-check-label">
+	              <input class="form-check-input" name="apk1" type="checkbox" id="inlineCheckbox1" value="sport">體育
+	          </label>
+	         </div>
+					 <div class="form-check form-check-inline col-md-4">
+ 	          <label class="form-check-label">
+ 	              <input class="form-check-input" name="apk1" type="checkbox" id="inlineCheckbox2" value="news">新聞
+ 	          </label>
+ 	         </div>
+			 <div class="form-check form-check-inline col-md-4">
+				 <label class="form-check-label">
+						 <input class="form-check-input" name="apk1" type="checkbox" id="inlineCheckbox3" value="drama">戲劇
+				 </label>
+				</div>
+				<div class="form-check form-check-inline col-md-4">
+					 <label class="form-check-label">
+							 <input class="form-check-input" name="apk1"  type="checkbox" id="inlineCheckbox4" value="moive">電影
+					 </label>
+					</div>
+				<div class="form-check form-check-inline col-md-4">
+					 <label class="form-check-label">
+							 <input class="form-check-input" name="apk1" type="checkbox" id="inlineCheckbox5" value="music">音樂
+					 </label>
+					</div>
+				<div class="form-check form-check-inline col-md-4">
+					 <label class="form-check-label">
+							 <input class="form-check-input" name="apk1" type="checkbox" id="inlineCheckbox6" value="combine">綜藝
+					 </label>
+					</div>
+					<div class="form-check form-check-inline col-md-4">
+					 <label class="form-check-label">
+							 <input class="form-check-input" name="apk1" type="checkbox" id="inlineCheckbox7" value="life">生活
+					 </label>
+					</div>
+					<div class="form-check form-check-inline col-md-4">
+					 <label class="form-check-label">
+							 <input class="form-check-input" name="apk1" type="checkbox" id="inlineCheckbox8" value="car">汽車
+					 </label>
+					</div>
+				<div class="form-check form-check-inline col-md-4">
+						<label class="form-check-label">
+								<input class="form-check-input" name="apk1" type="checkbox" id="inlineCheckbox9" value="game">電競
+						</label>
+	  			</div>
+
+			</div>
+		 </div>
+
+
+	 </div>
+
+	 <!--reasons-->
+	 <div class=" col-md-12 col-xs-12">
+		 <h4 class="title">請問您使用手機APP收看電視節目的原因? </h4>
+		 <!--單選-->
+		 <ol class=" col-xs-12">
+		 <li  class=" col-xs-12">
+		 <h4>能讓我進行雙向的溝通(例如:彈幕，留言板)</h4>
+		 <label class="checkbox-inline col-xs-2">
+			<input type="radio" name="reason1"
+		 value="option1" checked> 非常不重要
+		 </label>
+		 <label class="checkbox-inline col-xs-2">
+			<input type="radio" name="reason1"
+		 value="option2">不重要
+		</label>
+		<label class="checkbox-inline col-xs-2">
+		 <input type="radio" name="reason1"
+		value="option3" checked> 沒意見
+		</label>
+		<label class="checkbox-inline col-xs-2">
+		 <input type="radio" name="reason1"
+		value="option4">重要
+	 </label>
+	 <label class="checkbox-inline col-xs-2">
+		<input type="radio" name="reason1"
+	 value="option5">非常重要
+	 </label>
+   </li>
+
+
+	 <li class=" col-xs-12"><h4>能讓我進行即時性的溝通</h4>
+	 <label class="checkbox-inline col-xs-2">
+		<input type="radio" name="reason2"
+	 value="option1" checked> 非常不重要
+	 </label>
+	 <label class="checkbox-inline col-xs-2">
+		<input type="radio" name="reason2"
+	 value="option2">不重要
+	</label>
+	<label class="checkbox-inline col-xs-2">
+	 <input type="radio" name="reason2"
+	value="option3" checked> 沒意見
+	</label>
+	<label class="checkbox-inline col-xs-2">
+	 <input type="radio" name="reason2"
+	value="option4">重要
+ </label>
+ <label class="checkbox-inline col-xs-2">
+	<input type="radio" name="reason2"
+ value="option5">非常重要
+ </label>
+ </li>
+
+ <li class=" col-xs-12">
+ <h4>能讓我與其他使用者（觀眾）互動</h4>
+ <label class="checkbox-inline col-xs-2">
+	<input type="radio" name="reason3"
+ value="option1" checked> 非常不重要
+ </label>
+ <label class="checkbox-inline col-xs-2">
+	<input type="radio" name="reason3"
+ value="option2">不重要
+</label>
+<label class="checkbox-inline col-xs-2">
+ <input type="radio" name="reason3"
+ value="option3" checked> 沒意見
+</label>
+<label class="checkbox-inline col-xs-2">
+ <input type="radio" name="reason3"
+ value="option4">重要
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason3"
+ value="option5">非常重要
+</label>
+</li>
+
+<li class=" col-xs-12">
+<h4>能讓我與其他使用者進行意見的分享與交流</h4>
+<label class="checkbox-inline col-xs-2">
+ <input type="radio" name="reason4"
+ value="option1" checked> 非常不重要
+</label>
+<label class="checkbox-inline col-xs-2">
+ <input type="radio" name="reason4"
+ value="option2">不重要
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason4"
+ value="option3" checked> 沒意見
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason4"
+ value="option4">重要
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason4"
+ value="option5">非常重要
+</label>
+</li>
+
+<li class=" col-xs-12">
+<h4>能讓我快速搜尋瀏覽到想要的資訊</h4>
+<label class="checkbox-inline col-xs-2">
+ <input type="radio" name="reason5"
+ value="option1" checked> 非常不重要
+</label>
+<label class="checkbox-inline col-xs-2">
+ <input type="radio" name="reason5"
+ value="option2">不重要
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason5"
+ value="option3" checked> 沒意見
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason5"
+ value="option4">重要
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason5"
+ value="option5">非常重要
+</label>
+</li>
+
+<li class=" col-xs-12">
+<h4>具有快速回應我的功能</h4>
+<label class="checkbox-inline col-xs-2">
+ <input type="radio" name="reason6"
+ value="option1" checked> 非常不重要
+</label>
+<label class="checkbox-inline col-xs-2">
+ <input type="radio" name="reason6"
+ value="option2">不重要
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason6"
+ value="option3" checked> 沒意見
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason6"
+ value="option4">重要
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason6"
+ value="option5">非常重要
+</label>
+</li>
+
+<li class=" col-xs-12">
+<h4>能讓我可以選擇我想要的瀏覽（觀看）內容</h4>
+<label class="checkbox-inline col-xs-2">
+ <input type="radio" name="reason7"
+ value="option1" checked> 非常不重要
+</label>
+<label class="checkbox-inline col-xs-2">
+ <input type="radio" name="reason7"
+ value="option2">不重要
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason7"
+ value="option3" checked> 沒意見
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason7"
+ value="option4">重要
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason7"
+ value="option5">非常重要
+</label>
+</li>
+
+<li class=" col-xs-12">
+<h4>能讓我可以選擇我想要的瀏覽（觀看）次序</h4>
+<label class="checkbox-inline col-xs-2">
+ <input type="radio" name="reason8"
+ value="option1" checked> 非常不重要
+</label>
+<label class="checkbox-inline col-xs-2">
+ <input type="radio" name="reason8"
+ value="option2">不重要
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason8"
+ value="option3" checked> 沒意見
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason8"
+ value="option4">重要
+</label>
+<label class="checkbox-inline col-xs-2">
+<input type="radio" name="reason8"
+ value="option5">非常重要
+</label>
+</li>
+
+ </ol>
+
+
+
+	</div>
+	<div class="  col-md-12 col-xs-12">
+	<h4 class="title">手機號碼</h4>
+	<div class="form-group">
+
+	 <input type="phonenumber" class="form-control" id="phone" name='phone' placeholder="電話號碼" required="true">
+	 <span>請留下您的聯絡資訊以便中獎後聯繫</span>
+ </div>
+ </div>
+
+  <div class=" final col-md-12 col-xs-12">
+		<input type="submit" id="submit" value="提交" class="btn btn-log">
+	</div>
+
+</form>
+
+</div>
+
+
+		<!--jquery-->
+
+
+		<!--datepicker doesn't work-->
+		<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+   </script>
+	</body>
+</html>

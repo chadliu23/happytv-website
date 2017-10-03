@@ -1,4 +1,7 @@
-
+  function handleLineAuthClick(){
+    window.location = 'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1538014608&redirect_uri='+
+    encodeURIComponent('https://api-product.happytv.com.tw/happytvmember/login/callback') + '&state=rEeTqQ6zmnt7vETM&scope=openid%20profile';
+  }
 
 
   var facebook_api_version = 'v2.9';
@@ -42,7 +45,7 @@
             },
             dataType: 'json',
             data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
-            url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=facebook'
+            url: 'https://api-product.happytv.com.tw/happytvmember/login?source=facebook&mode=homepage'
           }).done((data) => {
             succuessLogin(data);
           }).fail((data) =>{
@@ -124,11 +127,10 @@ function logout() {
     if (GoogleAuth.isSignedIn.get()) {
       // User is authorized and has clicked 'Sign out' button.
       GoogleAuth.signOut();
-    } else {
-      // User is not signed in. Start Google auth flow.
-      onSignIn = true;
-      GoogleAuth.signIn();
-    }
+    } 
+    onSignIn = true;
+    GoogleAuth.signIn();
+    
   }
 
   function revokeAccess() {
@@ -137,7 +139,6 @@ function logout() {
 
   function setSigninStatus(isSignedIn) {
     if (Cookies.get("member_token") !== undefined){
-      // use self login
       return ;
     }
     var user = GoogleAuth.currentUser.get();
@@ -150,8 +151,8 @@ function logout() {
           "Access-Control-Allow-Origin":"http://172.18.1.86:8000"
         },
         dataType: 'json',
-        data: { "google_id_token": user.getAuthResponse().id_token  },
-        url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=google'
+        data: { "google_id_token": user.getAuthResponse().id_token, "google_access_token": user.getAuthResponse().access_token  },
+        url: 'https://api-product.happytv.com.tw/happytvmember/login?source=google&mode=homepage'
       }).done((data) => {
         succuessLogin(data);
       }).fail((data) =>{
@@ -216,13 +217,9 @@ if ($('#loginbutton')){
       return;
     }
     if (password === '' | password === undefined){
-      bootstrap_alert.warning('Please input password');
-      event.preventDefault();
       return;
     }
     if (!$('#readChecked').is(":checked")){
-      bootstrap_alert.warning('Please Check the checkbox');
-      event.preventDefault();
       return;
     }
     password = CryptoJS.SHA256('h@ppytvXXX' + password);
@@ -231,11 +228,10 @@ if ($('#loginbutton')){
       type: 'POST',
       headers: {
         "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
-        "Access-Control-Allow-Origin":"http://172.18.1.86:8000"
       },
       dataType: 'json',
       data: { "email": email, "password": password.toString(CryptoJS.enc.Hex) },
-      url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=email'
+      url: 'https://api-product.happytv.com.tw/happytvmember/login?source=email&mode=homepage'
     }).done((data) => {
       succuessLogin(data);
     }).fail((data) =>{
@@ -244,7 +240,29 @@ if ($('#loginbutton')){
     event.preventDefault();
   });
 }
+
+
 $(document).ready(function(){
+
+  var searchParams = new URLSearchParams(window.location.search);
+  var line_access_token = searchParams.get("line_access_token");
+  var line_id = searchParams.get("line_id");
+  if (line_access_token !== undefined && line_id != undefined){
+    $.ajax({
+      type: 'POST',
+      headers: {
+        "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
+      },
+      dataType: 'json',
+      data: { "line_access_token": line_access_token, "line_id": line_id },
+      url: 'https://api-product.happytv.com.tw/happytvmember/login?source=line&mode=homepage'
+    }).done((data) => {
+      succuessLogin(data);
+    }).fail((data) =>{
+      bootstrap_alert.warning('Login fail');
+    });
+  }
+
   if (Cookies.get("member_token") !== undefined){
       $('#member-tag').css('display', 'block');
         var avatar =  Cookies.get('member_image');

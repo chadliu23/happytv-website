@@ -37,15 +37,22 @@
           $.ajax({
             type: 'POST',
             headers: {
-              "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
+              "accesskey": "accessKey_eb3604bd21a3176806f29607d47b069f17956cba",
             },
             dataType: 'json',
             data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
             url: 'https://api.happytv.com.tw/happytvmember/login?source=facebook'
           }).done((data) => {
-            succuessLogin(data);
+            if (data.retCode === 0){
+              succuessLogin(data);
+            }else{
+              console.log('Login fail ' + data.retMessage);
+              FB.logout(function(response) {
+              });
+            }
+            
           }).fail((data) =>{
-            bootstrap_alert.warning('This Facebook account as not register.');
+            onsole.log('Login fail ');
             FB.logout(function(response) {
             });
           });
@@ -108,46 +115,6 @@ function succuessLogin(data){
   checkstatus();
 }
 
-if ($('#loginbutton')){
-  $('#loginbutton').on('click', function(event){
-    var email = $('#email').val();
-    if (email == ''){
-      return;
-    }
-    var password = $('#password').val();
-    if (!validateEmail(email)){
-      bootstrap_alert.warning('Please input correct email');
-      event.preventDefault();
-      return;
-    }
-    if (password === '' | password === undefined){
-      bootstrap_alert.warning('Please input password');
-      event.preventDefault();
-      return;
-    }
-    if (!$('#readChecked').is(":checked")){
-      bootstrap_alert.warning('Please Check the checkbox');
-      event.preventDefault();
-      return;
-    }
-    password = CryptoJS.SHA256('h@ppytvXXX' + password);
-    console.log(password.toString(CryptoJS.enc.Hex));
-    $.ajax({
-      type: 'POST',
-      headers: {
-        "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp"
-      },
-      dataType: 'json',
-      data: { "email": email, "password": password.toString(CryptoJS.enc.Hex) },
-      url: 'https://api-stage.happytv.com.tw/happytvmember/login?source=email'
-    }).done((data) => {
-      succuessLogin(data);
-    }).fail((data) =>{
-      bootstrap_alert.warning('Login fail');
-    });
-    event.preventDefault();
-  });
-}
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -168,13 +135,15 @@ function checkstatus(){
     $.ajax({
       type: 'GET',
       headers: {
+        "memberid": Cookies.get("member_id"),
+        "membertoken":Cookies.get("member_token")
+
       },
       dataType: 'json',
-      data: { "email": email, "password": password.toString(CryptoJS.enc.Hex) },
       url: 'https://api-stage.happytv.com.tw/api/v3/promotion/event/' + searchParams.get("event")
     }).done((data) => {
-      $('#promotion-code-area'+ event).css('display', 'block');
-      $('#promtion-code-' + event).html(data.result.promotion_code);
+      $('#promotion-code-area').css('display', 'block');
+      $('#promotion-code' ).html(data.result.promotion_code);
     }).fail((data) =>{
       $('#no-more-promotion-code').css('display', 'block');
     });
@@ -185,6 +154,25 @@ function checkstatus(){
   }
 }
 
+loadCSS = function(href) {
+
+  var cssLink = $("<link>");
+  $("head").append(cssLink); //IE hack: append before setting href
+
+  cssLink.attr({
+    rel:  "stylesheet",
+    type: "text/css",
+    href: href
+  });
+
+};
+
+
 $(document).ready(function(){
+  var searchParams = new URLSearchParams(window.location.search);
+  var event = searchParams.get("event");
+  loadCSS("/css/happyTV-digital-taipei-"+event+".css");
+  $('.logo-' + event).css('display', 'block');
+  $('.' + event).css('display', 'block');
   checkstatus();
 });
