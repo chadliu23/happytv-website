@@ -12,46 +12,13 @@
 		<!-- Custom Fonts -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link href="/css/qz.css" rel="stylesheet" type="text/css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/bower_components/moment/min/moment.min.js"></script>
-    <script type="text/javascript" src="/js/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-    <link rel="stylesheet" href="/js/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-    <script type="text/javascript" src="/js/js.cookie.js"></script>
-    
-    <script type="text/javascript" src="/js/qz.js"></script>
-    <script>
-        $( document ).ready( () => {
-            $( "#location" ).change(function(event) {
-                if (event.target.value == 18){
-                    $('#location-other').css('display', 'block');
-                }else{
-                    $('#location-other').css('display', 'none');
-                }
-            });
-            function countChecked(list) {
-                var count = 0;
 
-                for (var i = 0; i < list.length; i++) {
-                  var el = list[i];
-                  if (el.checked) {
-                    count++;
-                  }
-                }
-                return count;
-              }
-            var limit = 3;
-            var NewCount = 0;
-            $('input.form-check-input').on('change', function(evt) {
-               var topping = document.getElementsByName("apk1");
-               NewCount = countChecked(topping);
-               if (NewCount > 3) {
-                    this.checked = false;
-                }
-            });
-            
-        });
-        
-    </script>
+    <link rel="stylesheet" href="/js/bower_components/bootstrap-datepicker/css/datepicker3.css">
+    <script src="/js/bower_components/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="/js/js.cookie.js"></script>
+
+   
+
 		<!--google-analytics-->
 		 <script>
 					 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -70,7 +37,7 @@
     <div class="container">
 		 <div class="col-md-12 col-xs-12">
       <h1>HAPPY TV會員問卷 抽iPhone8等精美好禮</h1>
-			<h4 class="sub-t">活動截止：10/10 23:59</h4>
+			<h4 class="sub-t">活動截止：10/31 23:59</h4>
 	    </div>
 			<div class="col-md-12 col-xs-12">
 
@@ -112,10 +79,10 @@
 			</table>
 		  </div>
 
-<div id='loginArea'>
-    <div class="row newLogin" >
+<div id='loginArea' class="col-xs-12 " >
+    <div class=" row newLogin" >
            <a href="#" onclick='loginFacebook()'>
-                <ul class="facebook col-lg-6 col-xs-12 col-md-6">
+                <ul class="facebook col-lg-12 col-xs-12 col-md-6">
                     <span><i class="fa fa-1x fa-facebook-square" aria-hidden="true"></i></span>
                     <li>Facebook Login</li>
                 </ul>
@@ -123,8 +90,9 @@
         </div>
 </div>
 
-<div id='promotion-code-area' style="display: none">
-<form action="https://api-stage.happytv.com.tw/201710qz" method='POST'>
+<div id='promotion-code-area' style="display: none;">
+<h4 class="sub-t"><span style="font-weight:600; color:#de3323;">請填寫正確資料以免影響抽獎資格</span></h4>
+<form action="https://api-stage.happytv.com.tw/201710qz" onsubmit="return validateForm()" method='POST'>
     <input type="text" name='id' id='member-id' value='' hidden="true" />
 			<div class="col-md-12 col-xs-12">
 				<h3 class="title">性別</h3>
@@ -148,10 +116,12 @@
 			<div class="col-xs-12">
 			<!--JS沒作用-->
 			 <div class="input-group" id="datetimepicker1">
-			  <input type="text" id='birthday' name='birthday' class="form-control" required="true" />
-			  <span class="input-group-addon">
-					 <span class="glyphicon glyphicon-calendar"></span>
-			  </span>
+                <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+                </div>
+               <input type="text" id='birthday' name='birthday' class="date-picker form-control" data-date-start-view="decade" 
+               data-date-format="yyyy/mm/dd" data-date="1999/01/01"  name="birthday" placeholder="yyyy/mm/dd" />
+
 	    </div>
 		 </div>
 
@@ -216,7 +186,7 @@
          </div>
 		 <!--favorites-->
 
-		 <h3 class="title">觀看手機視頻的喜好</h3>
+		 <h3 class="title">觀看手機視頻的喜好(可複選)</h3>
 		 <div class="form-group row">
 
 				<div class=" col-md-12">
@@ -280,10 +250,10 @@
 		 <!--單選-->
 		 <ol class=" col-xs-12">
 		 <li  class=" col-xs-12">
-		 <h4>能讓我進行雙向的溝通(例如:彈幕，留言板)</h4>
+		 <h4>能讓我進行雙向的溝通(例如:問與答….等)</h4>
 		 <label class="checkbox-inline col-xs-2">
 			<input type="radio" name="reason1"
-		 value="option1" checked> 非常不重要
+		 value="option1" > 非常不重要
 		 </label>
 		 <label class="checkbox-inline col-xs-2">
 			<input type="radio" name="reason1"
@@ -291,7 +261,7 @@
 		</label>
 		<label class="checkbox-inline col-xs-2">
 		 <input type="radio" name="reason1"
-		value="option3" checked> 沒意見
+		value="option3"> 沒意見
 		</label>
 		<label class="checkbox-inline col-xs-2">
 		 <input type="radio" name="reason1"
@@ -299,15 +269,15 @@
 	 </label>
 	 <label class="checkbox-inline col-xs-2">
 		<input type="radio" name="reason1"
-	 value="option5">非常重要
+	 value="option5" checked>非常重要
 	 </label>
    </li>
 
 
-	 <li class=" col-xs-12"><h4>能讓我進行即時性的溝通</h4>
+	 <li class=" col-xs-12"><h4>能讓我進行即時性的溝通(例如:彈幕….等)</h4>
 	 <label class="checkbox-inline col-xs-2">
 		<input type="radio" name="reason2"
-	 value="option1" checked> 非常不重要
+	 value="option1"> 非常不重要
 	 </label>
 	 <label class="checkbox-inline col-xs-2">
 		<input type="radio" name="reason2"
@@ -315,7 +285,7 @@
 	</label>
 	<label class="checkbox-inline col-xs-2">
 	 <input type="radio" name="reason2"
-	value="option3" checked> 沒意見
+	value="option3" > 沒意見
 	</label>
 	<label class="checkbox-inline col-xs-2">
 	 <input type="radio" name="reason2"
@@ -323,15 +293,15 @@
  </label>
  <label class="checkbox-inline col-xs-2">
 	<input type="radio" name="reason2"
- value="option5">非常重要
+ value="option5" checked>非常重要
  </label>
  </li>
 
  <li class=" col-xs-12">
- <h4>能讓我與其他使用者（觀眾）互動</h4>
+ <h4>能讓我與其他使用者（觀眾）互動(例如:意見的分享與交流，留言版，投票機制….等)</h4>
  <label class="checkbox-inline col-xs-2">
 	<input type="radio" name="reason3"
- value="option1" checked> 非常不重要
+ value="option1" > 非常不重要
  </label>
  <label class="checkbox-inline col-xs-2">
 	<input type="radio" name="reason3"
@@ -339,7 +309,7 @@
 </label>
 <label class="checkbox-inline col-xs-2">
  <input type="radio" name="reason3"
- value="option3" checked> 沒意見
+ value="option3" > 沒意見
 </label>
 <label class="checkbox-inline col-xs-2">
  <input type="radio" name="reason3"
@@ -347,15 +317,15 @@
 </label>
 <label class="checkbox-inline col-xs-2">
 <input type="radio" name="reason3"
- value="option5">非常重要
+ value="option5" checked>非常重要
 </label>
 </li>
 
 <li class=" col-xs-12">
-<h4>能讓我與其他使用者進行意見的分享與交流</h4>
+<h4>能讓我快速搜尋瀏覽到想要的資訊(例如:搜尋功能，節目表….等)</h4>
 <label class="checkbox-inline col-xs-2">
  <input type="radio" name="reason4"
- value="option1" checked> 非常不重要
+ value="option1" > 非常不重要
 </label>
 <label class="checkbox-inline col-xs-2">
  <input type="radio" name="reason4"
@@ -363,7 +333,7 @@
 </label>
 <label class="checkbox-inline col-xs-2">
 <input type="radio" name="reason4"
- value="option3" checked> 沒意見
+ value="option3" > 沒意見
 </label>
 <label class="checkbox-inline col-xs-2">
 <input type="radio" name="reason4"
@@ -371,15 +341,15 @@
 </label>
 <label class="checkbox-inline col-xs-2">
 <input type="radio" name="reason4"
- value="option5">非常重要
+ value="option5" checked>非常重要
 </label>
 </li>
 
 <li class=" col-xs-12">
-<h4>能讓我快速搜尋瀏覽到想要的資訊</h4>
+<h4>具有快速回應我的功能(例如:線上客服…等)</h4>
 <label class="checkbox-inline col-xs-2">
  <input type="radio" name="reason5"
- value="option1" checked> 非常不重要
+ value="option1" > 非常不重要
 </label>
 <label class="checkbox-inline col-xs-2">
  <input type="radio" name="reason5"
@@ -387,7 +357,7 @@
 </label>
 <label class="checkbox-inline col-xs-2">
 <input type="radio" name="reason5"
- value="option3" checked> 沒意見
+ value="option3" > 沒意見
 </label>
 <label class="checkbox-inline col-xs-2">
 <input type="radio" name="reason5"
@@ -395,15 +365,15 @@
 </label>
 <label class="checkbox-inline col-xs-2">
 <input type="radio" name="reason5"
- value="option5">非常重要
+ value="option5" checked>非常重要
 </label>
 </li>
 
 <li class=" col-xs-12">
-<h4>具有快速回應我的功能</h4>
+<h4>能讓我可以選擇我想要的瀏覽（觀看）內容(例如:任一頻道的點選，節目預約，我的最愛…等)</h4>
 <label class="checkbox-inline col-xs-2">
  <input type="radio" name="reason6"
- value="option1" checked> 非常不重要
+ value="option1" > 非常不重要
 </label>
 <label class="checkbox-inline col-xs-2">
  <input type="radio" name="reason6"
@@ -411,7 +381,7 @@
 </label>
 <label class="checkbox-inline col-xs-2">
 <input type="radio" name="reason6"
- value="option3" checked> 沒意見
+ value="option3" > 沒意見
 </label>
 <label class="checkbox-inline col-xs-2">
 <input type="radio" name="reason6"
@@ -419,58 +389,9 @@
 </label>
 <label class="checkbox-inline col-xs-2">
 <input type="radio" name="reason6"
- value="option5">非常重要
+ value="option5" checked>非常重要
 </label>
 </li>
-
-<li class=" col-xs-12">
-<h4>能讓我可以選擇我想要的瀏覽（觀看）內容</h4>
-<label class="checkbox-inline col-xs-2">
- <input type="radio" name="reason7"
- value="option1" checked> 非常不重要
-</label>
-<label class="checkbox-inline col-xs-2">
- <input type="radio" name="reason7"
- value="option2">不重要
-</label>
-<label class="checkbox-inline col-xs-2">
-<input type="radio" name="reason7"
- value="option3" checked> 沒意見
-</label>
-<label class="checkbox-inline col-xs-2">
-<input type="radio" name="reason7"
- value="option4">重要
-</label>
-<label class="checkbox-inline col-xs-2">
-<input type="radio" name="reason7"
- value="option5">非常重要
-</label>
-</li>
-
-<li class=" col-xs-12">
-<h4>能讓我可以選擇我想要的瀏覽（觀看）次序</h4>
-<label class="checkbox-inline col-xs-2">
- <input type="radio" name="reason8"
- value="option1" checked> 非常不重要
-</label>
-<label class="checkbox-inline col-xs-2">
- <input type="radio" name="reason8"
- value="option2">不重要
-</label>
-<label class="checkbox-inline col-xs-2">
-<input type="radio" name="reason8"
- value="option3" checked> 沒意見
-</label>
-<label class="checkbox-inline col-xs-2">
-<input type="radio" name="reason8"
- value="option4">重要
-</label>
-<label class="checkbox-inline col-xs-2">
-<input type="radio" name="reason8"
- value="option5">非常重要
-</label>
-</li>
-
  </ol>
 
 
@@ -481,27 +402,74 @@
 	<div class="form-group">
 
 	 <input type="phonenumber" class="form-control" id="phone" name='phone' placeholder="電話號碼" required="true">
-	 <span>請留下您的聯絡資訊以便中獎後聯繫</span>
+	 <span>請留下您的聯絡資訊以便中獎後聯繫</span><br/>
+     <br/>
+     <span>得獎須知</span><br/>
+     <span>1.抽獎結果將於11/1 18:00公佈，台灣本島以外領獎需自付運費。</span><br/>
+     <span>2.得獎獎項超過新臺幣20,000元者，得獎者依法需自付10%稅額（海外人士或不具中華民國身分者，機會中獎所得稅為20%）。</span><br/>
+     <span>3.快樂電視保留活動最終修改權利。</span><br/>
+     <br/>
  </div>
  </div>
 
   <div class=" final col-md-12 col-xs-12">
+        <div id='alert_placeholder' ></div>
 		<input type="submit" id="submit" value="提交" class="btn btn-log">
 	</div>
 
 </form>
 
 </div>
+</div>
 
+<footer>
 
+</footer>
 		<!--jquery-->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/js/bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/js/bower_components/moment/min/moment.min.js"></script>
+    
+    <script src="//cdn.rawgit.com/niftylettuce/bootstrap-datepicker-mobile/9999ca720ebf89600bda1659c96a291dc447ff39/bootstrap-datepicker-mobile.js"></script>
 
+    <script type="text/javascript" src="/js/qz.js"></script>
+        <script>
+        bootstrap_alert = function() {}
+        bootstrap_alert.warning = function(message) {
+          $('#alert_placeholder').html('<div id="alertEmail" class="alert alert-danger fade"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
+          $("#alertEmail").addClass("in");
+          $("#alertEmail").fadeTo(2000, 500).slideUp(500, function(){
+              $("#alertEmail").slideUp(500);
+          });
+        }
+        function checkPhone( strPhone )
+        {
+            var cellphone = /^09[0-9]{8}$/;
 
-		<!--datepicker doesn't work-->
-		<script type="text/javascript">
-    $(function () {
-        $('#datetimepicker1').datetimepicker();
-    });
-   </script>
+            if ( cellphone.test( strPhone ) ) {
+                return true;
+            }
+            else {
+                bootstrap_alert.warning('手機號碼格式錯誤，範例0912345678');
+                return false;
+            }
+        };
+        function validateForm(){
+            return checkPhone($('#phone')[0].value);
+        }
+        $( document ).ready( () => {
+            $( "#location" ).change(function(event) {
+                if (event.target.value == 18){
+                    $('#location-other').css('display', 'block');
+                }else{
+                    $('#location-other').css('display', 'none');
+                }
+            });
+            
+        });
+        
+    </script>
+
 	</body>
 </html>
