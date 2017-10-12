@@ -156,6 +156,9 @@ $(document).ready(function(){
   var event = searchParams.get("event");
   loadCSS("/css/lottary.css");
   checkstatus();
+  $('#facebook-button').on('click', (event) => {
+    loginFacebook();
+  });
   $('#start-button').on('click', (event) => {
     var searchParams = new URLSearchParams(window.location.search);
     var event = searchParams.get("event");
