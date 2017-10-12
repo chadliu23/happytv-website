@@ -132,6 +132,7 @@ function checkstatus(){
   if (Cookies.get("member_token") !== undefined){
     $('#loginArea').css('display', 'none');
     $('#promotion-click').css('display', 'block');
+    $('#event-image-area').css('display', 'none');
   }else{
     $('#loginArea').css('display', 'block');
   }
@@ -174,9 +175,11 @@ $(document).ready(function(){
     }).done((data) => {
       $('#promotion-code-area').css('display', 'block');
       $('#start-button').css('display', 'none');
+      $('#event-image-area').css('display', 'block');
     }).fail((data) =>{
       $('#promotion-code-area').css('display', 'block');
       $('#start-button').css('display', 'none');
+      $('#event-image-area').css('display', 'block');
       console.log(data);
     });
   })
