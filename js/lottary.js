@@ -172,6 +172,7 @@ $(document).ready(function(){
       $('#promotion-code-area').css('display', 'block');
       $('#start-button').css('display', 'none');
     }).fail((data) =>{
+      $('#promotion-code-area').css('display', 'block');
       $('#start-button').css('display', 'none');
       console.log(data);
     });
