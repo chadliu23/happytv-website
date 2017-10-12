@@ -1,5 +1,5 @@
 body{
-    position: relative;
+
     font-family: "儷黑 Pro", "微軟正黑體";
     background-attachment: fixed;
     background-color: #aed4f5;
@@ -8,6 +8,7 @@ body{
   -moz-background-size   : 100%, auto;
   -webkit-background-size: 100%, auto;
   background-size        : 100%, auto;
+  padding-top: 5px;
 
 }
 .logo-on-site {
@@ -31,6 +32,11 @@ header.carousel {height:auto}
     font-family: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", "標楷體", DFKai-SB, sans-serif;
     font-weight: bold;
     margin: 50px 20px;
+}
+.namelist {
+    font-family: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", "標楷體", DFKai-SB, sans-serif;
+    font-weight: bold;
+    font-size:20px;
 }
 a {
     color: #ff7800;

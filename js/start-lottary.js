@@ -46,7 +46,7 @@ $(document).ready(function(){
       $('#promotion-code-area').css('display', 'block');
       $('#promotion-click').css('display', 'none');
       for (let i in data){
-        $('#promotion-code-area').append('<ul>' +(Number(i)+1) + '. ' + data[i].nick_name + '</ul>');
+        $('#promotion-code-area').append('<ul class="namelist">' +(Number(i)+1) + '. ' + data[i].nick_name + '</ul>');
       }
     }).fail((data) =>{
       $('#promotion-code-area').css('display', 'block');
