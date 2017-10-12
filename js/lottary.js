@@ -170,8 +170,9 @@ $(document).ready(function(){
       url: 'https://api-stage.happytv.com.tw/api/v3/promotion/event/' + searchParams.get("event")
     }).done((data) => {
       $('#promotion-code-area').css('display', 'block');
+      $('#start-button').css('display', 'none');
     }).fail((data) =>{
-      $('#promotion-code-area').css('display', 'block');
+      $('#start-button').css('display', 'none');
       console.log(data);
     });
   })
