@@ -40,7 +40,7 @@
               "accesskey": "accessKey_eb3604bd21a3176806f29607d47b069f17956cba",
             },
             dataType: 'json',
-            data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
+            data: { "fb_id": data.id, "nick_name": data.name, "fb_token": response.authResponse.accessToken },
             url: 'https://api.happytv.com.tw/happytvmember/login?source=facebook'
           }).done((data) => {
             if (data.retCode === 0){
