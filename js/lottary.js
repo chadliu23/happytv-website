@@ -52,9 +52,7 @@
             }
             
           }).fail((data) =>{
-            onsole.log('Login fail ');
-            FB.logout(function(response) {
-            });
+            console.log('Login fail ');
           });
         });
       }else {
