@@ -29,15 +29,22 @@ loadCSS = function(href) {
 
 };
 
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
 
 $(document).ready(function(){
-  var searchParams = new URLSearchParams(window.location.search);
-  var event = searchParams.get("event");
+  var event = getParameterByName("event");
   loadCSS("/css/lottary.css");
 
   $('#start-button').on('click', (event) => {
-    var searchParams = new URLSearchParams(window.location.search);
-    var event = searchParams.get("event");
+    var event = getParameterByName("event");
     $.ajax({
       type: 'GET',
       dataType: 'json',

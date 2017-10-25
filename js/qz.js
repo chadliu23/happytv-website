@@ -152,7 +152,6 @@ loadCSS = function(href) {
 
 
 $(document).ready(function(){
-  var searchParams = new URLSearchParams(window.location.search);
-  var event = searchParams.get("event");
+  var event = getParameterByName("event");
   checkstatus();
 });

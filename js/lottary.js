@@ -136,31 +136,14 @@ function checkstatus(){
   }
 }
 
-loadCSS = function(href) {
-
-  var cssLink = $("<link>");
-  $("head").append(cssLink); //IE hack: append before setting href
-
-  cssLink.attr({
-    rel:  "stylesheet",
-    type: "text/css",
-    href: href
-  });
-
-};
-
-
 $(document).ready(function(){
-  var searchParams = new URLSearchParams(window.location.search);
-  var event = searchParams.get("event");
-  loadCSS("/css/lottary.css");
+  var event = getParameterByName("event");
   checkstatus();
   $('#facebook-button').on('click', (event) => {
     loginFacebook();
   });
   $('#start-button').on('click', (event) => {
-    var searchParams = new URLSearchParams(window.location.search);
-    var event = searchParams.get("event");
+    var event = getParameterByName("event");
     $.ajax({
       type: 'PUT',
       headers: {

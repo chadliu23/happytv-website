@@ -130,8 +130,7 @@ function getParameterByName(name, url) {
 function checkstatus(){
   if (Cookies.get("member_token") !== undefined){
     $('#loginArea').css('display', 'none');
-    var searchParams = new URLSearchParams(window.location.search);
-    var event = searchParams.get("event");
+    var event = getParameterByName("event");
     $.ajax({
       type: 'GET',
       headers: {
@@ -169,8 +168,7 @@ loadCSS = function(href) {
 
 
 $(document).ready(function(){
-  var searchParams = new URLSearchParams(window.location.search);
-  var event = searchParams.get("event");
+  var event = getParameterByName("event");
   loadCSS("/css/happyTV-digital-taipei-"+event+".css");
   $('.logo-' + event).css('display', 'block');
   $('.' + event).css('display', 'block');
