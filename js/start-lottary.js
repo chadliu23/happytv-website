@@ -40,15 +40,13 @@ function getParameterByName(name, url) {
 }
 
 $(document).ready(function(){
-  var event = getParameterByName("event");
   loadCSS("/css/lottary.css");
 
   $('#start-button').on('click', (event) => {
-    var event = getParameterByName("event");
     $.ajax({
       type: 'GET',
       dataType: 'json',
-      url: 'https://api-stage.happytv.com.tw/api/v3/promotion/event/' + searchParams.get("event") + '/number/' + $('#number')[0].value
+      url: 'https://api-stage.happytv.com.tw/api/v3/promotion/event/' + getParameterByName("event"); + '/number/' + $('#number')[0].value
     }).done((data) => {
       $('#promotion-code-area').css('display', 'block');
       $('#promotion-click').css('display', 'none');

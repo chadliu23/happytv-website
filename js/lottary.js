@@ -137,13 +137,11 @@ function checkstatus(){
 }
 
 $(document).ready(function(){
-  var event = getParameterByName("event");
   checkstatus();
   $('#facebook-button').on('click', (event) => {
     loginFacebook();
   });
   $('#start-button').on('click', (event) => {
-    var event = getParameterByName("event");
     $.ajax({
       type: 'PUT',
       headers: {
@@ -152,7 +150,7 @@ $(document).ready(function(){
 
       },
       dataType: 'json',
-      url: 'https://api-stage.happytv.com.tw/api/v3/promotion/event/' + searchParams.get("event")
+      url: 'https://api-stage.happytv.com.tw/api/v3/promotion/event/' + getParameterByName("event")
     }).done((data) => {
       $('#promotion-code-area').css('display', 'block');
       $('#start-button').css('display', 'none');
