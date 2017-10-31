@@ -139,7 +139,7 @@ function checkstatus(){
 
       },
       dataType: 'json',
-      url: 'https://api-stage.happytv.com.tw/api/v3/promotion/event/' + searchParams.get("event")
+      url: 'https://api.happytv.com.tw/api/v3/promotion/event/' + searchParams.get("event")
     }).done((data) => {
       $('#promotion-code-area').css('display', 'block');
       $('#promotion-code' ).html(data.result.promotion_code);

@@ -150,7 +150,7 @@ $(document).ready(function(){
 
       },
       dataType: 'json',
-      url: 'https://api-stage.happytv.com.tw/api/v3/promotion/event/' + getParameterByName("event")
+      url: 'https://api.happytv.com.tw/api/v3/promotion/event/' + getParameterByName("event")
     }).done((data) => {
       $('#promotion-code-area').css('display', 'block');
       $('#start-button').css('display', 'none');
