@@ -15,16 +15,18 @@
     <meta property="og:image" content="images/h_mata_img.jpg" />
 
     <title>快樂電視官網-享受精采賽事，盡在快樂電視!!!</title>
-<!-- iOS 介面調整 -->
-<!-- 以下兩個效果 必須在使用者將連結加入主畫面螢幕 從桌面開啟才有效 -->
+    <!-- iOS 介面調整 -->
+    <!-- 以下兩個效果 必須在使用者將連結加入主畫面螢幕 從桌面開啟才有效 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon" href="images/Icon@2.png" /> <!-- 57×57px -->
-        <link rel="apple-touch-icon" sizes="72×72" href="images/Icon@2.png" /> <!-- 72×72px ipad-->
-        <link rel="apple-touch-icon" sizes="114×114" href="images/Icon@2.png" />
-        <meta content="all" name="robots" />
-        <link rel="icon" href="images/favicon.ico" type="image/png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="images/Icon@2.png" />
+    <!-- 57×57px -->
+    <link rel="apple-touch-icon" sizes="72×72" href="images/Icon@2.png" />
+    <!-- 72×72px ipad-->
+    <link rel="apple-touch-icon" sizes="114×114" href="images/Icon@2.png" />
+    <meta content="all" name="robots" />
+    <link rel="icon" href="images/favicon.ico" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
 
@@ -35,12 +37,12 @@
 
     <!-- Custom Fonts -->
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 
 
@@ -52,26 +54,32 @@
     <![endif]-->
 
     <script>
-     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-     ga('create', 'UA-84079620-2', 'auto');
-     ga('send', 'pageview');
-
-   </script>
+        ga('create', 'UA-84079620-2', 'auto');
+        ga('send', 'pageview');
+    </script>
 
 
 </head>
 
-<body class="time">
-  <!--BAK TO TOP BUTTON-->
+<body class="time" >
+    <!--BAK TO TOP BUTTON-->
 
 
-<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></button>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></button>
 
-     <!-- Navigation -->
+    <!-- Navigation -->
     <div id='navigation'></div>
 
 
@@ -83,13 +91,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header2">本週精選直播節目</h1>
-              <div class="channel">
-                <a class="btn btn-warning" href="timetable_game.html">賽事</a>
-                <a class="btn btn-s" href="timetable_drama.html">戲劇</a>
-                <a class="btn btn-s" href="timetable_movie.html">電影</a>
-                <!--<a class="btn btn-warning" href="timetable-2017uni-all.html">緯來體育台</a>
+                <div class="channel">
+                    <a class="btn btn-warning" href="timetable_game.html">賽事</a>
+                    <!--<a class="btn btn-warning" href="timetable-2017uni-all.html">緯來體育台</a>
                 <a class="btn btn-warning" href="timetable-2017uni-all.html">緯來育樂台</a>-->
-              </div>
+                </div>
             </div>
         </div>
 
@@ -110,7 +116,7 @@
         <!-- /.row -->
 
         <!-- Header Carousel -->
-    <!--<div class="row">
+        <!--<div class="row">
      <header id="myCarousel" class="carousel slide" data-ride="carousel">
 
         <div class="container">
@@ -144,616 +150,251 @@
 
         <div class="row">
             <div class="col-lg-12 ">
-                <h2 class="time-header">10/02-10/03 精選直播賽事</h2>
+                <h2 class="time-header"> 精選直播賽事</h2>
                 <h4 style="color:#eaeaea"><i class="fa fa-info-circle" aria-hidden="true"></i> 本節目表參考引用自各電視台公告內容。 若有異動，以各電視台實際播出內容為準。</h4>
-             </div>
-
-           <!--menu-list-->
-
-               <div class="col-lg-12">
-
-                 <ul class="nav nav-pills">
-                   <li class="active"><a class="menu-t"data-toggle="tab" href="#home">10/03(二)</a></li>
-                   <li><a class="menu-t"data-toggle="tab" href="#menu1">10/04(三)</a></li>
-                  <li><a class="menu-t"data-toggle="tab" href="#menu2">10/05(四)</a></li>
-                  <li><a class="menu-t"data-toggle="tab" href="#menu3">10/06(五)</a></li>
-
-
-                 </ul>
-               </div>
-
-             </div>
-
-
-
-<div class="row txtBox">
-   <div class="tab-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-            <!--tv programs-->
-            <!--firstd day-->
-
-        <div id="home" class="tab-pane fade in active">
-          <div class="row row-t">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-             <h3 class="table-title">10/03(二)</h3>
-            </div>
-            <!--4-1-->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-             <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                     <img class="img-responsive" src="images/tvicon/psg2-1.png">
-                    </div>
-                    <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                        <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>00:00-06:00</p>
-                         <h5 class="media-t">總統盃</h5>
-                         <p class="media-st">第四天</p>
-
-                    </div>
-                </div>
             </div>
 
-            <!--4-2-->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-             <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                     <img class="img-responsive" src="images/tvicon/psg1-1.png">
-                    </div>
-                    <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                        <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>12:30-23:00</p>
-                         <h5 class="media-t">2017中國男網賽</h5>
-                         <p class="media-st">第二天</p>
+            <!--menu-list-->
 
-                    </div>
-                </div>
-            </div>
-
-            <!--4-3-->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-             <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                     <img class="img-responsive" src="images/tvicon/pst2.png">
-                    </div>
-                    <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                        <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>12:30-21:30</p>
-                         <h5 class="media-t">2017中國女網賽</h5>
-                         <p class="media-st">第三天</p>
-
-                    </div>
-                </div>
-            </div>
-            <!--line-->
             <div class="col-lg-12">
-             <hr class="line-t">
-            </div>
-            <!--4-4-->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-             <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                     <img class="img-responsive" src="images/tvicon/ps2.png">
-                    </div>
-                    <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                        <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>19:00-20:00</p>
-                         <h5 class="media-t">2017烏茲別克女網賽</h5>
-                         <p class="media-st">四強</p>
 
-                    </div>
-                </div>
+                <ul class="nav nav-pills">
+                    <li class="active"><a class="menu-t" data-toggle="tab" href="#home" onclick="showProgramsInChannel(this.href)">博斯高球</a></li>
+                    <li><a class="menu-t" data-toggle="tab" href="#menu" onclick="showProgramsInChannel(this.href)">博斯高球2</a></li>
+                    <li><a class="menu-t" data-toggle="tab" href="#menu1" onclick="showProgramsInChannel(this.href)">博斯網球</a></li>
+                    <li><a class="menu-t" data-toggle="tab" href="#menu2" onclick="showProgramsInChannel(this.href)">博斯運動</a></li>
+                    <li><a class="menu-t" data-toggle="tab" href="#menu3" onclick="showProgramsInChannel(this.href)">博斯魅力</a></li>
+                    <li><a class="menu-t" data-toggle="tab" href="#menu4" onclick="showProgramsInChannel(this.href)">博斯足球</a></li>
+                    <li><a class="menu-t" data-toggle="tab" href="#menu5" onclick="showProgramsInChannel(this.href)">博斯無限</a></li>
+                </ul>
             </div>
 
-            <!--4-5-->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-             <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                     <img class="img-responsive" src="images/tvicon/psc2.png">
-                    </div>
-                    <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                        <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>19:00-20:00</p>
-                         <h5 class="media-t">2017日本男網賽</h5>
-                         <p class="media-st">第二天</p>
-
-                    </div>
-                </div>
-            </div>
-
-            <!--4-6-->
-
-
-
-          </div>
-      </div>
-      <div id="menu1" class="tab-pane fade">
-        <div class="row row-t">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-           <h3 class="table-title">10/04(三)</h3>
-          </div>
-            <!--4-1-->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-             <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                     <img class="img-responsive" src="images/tvicon/psft2.png">
-                    </div>
-                    <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                        <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>07:00-09:00</p>
-                         <h5 class="media-t">2017MLS</h5>
-                         <p class="media-st">第31輪亞特蘭大聯隊vs明尼蘇達聯隊</p>
-
-                    </div>
-                </div>
-            </div>
-
-            <!--4-2-->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-             <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                     <img class="img-responsive" src="images/tvicon/ps2.png">
-                    </div>
-                    <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                        <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>11:00-19:00</p>
-                         <h5 class="media-t">2017日本男網賽</h5>
-                         <p class="media-st">第三天</p>
-
-                    </div>
-                </div>
-            </div>
-
-            <!--4-3-->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-             <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                     <img class="img-responsive" src="images/tvicon/pst2.png">
-                    </div>
-                    <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                        <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>12:30-18:30</p>
-                         <h5 class="media-t">2017中國男網賽</h5>
-                         <p class="media-st">第三天</p>
-
-                    </div>
-                </div>
-            </div>
-            <!--line-->
-            <div class="col-lg-12">
-             <hr class="line-t">
-            </div>
-            <!--4-4-->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-             <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                     <img class="img-responsive" src="images/tvicon/psc2.png">
-                    </div>
-                    <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                        <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>12:30-23:00</p>
-                         <h5 class="media-t">2017中國女網賽</h5>
-                         <p class="media-st">第四天</p>
-
-                    </div>
-                </div>
-            </div>
-
-            <!--4-5-->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-             <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                     <img class="img-responsive" src="images/tvicon/pst2.png">
-                    </div>
-                    <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                        <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>19:30-21:30</p>
-                         <h5 class="media-t">2017中國男網賽</h5>
-                         <p class="media-st">第三天</p>
-
-                    </div>
-                </div>
-            </div>
-
-
-            <!--line-->
-            <div class="col-lg-12">
-             <hr class="line-t">
-            </div>
-            <!--4-7-->
-
-
-
-          </div>
-      </div>
-
-
-               <!--end-->
-               <!--3-day-->
-
-                <div id="menu2" class="tab-pane fade">
-                  <div class="row row-t">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                     <h3 class="table-title">10/５(四)</h3>
-                    </div>
-
-                    <!--3-1-->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                     <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                            <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                             <img class="img-responsive" src="images/tvicon/ps2.png">
-                            </div>
-                            <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                                <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>11:00-19:00</p>
-                                 <h5 class="media-t">2017日本男網賽</h5>
-                                 <p class="media-st">十六強</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!--3-2-->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                     <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                            <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                             <img class="img-responsive" src="images/tvicon/psc2.png">
-                            </div>
-                            <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                                <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>12:30-21:30</p>
-                                 <h5 class="media-t">2017中國女網賽</h5>
-                                 <p class="media-st">十六強</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!--3-3-->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                     <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                            <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                             <img class="img-responsive" src="images/tvicon/pst2.png">
-                            </div>
-                            <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                                <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>14:30-23:00</p>
-                                 <h5 class="media-t">2017中國男網賽</h5>
-                                 <p class="media-st">十六強</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!--line-->
-                    <div class="col-lg-12">
-                     <hr class="line-t">
-                    </div>
-                    <!--3-4-->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                     <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                            <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                             <img class="img-responsive" src="images/tvicon/psg2-1.png">
-                            </div>
-                            <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                                <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>20:00-24:00</p>
-                                 <h5 class="media-t">2017艾弗列登喜路錦標賽</h5>
-                                 <p class="media-st">第一輪</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!--3-5-->
-
-                    <!--3-6-->
-
-          </div>
         </div>
-            <!--programs-end-->
-            <!--4-day-->
-
-            <div id="menu3" class="tab-pane fade">
-              <div class="row row-t">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                 <h3 class="table-title">10/0６(五)</h3>
-                </div>
-                <!--4-1-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                 <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                         <img class="img-responsive" src="images/tvicon/psg1-1.png">
+        <div class="row txtBox">
+            <div class="table-content col-lg-12">
+                <div id="home" class="tab-pane fade in active" >
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BS0">
+                            <h3 class=" col-sm-12 col-md-9">
+                    <p id ="today0"><p>
+                  </h3>
                         </div>
-                        <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                            <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i> 05:30-08:30</p>
-                             <h5 class="media-t">喜互惠公開賽</h5>
-                             <p class="media-st">第一輪</p>
 
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSday0" style="float:left">
+                            <h3 class="col-sm-12 col-md-9">
+                    <p id ="secondDay0"><p></h3>
                         </div>
                     </div>
-                </div>
-
-                <!--4-2-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                 <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                         <img class="img-responsive" src="images/tvicon/ps2.png">
-                        </div>
-                        <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                            <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>11:00-19:00</p>
-                             <h5 class="media-t">2017日本男網賽</h5>
-                             <p class="media-st">八強</p>
-
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSthird0" style="float:left">
+                            <h3 class=" col-sm-12 col-md-9">
+                  <p id ="thirdDay0"><p></h3>
                         </div>
                     </div>
-                </div>
-
-                <!--4-3-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                 <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                         <img class="img-responsive" src="images/tvicon/psc2.png">
-                        </div>
-                        <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                            <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>12:30-18:30</p>
-                             <h5 class="media-t">2017中國女網賽</h5>
-                             <p class="media-st">八強</p>
-
-                        </div>
-                    </div>
-                </div>
-                <!--line-->
-                <div class="col-lg-12">
-                 <hr class="line-t">
-                </div>
-                <!--4-4-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                 <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                         <img class="img-responsive" src="images/tvicon/pst2.png">
-                        </div>
-                        <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                            <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>12:30-18:30</p>
-                             <h5 class="media-t">2017中國男網賽</h5>
-                             <p class="media-st">八強</p>
-
-                        </div>
-                    </div>
-                </div>
-                <!--4-4-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                 <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                         <img class="img-responsive" src="images/tvicon/pst2.png">
-                        </div>
-                        <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                            <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>19:30-21:30</p>
-                             <h5 class="media-t">2017中國男網賽</h5>
-                             <p class="media-st">八強</p>
-
-                        </div>
-                    </div>
-                </div>
-                <!--4-4-->
-                  <div class="col-md-4 col-sm-6 col-xs-12">
-                   <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                          <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                           <img class="img-responsive" src="images/tvicon/psg2-1.png">
-                          </div>
-                          <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                              <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>20:00-24:00</p>
-                               <h5 class="media-t">2017艾弗列登喜路錦標賽</h5>
-                               <p class="media-st">第二輪</p>
-
-                          </div>
-                      </div>
-                  </div>
-                <!--4-5-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                 <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                         <img class="img-responsive" src="images/tvicon/psc2.png">
-                        </div>
-                        <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                            <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>21:00-23:00</p>
-                             <h5 class="media-t">2017中國女網賽</h5>
-                             <p class="media-st">八強</p>
-
-                        </div>
-                    </div>
-                </div>
-
-              </div>
-          </div>
-
-
-            <!--programs-end-->
-            <!--5-day-->
-
-            <div id="" class="tab-pane fade">
-              <div class="row row-t">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                 <h3 class="table-title">9/29(五)</h3>
-                </div>
-                <!--5-1-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                 <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                         <img class="img-responsive" src="images/tvicon/psg2-1.png">
-                        </div>
-                        <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                            <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>00:00-00:30</p>
-                             <h5 class="media-t">2017英格蘭名人賽</h5>
-                             <p class="media-st">第一輪</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!--5-2-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                 <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                         <img class="img-responsive" src="images/tvicon/psg1-1.png">
-                        </div>
-                        <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                            <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>01:00-06:00</p>
-                             <h5 class="media-t">總統盃</h5>
-                             <p class="media-st">第一天</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!--5-3-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                 <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                         <img class="img-responsive" src="images/tvicon/pst2.png">
-                        </div>
-                        <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                            <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>14:00-18:00</p>
-                             <h5 class="media-t">2017成都男網賽</h5>
-                             <p class="media-st">八強</p>
-
-                        </div>
-                    </div>
-                </div>
-                <!--line-->
-                <div class="col-lg-12">
-                 <hr class="line-t">
-                </div>
-                <!--5-4-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                 <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                         <img class="img-responsive" src="images/tvicon/ps2.png">
-                        </div>
-                        <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                            <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>14:00-18:00</p>
-                             <h5 class="media-t">2017烏茲別克女網賽</h5>
-                             <p class="media-st">四強</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!--5-5-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                 <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                         <img class="img-responsive" src="images/tvicon/psc2.png">
-                        </div>
-                        <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                            <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>17:30-21:30</p>
-                             <h5 class="media-t">2017武漢女網賽</h5>
-                             <p class="media-st">四強</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!--5-6-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                 <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                         <img class="img-responsive" src="images/tvicon/psg2-1.png">
-                        </div>
-                        <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                            <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>20:30-24:00</p>
-                             <h5 class="media-t">2017英格蘭名人賽</h5>
-                             <p class="media-st">第二輪</p>
-
-                        </div>
-                    </div>
-                </div>
-                <!--line-->
-                <div class="col-lg-12">
-                 <hr class="line-t">
-                </div>
-                <!--5-7-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                 <div class="panel panel-t col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel-timetable col-md-6 col-sm-6 col-xs-6">
-                         <img class="img-responsive" src="images/tvicon/psg2-1.png">
-                        </div>
-                        <div class="panel-tbody col-md-6 col-sm-6 col-xs-6">
-                            <p class="text-t"><i class="fa fa-clock-o" aria-hidden="true"></i>23:30-24:00</p>
-                             <h5 class="media-t">總統盃</h5>
-                             <p class="media-st">第二天</p>
-
-                        </div>
-                    </div>
-                </div>
-
-
-              </div>
-          </div>
-
-     <!--programs-end-->
-
-
-
-
-     <!--Don't touch-->
-
-</div>
- </div>
-
-
-
-        <!-- /.row -->
-
-               <!-- <div style="margin-top: 20px;">
-                    <a class="btn btn-lg btn-default btn-block" href="activity_d.html" >返回列表</a>
-                </div>-->
-        <!-- /.row -->
-
-
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-md-6">
-                    <p style="color:#cfcfcf">Copyright  &copy; 2017. Happy TV co. All rights reserved.</p>
-                </div>
-                <div class="col-md-6" align="right">
-                    <p> <a href="private.html">隱私政策</a> | <a href="server.html">服務條款</a> | <a href="about.html">關於快樂</a></p>
                 </div>
             </div>
-        </footer>
+            <div class="table-content ">
+                <div id="menu" class="tab-pane fade col-lg-12 col-sm-12 " style='display: none'>
+                    <div class="col-sm-10 col-md-4">
+
+                        <div id="BS1">
+                            <h3 class=" col-sm-12 col-md-9">
+                    <p id ="today1"><p>
+                  </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSday1" style="float:left">
+                            <h3 class=" col-sm-12 col-md-9">
+                    <p id ="secondDay1"><p></h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSthird1" style="float:left">
+                            <h3 class=" col-sm-12 col-md-9">
+                  <p id ="thirdDay1"><p></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-content ">
+                <div id="menu1" class="tab-pane fade col-lg-12" style='display: none'>
+                    <div class="col-sm-10 col-md-4">
+
+                        <div id="BS2">
+                            <h3 class=" col-sm-12 col-md-9">
+                    <p id ="today2"><p>
+                  </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSday2" style="float:left">
+                            <h3 class=" col-sm-12 col-md-9">
+                    <p id ="secondDay2"><p></h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSthird2" style="float:left">
+                            <h3 class=" col-sm-12 col-md-9">
+                  <p id ="thirdDay2"><p></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-content ">
+                <div id="menu2" class="tab-pane fade col-lg-12" style='display: none'>
+                    <div class="col-sm-10 col-md-4">
+
+                        <div id="BS3">
+                            <h3 class=" col-sm-12 col-md-9">
+                    <p id ="today3"><p>
+                  </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSday3" style="float:left">
+                            <h3 class=" col-sm-12 col-md-9">
+                    <p id ="secondDay3"><p></h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSthird3" style="float:left">
+                            <h3 class=" col-sm-12 col-md-9">
+                  <p id ="thirdDay3"><p></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-content ">
+                <div id="menu3" class="tab-pane fade col-lg-12" style='display: none'>
+                    <div class="col-sm-10 col-md-4">
+
+                        <div id="BS4">
+                            <h3 class=" col-sm-12 col-md-9">
+                    <p id ="today4"><p>
+                  </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSday4" style="float:left">
+                            <h3 class=" col-sm-12 col-md-9">
+                    <p id ="secondDay4"><p></h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSthird4" style="float:left">
+                            <h3 class=" col-sm-12 col-md-9">
+                  <p id ="thirdDay4"><p></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-content ">
+                <div id="menu4" class="tab-pane fade col-lg-12" style='display: none'>
+                    <div class="col-sm-10 col-md-4">
+
+                        <div id="BS5">
+                            <h3 class=" col-sm-12 col-md-9">
+                    <p id ="today5"><p>
+                  </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSday5" style="float:left">
+                            <h3 class=" col-sm-12 col-md-9">
+                    <p id ="secondDay5"><p></h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSthird5" style="float:left">
+                            <h3 class=" col-sm-12 col-md-9">
+                  <p id ="thirdDay5"><p></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-content ">
+                <div id="menu5" class="tab-pane fade col-lg-12" style='display: none'>
+                    <div class="col-sm-10 col-md-4">
+
+                        <div id="BS6">
+                            <h3 class=" col-sm-12 col-md-9">
+                    <p id ="today6"><p>
+                  </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSday6" style="float:left">
+                            <h3 class=" col-sm-12 col-md-9">
+                    <p id ="secondDay6"><p></h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <div id="BSthird6" style="float:left">
+                            <h3 class=" col-sm-12 col-md-9">
+                  <p id ="thirdDay6"><p></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-md-6">
+                <p style="color:#cfcfcf">Copyright &copy; 2017. Happy TV co. All rights reserved.</p>
+            </div>
+            <div class="col-md-6" align="right">
+                <p> <a href="private.html">隱私政策</a> | <a href="server.html">服務條款</a> | <a href="about.html">關於快樂</a></p>
+            </div>
+        </div>
+    </footer>
 
     </div>
     <!-- /.container -->
 
-    <!-- jQuery -->
     <script src="js/jquery.js"></script>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
 
-    <!--bact to top jQuery-->
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- Bootstrap Core JavaScript -->
 
-<script>
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="css/happyTV-fortime.css" rel="stylesheet">
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
-    }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-</script>
-
-<!-- Bootstrap Core JavaScript -->
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link href="css/happyTV-fortime.css" rel="stylesheet">
-
-<!-- Script to Activate the Carousel -->
-<script>
-    $("#navigation").load("navigation.html");
-
-
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-</script>
-<script src="/js/js.cookie.js" ></script>
-<script type="text/javascript" src='/js/login.js'></script>
-
-<script async defer src="https://apis.google.com/js/api.js"
-    onload="this.onload=function(){};handleClientLoad()"
-    onreadystatechange="if (this.readyState === 'complete') this.onload()">
-</script>
+    <!-- Script to Activate the Carousel -->
+    <script>
+        $("#navigation").load("navigation.html");
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/js.cookie.js"></script>
+    <script type="text/javascript" src='/js/login.js'></script>
+    <script type="text/javascript" src="/js/timetable.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 </body>
 
 </html>
