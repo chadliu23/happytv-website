@@ -1,9 +1,5 @@
-function start() {
-    $('.tab-pane').hide();
-    $('#home').show();
-}
 
-function myFunction(attr) {
+function showProgramsInChannel(attr) {
     id = attr.split("#")[1];
     $('.tab-pane').hide();
     $('#' + id).show();
@@ -16,60 +12,37 @@ function list(index, image, link) {
         headers: {
             'accesskey':'accessKey_eb3604bd21a3176806f29607d47b069f17956cba'
         },
-        url: "http://localhost:4000/api/v3/epg/channel/" + link
+        url: "https://api-product.happytv.com.tw/api/v3/epg/channel/" + link
     }).done((data) => {
+        let today = new Date();
+        const date = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0).toLocaleDateString();
+        const date1 = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1, 0, 0, 0).toLocaleDateString();
+        const date2 = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2, 0, 0, 0).toLocaleDateString();
+        let dateMap = {};
+        dateMap[date] =  '#today' + index + '';
+        dateMap[date1] = '#secondDay' + index + '';
+        dateMap[date2] = '#thirdDay' + index + '';
+        let dateBSMap = {};
+        dateBSMap[date] = '#BS' + index + ''; 
+        dateBSMap[date1] = '#BSday' + index + ''; 
+        dateBSMap[date2] = '#BSthird' + index + '';
+        
         for (let i = 1; i < data.result.length - 1; i++) {
-            let today = new Date();
-            const date = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0).toLocaleDateString();
-            const date1 = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1, 0, 0, 0).toLocaleDateString();
-            const date2 = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2, 0, 0, 0).toLocaleDateString();
             let channel = data.result[i].program;
             let startDate = data.result[i].program.time.startTime;
             let endDate = data.result[i].program.time.endTime;
-            switch (data.result[i].program.time.date) {
-                case date:
-                    $('#today' + index + '').text(data.result[i].program.time.date);
-                    $('#BS' + index + '').append('<div class="col-md-12 col-sm-12 col-xs-12">' +
-                        '<div class="panel panel-t col-md-12 col-sm-12 col-xs-12">' +
-                        '<div class="panel-timetable col-md-4 col-sm-6 col-xs-6">' +
-                        '<img class="img-responsive" src=' + image + '>' +
-                        '</div>' +
-                        '<div class="panel-tbody col-md-8 col-sm-6 col-xs-6">' +
-                        '<p class="text-t"><i class="fa " aria-hidden="true"></i>' + startDate + ":" + endDate + '</p>' +
-                        '<h5 class="media-t">' + channel.name + '</h5>' +
-                        '<p class="text-t">' + channel.remark + '</p>' +
-                        '</div>' +
-                        '</div>');
-                    break;
-                case date1:
-                    $('#secondDay' + index + '').text(data.result[i].program.time.date);
-                    $('#BSday' + index + '').append('<div class="col-md-12 col-sm-12 col-xs-12">' +
-                        '<div class="panel panel-t col-md-12 col-sm-12 col-xs-12">' +
-                        '<div class="panel-timetable col-md-4 col-sm-6 col-xs-6">' +
-                        '<img class="img-responsive" src=' + image + '>' +
-                        '</div>' +
-                        '<div class="panel-tbody col-md-8 col-sm-6 col-xs-6">' +
-                        '<p class="text-t"><i class="fa" aria-hidden="true"></i>' + startDate + " : " + endDate + '</p>' +
-                        '<h5 class="media-t">' + channel.name + '</h5>' +
-                        '<p class="text-t">' + channel.remark + '</p>' +
-                        '</div>' +
-                        '</div>');
-                    break;
-                case date2:
-                    $('#thirdDay' + index + '').text(data.result[i].program.time.date);
-                    $('#BSthird' + index + '').append('<div class="col-md-12 col-sm-12 col-xs-12">' +
-                        '<div class="panel panel-t col-md-12 col-sm-12 col-xs-12">' +
-                        '<div class="panel-timetable col-md-4 col-sm-6 col-xs-6">' +
-                        '<img class="img-responsive" src=' + image + '>' +
-                        '</div>' +
-                        '<div class="panel-tbody col-md-8 col-sm-6 col-xs-6">' +
-                        '<p class="text-t"><i class="fa " aria-hidden="true"></i>' + startDate + " : " + endDate + '</p>' +
-                        '<h5 class="media-t">' + channel.name + '</h5>' +
-                        '<p class="text-t">' + channel.remark + '</p>' +
-                        '</div>' +
-                        '</div>');
-                    break;
-            }
+            $(dateMap[data.result[i].program.time.date]).text(data.result[i].program.time.date);
+            $(dateBSMap[data.result[i].program.time.date]).append('<div class="col-md-12 col-sm-12 col-xs-12">' +
+                '<div class="panel panel-t col-md-12 col-sm-12 col-xs-12">' +
+                '<div class="panel-timetable col-md-4 col-sm-6 col-xs-6">' +
+                '<img class="img-responsive" src=' + image + '>' +
+                '</div>' +
+                '<div class="panel-tbody col-md-8 col-sm-6 col-xs-6">' +
+                '<p class="text-t"><i class="fa " aria-hidden="true"></i>' + startDate + ":" + endDate + '</p>' +
+                '<h5 class="media-t">' + channel.name + '</h5>' +
+                '<p class="text-t">' + channel.remark + '</p>' +
+                '</div>' +
+                '</div>');
         }
     }).fail((data) => {
         console.log('error');
