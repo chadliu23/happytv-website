@@ -254,7 +254,7 @@ function getParameterByName(name, url) {
 $(document).ready(function(){
 
   var line_access_token = getParameterByName("line_access_token");
-  var line_id = searchParams.get("line_id");
+  var line_id = getParameterByName("line_id");
   if (line_access_token !== undefined && line_id != undefined){
     $.ajax({
       type: 'POST',
