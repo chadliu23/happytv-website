@@ -38,7 +38,7 @@ function list(index, image, link) {
           '<img class="img-responsive" src=' + image + '>' +
           '</div>' +
           '<div class="panel-tbody col-md-8 col-sm-6 col-xs-6">' +
-          '<p class="text-t"><i class="fa " aria-hidden="true"></i>' + startDate + ":" + endDate +  '</p>' +
+          '<p class="text-t"><i class="fa " aria-hidden="true"></i>' + startDate + " ~ " + endDate +  '</p>' +
           '<h5 class="media-t">'  + channel.name + '</h5>' +
           '<p class="text-t">' + channel.remark + '</p>' +
           '</div>' +
