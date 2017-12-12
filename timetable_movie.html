@@ -98,7 +98,7 @@
         <div class="channel">
           <a class="btn btn-s" href="timetable_game.html">賽事</a>
           <a class="btn btn-warning" href="timetable_movie.html">電影</a>
-          <!--  <a class="btn btn-s" href="timetable_drama.html">戲劇</a>-->
+           <a class="btn btn-s" href="timetable_drama.html">戲劇</a>
 
 
         </div>
@@ -167,7 +167,7 @@
 
         <ul class="nav nav-pills">
           <li class="active"><a class="menu-t" data-toggle="tab" href="#menu0" onclick="showProgramsInChannel(this.href)">龍華電影</a></li>
-          <li class="menu-t"><a class="menu-t" data-toggle="tab" href="#menu1" onclick="showProgramsInChannel(this.href)">龍華動畫</a></li>
+          <li class="menu-t"><a class="menu-t" data-toggle="tab" href="#menu2" onclick="showProgramsInChannel(this.href)">龍華動畫</a></li>
         </ul>
       </div>
 
@@ -260,7 +260,11 @@
   <script src="js/jquery.js"></script>
 
   <!--bact to top jQuery-->
-
+<script type="text/javascript" src="/js/timetable.js"></script>
+ <script>
+ list(0, 'images/tvicon/lwm.png', 'f9bd85aabd5d74a05aac19dd5e8999b60fce773b');
+ list(1, 'images/tvicon/lta.jpg', 'c3bd85e3767f9a07aeac05ab2dd4112210b7fd5f');
+ </script>
   <script>
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function() {
@@ -301,7 +305,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="/js/js.cookie.js"></script>
   <script type="text/javascript" src='/js/login.js'></script>
-  <script type="text/javascript" src="/js/timetable_movie.js"></script>
   <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
   </script>
 
