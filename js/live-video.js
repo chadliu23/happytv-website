@@ -8,6 +8,27 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+function iOS() {
+
+  var iDevices = [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ];
+
+  if (!!navigator.platform) {
+    while (iDevices.length) {
+      if (navigator.platform === iDevices.pop()){ return true; }
+    }
+  }
+
+  return false;
+}
+
+
 
 $(document).ready(()=> {
   var channel_id = getParameterByName('channel_id');
@@ -20,10 +41,19 @@ $(document).ready(()=> {
   }).done((data) => {
     console.log(data);
       var hls;
+      
       var video = $('#video')[0];
-      hls = new Hls();
-      hls.loadSource(data.result.source);
-      hls.attachMedia(video);
+      if (iOS()){
+        $('#video').attr('width', '100%');
+        $('#video').attr('src', data.result.source);
+      }else{
+        hls = new Hls();
+        hls.loadSource(data.result.source);
+        hls.attachMedia(video);
+        $('#video').attr('height', '480px');
+        $('#video').attr('width', '854px');
+      }
+      
       $('#title').text(data.result.channel_name);
   }).fail((data) => {
     debugger;
