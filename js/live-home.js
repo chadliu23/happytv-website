@@ -20,17 +20,7 @@ $(document).ready(() => {
             
         });
     }).fail((data) => {
-        console.log(data);
+        console.error(data);
     })
-    $.ajax({
-        type: 'GET',
-        headers: {
-          'accesskey': 'accessKey_eb3604bd21a3176806f29607d47b069f17956cba'
-        },
-        url: "https://api-product.happytv.com.tw/api/v3/menu/b9d775da/hotBlocks"
-    }).done((data) => {
-        console.log(data);
-    }).fail((data) => {
-        console.log(data);
-    })
+
 });
