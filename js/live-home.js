@@ -15,7 +15,7 @@ $(document).ready(() => {
                     "<a href='live-video.html?channel_id="+channel.channel_id+"' data-toggle='tooltip' data-placement='bottom'>"+
                     "<div style='height:160px'><img class='img-responsive' src='"+channel.image_path+"' alt=''> </div>" +
                     "</a>"+
-                    "<h3><i class='fa fa-hand-o-right' aria-hidden='true'></i>"+channel.channel_name+"</h3></div>");
+                    "<div style='height:80px'><h3><i class='fa fa-hand-o-right' aria-hidden='true'></i>"+channel.channel_name+"</h3></div></div>");
             }) 
             
         });
