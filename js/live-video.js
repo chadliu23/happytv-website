@@ -43,7 +43,7 @@ $(document).ready(()=> {
       var hls;
       
       var video = $('#video')[0];
-      if (iOS()){
+      if(!Hls.isSupported()) {
         $('#video').attr('width', '100%');
         $('#video').attr('src', data.result.source);
       }else{
