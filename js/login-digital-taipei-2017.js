@@ -150,6 +150,7 @@ function checkstatus(){
 
   }else{
     $('#loginArea').css('display', 'block');
+    FB.logout();
   }
 }
 
