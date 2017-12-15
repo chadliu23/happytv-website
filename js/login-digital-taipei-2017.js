@@ -12,6 +12,7 @@
         xfbml      : true,  // parse social plugins on this page
         version    : 'v2.8' // use graph api version 2.8
       });
+      $(document).trigger('fbload');
   };
 
   // Load the SDK asynchronously
@@ -150,7 +151,13 @@ function checkstatus(){
 
   }else{
     $('#loginArea').css('display', 'block');
-    FB.logout();
+    FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+      FB.logout(function(response) {
+      });
+      }
+    });
+    
   }
 }
 
@@ -168,7 +175,8 @@ loadCSS = function(href) {
 };
 
 
-$(document).ready(function(){
+$(document).on(
+    'fbload',function(){
   var event = getParameterByName("event");
   loadCSS("/css/happyTV-digital-taipei-"+event+".css");
   $('.logo-' + event).css('display', 'block');
