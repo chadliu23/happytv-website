@@ -1,0 +1,323 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'msjh';
+}
+
+
+/* Box Model */
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+body {
+    overflow-x: hidden;
+    background-color: black;
+}
+
+#banner {
+    content:url("/images/promotion/war.jpg");
+}
+
+
+#body .container {
+    max-width: 100%;
+    height: auto;
+
+}
+
+
+#body .banner img {
+    position: relative;
+    top: 30px;
+    width: 80%;
+    height: 80%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+
+#body .login p {
+    position: relative;
+    top: 30px;
+    width: 80%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-family: 'msjh';
+    font-weight: bold;
+    background-color: #000000;
+}
+
+
+#body .facebook p {
+    position: relative;
+    top: 30px;
+    width: 80%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-family: 'msjh';
+    font-weight: bold;
+    background-color: #64d016;
+    padding: 0;
+}
+
+#body .facebook p:hover {
+    color: white;
+    background-color: #004f93;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+#body .gain h1 {
+    position: relative;
+    top: 20px;
+    width: 80%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 4px;
+    font-family: 'msjh';
+    font-weight: bold;
+    padding: 0;
+}
+
+
+#body .gain .number p {
+    position: relative;
+    top: 30px;
+    width: 80%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-family: 'msjh';
+    font-weight: bold;
+    background-color: #ba0000;
+    padding: 0;
+}
+#body .gain h2 {
+    position: relative;
+    top: 50px;
+    width: 80%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 4px;
+    font-family: 'msjh';
+    font-weight: bold;
+    padding: 0;
+}
+
+
+#body .gain p {
+    position: relative;
+    top: 50px;
+    width: 80%;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-family: 'msjh';
+    font-weight: bold;
+    padding: 0;
+}
+
+
+#body .gain p:nth-of-type(2) {
+    color: #de0000;
+}
+
+#body .finish h3 {
+    position: relative;
+    top: 50px;
+    width: 80%;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: #cb0000;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-family: 'msjh';
+    font-weight: bold;
+    padding: 0;
+}
+
+
+/*------------------------------------------------*/
+
+@media(max-width:768px) {
+
+    #body .container {
+        padding: 0;
+    }
+
+    #body .banner img {
+        position: relative;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #body .login p {
+        position: relative;
+        top: 20px;
+        height: 45px;
+        font-size: 15px;
+        letter-spacing: 3px;
+    }
+
+
+    #body .facebook p {
+        height: 45px;
+        font-size: 15px;
+        letter-spacing: 3px;
+        position: relative;
+        top: 30px;
+    }
+
+
+    #body .gain h1 {
+        position: relative;
+        top: 20px;
+        width: 80%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        color: #ffffff;
+        font-size: 15px;
+        letter-spacing: 4px;
+        font-family: 'msjh';
+        font-weight: bold;
+        padding: 0;
+    }
+
+
+    #body .gain .number p {
+        position: relative;
+        top: 30px;
+        width: 80%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        color: #ffffff;
+        font-size: 15px;
+        letter-spacing: 2px;
+        font-family: 'msjh';
+        font-weight: bold;
+        background-color: #ba0000;
+        padding: 0;
+    }
+
+
+    #body .gain h2 {
+        position: relative;
+        top: 50px;
+        width: 80%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        color: #ffffff;
+        font-size: 13px;
+        letter-spacing: 4px;
+        font-family: 'msjh';
+        font-weight: bold;
+        padding: 0;
+    }
+
+
+    #body .gain p {
+        position: relative;
+        top: 50px;
+        width: 80%;
+        height: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        color: #ffffff;
+        font-size: 13px;
+        letter-spacing: 4px;
+        font-family: 'msjh';
+        font-weight: bold;
+        padding: 0;
+    }
+
+
+    #body .gain p:nth-of-type(2) {
+        color: #de0000;
+    }
+
+    #body .finish h3 {
+        position: relative;
+        top: 50px;
+        width: 80%;
+        height: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        color: #cb0000;
+        font-size: 15px;
+        letter-spacing: 5px;
+        font-family: 'msjh';
+        font-weight: bold;
+        padding: 0;
+    }
+
+
+}

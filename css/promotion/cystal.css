@@ -22,6 +22,9 @@ body {
     background-color: black;
 }
 
+#banner {
+    content:url("/images/promotion/banner_01.jpg");
+}
 
 #body .container {
     max-width: 100%;
