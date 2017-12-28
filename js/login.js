@@ -3,14 +3,66 @@
     encodeURIComponent('https://api-product.happytv.com.tw/happytvmember/login/callback') + '&state=rEeTqQ6zmnt7vETM&scope=openid%20profile';
   }
 
+  AccountKit_OnInteractive = function(){
+      AccountKit.init(
+        {
+          appId:"1737378749850147",
+          state:" ",
+          version:"v1.1",
+          fbAppEventsEnabled:true
+        }
+      );
+
+  };
+  // phone form submission handler
+  function smsLogin() {
+    let countryCode = document.getElementById("country_code").value;
+    let phoneNumber = document.getElementById("phone_number").value;
+    AccountKit.login(
+      'PHONE',
+      {countryCode: countryCode, phoneNumber: phoneNumber}, // will use default values if not specified
+      loginCallback
+    );
+  }
+          // login callback
+          function loginCallback(response) {
+              console.log(response)
+            if (response.status === "PARTIALLY_AUTHENTICATED") {
+              $.ajax({
+                type: 'post',
+                dataType: 'json',
+                headers: {
+                  "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp"
+                },
+                data:{
+                  "account_code": response.code
+                },
+                url: 'https://api-product.happytv.com.tw/happytvmember/login?source=accountkit&mode=homepage'
+
+              }).done((data) => {
+                succuessLogin(data)
+              }).fail((data) =>{
+                bootstrap_alert.warning('Phone number fails to register.');
+              });
+
+            }
+
+            else if (response.status === "NOT_AUTHENTICATED") {
+              // handle authentication failure
+            }
+            else if (response.status === "BAD_PARAMS") {
+              // handle bad parameters
+            }
+          }
+
 
   var facebook_api_version = 'v2.9';
-  
+
   window.fbAsyncInit = function() {
       FB.init({
         appId      : '1737378749850147',
         status     : true,
-        cookie     : true,  // enable cookies to allow the server to access 
+        cookie     : true,  // enable cookies to allow the server to access
                             // the session
         xfbml      : true,  // parse social plugins on this page
         version    : 'v2.8' // use graph api version 2.8
@@ -40,8 +92,7 @@
           $.ajax({
             type: 'POST',
             headers: {
-              "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
-              "Access-Control-Allow-Origin":"http://172.18.1.86:8000"
+              "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp"
             },
             dataType: 'json',
             data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
@@ -75,7 +126,7 @@ function logout() {
     if (GoogleAuth.isSignedIn.get()) {
       // User is authorized and has clicked 'Sign out' button.
       GoogleAuth.signOut();
-      
+
     }
     window.location.replace("/index.html");
 }
@@ -115,10 +166,10 @@ function logout() {
       //      "Sign In/Authorize" button.
       // $('#sign-in-or-out-button').click(function() {
       //   handleAuthClick();
-      // }); 
+      // });
       // $('#revoke-access-button').click(function() {
       //   revokeAccess();
-      // }); 
+      // });
     });
   }
   var onSignIn = false;
@@ -127,10 +178,10 @@ function logout() {
     if (GoogleAuth.isSignedIn.get()) {
       // User is authorized and has clicked 'Sign out' button.
       GoogleAuth.signOut();
-    } 
+    }
     onSignIn = true;
     GoogleAuth.signIn();
-    
+
   }
 
   function revokeAccess() {
@@ -193,13 +244,13 @@ function succuessLogin(data){
   if ($('#username') !== undefined){
       $('#username').html(data.result.member_nickname);
   }
-  Cookies.set("member_id", data.result.member_id, 
+  Cookies.set("member_id", data.result.member_id,
      { expires: 1 });
-  Cookies.set("member_token", data.result.member_token, 
+  Cookies.set("member_token", data.result.member_token,
      { expires: 1 });
-  Cookies.set("member_nickname", data.result.member_nickname, 
+  Cookies.set("member_nickname", data.result.member_nickname,
      { expires: 1 });
-  Cookies.set("member_image", data.result.member_image, 
+  Cookies.set("member_image", data.result.member_image,
      { expires: 1 });
   window.location.replace("/member.html");
 }
@@ -278,6 +329,6 @@ $(document).ready(function(){
         $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
         if ($('#username') !== undefined){
             $('#username').html(Cookies.get('member_nickname') + ' ( ID: ' + Cookies.get('member_id')+ ')');
-        }     
+        }
   }
 });
