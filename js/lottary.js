@@ -41,7 +41,7 @@
             },
             dataType: 'json',
             data: { "fb_id": data.id, "nick_name": data.name, "fb_token": response.authResponse.accessToken },
-            url: 'https://api.happytv.com.tw/happytvmember/login?source=facebook'
+            url: 'https://api-product.happytv.com.tw/happytvmember/login?source=facebook'
           }).done((data) => {
             if (data.retCode === 0){
               succuessLogin(data);
@@ -150,7 +150,7 @@ $(document).ready(function(){
 
       },
       dataType: 'json',
-      url: 'https://api.happytv.com.tw/api/v3/promotion/event/' + getParameterByName("event")
+      url: 'https://api-product.happytv.com.tw/api/v3/promotion/event/' + getParameterByName("event")
     }).done((data) => {
       $('#promotion-code-area').css('display', 'block');
       $('#start-button').css('display', 'none');

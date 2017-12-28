@@ -46,7 +46,7 @@ $(document).ready(function(){
     $.ajax({
       type: 'GET',
       dataType: 'json',
-      url: 'https://api.happytv.com.tw/api/v3/promotion/event/' + getParameterByName("event") + '/number/' + $('#number')[0].value
+      url: 'https://api-product.happytv.com.tw/api/v3/promotion/event/' + getParameterByName("event") + '/number/' + $('#number')[0].value
     }).done((data) => {
       $('#promotion-code-area').css('display', 'block');
       $('#promotion-click').css('display', 'none');
