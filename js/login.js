@@ -37,7 +37,7 @@
                 data:{
                   "account_code": response.code
                 },
-                url: 'https://api-product.happytv.com.tw/happytvmember/login?source=accountkit'
+                url: 'https://api-product.happytv.com.tw/happytvmember/login?source=accountkit&mode="homepage"'
 
               }).done((data) => {
                 succuessLogin(data)
