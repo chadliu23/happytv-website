@@ -2,3 +2,6 @@
 #banner {
     content:url("/images/promotion/war.jpg");
 }
+#endtime:after {
+    content: "本領取頁將於 2017/1/5 23:59 關閉";
+}
