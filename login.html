@@ -39,8 +39,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="css/happyTV.css" rel="stylesheet">
+<script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
 
-    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,6 +77,9 @@
          </div>
 
 
+
+
+
            <!--<div class="col-lg-12">
                 <form action="get.php" method="get">
                 <div class="input-info">
@@ -98,21 +102,24 @@
                             <label>密碼:</label>
                             <input id='password' type="password" class="form-control" placeholder="請輸入密碼" required />
                         </div>
+
                         <div class="form-group">
                             <div class="checkbox">
                                 <label>
                                     <input id='readChecked' type="checkbox" required />已閱讀
-                                </label> 
-                                <a href='server.html' target="_blank"><<服務條款>></a>                               
+                                </label>
+                                <a href='server.html' target="_blank"><<服務條款>></a>
                             </div>
 
                         </div>
+
                         <div class="form-group">
 
-                                <input type='submit' id='loginbutton' value='登入' class="btn btn-log" /> 
-                                <p class="login-pw"><a href="forget-pw.html">忘記密碼?</a> | <a href="change-pw.html">更改密碼</a> </p>
+                                <input type='submit' id='loginbutton' value='登入' class="btn btn-log" />
+                                <p class="login-pw"> <a href="forget-pw.html">忘記密碼?</a> | <a href="change-pw.html">更改密碼</a> </p>
 
                         </div>
+
                         <div id='alert_placeholder' ></div>
 
                         <!--*test-line*-->
@@ -123,22 +130,28 @@
 
                         </div>
 
-
+                        <div class="form-group">
+                        <input value="+886" id="country_code" class="hidden" style="float:left"/>
+                        <input placeholder="請輸電話" id="phone_number" class="hidden"/>
+                        </div>
+                        <form id="login_success">
+                          <input id="csrf" type="hidden" name="csrf" />
+                          <input id="code" type="hidden" name="code" />
+                        </form>
 
                         <div class="form-group">
-                            <a href="#" onclick='handleLineAuthClick()'><ul class="linelogo col-lg-4 col-xs-12 col-md-4"><span><i class="fa fa-1x" aria-hidden="true"></i></span>
+                          <a href="#" onclick='smsLogin()'><ul class="phonelogo col-lg-6 col-xs-12 col-md-4"><span><i class="fa fa-1x" aria-hidden="true"><img src="/images/phone.png" alt="Phone View"  width="10" height="10" ></i></span>
+                           <li>Phone Login</li>
+                         </ul></a>
+                            <a href="#" onclick='handleLineAuthClick()'><ul class="linelogo col-lg-6 col-xs-12 col-md-4"><span><i class="fa fa-1x" aria-hidden="true"></i></span>
                              <li>Line</li>
                             </ul></a>
-
-                            <a href="#" onclick='loginFacebook()'><ul class="facebook col-lg-4 col-xs-12 col-md-4"><span><i class="fa fa-1x fa-facebook-square" aria-hidden="true"></i></span>
+                            <a href="#" onclick='loginFacebook()'><ul class="facebook col-lg-6 col-xs-12 col-md-4"><span><i class="fa fa-1x fa-facebook-square" aria-hidden="true"></i></span>
                              <li>Facebook</li>
                             </ul></a>
-                        
-                            <a href="#" onclick='handleAuthClick()'><ul class="google-plus col-lg-4 col-xs-12 col-md-4"><span><i class="fa fa-1x fa-google-plus-square" aria-hidden="true"></i></span>
+                            <a href="#" onclick='handleAuthClick()'><ul class="google-plus col-lg-6 col-xs-12 col-md-4"><span><i class="fa fa-1x fa-google-plus-square" aria-hidden="true"></i></span>
                              <li>Google +</li>
-                            </ul></a>
-                            
-
+                             </ul></a>
                         </div>
 
 
@@ -179,11 +192,11 @@
   crossorigin="anonymous"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    
+
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link href="css/happyTV.css" rel="stylesheet">
+
 
     <script>
         $("#navigation").load("navigation.html");
@@ -191,9 +204,9 @@
     <script src="/js/js.cookie.js" ></script>
     <script src="/js/bower_components/crypto-js/crypto-js.js"></script>
     <script type="text/javascript" src='/js/login.js'></script>
-    
-    <script async defer src="https://apis.google.com/js/api.js" 
-        onload="this.onload=function(){};handleClientLoad()" 
+
+    <script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
 
@@ -218,6 +231,7 @@
                 return ;
             }
         });
+
       </script>
 
 </body>
