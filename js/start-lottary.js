@@ -40,7 +40,6 @@ function getParameterByName(name, url) {
 }
 
 $(document).ready(function(){
-  loadCSS("/css/lottary.css");
 
   $('#start-button').on('click', (event) => {
     $.ajax({
@@ -50,8 +49,9 @@ $(document).ready(function(){
     }).done((data) => {
       $('#promotion-code-area').css('display', 'block');
       $('#promotion-click').css('display', 'none');
+      $('#start-button').css('display', 'none');
       for (let i in data){
-        $('#promotion-code-area').append('<ul class="namelist">' +(Number(i)+1) + '. ' + data[i].nick_name + '</ul>');
+        $('#name').append('<ul class="name"><p>' +(Number(i)+1) + '. ' + data[i].nick_name + '</p></ul>');
       }
     }).fail((data) =>{
       $('#promotion-code-area').css('display', 'block');
