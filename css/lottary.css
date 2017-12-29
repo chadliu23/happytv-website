@@ -208,12 +208,12 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    color: red;
+    color: #ffffff;
     font-size: 24px;
     letter-spacing: 4px;
     font-family: 'msjh';
     font-weight: bold;
-    background-color: #ff8900;
+    background-color: red;
     padding: 0;
     padding-top: 5px;
 }
@@ -363,6 +363,14 @@ body {
     }
 
     #body .finish p {
+        width: 80%;
+        height: 45px;
+        font-size: 15px;
+        letter-spacing: 3px;
+        position: relative;
+        top: 55px;
+    }
+    #body .finish-note p {
         width: 80%;
         height: 45px;
         font-size: 15px;
