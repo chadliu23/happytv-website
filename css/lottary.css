@@ -199,7 +199,24 @@ body {
     background-color: #ff8900;
     padding: 0;
 }
-
+#body .finish-note p {
+    position: relative;
+    top: 90px;
+    width: 60%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: red;
+    font-size: 24px;
+    letter-spacing: 4px;
+    font-family: 'msjh';
+    font-weight: bold;
+    background-color: #ff8900;
+    padding: 0;
+    padding-top: 5px;
+}
 
 
 
