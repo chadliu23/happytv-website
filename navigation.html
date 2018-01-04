@@ -1,154 +1,49 @@
 
-<html>
-    <head>
-        <meta http-equiv="Cache-control" content="public">
-        <link href="css/navigation.css" rel="stylesheet">
-    </head>
-<!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-
-        <div class="navbar-container">
+<nav id="nav">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/index.html"><img src="/images/logo_white.png"></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <div class="logo">
+                    <a href="/index.html"><img src="/images/index/logo_01.png"></a>
+                </div>
+
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li id='index-tag'>
-                        <a href="/index.html"><i class="fa fa-1x fa-smile-o" aria-hidden="true"></i> 首頁</a>
-                    </li>
-                    <li id='live-tag' >
-                        <a href="live/live-home.html"><i class="fa fa-1x fa-video-camera" aria-hidden="true"></i>Live</a>
-                    </li>
-                    <li id='activity-tag' class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-1x fa-bullhorn" aria-hidden="true"></i> 活動/最新資訊<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-
-                            <li>
-                                <a href="/news.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> 系統公告</a>
-                            </li>
-                            <li>
-                                <a href="/activity_d.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> 各類活動</a>
-                            </li>
-                            <li>
-                                <a href="/darts.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> 鏢心立翼</a>
-                            </li>
-                            <li>
-                                <a href="/activity_a.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> HBL甲級賽事</a>
-                            </li>
-                            <li>
-                                <a href="/activity_b.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> HBL乙級賽事</a>
-                            </li>
-                            <li>
-                                <a href="/activity_c.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> HBL微電影活動</a>
-                            </li>
-                        
-                            <li>
-                                <a href="/timetable_game.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> 本週精選直播節目</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li id='cooperation-tag' class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-1x fa-users" aria-hidden="true"></i> 合作專區 <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="/cooperation_a.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> 資策會</a>
-                            </li>
-                            <li>
-                                <a href="/phoenix.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> Phoenix Taiwan</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li id='article-tag' class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-1x fa-pencil" aria-hidden="true"></i> 文章專區 <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="/article_a.html"><i class="fa fa-1x fa-caret-right" aria-hidden="true"></i> 校園走透透</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li id='playInfo-tag' >
-                        <a href="/playInfo.html"><i class="fa fa-1x fa-youtube-play" aria-hidden="true"></i> 快樂播放</a>
-                    </li>
-                    <li id='contact-tag'>
-                        <a href="/contactUs.html"><i class="fa fa-1x fa-compass" aria-hidden="true"></i> 聯絡資訊</a>
-                    </li>
-                    <li><a href="https://www.facebook.com/happytv.com.tw/?fref=ts" target="_blank"><i class="fa fa-1x fa-facebook-square" aria-hidden="true"></i> 加入快樂粉絲</a>
-                    </li>
-
-            
-                    <li id='member-tag' style="display: none">
-                        <a href="/member.html"><i class="fa fa-1x " aria-hidden="true"></i> </a>
-                    </li>
-            
-                    <li id='login-tag'>
-   
-                        <a href="/login.html"><i class="fa fa-1x fa-sign-in" aria-hidden="true"></i> 登入</a>
-
-                    </li>
-           
-                </ul>
-
+            <div class="collapse navbar-collapse">
+            <ul id='menu' class="nav navbar-nav">
+                
+            </ul>
             </div>
             <!-- /.navbar-collapse -->
-
         </div>
-        <!-- /.container -->
-    </nav>
-    <script>
-        var pathname = window.location.pathname; // Returns path only
+    </div>
+</nav>
 
-        if (pathname.includes('playInfo')){
-            $('#playInfo-tag').addClass('active');
-        }
-        else if (pathname.includes('contact')){
-            $('#contact-tag').addClass('active');
-        }
-        else if (pathname.includes('news') || pathname.includes('darts') || pathname.includes('activity')){
-            $('#activity-tag').addClass('active');
-        }
-        else if (pathname.includes('cooperation') || pathname.includes('phoenix')){
-            $('#cooperation-tag').addClass('active');
-        }
-        else if (pathname.includes('article')){
-            $('#article-tag').addClass('active');
-        }
-        else if (pathname === '/' || pathname.includes('index.html')) {
-            $('#index-tag').addClass('active');
-        }
-        else if (pathname.includes('member')) {
-            $('#member-tag').addClass('active');
-        }
-        else if (pathname.includes('login')) {
-            $('#login-tag').addClass('active');
-        }
-        else if (pathname.includes('live')) {
-            $('#live-tag').addClass('active');
-        }
-
-    
-
-
-        $(document).ready(function(){
-          if (Cookies.get("member_token") !== undefined){
-              $('#member-tag').css('display', 'block');
-                var avatar =  Cookies.get('member_image');
-                $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + ' /> '+ Cookies.get('member_nickname') +'</a>');
-                $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
-                if ($('#username') !== undefined){
-                    $('#username').html(Cookies.get('member_nickname') + ' ( ID: ' + Cookies.get('member_id')+ ')');
-                }     
-          }
-        });
-    </script>
-
-
-</html>
+<script>
+    $.ajax({
+      type: 'GET',
+      headers: {
+        "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
+      },
+      dataType: 'json',
+      url: 'https://api-product.happytv.com.tw/api/v3/web-menu/all'
+    }).done((data) => {
+      data.result.forEach((item)=>{
+        $('#menu').append('<li><a href="/index.html#'+item.id+'">'+item.title+'</a></li>');
+      });
+      $('#menu').append("<li id='member-tag' style='display: none'>" + 
+                    '<a href="/member.html"><i class="fa fa-1x " aria-hidden="true"></i> </a>' +
+                '</li>' +
+                "<li id='login-tag' class='login'>" + 
+                '<a href="/login.html"> 登入</a>' +
+                "</li>");
+    }).fail((data) =>{
+      console.log(data);
+    });
+</script>
