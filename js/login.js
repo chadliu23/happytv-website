@@ -239,7 +239,7 @@ function validateEmail(email) {
 function succuessLogin(data){
    $('#member-tag').css('display', 'block');
   var avatar =  data.result.member_image;
-  $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + ' /> '+ data.result.member_nickname +'</a>');
+  $('#member-tag').html( '<a href="/member.html"><img style="max-height:18px;max-width:18px;" src= '+avatar + ' /> '+ data.result.member_nickname +'</a>');
   $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
   if ($('#username') !== undefined){
       $('#username').html(data.result.member_nickname);
@@ -252,7 +252,13 @@ function succuessLogin(data){
      { expires: 1 });
   Cookies.set("member_image", data.result.member_image,
      { expires: 1 });
-  window.location.replace("/member.html");
+  let redirect = getParameterByName("redirect");
+  if (redirect){
+    window.location.replace(redirect);
+  }else{
+    window.location.replace("/member.html");
+  }
+  
 }
 
 if ($('#loginbutton')){
@@ -325,7 +331,7 @@ $(document).ready(function(){
   if (Cookies.get("member_token") !== undefined){
       $('#member-tag').css('display', 'block');
         var avatar =  Cookies.get('member_image');
-        $('#member-tag').html( '<a href="/member.html"><img height="18" src= '+avatar + ' /> '+ Cookies.get('member_nickname') +'</a>');
+        $('#member-tag').html( '<a href="/member.html"><img style="max-height:18px;max-width:18px;" src= '+avatar + ' /> '+ Cookies.get('member_nickname') +'</a>');
         $('#login-tag').html( '<a onclick="logout()">' + '登出</a>');
         if ($('#username') !== undefined){
             $('#username').html(Cookies.get('member_nickname') + ' ( ID: ' + Cookies.get('member_id')+ ')');

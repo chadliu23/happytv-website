@@ -10,7 +10,7 @@ $.ajax({
 
   data.result.forEach((item)=>{
       $('#list').append(
-        '<div id="'+item.id+'">' +
+        '<div id="'+item.id+'" class="menu">' +
           '<div class="title">' +
           '<div class="container">' +
             '<h1 class="wow fadeInUp">'+ item.title + '</h1>' +

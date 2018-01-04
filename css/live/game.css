@@ -1,0 +1,23 @@
+#footer {
+    background-color: #000000;
+    position: relative;
+    top: 10px;
+}
+
+#title {
+
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    color: #ff8000;
+    font-size: 30px;
+}
+
+#title::before {
+    display: inline-block;
+    font-family: 'FontAwesome';
+    content: '\f138';
+    padding-right: 16px;
+    color: #ff8000;
+    font-size: 28px;

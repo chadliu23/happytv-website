@@ -32,12 +32,20 @@ function iOS() {
 
 $(document).ready(()=> {
   var channel_id = getParameterByName('channel_id');
+  let header = {
+      'accesskey': 'accessKey_eb3604bd21a3176806f29607d47b069f17956cba'
+    };
+  if (Cookies.get("member_token") !== undefined){
+      header['membertoken'] = Cookies.get("member_token");
+  }
+  if (Cookies.get("member_id") !== undefined){
+      header['memberid'] = Cookies.get("member_id");
+  }
+  
    $.ajax({
     type: 'GET',
-    headers: {
-      'accesskey': 'accessKey_eb3604bd21a3176806f29607d47b069f17956cba'
-    },
-    url: "https://api-product.happytv.com.tw/api/v3/channels/" + channel_id +'/web-join'
+    headers: header,
+    url: "https://api-product.happytv.com.tw/api/v3/channels/" + channel_id +'/web-join',
   }).done((data) => {
     console.log(data);
       var hls;
@@ -55,9 +63,8 @@ $(document).ready(()=> {
       }
       
       $('#title').text(data.result.channel_name);
-  }).fail((data) => {
-    debugger;
-    console.log(data);
+  }).fail((jqXHR, textStatus, errorThrown) => {
+    window.location = ('/login.html?redirect='+ window.location);
   });
 
   

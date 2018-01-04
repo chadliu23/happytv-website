@@ -711,29 +711,9 @@ img:hover {
     padding-right: 8px;
 }
 
-#hot {
-    position: relative;
-    top: 80px;
-}
-
-
-#live {
-    position: relative;
-    top: 140px;
-}
-
-
-#program {
-    position: relative;
-    top: 200px;
-}
-
-
-#topic {
-    position: relative;
-    top: 260px;
-}
-
+.menu {
+        margin-top: 30px;
+    }
 
 body {
     background-color: #ebebeb;
@@ -755,29 +735,7 @@ body {
         padding: 0 0 25px 0;
     }
 
-    #hot {
-        position: relative;
-        top: 70px;
-    }
-
-
-    #live {
-        position: relative;
-        top: 90px;
-    }
-
-
-    #program {
-        position: relative;
-        top: 110px;
-    }
-
-
-    #topic {
-        position: relative;
-        top: 130px;
-    }
-
+    
 
 
     .row {
@@ -788,12 +746,7 @@ body {
 
 /* --------------------footer-----------------------*/
 
-#footer {
-    background-color: #000000;
-    position: relative;
-    top: 400px;
-    height: 300px;
-}
+
 
 #footer img {
     width: 892px;
@@ -904,6 +857,9 @@ body {
     #footer .footer-nav p {
         position: relative;
         top: 40px;
+    }
+    #footer .container {
+        background: black;
     }
 
 }

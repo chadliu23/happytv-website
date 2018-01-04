@@ -17,7 +17,13 @@
             </div>
             <div class="collapse navbar-collapse">
             <ul id='menu' class="nav navbar-nav">
-                
+
+                <li id='member-tag' style='display: none'>
+                <a href="/member.html"><i class="fa fa-1x " aria-hidden="true"></i> </a>
+                </li>
+                <li id='login-tag' class='login'> 
+                <a href="/login.html"> 登入</a>
+                </li>
             </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -34,15 +40,9 @@
       dataType: 'json',
       url: 'https://api-product.happytv.com.tw/api/v3/web-menu/all'
     }).done((data) => {
-      data.result.forEach((item)=>{
-        $('#menu').append('<li><a href="/index.html#'+item.id+'">'+item.title+'</a></li>');
-      });
-      $('#menu').append("<li id='member-tag' style='display: none'>" + 
-                    '<a href="/member.html"><i class="fa fa-1x " aria-hidden="true"></i> </a>' +
-                '</li>' +
-                "<li id='login-tag' class='login'>" + 
-                '<a href="/login.html"> 登入</a>' +
-                "</li>");
+      for (var i = data.result.length - 1; i >= 0; i--) {
+        $('#menu').prepend('<li><a href="/index.html#'+data.result[i].id+'">'+data.result[i].title+'</a></li>'); 
+      }
     }).fail((data) =>{
       console.log(data);
     });
