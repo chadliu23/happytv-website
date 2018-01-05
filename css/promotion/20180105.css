@@ -1,0 +1,7 @@
+
+#banner {
+    content:url("/images/promotion/20171220ball.jpg");
+}
+#endtime:after {
+    content: "本領取頁將於 2018/1/12 23:59 關閉";
+}
