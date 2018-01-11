@@ -93,7 +93,7 @@ $(document).ready(()=> {
       $('#title').text(data.result.channel_name);
 
       publish_channel = data.result.pub_topic;
-      mqtt_client  = mqtt.connect('mqtt://' + data.result.mqtt_server, {
+      mqtt_client  = mqtt.connect('wss://' + data.result.mqtt_server, {
         username: data.result.user_name, 
         password: data.result.password,
         port:  parseInt(data.result.mqtt_port)+1,
