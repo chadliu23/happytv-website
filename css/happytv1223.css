@@ -267,17 +267,21 @@ ul.nav > li ul > li > a:before {
 }
 
 #header .navbar-collapse .navbar-nav a {
-    font-size: 15px;
+    font-size: 13px;
     color: #000000;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     font-family: 'msjh';
-    font-weight: bold;
+}
+
+
+#header .navbar-collapse .navbar-nav a:hover{
+    color: #ff8000;
 }
 
 #header .navbar-default {
     background-color: #ffffff;
     border-bottom: 0;
-    box-shadow: 1px 1px 10px 2px rgba(20%, 20%, 40%, 0.2);
+    box-shadow: 2px 2px 15px 5px rgba(34%, 34%, 34%, 0.2);
 }
 
 #header .logo {
@@ -294,7 +298,6 @@ ul.nav > li ul > li > a:before {
 }
 
 #header .navbar-collapse .navbar-nav .login a {
-    font-weight: bold;
     color: #ff8000;
 }
 
@@ -348,8 +351,6 @@ ul.nav > li ul > li > a:before {
         font-size: 14px;
         color: #000000;
         letter-spacing: 0px;
-        font-family: 'msjh';
-        font-weight: bold;
     }
 
     #header .navbar-default {
@@ -379,8 +380,6 @@ ul.nav > li ul > li > a:before {
         font-size: 10px;
         color: #000000;
         letter-spacing: 0px;
-        font-family: 'msjh';
-        font-weight: bold;
     }
 
     #header .navbar-default {
@@ -573,9 +572,9 @@ ul.nav > li ul > li > a:before {
     display: inline-block;
     font-family: 'FontAwesome';
     content: '\f138';
-    padding-right: 16px;
+    padding-right: 15px;
     color: #ff8000;
-    font-size: 28px;
+    font-size: 25px;
 }
 
 
@@ -586,11 +585,11 @@ ul.nav > li ul > li > a:before {
     justify-content: left;
     text-align: left;
     position: relative;
-    top: 10px;
+    top: 13px;
     color: #ff8000;
-    font-size: 30px;
-    letter-spacing: 3px;
-    font-family: 'msjh';
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
 
@@ -600,12 +599,11 @@ ul.nav > li ul > li > a:before {
     justify-content: left;
     text-align: left;
     position: relative;
-    top: 10px;
-    color: #000000;
-    font-size: 16px;
-    letter-spacing: 3px;
-    font-family: 'msjh';
-    padding-left: 20px;
+    top: 7px;
+    color: #585858;
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding-left: 15px;
     text-decoration: none;
 }
 
@@ -626,9 +624,9 @@ ul.nav > li ul > li > a:before {
     display: inline-block;
     font-family: 'FontAwesome';
     content: '\f101';
-    padding-left: 10px;
+    padding-left: 8px;
     color: #000000;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 
@@ -666,15 +664,6 @@ img:hover {
     cursor: pointer;
 }
 
-.title .fadeInUp {
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-}
-
-.content .fadeInUp {
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-}
 
 .content h2 {
     align-items: left;
@@ -683,11 +672,9 @@ img:hover {
     position: relative;
     top: 15px;
     color: #000000;
-    font-size: 17px;
-    letter-spacing: 3px;
-    font-family: 'msjh';
+    font-size: 15px;
+    letter-spacing: 2px;
     text-decoration: none;
-    font-weight: bold;
 }
 
 .content p {
@@ -695,10 +682,10 @@ img:hover {
     justify-content: right;
     text-align: right;
     position: relative;
-    top: -20px;
-    font-size: 16px;
+    top: -18px;
+    font-size: 15px;
     opacity: 0.9;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .content p::before {
@@ -707,13 +694,33 @@ img:hover {
     content: '\f06e';
     padding-left: 18px;
     color: #000000;
-    font-size: 20px;
+    font-size: 15px;
     padding-right: 8px;
 }
 
-.menu {
-        margin-top: 30px;
-    }
+#hot {
+    position: relative;
+    top: 80px;
+}
+
+
+#live {
+    position: relative;
+    top: 140px;
+}
+
+
+#program {
+    position: relative;
+    top: 200px;
+}
+
+
+#topic {
+    position: relative;
+    top: 260px;
+}
+
 
 body {
     background-color: #ebebeb;
@@ -735,7 +742,29 @@ body {
         padding: 0 0 25px 0;
     }
 
-    
+    #hot {
+        position: relative;
+        top: 70px;
+    }
+
+
+    #live {
+        position: relative;
+        top: 90px;
+    }
+
+
+    #program {
+        position: relative;
+        top: 110px;
+    }
+
+
+    #topic {
+        position: relative;
+        top: 130px;
+    }
+
 
 
     .row {
@@ -746,7 +775,12 @@ body {
 
 /* --------------------footer-----------------------*/
 
-
+#footer {
+    background-color: #000000;
+    position: relative;
+    top: 400px;
+    height: 300px;
+}
 
 #footer img {
     width: 892px;
@@ -857,9 +891,6 @@ body {
     #footer .footer-nav p {
         position: relative;
         top: 40px;
-    }
-    #footer .container {
-        background: black;
     }
 
 }
