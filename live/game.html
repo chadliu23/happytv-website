@@ -58,9 +58,7 @@
 
 
 
-    <div id="vedio">
-        <div class="container">
-
+    <div id="vedio" class='container-fluid'>
             <!-- Page Heading/Breadcrumbs -->
             <div class="row">
                 <div class="col-lg-12">
@@ -74,14 +72,29 @@
                 <div class="col-lg-12">
                     <h2 id='title'></h2>
                 </div>
-                <div class="col-lg-12" align='center'>
+            </div>
+            <div class="row">
+                <div class="col-lg-8" align='center'>
                     <video id="video" webkit-playsinline playsinline controls  autoplay  class="videoCentered"></video><br>
                 </div>
-                
-            </div>
-        </div>
+                <div id='chatroom' class="col-lg-4"  >
+                        <div id='chatroom_chat' class="panel-body msg_container_base">
+                            
+                        </div>
+                        
+                        <div class="panel-footer">
+                            <div class="input-group">
+                                <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." disabled />
+                                <span class="input-group-btn">
+                                <button class="btn btn-primary btn-sm" id="btn-chat">Send</button>
+                                </span>
+                            </div>
+                        </div>
 
+                </div>
+            </div>
     </div>
+    
 
 
 
@@ -177,6 +190,9 @@
     <script src="/js/js.cookie.js"></script>
     <script type="text/javascript" src='/js/login.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src='https://unpkg.com/mqtt/dist/mqtt.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js'></script>
     <script type="text/javascript"  src='/js/live-video.js'></script>
 </body>
 
