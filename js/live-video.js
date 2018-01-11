@@ -121,13 +121,16 @@ $(document).ready(()=> {
             image = 'http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg';
           }
           var date = moment(obj.date);
-
+          let isAtBottom = false;
+          if ($('#chatroom_chat')[0].scrollHeight - $('#chatroom_chat')[0].scrollTop === $('#chatroom_chat')[0].clientHeight){
+            isAtBottom = true;
+          }
           if (obj.member_id == Cookies.get("member_id") ){
             $('#chatroom_chat').append(
               '<div class="row msg_container base_sent">'+
               '<div class="col-md-10 col-xs-10">' +
                 '<div class="messages msg_sent">' + 
-                  '<p>'+obj.message+'</p>' + 
+                  '<p style="word-break: break-word;">'+obj.message+'</p>' + 
                   '<time datetime="'+obj.date+'">' + obj.from + '@ '+ date.local().format('YYYY-MM-DD HH:mm:ss') +  '</time>'+
                 '</div>'+
               '</div>'+
@@ -144,9 +147,12 @@ $(document).ready(()=> {
               '</div>'+
               '<div class="col-xs-10 col-md-10">' +
               '<div class="messages msg_receive">'+
-              '<p>'+obj.message+'</p>' + 
+              '<p style="word-break: break-word;">'+obj.message+'</p>' + 
               '<time datetime="'+obj.date+'">' + obj.from +'@ '+ date.local().format('YYYY-MM-DD HH:mm:ss') +  '</time></div></div></div>'  
             );
+          }
+          if (isAtBottom){
+            $('#chatroom_chat')[0].scrollTop = $('#chatroom_chat')[0].scrollHeight;
           }
         } catch (e) {
           console.log(e);
