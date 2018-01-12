@@ -568,6 +568,13 @@ ul.nav > li ul > li > a:before {
 
 /*----------------------body-------------------------*/
 
+@media (min-width: 1200px) {
+  .container {
+    width: 1450px;
+  }
+}
+
+
 .title h1::before {
     display: inline-block;
     font-family: 'FontAwesome';
@@ -641,6 +648,7 @@ ul.nav > li ul > li > a:before {
     top: 35px;
     max-width: 100%;
     height: auto;
+    padding: 0px 0 50px 15px;
 }
 
 
@@ -649,7 +657,7 @@ ul.nav > li ul > li > a:before {
 }
 
 .col-sm-4 {
-    padding: -15px;
+    padding: 0 15px 15px 15px;
 }
 
 
