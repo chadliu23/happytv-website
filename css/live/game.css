@@ -67,10 +67,7 @@
     overflow: hidden;
     display: flex;
 }
-img {
-    display: block;
-    width: 100%;
-}
+
 .avatar {
     position: relative;
 }
@@ -132,3 +129,4 @@ img {
     left:0px;
     bottom:0;
 }
+
