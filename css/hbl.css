@@ -13,6 +13,20 @@
     padding-left: 3px;
 }
 
+#home h2{
+ color: #f06600;
+}
+
+
+#home h2:before{
+    display: inline-block;
+    font-family: 'FontAwesome';
+    content: '\f101';
+    padding-right: 15px;
+font-size: 35px;
+}
+
+
 #menu1 h2:before{
     display: inline-block;
     font-family: 'FontAwesome';
