@@ -161,7 +161,7 @@ $(document).ready(()=> {
       })
 
   }).fail((jqXHR, textStatus, errorThrown) => {
-    //window.location = ('/login.html?redirect='+ window.location);
+    window.location = ('/login.html?redirect='+ window.location);
   });
   $('#btn-chat').on('click', (event) => {
     sendMessage();
@@ -173,5 +173,7 @@ $(document).ready(()=> {
   });
 });
 
-
+window.onresize = function(event) {
+    $('.msg_container_base').css('max-height', $('#video')[0].offsetHeight );
+};
 
