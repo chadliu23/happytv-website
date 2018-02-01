@@ -1,0 +1,536 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Box Model */
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+.select_menu {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+
+/*----------------bootstrap-container----------------*/
+
+.container {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1350px;
+    }
+}
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    margin-right: -0px;
+    margin-left: -0px;
+}
+
+
+
+/*---------------------header-----------------------*/
+
+#header .phone-banner {
+    display: none;
+}
+
+
+
+/*---------------------header-phone--------------------*/
+
+@media (max-width: 768px) {
+
+    #header .banner {
+        display: none;
+    }
+
+    #header .phone-banner {
+        display: block;
+    }
+}
+
+
+
+/*---------------------section1-----------------------*/
+
+#section1 {
+    padding: 60px 0;
+    background: #ffc73a;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #ffc73a 1%, #ff7c19 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #ffc73a 1%, #ff7c19 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #ffc73a 1%, #ff7c19 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+
+#section1 img {
+    margin: 0 auto;
+}
+
+#section1 .qr-code {
+    border-right: 3px solid black;
+    padding: 0px;
+}
+
+
+
+#section1 .video {
+    border-right: 3px solid black;
+}
+
+#section1-phone {
+    display: none;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 6px solid black;
+}
+
+#section1 .video {
+    text-align: center;
+}
+
+#section1 iframe {
+    border: 8px solid black;
+    border-radius: 10px;
+}
+
+.facebook-like {
+    margin-top: 35px;
+}
+.youtube-subscribe {
+    margin-top: 35px;
+}
+
+/*---------------------section1-phone--------------------*/
+
+@media (max-width: 768px) {
+
+    #section1 {
+        display: none;
+    }
+
+    #section1-phone {
+        display: block;
+        background: #ffc73a;
+        /* Old browsers */
+        background: -moz-linear-gradient(45deg, #ffc73a 1%, #ff7c19 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(45deg, #ffc73a 1%, #ff7c19 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(45deg, #ffc73a 1%, #ff7c19 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        padding-bottom: 5px;
+    }
+
+    #section1-phone .qr-code {
+        float: left;
+        padding: 30px 10px 20px 40px;
+        max-width: 47%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    #section1-phone .happy-tv-logo {
+        float: right;
+        max-width: 50%;
+        padding: 10px 25px 15px 10px;
+        height: auto;
+    }
+
+}
+.facebook {
+  margin:0 auto;
+  float: left;
+  background: #578ee8;
+  color: #fff;
+  padding: 12px 40px;
+  text-align: -webkit-center;
+  margin-top: 10px;
+}
+.facebook:hover {
+  background: #1E4078;
+  border-bottom-right-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  transition: 0.1s all;
+  -webkit-transition: 0.1s all;
+  -moz-transition: 0.1s all;
+  -o-transition: 0.1s all;
+}
+.facebook li {
+  display: inline-block;
+  vertical-align: middle;
+}
+.facebook li img {
+  margin: 0px 18px 0 0;
+  vertical-align: bottom;
+}
+
+
+
+/*---------------------section2-------------------------*/
+
+#section2 {
+    padding: 60px 0;
+    background: black;
+}
+
+/*---------------------section2-phone-------------------*/
+
+@media (max-width: 768px) {
+
+    #section2 {
+        padding: 20px 15px 20px 25px;
+        background: black;
+    }
+    #section2 .vip img {
+        max-width: 92%;
+        height: auto;
+    }
+
+}
+
+
+/*---------------------section3-------------------------*/
+
+#section3 {
+    padding: 80px 0;
+    background: #ad0d10;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #c10f12 0%, #640202 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #c10f12 0%, #640202 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #c10f12 0%, #640202 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+
+#section3 img {
+    margin: 0 auto;
+}
+
+#section3 .container2 {
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+#section3 .vip-content {
+    padding: 20px 0 20px 0px;
+    margin: 0 0 0 40px;
+}
+
+#section3 .thumbnail {
+    padding: 10px;
+    border-radius: 0;
+}
+
+#section3 .vip-content-phone {
+    display: none;
+}
+
+
+/*---------------------section3-phone-------------------*/
+
+@media (max-width: 768px) {
+
+    #section3 {
+        padding: 20px 0 40px 0;
+    }
+
+    #section3 .vip-content {
+        display: none;
+    }
+
+    #section3 .vip-content-phone {
+        display: block;
+    }
+
+    #section3 .col-sm-4 {
+        padding: 10px;
+    }
+
+    #section3 .thumbnail {
+        padding: 5px;
+        border-radius: 0;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+}
+
+
+/*---------------------section3-------------------------*/
+
+#section4 {
+    padding: 100px 0;
+    background: #72090a;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #810e24 1%, #000000 99%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #810e24 1%, #000000 99%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #810e24 1%, #000000 99%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+#section4 .step2 {
+    padding: 4px 0 0 5px;
+}
+
+#section4 .step3 {
+    padding: 8px 0 0 0px;
+    margin: 0 auto;
+}
+
+#section4 .book {
+    padding: 15px 0 0 0;
+}
+
+#section4 .attend {
+    padding: 15px 0 0 0;
+}
+
+#section4 .check {
+    padding: 20px 0 10px 15px;
+}
+
+
+#section4 .mascot {
+    text-align: right;
+}
+
+#section4 .form-group {
+    padding: 5px;
+}
+
+
+#section4 .form-control {
+    height: 45px;
+}
+
+#section4 .form-group .btn {
+    margin: 10px 0 0 20px;
+    padding: 10px 20px;
+}
+
+#section4 .checkbox {
+    color: white;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-top: 20px;
+}
+
+#section4 .statement {
+    width: 90%;
+    padding: 80px 0 0px 0px;
+    margin: 0 0 0 70px;
+}
+
+
+/*---------------------section4-phone-------------------*/
+
+@media (max-width: 768px) {
+
+    #section4 {
+        padding: 10px 0 40px 0;
+    }
+
+    #section4 .facebook-like {
+        width: 35%;
+        height: 35%;
+        margin: 0 auto;
+        left: -15px;
+        padding-top: 20px;
+    }
+
+
+    #section4 .book img {
+        width: 30%;
+        height: 30%;
+        margin: 0 auto;
+    }
+
+    #section4 .step1 {
+        padding: 0 15px 5px 15px;
+    }
+
+    #section4 .step2 {
+        padding: 5px 15px;
+    }
+
+
+    #section4 .step3 {
+        padding: 0 15px;
+    }
+
+    #section4 .check {
+        padding: 10px 5px;
+    }
+
+
+    #section4 .mascot img {
+        display: none;
+    }
+
+    #section4 .form-group {
+        padding: 0 15px;
+    }
+
+
+    #section4 .form-control {
+        height: 40px;
+    }
+
+    #section4 .form-group .btn {
+        width: 240px;
+        margin: 0 0 0 20px;
+    }
+
+    #section4 .checkbox {
+        color: white;
+        font-size: 10px;
+        letter-spacing: 1px;
+        padding-top: 15px;
+        line-height: 20px;
+        text-align: justify;
+    }
+
+    #section4 .statement {
+        width: 100%;
+        padding: 20px 0 0 0;
+        margin: 0;
+    }
+
+}
+
+/* --------------------footer-----------------------*/
+
+#footer {
+    background-color: #000000;
+    position: relative;
+    top: 0px;
+    height: 80px;
+    padding: 30px 0 0 0;
+    color: white;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+
+/*---------------------section4-phone-------------------*/
+
+@media (max-width: 768px) {
+
+    #footer {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+}
