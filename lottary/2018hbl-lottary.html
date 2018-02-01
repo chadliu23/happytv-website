@@ -480,9 +480,17 @@
                 url: 'https://api-product.happytv.com.tw/2018hbl-lottary'
 
               }).done((data) => {
-                alert('感謝您的參與!');
+                if (data.status === 200){
+                    alert('感謝您的參與!');
+                }else{
+                    alert('您已經參加過了!');
+                }
               }).fail((data) =>{
-                alert('您已經參加過了!');
+                if (data.status === 200){
+                    alert('感謝您的參與!');
+                }else{
+                    alert('您已經參加過了!');
+                }
               });
             // document.getElementById("hbl-form").reset();
             
