@@ -321,7 +321,7 @@ legend,
 }
 
 #section3 .vip-content {
-    padding: 20px 0 20px 0px;
+    padding: 20px 0 0px 0px;
     margin: 0 0 0 40px;
 }
 
@@ -334,6 +334,15 @@ legend,
     display: none;
 }
 
+
+#section3 .right-now {
+    padding: 0px 100px 40px 20px;
+    margin: 0 90px 0 40px;
+}
+
+#section3 .right-now:hover{
+opacity: 0.9;
+}
 
 /*---------------------section3-phone-------------------*/
 
@@ -362,7 +371,10 @@ legend,
         margin: 0 auto;
     }
 
-}
+    #section3 .right-now {
+    padding: 0 25px 20px 25px;
+        margin: 0;
+	}}
 
 
 /*---------------------section3-------------------------*/

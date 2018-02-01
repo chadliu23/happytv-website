@@ -202,7 +202,14 @@
             </div>
         </div>
 
-        <div class="container2">
+        <div class="container3">
+            <div class="row">
+                <div class="col-md-12 right-now">
+                    <a href="#section4"><img src="/images/lottary/right-now_01.png" class="img-responsive"></a>
+                </div>
+
+            </div>
+        </div>        <div class="container2">
             <div class="row">
 
                 <div class="col-sm-4">
@@ -505,6 +512,52 @@
             // document.getElementById("hbl-form").reset();
             
         }
+    </script>
+<div id="gotop" style='text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;'><a title="" target=""><img src="/images/lottary/go-top_01.png"></a></div>
+
+
+
+<script type="text/javascript">
+        $(function() {
+            $("#gotop").click(function() {
+                jQuery("html,body").animate({
+                    scrollTop: 0
+                }, 1000);
+            });
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('#gotop').fadeIn("fast");
+                } else {
+                    $('#gotop').stop().fadeOut("fast");
+                }
+            });
+        });
+
+    </script>
+
+    <!-----------------------------slide-js---------------------------------->
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("a").click(function() {
+                console.log($(this).attr("href"))
+
+                var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+
+                $body.animate({
+                    scrollTop: $($(this).attr("href")).offset().top + "px"
+                }, {
+                    duration: 500,
+                    easing: "swing"
+                });
+
+                return false;
+            });
+
+        });
+
     </script>
 </body>
 
