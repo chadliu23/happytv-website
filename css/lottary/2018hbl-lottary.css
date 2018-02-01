@@ -260,6 +260,7 @@ legend,
   -webkit-transition: 0.1s all;
   -moz-transition: 0.1s all;
   -o-transition: 0.1s all;
+  cursor: pointer;
 }
 .facebook li {
   display: inline-block;
