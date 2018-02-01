@@ -343,7 +343,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" id="userid" name='userid' placeholder="" disabled required>
+                                <input type="text" class="form-control" id="userid" name='userid' placeholder="" disabled>
                             </div>
                             <div class="col-md-4">
                             </div>
@@ -465,6 +465,10 @@
     <script src="https://apis.google.com/js/platform.js"></script>
     <script> 
         function handleClick(){
+            if ($('#userid').val() === ''){
+                alert('請登入FB');
+                return;
+            }
             let form = $('form').serializeArray();
             $.ajax({
                 type: 'post',
@@ -473,12 +477,12 @@
                   "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp"
                 },
                 data:form,
-                url: 'http://172.18.1.86/2018hbl-lottary'
+                url: 'https://api-product.happytv.com.tw/2018hbl-lottary'
 
               }).done((data) => {
                 alert('感謝您的參與!');
               }).fail((data) =>{
-                
+                alert('您已經參加過了!');
               });
             // document.getElementById("hbl-form").reset();
             
