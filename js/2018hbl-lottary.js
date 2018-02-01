@@ -19,7 +19,7 @@
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
+    js.src = "//connect.facebook.net/zh_TW/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
@@ -129,7 +129,7 @@ function getParameterByName(name, url) {
 function checkstatus(){
   if (Cookies.get("member_token") !== undefined){
     $('#facebook-login').css('display', 'none');
-    $('#username').val(Cookies.get("member_nickname"));
+    $('#fbname').val(Cookies.get("member_nickname"));
     $('#userid').val(Cookies.get("member_id"));
   }
 }
