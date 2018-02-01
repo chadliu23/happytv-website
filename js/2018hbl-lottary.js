@@ -129,8 +129,8 @@ function getParameterByName(name, url) {
 function checkstatus(){
   if (Cookies.get("member_token") !== undefined){
     $('#facebook-login').css('display', 'none');
-    $('username').val(Cookies.get("member_nickname"));
-    $('userid').val(Cookies.get("member_id"));
+    $('#username').val(Cookies.get("member_nickname"));
+    $('#userid').val(Cookies.get("member_id"));
   }
 }
 
