@@ -38,7 +38,7 @@
 </head>
 
 <body>
-<div id="fb-root"></div>
+    <div id="fb-root"></div>
 
     <!-- --------------------------------header----------------------------------------- -->
 
@@ -122,34 +122,33 @@
             </div>
 
             <div class="wrapper">
-                <div class="col-md-3 qr-code">
-
-                    <tr>
-                        <td> <a href="https://www.facebook.com/happytv.com.tw/?fref=ts">  <img src="/images/lottary/facebook-logo_01.png" class="img-responsive"></a></td>
-                    </tr>
-
-                    <tr>
-                        <td> <a href="https://www.youtube.com/channel/UCvKez7HK8fOyCMPh2TN0hvQ"><img src="/images/lottary/youtube-logo_01.png" class="img-responsive"></a></td>
-                    </tr>
-                </div>
 
 
                 <div class="happy-tv-logo">
+                    <a href="https://www.happytv.com.tw/index.html"> <img src="/images/lottary/happv-tv-logo_01.png" class="img-responsive"></a>
+                </div>
+
+
+
+                <div class="col-sm-6 fb-youtube-logo">
+
                     <tr>
-                        <td>
-                            <a href="https://www.happytv.com.tw/index.html"> <img src="/images/lottary/happv-tv-logo_01.png" class="img-responsive"></a>
-                        </td>
+                        <td> <a href="https://www.facebook.com/happytv.com.tw/?fref=ts">  <img src="/images/lottary/facebook-logo-phone_01.png" class="img-responsive"></a></td>
+                        <td> <a href="https://www.youtube.com/channel/UCvKez7HK8fOyCMPh2TN0hvQ"><img src="/images/lottary/youtube-logo-phone_01.png" class="img-responsive"></a></td>
+
                     </tr>
+                    
+                    </div>
+                
+                
+                  <div class="col-sm-6 app-logo">
 
                     <tr>
                         <td> <a href="https://itunes.apple.com/tw/app/%E5%BF%AB%E6%A8%82%E9%9B%BB%E8%A6%96/id1166854716?mt=8">  <img src="/images/lottary/apple-store-logo_01.png" class="img-responsive"></a></td>
-                    </tr>
-
-                    <tr>
-                        <td> <a href="https://play.google.com/store/apps/details?id=com.happytvtw.happtvlive"><img src="/images/lottary/google-play-logo_01.png" class="img-responsive"></a></td>
+                        <td> <a href="https://itunes.apple.com/tw/app/%E5%BF%AB%E6%A8%82%E9%9B%BB%E8%A6%96/id1166854716?mt=8">  <img src="/images/lottary/google-play-logo_01.png" class="img-responsive"></a></td>
                     </tr>
                 </div>
-
+                
             </div>
 
         </div>
@@ -209,7 +208,8 @@
                 </div>
 
             </div>
-        </div>        <div class="container2">
+        </div>
+        <div class="container2">
             <div class="row">
 
                 <div class="col-sm-4">
@@ -290,7 +290,7 @@
                 <div class="col-md-7 step3">
                     <img src="/images/lottary/vip-step3_01.png" class="img-responsive">
                 </div>
-                
+
 
 
             </div>
@@ -323,13 +323,12 @@
                 </div>
 
                 <div class="col-md-8 form">
-                    <div id='facebook-login' class="" >
-                            <a onclick='loginFacebook()'>
-                                <div class="facebook col-lg-12 col-xs-12 col-md-6">
-                                    <span><i class="fa fa-1x fa-facebook-square" aria-hidden="true"></i></span>
-                                    登入Facebook 填寫資料
-                                </div>
-                            </a>
+                    <div id='facebook-login' class="">
+                        <a onclick='loginFacebook()'>
+                            <div class="facebook col-lg-12 col-xs-12 col-md-6">
+                                <span><i class="fa fa-1x fa-facebook-square" aria-hidden="true"></i></span> 登入Facebook 填寫資料
+                            </div>
+                        </a>
                     </div>
 
                     <form id='hbl-form' class="form-horizontal" action='javascript:handleClick()' role="form" style='display:none;'>
@@ -462,19 +461,16 @@
         </div>
     </div>
     <div id="gotop" style='text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;'><a title="" target=""><img src="/images/lottary/go-top_01.png"></a></div>
-    
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="/js/js.cookie.js"></script>
     <script src='/js/2018hbl-lottary.js'></script>
     <script src="https://apis.google.com/js/platform.js"></script>
-    <script> 
-        function handleClick(){
-            if ($('#userid').val() === ''){
+    <script>
+        function handleClick() {
+            if ($('#userid').val() === '') {
                 alert('請登入FB');
                 return;
             }
@@ -483,29 +479,30 @@
                 type: 'post',
                 dataType: 'json',
                 headers: {
-                  "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp"
+                    "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp"
                 },
-                data:form,
+                data: form,
                 url: 'https://api-product.happytv.com.tw/2018hbl-lottary'
 
-              }).done((data) => {
-                if (data.status === 200){
+            }).done((data) => {
+                if (data.status === 200) {
                     alert('感謝您的參與!');
-                }else{
+                } else {
                     alert('您已經參加過了!');
                 }
-              }).fail((data) =>{
-                if (data.status === 200){
+            }).fail((data) => {
+                if (data.status === 200) {
                     alert('感謝您的參與!');
-                }else{
+                } else {
                     alert('您已經參加過了!');
                 }
-              });
+            });
             // document.getElementById("hbl-form").reset();
-            
+
         }
+
     </script>
-    
+
 
 
 
