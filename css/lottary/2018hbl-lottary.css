@@ -458,6 +458,8 @@ legend,
     color: white;
     padding: 20px 0 0 0;
     letter-spacing: 1px;
+            position: relative;
+        right:10px;
 }
 
 #section4 .checkbox {
@@ -524,7 +526,7 @@ legend,
     }
 
     #section4 .form-group {
-        padding: 0 15px;
+        padding: 0 15px; fvvvvvvvvvvvvvvvvvvvvvn
     }
 
 
