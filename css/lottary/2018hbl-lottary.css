@@ -199,6 +199,7 @@ legend,
 .facebook-like {
     margin-top: 35px;
 }
+
 .youtube-subscribe {
     margin-top: 35px;
 }
@@ -229,62 +230,64 @@ legend,
         max-width: 50%;
         height: auto;
         margin: 0 auto;
-                    padding: 10px 10px 10px 20px;
+        padding: 10px 10px 10px 20px;
     }
-    
-        #section1-phone .facebook-logo-phone {
-padding-bottom: 10px;
+
+    #section1-phone .facebook-logo-phone {
+        padding-bottom: 10px;
     }
-    
-        #section1-phone .app-logo {
-            float: right;
+
+    #section1-phone .app-logo {
+        float: right;
         max-width: 50%;
         height: auto;
         margin: 0 auto;
-           padding: 10px 20px 10px 10px;
+        padding: 10px 20px 10px 10px;
     }
-    
-            #section1-phone .apple-store-logo {
-padding-bottom: 8px;
+
+    #section1-phone .apple-store-logo {
+        padding-bottom: 8px;
     }
 
     #section1-phone .happy-tv-logo {
-        text-align: center;
         margin: 0 auto;
-        width:50%;
-        padding: 15px 0 10px 0;
+       padding:15px 20px 10px 20px;
     }
 
 }
+
 .facebook {
-  margin:0 auto;
-  float: left;
-  background: #578ee8;
-  color: #fff;
-  padding: 12px 40px;
-  text-align: -webkit-center;
-  margin-top: 10px;
+    margin: 0 auto;
+    float: left;
+    background: #578ee8;
+    color: #fff;
+    padding: 12px 40px;
+    text-align: -webkit-center;
+    margin-top: 10px;
 }
+
 .facebook:hover {
-  background: #1E4078;
-  border-bottom-right-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -o-border-radius: 5px;
-  -ms-border-radius: 5px;
-  transition: 0.1s all;
-  -webkit-transition: 0.1s all;
-  -moz-transition: 0.1s all;
-  -o-transition: 0.1s all;
-  cursor: pointer;
+    background: #1E4078;
+    border-bottom-right-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    transition: 0.1s all;
+    -webkit-transition: 0.1s all;
+    -moz-transition: 0.1s all;
+    -o-transition: 0.1s all;
+    cursor: pointer;
 }
+
 .facebook li {
-  display: inline-block;
-  vertical-align: middle;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 .facebook li img {
-  margin: 0px 18px 0 0;
-  vertical-align: bottom;
+    margin: 0px 18px 0 0;
+    vertical-align: bottom;
 }
 
 
@@ -357,8 +360,8 @@ padding-bottom: 8px;
     margin: 0 90px 0 40px;
 }
 
-#section3 .right-now:hover{
-opacity: 0.9;
+#section3 .right-now:hover {
+    opacity: 0.9;
 }
 
 /*---------------------section3-phone-------------------*/
@@ -389,9 +392,10 @@ opacity: 0.9;
     }
 
     #section3 .right-now {
-    padding: 0 25px 20px 25px;
+        padding: 0 25px 20px 25px;
         margin: 0;
-	}}
+    }
+}
 
 
 /*---------------------section3-------------------------*/
