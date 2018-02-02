@@ -251,7 +251,7 @@ legend,
 
     #section1-phone .happy-tv-logo {
         margin: 0 auto;
-       padding:15px 20px 10px 20px;
+        padding: 15px 20px 10px 20px;
     }
 
 }
@@ -398,7 +398,7 @@ legend,
 }
 
 
-/*---------------------section3-------------------------*/
+/*---------------------section4-------------------------*/
 
 #section4 {
     padding: 100px 0;
@@ -448,8 +448,16 @@ legend,
 }
 
 #section4 .form-group .btn {
-    margin: 10px 0 0 20px;
-    padding: 10px 20px;
+        width: 240px;
+        margin: 0 0 0 25px;
+    height: 45px;
+}
+
+
+#section4 .real-name {
+    color: white;
+    padding: 20px 0 0 0;
+    letter-spacing: 1px;
 }
 
 #section4 .checkbox {
@@ -472,6 +480,11 @@ legend,
     #section4 {
         padding: 10px 0 40px 0;
     }
+    
+    #section4 .attend {
+    padding: 15px;
+        width: 45%;
+}
 
     #section4 .facebook-like {
         width: 35%;
@@ -502,7 +515,7 @@ legend,
     }
 
     #section4 .check {
-        padding: 10px 5px;
+        padding: 10px 0 5px 10px;
     }
 
 
@@ -521,8 +534,13 @@ legend,
 
     #section4 .form-group .btn {
         width: 240px;
-        margin: 0 0 0 20px;
+        margin: 0 0 0 40px;
     }
+    
+    #section4 .real-name {
+font-size: 10px;
+        padding:10px 0 0 0;
+}
 
     #section4 .checkbox {
         color: white;
