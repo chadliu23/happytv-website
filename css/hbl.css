@@ -2,7 +2,7 @@
 /* CSS Document */
 
 .container .table {
-    width: 96%;
+    width: 92%;
     border: 1px solid #dedede;
 }
 
@@ -15,6 +15,8 @@
 
 #home h2{
  color: #f06600;
+ letter-spacing: 1px;
+ font-size: 30px;
 }
 
 
@@ -141,5 +143,6 @@ font-size: 17px;
     text-align: center;
     font-weight: bold;
     letter-spacing: 1px;
-
 }
+
+
