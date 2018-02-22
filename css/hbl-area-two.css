@@ -19,4 +19,15 @@ border: none;
   color: #fff;
   background-color: #f06600;
 }
-
+.team-cloumn {
+   min-width: 75px
+}
+.girl {
+    color: red;
+}
+.live {
+    font-weight:bolder;
+}
+.win {
+    color: red;
+}
