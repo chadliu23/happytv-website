@@ -19,12 +19,12 @@ function showGame( items, index){
   }
 
   element += '<td>';
-  element += '<div class="' + (visitorWin?'':'win') + '">' + items[index].home + '</div>';
-  element += '<div class="' + (visitorWin?'win':'') + '">' + items[index].visitor + '</div>';
+  element += '<div class="' + (items[index].visitor_score === items[index].home_score ? '':(visitorWin?'':'win')) + '">' + items[index].home + '</div>';
+  element += '<div class="' + (items[index].visitor_score === items[index].home_score ? '':(visitorWin?'win':'')) + '">' + items[index].visitor + '</div>';
   element += '</td>';
   element += '<td>';
-  element += '<div class="' + (visitorWin?'':'win') + '">' + items[index].home_score + '</div>';
-  element += '<div class="' + (visitorWin?'win':'') + '">' + items[index].visitor_score + '</div>';
+  element += '<div class="' + (items[index].visitor_score === items[index].home_score ? '':(visitorWin?'':'win')) + '">' + items[index].home_score + '</div>';
+  element += '<div class="' + (items[index].visitor_score === items[index].home_score ? '':(visitorWin?'win':'')) + '">' + items[index].visitor_score + '</div>';
   element += '</td>';
   return element;
 }
@@ -38,8 +38,7 @@ function list(id) {
     url: "https://api-product.happytv.com.tw/api/v3/hbl/record/date/" + id
   }).done((data) => {
 
-
-    console.log(data);
+    let url = 'https://tw.piliapp.com/generator/qr-code/apps/?iphone=https%3A%2F%2Fitunes.apple.com%2Ftw%2Fapp%2F%25E5%25BF%25AB%25E6%25A8%2582%25E9%259B%25BB%25E8%25A6%2596%2Fid1166854716%3Fmt%3D8%26ign-mpt%3Duo%253D4&ipad=https%3A%2F%2Fitunes.apple.com%2Ftw%2Fapp%2F%25E5%25BF%25AB%25E6%25A8%2582%25E9%259B%25BB%25E8%25A6%2596%2Fid1166854716%3Fmt%3D8%26ign-mpt%3Duo%253D4&android=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.happytvtw.happtvlive';
     let hide = 'style="display:none"';
     if (id === '2018-2-26'){
       hide = '';
@@ -62,9 +61,14 @@ function list(id) {
       element += showGame(items, 0);
 
       element += '<td rowspan="'+ items.length +'" class="live">';
-      element += 'APP Download<br><a href="# "><img src="images/hbl/happy-tv-logo.png "></a><br><br>';
-      element += '粉絲團直播<br><a href="# "><img src="images/hbl/facebook-logo.png "></a><br><br>';
-      element += 'Youtube 直播<br><a href="# "><img src="images/hbl/youtube-logo.png "></a>';
+      element += 'APP Download<br><a href="'+url+'"><img src="images/hbl/happy-tv-logo.png "></a><br><br>';
+      if (items[0].facebook !== ''){
+        element += '粉絲團直播<br><a href="'+items[0].facebook+'"><img src="images/hbl/facebook-logo.png "></a><br><br>';
+      }
+      if (items[0].youtube !== ''){
+        element += 'Youtube 直播<br><a href="'+items[0].youtube+'"><img src="images/hbl/youtube-logo.png "></a>';
+      }
+      debugger;
       element += '</td>';
       element += '</tr>';
       for(let i = 1; i < items.length; ++i){
