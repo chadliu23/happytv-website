@@ -31,3 +31,18 @@ border: none;
 .win {
     color: red;
 }
+.phone {
+	display:none;
+}
+.web {
+	display: block;
+	margin:auto;
+}
+@media (max-width: 767px) {
+	.web {
+		display: none;
+	}
+	.phone {
+		display:block;
+	}
+}

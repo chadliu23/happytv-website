@@ -61,14 +61,15 @@ function list(id) {
       element += showGame(items, 0);
 
       element += '<td rowspan="'+ items.length +'" class="live">';
-      element += 'APP Download<br><a href="'+url+'"><img src="images/hbl/happy-tv-logo.png "></a><br><br>';
+      if (items[0].channel_id !== ''){
+        element += '<div class="web">APP Download</div><a href="'+url+'"><img class="web" src="/images/hbl/happy-tv-logo.png "><img class="phone" src="/images/hbl/happy-tv-logo-phone.png"></a><br><br>';
+      }
       if (items[0].facebook !== ''){
-        element += '粉絲團直播<br><a href="'+items[0].facebook+'"><img src="images/hbl/facebook-logo.png "></a><br><br>';
+        element += '<div class="web">粉絲團直播</div><a href="'+items[0].facebook+'"><img class="web" src="/images/hbl/facebook-logo.png "><img class="phone" src="/images/hbl/facebook-logo-phone.png"></a><br><br>';
       }
       if (items[0].youtube !== ''){
-        element += 'Youtube 直播<br><a href="'+items[0].youtube+'"><img src="images/hbl/youtube-logo.png "></a>';
+        element += '<div class="web">Youtube 直播</div><a href="'+items[0].youtube+'"><img class="web" src="/images/hbl/youtube-logo.png "><img class="phone" src="/images/hbl/youtube-logo-phone.png"></a>';
       }
-      debugger;
       element += '</td>';
       element += '</tr>';
       for(let i = 1; i < items.length; ++i){
