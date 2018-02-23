@@ -13,6 +13,8 @@ $(function() {
     }).done((data) => {
       recordByDate = data;
       $('#location').empty();
+      $('#event_id').empty();
+      $('#input-area').css('display', 'none')
       $('#location').append($('<option>', {value:'', text:'-', selected: true, disabled: true}));
       for(let location in recordByDate.result){
         $('#location').append($('<option>', {value:location, text:location}));
@@ -26,6 +28,7 @@ $(function() {
     var selected = $(this).find("option:selected").val();
     let items = recordByDate.result[selected];
     $('#event_id').empty();
+    $('#input-area').css('display', 'none')
     $('#event_id').append($('<option>', {value:'', text:'-', selected: true, disabled: true}));
     for(let i in items){
       $('#event_id').append($('<option>', {value:i, text:items[i].time + ' ' + items[i].home + ' ' + items[i].visitor }));

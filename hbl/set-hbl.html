@@ -1,5 +1,9 @@
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -7,7 +11,7 @@
 <body>
     <div class="container">
         <div class="form-group">
-          <label for="date" class='input-lg'>Select Date:</label>
+          <label for="date" class='input-lg'>日期:</label>
           <select class="form-control input-lg" id="date">
               <option value="2018-2-26" disabled selected>-</option>
               <option value="2018-2-26">2/26</option>
@@ -16,24 +20,27 @@
               <option value="2018-3-1">3/1</option>
               <option value="2018-3-2">3/2</option>
           </select>
-          <label for="location" class='input-lg'>Select location:</label>
+          <label for="location" class='input-lg'>地點:</label>
           <select class="form-control input-lg" id="location">
           </select>
-          <label for="event_id" class='input-lg'>Select Game number:</label>
+          <label for="event_id" class='input-lg'>場次:</label>
           <select class="form-control input-lg" id="event_id">
+
           </select>
           <div id='input-area' style='display: none'>
+              <hr />
               <input class='input-lg' id="hbl_id" type='hidden' />
-              <label for="home" class='input-lg'>Home team name:</label>
+              <label for="home" class='input-lg'>淺色球衣(主場)隊名:</label>
               <input type="text" class="form-control input-lg" id="home">
-              <label for="home_score" class='input-lg'>Home team score:</label>
+              <label for="home_score" class='input-lg'>淺色球衣(主場)分數:</label>
               <input type="number" class="form-control input-lg" id="home_score" pattern="\d*">
-              <label for="visitor" class='input-lg'>Visitor team name:</label>
+              <hr />
+              <label for="visitor" class='input-lg'>深色球衣(客場)隊名:</label>
               <input type="text" class="form-control input-lg" id="visitor">
-              <label for="visitor_score" class='input-lg'>Visitor team score:</label>
+              <label for="visitor_score" class='input-lg'>深色球衣(客場)分數:</label>
               <input type="number" class="form-control input-lg" id="visitor_score" pattern="\d*">
               <br>
-              <button type="button" id='submit' class="btn btn-primary btn-block">Submit</button>
+              <button type="button" id='submit' class="btn btn-primary btn-block">上傳</button>
           </div>
 
         </div>
