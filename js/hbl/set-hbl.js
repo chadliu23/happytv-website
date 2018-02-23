@@ -17,7 +17,7 @@ $(function() {
       $('#input-area').css('display', 'none')
       $('#location').append($('<option>', {value:'', text:'-', selected: true, disabled: true}));
       for(let location in recordByDate.result){
-        $('#location').append($('<option>', {value:location, text:location}));
+        $('#location').append($('<option>', {value:location, text:location.replace(/\d/, '')}));
       }
     }).fail((data) => {
       console.log('error');

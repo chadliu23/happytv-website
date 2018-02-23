@@ -57,7 +57,7 @@ function list(id) {
     for (let key in data.result){
       let items = data.result[key];
       element += '<tr>';
-      element += '<td rowspan="'+ items.length +'">'+key+'</td>'
+      element += '<td rowspan="'+ items.length +'">'+key.replace(/\d/, '') +'</td>'
       element += showGame(items, 0);
 
       element += '<td rowspan="'+ items.length +'" class="live">';
