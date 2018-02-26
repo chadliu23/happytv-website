@@ -64,7 +64,7 @@ $(function() {
       data: data
     }).done((data) => {
        alert('Update Success')
-       $('#input-area').css('display', 'none')
+       location.reload();
     }).fail((data) => {
       alert('Update Fail')
     });
