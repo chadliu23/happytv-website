@@ -40,8 +40,13 @@ function list(id) {
 
     let url = 'https://tw.piliapp.com/generator/qr-code/apps/?iphone=https%3A%2F%2Fitunes.apple.com%2Ftw%2Fapp%2F%25E5%25BF%25AB%25E6%25A8%2582%25E9%259B%25BB%25E8%25A6%2596%2Fid1166854716%3Fmt%3D8%26ign-mpt%3Duo%253D4&ipad=https%3A%2F%2Fitunes.apple.com%2Ftw%2Fapp%2F%25E5%25BF%25AB%25E6%25A8%2582%25E9%259B%25BB%25E8%25A6%2596%2Fid1166854716%3Fmt%3D8%26ign-mpt%3Duo%253D4&android=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.happytvtw.happtvlive';
     let hide = 'style="display:none"';
-    if (id === '2018-2-26'){
+    let todayString = moment(new Date()).format('YYYY-MM-DD');
+    if (id === todayString || (new Date() > new Date('2018-03-03') ) ){
       hide = '';
+    }
+    $('#'+todayString + '-tag').addClass('active');
+    if ( new Date() > new Date('2018-03-03') ){
+      $('#2018-02-26-tag').addClass('active');
     }
     let element = ' <table id="' +id+'" class="table table-bordered record-table" '+hide+' >';
     element += '<thead>';
