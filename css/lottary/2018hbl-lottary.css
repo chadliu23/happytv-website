@@ -561,20 +561,6 @@ font-size: 10px;
 
 }
 
-/* --------------------footer-----------------------*/
-
-#footer {
-    background-color: #000000;
-    position: relative;
-    top: 0px;
-    height: 80px;
-    padding: 30px 0 0 0;
-    color: white;
-    text-align: center;
-    letter-spacing: 3px;
-    font-size: 14px;
-}
-
 
 /*---------------------section4-phone-------------------*/
 
@@ -585,4 +571,95 @@ font-size: 10px;
         letter-spacing: 1px;
     }
 
+}
+
+
+/*---------------------section5-------------------------*/
+
+
+#section5 {
+padding: 100px 0;
+}
+
+#section5 {
+    background: #71c837;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #71c837 0%, #a7c837 31%, #91b63d 69%, #cac532 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #71c837 0%, #a7c837 31%, #91b63d 69%, #cac532 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #71c837 0%, #a7c837 31%, #91b63d 69%, #cac532 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+
+#section5 img {
+    margin: 0 auto;
+}
+
+#section5 .ticket-title {
+    padding-bottom: 15px;
+}
+
+#section5 .ticket-content {
+    padding-right: 60px;
+}
+
+#section5 .ticket-content-phone {
+    display: none;
+}
+
+#section5 .ticket-attend:hover {
+    opacity: 0.9;
+}
+
+
+#section5 .statement {
+        padding: 50px 0 0px 0px;
+}
+
+
+/*---------------------section5-phone-------------------*/
+
+@media (max-width: 768px) {
+
+
+#section5 {
+padding: 30px 0;
+}
+
+#section5 .ticket-content{
+    display: none;
+}
+
+#section5 .ticket-attend{
+    padding: 10px 0 0 0;
+}
+
+#section5 .ticket-content-phone {
+    display: block;
+    padding: 0 15px;
+}
+
+#section5 .statement {
+        padding: 20px 15px 0px 15px;
+}
+
+
+}
+
+
+
+/* --------------------footer-----------------------*/
+
+#footer {
+    background-color: #000000;
+    position: relative;
+    bottom: 0px;
+    height: 80px;
+    padding: 30px 0 0 0;
+    color: white;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 14px;
 }
