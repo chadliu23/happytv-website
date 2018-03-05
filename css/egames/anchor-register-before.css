@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+
+
+
+/* CSS Document */
+
+body {
+    padding-top: 70px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c10020+0,a5001b+15,8c0015+30,490010+100 */
+background-image:url('../images/anchor-background.png');
+background-repeat: no-repeat; 
+ background-position: center center;
+ background-attachment: fixed;  
+background-color: #a10620; /* Old browsers */
+}
+
+
+#anchor-register .container {
+    display: block;
+    max-width: 950px;
+    padding: 60px 0 0px 0;
+}
+
+
+#anchor-register .anchor-register-button {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+#anchor-register .anchor-register-button img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+#anchor-register .message,
+#anchor-register .upload-link {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+
+
+#anchor-register .message h2,
+#anchor-register .upload-link h2 {
+    color: white;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+
+#anchor-register .message h2::before,
+#anchor-register .upload-link h2::before {
+    font-family: 'FontAwesome';
+    content: '\f138';
+    font-size: 25px;
+    padding-right: 18px;
+    position: relative;
+    top: 3px;
+}
+
+
+#anchor-register .message p,
+#anchor-register .upload-link p {
+    color: white;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+
+#anchor-register .message table {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+#anchor-register .message table th {
+    width: 145px;
+    height: 50px;
+    height: auto;
+    color: white;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+#anchor-register .message table input {
+    width: 145px;
+    height: 50px;
+    height: auto;
+    outline: red;
+    color: white;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    padding: 8px;
+    text-align: center;
+    margin-left: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+
+#anchor-register .message .link-button {
+    width: 160px;
+    height: 40px;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    padding: 8px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+}
+
+
+#anchor-register .message .link-button:hover{
+    opacity: 0.7;
+}
+
+
+#anchor-register .upload-link .link-input {
+    width: 900px;
+    height: 50px;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    padding: 8px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+}
+
+
+#anchor-register .upload-link .link-button {
+    width: 180px;
+    height: 50px;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    padding: 8px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+}
+
+
+#anchor-register .upload-link .link-button:hover {
+    opacity: 0.7;
+}
+
+
+
+#anchor-register .attention-text  .container {
+    display: block;
+    max-width: 950px;
+    padding: 0;
+    text-align: center;
+}
+
+
+#anchor-register .attention-text {
+color: white;
+margin-bottom: 100px;
+}
+
+
+#anchor-register .attention-text h4 {
+    color: white;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+
+#anchor-register .attention-text h2{
+    color: white;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+
+#anchor-register .attention-text h2::before {
+    font-family: 'FontAwesome';
+    content: '\f138';
+    font-size: 25px;
+    padding-right: 18px;
+    position: relative;
+    top: 3px;
+}
+

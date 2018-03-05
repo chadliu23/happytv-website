@@ -1,0 +1,534 @@
+@charset "utf-8";
+
+
+
+
+
+
+
+
+
+/* CSS Document */
+
+
+/*-----------register-------------*/
+
+
+#register .container {
+    display: block;
+    max-width: 1400px;
+    padding: 60px 0 50px 0;
+}
+
+
+#register .register-button-img .container {
+    padding: 60px 0 0 0;
+    text-align: center;
+}
+
+
+#register .accout-button {
+max-width:20%;
+padding-top: 50px;
+padding-left:50px;
+}
+
+#register .accout-button:hover{
+opacity: 0.5;
+}
+
+
+#register .register h2 {
+    color: white;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    display: inline;
+}
+
+
+#register .register h2::before {
+    font-family: 'FontAwesome';
+    content: '\f138';
+    font-size: 25px;
+    padding-right: 18px;
+    position: relative;
+    top: 3px;
+}
+
+
+#register .register p {
+    color: white;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    padding-left: 45px;
+    text-align: justify;
+    display: inline;
+    padding-left: 20px;
+}
+
+
+#register .register .team-name {
+    margin-left: 30px;
+    width: 200px;
+    height: 35px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+
+
+
+
+#register .table .container {
+    padding: 20px 20px 30px 20px;
+    margin-top: 40px;
+}
+
+
+#register .table tr th {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    letter-spacing: 3px;
+    padding-left: 5px;
+    border: none;
+    text-align: center;
+    padding: 20px;
+}
+
+#register .table tr td {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding-left: 5px;
+    border: none;
+    text-align: center;
+    padding: 12px;
+}
+
+
+#register .table .text-input {
+    width: 135px;
+    height: 35px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding-left: 5px;
+    opacity: 1;
+    outline: none;
+    border-radius: 5px;
+}
+
+#register .table .table-title {
+    color: white;
+}
+
+
+#register .table .button-input {
+    width: 135px;
+    height: 40px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding-left: 5px;
+    opacity: 1;
+    background-color: #53099e;
+    color: white;
+    border: none;
+    outline: none;
+    opacity: 0.7;
+    border-radius: 5px;
+}
+
+
+#register .table .re-send {
+    background-color: black;
+}
+
+
+#register .table .re-send:hover {
+    opacity: 0.5;
+}
+
+
+
+
+
+
+/*-----------note-------------*/
+
+#note .note p {
+    color: white;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    padding-left: 45px;
+    text-align: justify;
+}
+
+
+
+#note .note h4 {
+    color: white;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    padding-left: 90px;
+}
+
+
+#note .note h4::before {
+    font-family: 'FontAwesome';
+    content: '\f101';
+    font-size: 15px;
+    padding-right: 15px;
+    position: relative;
+    top: 1px;
+}
+
+
+#note .note .container {
+    padding: 0 0 50px 80px;
+}
+
+
+
+
+
+
+
+/*-----------student-------------*/
+
+
+#student .container {
+    display: block;
+    max-width: 1400px;
+    padding: 20px 0 10px 0;
+    text-align: center;
+}
+
+#student .student-button {
+    padding: 30px;
+}
+
+
+
+#student .student-upload .file-input {
+    width: 400px;
+    height: 60px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline;
+    padding: 17px;
+    margin-left: 15px;
+}
+
+
+
+#student .student-upload .button-input {
+    width: 180px;
+    height: 60px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    display: inline;
+    margin-left: 20px;
+    position: relative;
+    top: 2px;
+}
+
+
+#student .student-upload .button-input:hover {
+    opacity: 0.5;
+}
+
+
+#student .student-upload span {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+}
+
+
+#student .title img {
+    margin: 10px;
+    padding: 0 100px;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-size:13px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+
+#student .student-upload span:nth-of-type(1) {
+    margin: 50px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+#student .student-upload-ex span {
+    margin: 30px;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    letter-spacing: 3px;
+}
+
+#student .student-upload-ex {
+    padding-bottom: 50px;
+}
+
+
+#student .student-upload-ex .student-img-div {
+    display: inline;
+}
+
+
+
+#student .student-upload-ex .student-img-div img {
+    max-width: 400px;
+    height: 250px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    margin: 10px;
+}
+
+
+
+
+
+/*-----------account-------------*/
+
+#account .container {
+    display: block;
+    max-width: 900px;
+    padding: 90px 0 0 0;
+    text-align: center;
+}
+
+
+#account .account-information .container {
+    text-align: left;
+    padding: 60px 0 0 0;
+}
+
+
+#account .account-information h4 {
+    color: white;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    padding-left: 90px;
+}
+
+
+#account .account-information h4::before {
+    font-family: 'FontAwesome';
+    content: '\f101';
+    font-size: 15px;
+    padding-right: 15px;
+    position: relative;
+    top: 1px;
+}
+
+
+#account .account-information h2 {
+    color: white;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+
+#account .account-information h2::before {
+    font-family: 'FontAwesome';
+    content: '\f138';
+    font-size: 25px;
+    padding-right: 18px;
+    position: relative;
+    top: 3px;
+}
+
+#account .account-information p {
+    color: white;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    padding-left: 45px;
+    text-align: justify;
+    padding-left: 20px;
+}
+
+
+#account .table-title th {
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+
+
+#account .table .text-input {
+    width: 135px;
+    height: 35px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding-left: 5px;
+    opacity: 1;
+    outline: none;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+
+
+
+/*-----------bottom-button-------------*/
+
+#bottom-button .bottom-button .container {
+    display: block;
+    max-width: 1400px;
+    text-align: center;
+    padding: 80px;
+}
+
+
+#bottom-button .bottom-button img {
+    padding-left: 50px;
+}
+
+#bottom-button .bottom-button img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+/*------------qa-modal--------------*/
+
+.qa-modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 99999999;
+    opacity: 0;
+    display: none;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.qa-modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.qa-modalDialog>div {
+    position: absolute;
+    width: 470px;
+    height: 200px;
+
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    top: 50%;
+    left: 50%;
+    margin-left: -235px;
+    margin-top: -250px;
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    margin-right: -50%;
+    padding: 5px;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    -webkit-box-shadow: 0 0 18px 3px rgba(0, 0, 0, .07);
+    -moz-box-shadow: 0 0 18px 3px rgba(0, 0, 0, .07);
+    box-shadow: 0 0 18px 3px rgba(0, 0, 0, .07);
+}
+
+.qa-modalDialog>div>p {
+    margin: 5px;
+}
+
+.qa-close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    cursor: pointer;
+}
+
+.qa-close:hover {
+    background: #000000;
+}
+
+#qa-openModal p {
+    padding: 55px 60px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    line-height: 28px;
+    color: white;
+    font-weight: bold;
+    text-align: justify;
+}
+
+
+

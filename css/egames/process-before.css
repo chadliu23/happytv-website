@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+
+
+
+
+
+/* CSS Document */
+
+#process .process .container{
+	max-width: 1500px;
+height: auto;
+display: block;
+}
+
+#process .process {
+border: none;
+padding: 30px;
+margin:0 auto;
+margin-top:60px;
+margin-bottom:60px;
+text-align: center;
+color: white;
+font-size:15px;
+}
+
+
+
+#process .process tr td{
+		width: 240px;
+		height: 80px;
+border: none;
+}
+
+
+#process .process .line{
+		width: 180px;
+border: none;
+}
+
+
+#process .process .up-load{
+		width: 200px;
+border: none;
+}
+
+
+#process .process .up-load p{
+font-size: 12px;
+letter-spacing: 2px;;
+}
+
+
+#process .process .team-button-a{
+display:inline-block;
+width: 180px;
+height: 40px;
+background-color: #310054;
+border: none;
+margin:0 10px 10px 10px;
+outline: none;
+letter-spacing: 3px;
+cursor: initial;
+}
+
+
+#process .process .team-button-b{
+display:inline-block;
+width: 180px;
+height: 40px;
+background-color: #1b002e;
+border: none;
+margin:0 10px 10px 10px;
+outline: none;
+letter-spacing: 3px;
+cursor: initial;
+}
+
+
+
+#process .process .team-button-a:hover,
+#process .process .team-button-b:hover{
+opacity: 0.6;
+cursor: initial;
+}
+
+
+#process .process .up-load-button {
+display: inline-block;
+width: 60px;
+height: 20px;
+background-color: rgba(0,0,0,0);
+border: none;
+margin:0 10px 10px 10px;
+outline: none;
+letter-spacing: 3px;
+cursor: initial;
+font-size: 12px;
+}
+
+
+

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="快樂,快樂直播,快樂app,快樂官網,直播,明星直播,快樂下載,快樂直播下載,快樂app下載,全民直播,美女直播,高顏值直播">
+    <meta name="description" content="快樂直播,實事、高清、快捷、流暢的視頻直播平臺,中國全新的視頻社交媒體,明星大咖、網路紅人、時尚娛樂、高顏值、視頻交友等盡在快樂直播app">
+    <meta name="apple-mobile-web-app-title" content="快樂電視官網">
+    <meta property="og:tilte" content="享受精采賽事，盡在快樂電視!!!" />
+    <meta property="og:image" content="images/h_mata_img.jpg" />
+    <title>《 2018 暗光鳥盃 》- 高中職LOL擂台挑戰賽</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/e-games.css">
+    <link rel="stylesheet" href="css/register-interface-before.css">
+    <link rel="stylesheet" href="css/register-interface-after.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome-webfont.ttf">
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-84079620-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <!--header-->
+    <div id="header">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="fukurou-award.html"><img src="images/happy-tv-logo.png"></a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">nav</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+                                <p onclick="openPopup()">登入<span class="caret"></span></p>
+                            </a>
+                            <div id="dropdown" style="display:none" ;>
+                                <ul class="dropdown-menu collapse">
+                                    <li><a href="#">戰隊資訊</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="openModal" class="modalDialog">
+                    <div>
+                        <div onclick="closePopup()" title="Close" class="close">X</div>
+                        <a href="#"><img src="images/fb-button.png"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="banner">
+            <div class="jumbotron-fluid">
+                <div class="container-fluid">
+                    <img class="img-responsive" src="images/egames-banner.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="middle-bar">
+        <div class="middle-bar">
+            <div class="container">
+                <a href="e-games.html
+"><img class="img-responsive" src="images/egames-web-navbar-re_01.png"></a>
+                <a href="way.html"><img class="img-responsive" src="images/egames-web-navbar_02.png"></a>
+                <a href="regulation.html"><img class="img-responsive" src="images/egames-web-navbar-re_03.png"></a>
+                <a href="process-before.html"> <img class="img-responsive" src="images/egames-web-navbar-re_04.png"></a>
+                <a href="teach.html"> <img class="img-responsive" src="images/egames-web-navbar-re_05.png"></a>
+                <a href="site.html"> <img class="img-responsive" src="images/egames-web-navbar-re_06.png"></a>
+            </div>
+        </div>
+    </div>
+    <div id="register">
+        <div class="register-button-img">
+            <div class="container">
+                <img src="images/register-button.png">
+                 <a href="account-interface-before.html"><img class="accout-button" src="images/account-button.png"></a>
+            </div>
+        </div>
+        <div class="register">
+            <div class="container">
+                <h2>隊伍名稱</h2>
+                <input type="button" class="button-input team-name" value="快樂電視隊">
+                <input style="display:none" type="text" class="team-name" name="team-name" placeholder="限中、英、數字">
+                <p>( 最多8個中文/16英文字元 )</p>
+                <div class="table">
+                    <div class="container">
+                        <table>
+                            <thead>
+                                <tr class="table-title">
+                                    <th>擔任</th>
+                                    <th>召喚師名稱</th>
+                                    <th>姓名</th>
+                                    <th>學校名稱</th>
+                                    <th>學號</th>
+                                    <th>手機電話</th>
+                                    <th>E-MAIL</th>
+                                    <th style="display:none">MAIL驗證</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="table-title">隊長</td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="KATE">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="陳儀潔">
+                                        <input style="display:none" type="text" class="text-input" maxlength="4">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="台北城市科技大學">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="A1234567">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="0911123123">
+                                        <input style="display:none" type="tel" class="text-input" maxlength="10">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="kate0216123@happytv.com">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input" value="驗證成功">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input text-input" value="重寄認證信">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">隊員1</td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="KATE">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="陳儀潔">
+                                        <input style="display:none" type="text" class="text-input" maxlength="4">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="台北城市科技大學">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="A1234567">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="0911123123">
+                                        <input style="display:none" type="tel" class="text-input" maxlength="10">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="kate0216123@happytv.com">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input" value="驗證成功">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input text-input" value="重寄認證信">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">隊員2</td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="KATE">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="陳儀潔">
+                                        <input style="display:none" type="text" class="text-input" maxlength="4">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="台北城市科技大學">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="A1234567">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="0911123123">
+                                        <input style="display:none" type="tel" class="text-input" maxlength="10">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="kate0216123@happytv.com">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input" value="驗證成功">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input text-input" value="重寄認證信">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">隊員3</td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="KATE">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="陳儀潔">
+                                        <input style="display:none" type="text" class="text-input" maxlength="4">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="台北城市科技大學">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="A1234567">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="0911123123">
+                                        <input style="display:none" type="tel" class="text-input" maxlength="10">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="kate0216123@happytv.com">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input" value="驗證成功">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input text-input" value="重寄認證信">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">隊員4</td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="KATE">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="陳儀潔">
+                                        <input style="display:none" type="text" class="text-input" maxlength="4">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="台北城市科技大學">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="A1234567">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="0911123123">
+                                        <input style="display:none" type="tel" class="text-input" maxlength="10">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="kate0216123@happytv.com">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input" value="驗證成功">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input text-input" value="重寄認證信">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">後補5</td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="KATE">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="陳儀潔">
+                                        <input style="display:none" type="text" class="text-input" maxlength="4">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="台北城市科技大學">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="A1234567">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="0911123123">
+                                        <input style="display:none" type="tel" class="text-input" maxlength="10">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="kate0216123@happytv.com">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input" value="驗證成功">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input text-input" value="重寄認證信">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">後補6</td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="KATE">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="陳儀潔">
+                                        <input style="display:none" type="text" class="text-input" maxlength="4">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="台北城市科技大學">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="A1234567">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="0911123123">
+                                        <input style="display:none" type="tel" class="text-input" maxlength="10">
+                                    </td>
+                                    <td>
+                                        <input type="button" class="button-input text-input" value="kate0216123@happytv.com">
+                                        <input style="display:none" type="text" class="text-input">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input" value="驗證成功">
+                                    </td>
+                                    <td>
+                                        <input style="display:none" type="button" class="button-input text-input" value="重寄認證信">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="note" style="display: none;">
+            <div class="note">
+                <div class="container">
+                    <p><b>&Delta;&nbsp;&nbsp;注意事項：</b></p>
+                    <h4>須完整填寫召喚師名號。</h4>
+                    <h4>姓名、學號、手機號碼、學校名稱 為“必填”格式。</h4>
+                    <h4>系統需判斷是否已被註冊到其它戰隊，每個註冊帳號僅可被登錄到一個戰隊</h4>
+                    <h4>如已加入其它戰隊，出現訊息【該召喚師已被其它戰隊登錄】</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="student">
+        <div class="student-button">
+            <div class="container">
+                <img src="images/student-button.png">
+            </div>
+        </div>
+
+
+                <div class="student-upload-ex"  style="display:none;">
+            <div class="container">
+                <span>範例</span>
+                <span>正面</span>
+                <div class="student-img-div"><img src="images/student-card-ex.png"></div>
+                <span>反面</span>
+                <div class="student-img-div"><img src="images/student-card-ex-back.png"></div>
+            </div>
+        </div>
+
+                <div class="title" style="display:none;">
+            <div class="container">
+                <img src="images/student-card-before-button.png">
+                <img src="images/student-card-back-button.png">
+            </div>
+        </div>
+
+
+        <div class="student-upload" style="display:block;">
+            <div class="container">
+                <span>隊長</span>
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+            </div>
+        </div>
+        <div class="student-upload" style="display:none;">
+            <div class="container">
+                <span>隊長</span>
+                <input type="file" class="file-input">
+                <input type="file" class="file-input">
+                <input type="button" class="button-input" value="上傳">
+            </div>
+        </div>
+        <div class="student-upload" style="display:block;">
+            <div class="container">
+                <span>隊員1</span>
+        
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+              
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+            </div>
+        </div>
+        <div class="student-upload" style="display:none;">
+            <div class="container">
+                <span>隊員1</span>
+             
+                <input type="file" class="file-input">
+               
+                <input type="file" class="file-input">
+                <input type="button" class="button-input" value="上傳">
+            </div>
+        </div>
+        <div class="student-upload" style="display:block;">
+            <div class="container">
+                <span>隊員2</span>
+           
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+         
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+            </div>
+        </div>
+        <div class="student-upload" style="display:none;">
+            <div class="container">
+                <span>隊員2</span>
+     
+                <input type="file" class="file-input">
+       
+                <input type="file" class="file-input">
+                <input type="button" class="button-input" value="上傳">
+            </div>
+        </div>
+        <div class="student-upload" style="display:block;">
+            <div class="container">
+                <span>隊員3</span>
+             
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+           
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+            </div>
+        </div>
+        <div class="student-upload" style="display:none;">
+            <div class="container">
+                <span>隊員3</span>
+                
+                <input type="file" class="file-input">
+           
+                <input type="file" class="file-input">
+                <input type="button" class="button-input" value="上傳">
+            </div>
+        </div>
+        <div class="student-upload" style="display:block;">
+            <div class="container">
+                <span>隊員4</span>
+               
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+             
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+            </div>
+        </div>
+        <div class="student-upload" style="display:none;">
+            <div class="container">
+                <span>隊員4</span>
+               
+                <input type="file" class="file-input">
+             
+                <input type="file" class="file-input">
+                <input type="button" class="button-input" value="上傳">
+            </div>
+        </div>
+        <div class="student-upload" style="display:block;">
+            <div class="container">
+                <span>後補5</span>
+               
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+             
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+            </div>
+        </div>
+        <div class="student-upload" style="display:none;">
+            <div class="container">
+                <span>後補5</span>
+              
+                <input type="file" class="file-input">
+           
+                <input type="file" class="file-input">
+                <input type="button" class="button-input" value="上傳">
+            </div>
+        </div>
+        <div class="student-upload" style="display:block;">
+            <div class="container">
+                <span>後補6</span>
+       
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+            
+                <div class="student-img-div"><img src="http://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+            </div>
+        </div>
+        <div class="student-upload" style="display:none;">
+            <div class="container">
+                <span>後補6</span>
+                <input type="file" class="file-input">
+                <input type="file" class="file-input">
+                <input type="button" class="button-input" value="上傳">
+            </div>
+        </div>
+    </div>
+
+    <div id="bottom-button">
+        <div class="bottom-button">
+            <div class="container">
+                <img onclick="openPopup2()" src="images/qa-button.png">
+                <img src="images/edit-button.png">
+                <img src="images/send-button.png">
+            </div>
+        </div>
+    </div>
+    <div id="qa-openModal" class="qa-modalDialog">
+        <div>
+            <div onclick="closePopup2()" title="Close" class="qa-close">X</div>
+            <p>如有報名上問題，無法自行解決，請隊長加入官方賴群告知（於上班時間內會即時處理）
+            </p>
+            </a>
+        </div>
+    </div>
+    <!--footer-->
+    <div id="footer">
+        <div class="footer container-fluid">
+            <p>Copyright © HAPPY TV 2018 All Rights Reserved.</p>
+        </div>
+    </div>
+    <div id="gotop" style='text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;'><a title="" target=""><img src="images/go-top_01.png"></a></div>
+    <!--go-top-js-->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $("#gotop").click(function() {
+            jQuery("html,body").animate({
+                scrollTop: 0
+            }, 1000);
+        });
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 300) {
+                $('#gotop').fadeIn("fast");
+            } else {
+                $('#gotop').stop().fadeOut("fast");
+            }
+        });
+    });
+    </script>
+    <!--modal-js-->
+    <script type="text/javascript">
+    function openPopup() {
+        $('#openModal').css({ 'display': 'block' });
+        setTimeout(function() {
+            $('#openModal').css({ 'opacity': '1', 'pointer-events': 'auto' });
+        }, 500);
+    }
+
+    function closePopup() {
+        $('#openModal').css({ 'opacity': '0', 'pointer-events': 'none' });
+        setTimeout(function() {
+            $('#openModal').css({ 'display': 'none' });
+        }, 500);
+    };
+    </script>
+    <!--qa-modal-js-->
+    <script type="text/javascript">
+    function openPopup2() {
+        $('#qa-openModal').css({ 'display': 'block' });
+        setTimeout(function() {
+            $('#qa-openModal').css({ 'opacity': '1', 'pointer-events': 'auto' });
+        }, 500);
+    }
+
+    function closePopup2() {
+        $('#qa-openModal').css({ 'opacity': '0', 'pointer-events': 'none' });
+        setTimeout(function() {
+            $('#qa-openModal').css({ 'display': 'none' });
+        }, 500);
+    };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

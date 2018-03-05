@@ -1,0 +1,356 @@
+@charset "utf-8";
+
+
+/* CSS Document */
+
+
+/*---------remove-bootstrap-container----------*/
+
+@media (min-width: 768px) {
+    .container {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        display: none;
+    }
+}
+
+
+
+
+/*---------instead-container----------*/
+
+.navbar .container {
+    display: block;
+}
+
+@media (max-width: 1450px) {
+    .navbar .container {
+        max-width: 1366px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .navbar .container {
+        max-width: 1220px;
+    }
+}
+
+
+
+
+body {
+    padding-top: 70px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c10020+0,a5001b+15,8c0015+30,490010+100 */
+background-image:url('/images/egames/e-games-background.png');
+background-repeat: no-repeat; 
+ background-position: bottom right;
+ background-attachment: fixed;  
+background-color: #0d0218; /* Old browsers */
+}
+
+
+
+/*------- remove container-padding-------*/
+
+.container {
+    padding: 0px;
+    margin: auto;
+}
+
+.container-fluid {
+    padding: 0px;
+    margin: auto;
+}
+
+.row {
+    margin: 0px;
+}
+
+
+
+
+
+/*------- top-bar-------*/
+
+.navbar {
+    height: 80px;
+    background-color: black;
+    box-shadow: 2px 2px 2px rgba(20%, 20%, 40%, 0.6), 2px 2px 4px rgba(20%, 20%, 40%, 0.4), 4px 4px 10px rgba(20%, 20%, 40%, 0.4);
+}
+
+
+.dropdown-toggle p {
+    color: white;
+    padding-top: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.dropdown-toggle p::before{
+    font-family: 'FontAwesome';
+    content: '\f090';
+    font-size: 25px;
+    padding-right: 18px;
+    position: relative;
+    top:3px;
+}
+
+.dropdown-menu {
+    background-color: black;
+    height: 70px;
+    padding: 20px;
+}
+
+
+.dropdown-menu li a {
+    color: white;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.dropdown-menu li a:hover {
+    background-color: #21005e;
+    color: white;
+}
+
+
+
+
+/*------- middle-bar-------*/
+
+
+#middle-bar .container {
+    display: block;
+    max-width: 1450px;
+}
+
+
+#middle-bar .middle-bar img {
+    max-width: 16.66%;
+    height: auto;
+    float: left;
+}
+
+
+
+/*------- content-------*/
+
+#content .container {
+    display: block;
+    max-width: 1250px;
+    padding:60px 0 50px 0;
+}
+
+#content .join-button{
+    padding-bottom: 30px;
+}
+
+
+#content .content h2 {
+    color: white;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+#content .content h2::before {
+    font-family: 'FontAwesome';
+    content: '\f138';
+    font-size: 25px;
+    padding-right: 18px;
+    position: relative;
+    top:3px;
+}
+
+
+#content .download-button h2::after {
+    font-family: 'FontAwesome';
+    content: '\f019';
+    font-size: 50px;
+    padding-left: 30px;
+    position:relative;
+    top:20px;
+    outline: none;
+}
+
+
+#content .content h3 {
+    color: white;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    padding-left: 45px;
+}
+
+
+#content .content h3::before {
+    font-family: 'FontAwesome';
+    content: '\f091';
+    font-size: 20px;
+    padding-right: 18px;
+    position: relative;
+    top:1px;
+}
+
+
+#content .content h4 {
+    color: white;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    padding-left: 80px;
+
+}
+
+
+#content .content h4::before {
+    font-family: 'FontAwesome';
+    content: '\f101';
+    font-size: 15px;
+    padding-right: 15px;
+    position: relative;
+    top:1px;
+}
+
+
+#content .content p {
+    color: white;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    padding-left: 45px;
+    text-align: justify;
+}
+
+
+#content .join-button img:hover{
+    opacity: 0.5;
+}
+
+
+
+/*------------modal--------------*/
+
+
+.modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 99999999;
+    opacity: 0;
+    display: none;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    position: absolute;
+    width: 470px;
+    height: 200px;
+ 
+    border-radius: 10px;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    margin-left: -235px;
+    margin-top: -250px;
+ 
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+ 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+ 
+    margin-right: -50%;
+    padding: 5px;
+ 
+    background: #fff;
+ 
+    -webkit-box-shadow: 0 0 18px 3px rgba(0, 0, 0, .07);
+    -moz-box-shadow: 0 0 18px 3px rgba(0, 0, 0, .07);
+    box-shadow: 0 0 18px 3px rgba(0, 0, 0, .07);
+}
+.modalDialog > div > p {
+    margin: 5px;
+}
+ 
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    cursor: pointer;
+}
+ 
+.close:hover {
+    background: #0088dd;
+}
+
+#openModal img {
+padding:60px 75px;
+}
+
+
+#openModal img:hover{
+opacity: 0.8;
+}
+
+
+
+
+/*----------------footer-----------------*/
+
+.footer {
+    background-color: black;
+    height: 70px;
+}
+
+.footer p {
+    color: white;
+    text-align: center;
+    padding-top: 25px;
+    letter-spacing: 2px;
+}
+
+
+
+
