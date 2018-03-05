@@ -97,7 +97,15 @@ background-color: #0d0218; /* Old browsers */
     font-size: 17px;
 }
 
-.dropdown-toggle p::before{
+.dropdown-toggle.login p::before{
+    font-family: 'FontAwesome';
+    content: '\f090';
+    font-size: 25px;
+    padding-right: 18px;
+    position: relative;
+    top:3px;
+}
+.dropdown-toggle.logout p::before{
     font-family: 'FontAwesome';
     content: '\f090';
     font-size: 25px;

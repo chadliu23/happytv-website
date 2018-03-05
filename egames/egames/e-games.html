@@ -38,7 +38,7 @@
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="fukurou-award.html"><img src="/images/egames/happy-tv-logo.png"></a>
+                    <a class="navbar-brand" href="/egames/fukurou-award.html"><img src="/images/egames/happy-tv-logo.png"></a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
                         <span class="sr-only">nav</span>
                         <span class="icon-bar"></span>
@@ -48,22 +48,20 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+                        <li class="dropdown" id='member-tag' style="display: none">
+                        </li>
+                        <li class="dropdown dropdown-toggle" id='login-tag'>
+                            <a class="dropdown-toggle login" data-toggle="dropdown" href="#" role="button">
                                 <p onclick="openPopup()">登入<span class="caret"></span></p>
                             </a>
-                            <div id="dropdown" style="display:none";>
-                                <ul class="dropdown-menu collapse">
-                                    <li><a href="#">戰隊資訊</a></li>
-                                </ul>
-                            </div>
+                            
                         </li>
                     </ul>
                 </div>
                 <div id="openModal" class="modalDialog">
                     <div>
                         <div onclick="closePopup()" title="Close" class="close">X</div>
-                        <a href="#"><img src="/images/egames/fb-button.png"></a>
+                        <a href="#" onclick='loginFacebook()'><img src="/images/egames/fb-button.png"></a>
                     </div>
                 </div>
             </div>
@@ -138,6 +136,8 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/js.cookie.js" ></script>
+    <script src="/js/egames/login.js"></script>
     <script type="text/javascript">
     $(function() {
         $("#gotop").click(function() {
