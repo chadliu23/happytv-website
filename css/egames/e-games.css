@@ -107,7 +107,7 @@ background-color: #0d0218; /* Old browsers */
 }
 .dropdown-toggle.logout p::before{
     font-family: 'FontAwesome';
-    content: '\f090';
+    content: "\f08b";
     font-size: 25px;
     padding-right: 18px;
     position: relative;
