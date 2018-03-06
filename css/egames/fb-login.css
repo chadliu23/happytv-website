@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+
+
+/* CSS Document */
+
+#fb-login .fb-login .container {
+    display: block;
+    text-align: center;
+    padding: 70px 90px 150px 90px;
+}
+
+
+#fb-login .fb-login img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+#fb-login .fb-login img:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+
+#fb-login .fb-login p{
+font-size:15px;
+color: white;
+letter-spacing: 2px;
+padding-bottom: 20px;
+}
+
+#check-correct .check-correct .container {
+    display: block;
+    text-align: center;
+    padding: 80px 90px 150px 90px;
+}
+
+
+#check-correct .check-correct .correct-input {
+background-color:rgba(0,0,0,0.6);
+color: white;
+border: none;
+text-align: center;
+font-size: 15px;
+letter-spacing: 3px;
+width: 380px;
+height:60px;
+outline: none;
+cursor:initial;
+}
