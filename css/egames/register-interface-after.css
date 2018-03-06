@@ -10,7 +10,7 @@
 
 /*-----------register-------------*/
 
-#register .table .text-input {
+#register .table .button-input {
     width: 160px;
     height: 40px;
     font-size: 15px;
@@ -114,3 +114,9 @@
 
 
 
+.for-display {
+    
+}
+.for-input {
+    display: none; 
+}

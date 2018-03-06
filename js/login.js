@@ -199,7 +199,6 @@ function logout() {
         type: 'POST',
         headers: {
           "accesskey": "accessKey_k46zs4fyf4rbajev6px4384uztxhd3hrtdmu2btgzubtrpz9cpsnrnfqfhruyshp",
-          "Access-Control-Allow-Origin":"http://172.18.1.86:8000"
         },
         dataType: 'json',
         data: { "google_id_token": user.getAuthResponse().id_token, "google_access_token": user.getAuthResponse().access_token  },

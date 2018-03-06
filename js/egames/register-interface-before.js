@@ -71,7 +71,7 @@ function logout() {
 
 
 function succuessLogin(data){
-   $('#member-tag').css('display', 'block');
+  $('#member-tag').css('display', 'block');
   var avatar =  data.result.member_image;
   $('#member-tag').html( 
     '<a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">' +
@@ -108,18 +108,25 @@ function getParameterByName(name, url) {
 $(document).ready(function(){
 
   if (Cookies.get("member_token") !== undefined){
+
+      $('#member_id').val(Cookies.get('member_id'));
       $('#member-tag').css('display', 'block');
-        var avatar =  Cookies.get('member_image');
-        $('#member-tag').html( 
-        '<a class="dropdown-toggle " data-toggle="dropdown" role="button" href="#">' +
-          '<p><img height="18" src= '+avatar + ' /> '+ Cookies.get('member_nickname') + 
-        '<span class="caret"></span></p></a>' +
-        '<ul class="dropdown-menu collapse">' +
-        '<li><a href="#">戰隊資訊</a></li>'+
-        '</ul>');
-        $('#login-tag').html( '<a class="dropdown-toggle logout" onclick="logout()" href="#"><p>' + '登出</p></a>');
-        if ($('#username') !== undefined){
-            $('#username').html(Cookies.get('member_nickname') + ' ( ID: ' + Cookies.get('member_id')+ ')');
-        }
+      var avatar =  Cookies.get('member_image');
+      $('#member-tag').html( 
+      '<a class="dropdown-toggle " data-toggle="dropdown" role="button" href="#">' +
+        '<p><img height="18" src= '+avatar + ' /> '+ Cookies.get('member_nickname') + 
+      '<span class="caret"></span></p></a>' +
+      '<ul class="dropdown-menu collapse">' +
+      '<li><a href="#">戰隊資訊</a></li>'+
+      '</ul>');
+      $('#login-tag').html( '<a class="dropdown-toggle logout" onclick="logout()" href="#"><p>' + '登出</p></a>');
+      if ($('#username') !== undefined){
+          $('#username').html(Cookies.get('member_nickname') + ' ( ID: ' + Cookies.get('member_id')+ ')');
+      }
+  }else{
+    $('#openModal').css({ 'display': 'block' });
+        setTimeout(function() {
+            $('#openModal').css({ 'opacity': '1', 'pointer-events': 'auto' });
+        }, 500);
   }
 });

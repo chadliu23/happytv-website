@@ -53,7 +53,7 @@
                         </li>
                         <li class="dropdown dropdown-toggle" id='login-tag'>
                             <a class="dropdown-toggle login" data-toggle="dropdown" href="#" role="button">
-                                <p onclick="openPopup()">登入<span class="caret"></span></p>
+                                <p onclick="openPopup()">登入</p>
                             </a>
                             
                         </li>
@@ -87,6 +87,8 @@
             </div>
         </div>
     </div>
+    <form action='https://api-product.happytv.com.tw/api/v3/egame/2018-01/create' method='post' enctype="multipart/form-data" >
+        <input id='member_id' name='member_id' type="number" class="text-input" hidden="true">
     <div id="register">
         <div class="register-button-img">
             <div class="container">
@@ -97,8 +99,8 @@
         <div class="register">
             <div class="container">
                 <h2>隊伍名稱</h2>
-                <input type="text" class="team-name" name="team-name" placeholder="限中、英、數字">
-                <p>( 最多8個中文/16英文字元 )</p>
+                <input type="text" class="team-name" name="team_name" placeholder="限中、英、數字" maxlength="16" required>
+                <p>(最多16字)</p>
                 <div class="table">
                     <div class="container">
                         <table>
@@ -111,198 +113,154 @@
                                     <th>學號</th>
                                     <th>手機電話</th>
                                     <th>E-MAIL</th>
-                                    <th>MAIL驗證</th>
-                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td class="table-title">隊長</td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='summoner_0' type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input" maxlength="4">
+                                        <input name='name_0' type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='school_name_0'  type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='student_id_0'  type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="tel" class="text-input" maxlength="10">
+                                        <input name='phone_0'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input" value="驗證成功">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input re-send" value="重寄認證信">
+                                        <input name='email_0'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="table-title">隊員1</td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='summoner_1' type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input" maxlength="4">
+                                        <input name='name_1' type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='school_name_1'  type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='student_id_1'  type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="tel" class="text-input" maxlength="10">
+                                        <input name='phone_1'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}"  title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input" value="驗證成功">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input re-send" value="重寄認證信">
+                                        <input name='email_1'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="table-title">隊員2</td>
-                                    <td>
-                                        <input type="text" class="text-input">
+                                   <td>
+                                        <input name='summoner_2' type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input" maxlength="4">
+                                        <input name='name_2' type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='school_name_2'  type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='student_id_2'  type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="tel" class="text-input" maxlength="10">
+                                        <input name='phone_2'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input" value="驗證成功">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input re-send" value="重寄認證信">
+                                        <input name='email_2'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="table-title">隊員3</td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='summoner_3' type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input" maxlength="4">
+                                        <input name='name_3' type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='school_name_3'  type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='student_id_3'  type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="tel" class="text-input" maxlength="10">
+                                        <input name='phone_3'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input" value="驗證成功">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input re-send" value="重寄認證信">
+                                        <input name='email_3'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="table-title">隊員4</td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='summoner_4' type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input" maxlength="4">
+                                        <input name='name_4' type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='school_name_4'  type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='student_id_4'  type="text" class="text-input" required>
                                     </td>
                                     <td>
-                                        <input type="tel" class="text-input" maxlength="10">
+                                        <input name='phone_4'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input" value="驗證成功">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input re-send" value="重寄認證信">
+                                        <input name='email_4'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="table-title">後補5</td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='summoner_5' type="text" class="text-input" >
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input" maxlength="4">
+                                        <input name='name_5' type="text" class="text-input" >
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='school_name_5'  type="text" class="text-input" >
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='student_id_5'  type="text" class="text-input" >
                                     </td>
                                     <td>
-                                        <input type="tel" class="text-input" maxlength="10">
+                                        <input name='phone_5'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input" value="驗證成功">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input re-send" value="重寄認證信">
+                                        <input name='email_5'  type="text" class="text-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="table-title">後補6</td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='summoner_6' type="text" class="text-input">
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input" maxlength="4">
+                                        <input name='name_6' type="text" class="text-input" >
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='school_name_6'  type="text" class="text-input" >
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input name='student_id_6'  type="text" class="text-input" >
                                     </td>
                                     <td>
-                                        <input type="tel" class="text-input" maxlength="10">
+                                        <input name='phone_6'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input" value="驗證成功">
-                                    </td>
-                                    <td>
-                                        <input type="button" class="button-input re-send" value="重寄認證信">
+                                        <input name='email_6'  type="text" class="text-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                 </tr>
                             </tbody>
@@ -345,57 +303,50 @@
         <div class="student-upload">
             <div class="container">
                 <span>隊長</span>
-                <input type="file" class="file-input">
-                <input type="file" class="file-input">
-                <input type="button" class="button-input" value="上傳">
+                <input type="file" name='id_front_photo_0' class="file-input form-control" accept="image/*">
+                <input type="file" name='id_back_photo_0'  class="file-input form-control" accept="image/*">
             </div>
         </div>
         <div class="student-upload">
             <div class="container">
                 <span>隊員1</span>
-                <input type="file" class="file-input">
-                <input type="file" class="file-input">
-                <input type="button" class="button-input" value="上傳">
+                <input type="file" name='id_front_photo_1' class="file-input form-control" accept="image/*">
+                <input type="file" name='id_back_photo_1'  class="file-input form-control" accept="image/*">
             </div>
         </div>
         <div class="student-upload">
             <div class="container">
                 <span>隊員2</span>
-                <input type="file" class="file-input">
-                <input type="file" class="file-input">
-                <input type="button" class="button-input" value="上傳">
+                <input type="file" name='id_front_photo_2' class="file-input form-control" accept="image/*">
+                <input type="file" name='id_back_photo_2'  class="file-input form-control" accept="image/*">
             </div>
         </div>
         <div class="student-upload">
             <div class="container">
                 <span>隊員3</span>
-                <input type="file" class="file-input">
-                <input type="file" class="file-input">
-                <input type="button" class="button-input" value="上傳">
+                <input type="file" name='id_front_photo_3' class="file-input form-control" accept="image/*">
+                <input type="file" name='id_back_photo_3'  class="file-input form-control" accept="image/*">
             </div>
         </div>
         <div class="student-upload">
             <div class="container">
                 <span>隊員4</span>
-                <input type="file" class="file-input">
-                <input type="file" class="file-input">
-                <input type="button" class="button-input" value="上傳">
+                <input type="file" name='id_front_photo_4' class="file-input form-control" accept="image/*">
+                <input type="file" name='id_back_photo_4'  class="file-input form-control" accept="image/*">
             </div>
         </div>
         <div class="student-upload">
             <div class="container">
                 <span>後補5</span>
-                <input type="file" class="file-input">
-                <input type="file" class="file-input">
-                <input type="button" class="button-input" value="上傳">
+                <input type="file" name='id_front_photo_5' class="file-input form-control" accept="image/*">
+                <input type="file" name='id_back_photo_5'  class="file-input form-control" accept="image/*">
             </div>
         </div>
         <div class="student-upload">
             <div class="container">
                 <span>後補6</span>
-                <input type="file" class="file-input">
-                <input type="file" class="file-input">
-                <input type="button" class="button-input" value="上傳">
+                <input type="file" name='id_front_photo_6' class="file-input form-control" accept="image/*">
+                <input type="file" name='id_back_photo_6'  class="file-input form-control" accept="image/*">
             </div>
         </div>
     </div>
@@ -403,11 +354,11 @@
         <div class="bottom-button">
             <div class="container">
                 <img onclick="openPopup2()" src="/images/egames/qa-button.png">
-                <img src="/images/egames/edit-button.png">
-                <img src="/images/egames/send-button.png">
+                <button type='submit'> <img src="/images/egames/send-button.png"> </button>
             </div>
         </div>
     </div>
+    </form>
     <div id="qa-openModal" class="qa-modalDialog">
         <div>
             <div onclick="closePopup2()" title="Close" class="qa-close">X</div>
@@ -428,7 +379,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
     <script src="/js/js.cookie.js" ></script>
-    <script src="/js/egames/login.js"></script>
+    <script src='/js/egames/register-interface-before.js'></script>
     <script type="text/javascript">
     $(function() {
         $("#gotop").click(function() {
