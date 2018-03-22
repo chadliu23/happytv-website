@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+
+
+
+/* CSS Document */
+
+
+
+
+#home .col-md-3,
+#menu1 .col-md-3,
+	#menu2 .col-md-3,
+		#menu3 .col-md-3,
+			#menu4 .col-md-3 {
+	padding: 25px;
+}
+
+
+#home .col-md-3 h3,
+#menu1 .col-md-3 h3,
+	#menu2 .col-md-3 h3,
+		#menu3 .col-md-3 h3,
+			#menu4 .col-md-3 h3{
+	font-size: 15px;
+	padding-top:10px;
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+
+#home .col-md-3 img,
+#menu1 .col-md-3 img,
+	#menu2 .col-md-3 img,
+		#menu3 .col-md-3 img,
+			#menu4 .col-md-3 img{
+
+	border-radius: 4px;
+}
+
+#home .col-md-3 span,
+#menu1 .col-md-3 span,
+	#menu2 .col-md-3 span,
+		#menu3 .col-md-3 span,
+			#menu4 .col-md-3 span{
+position: absolute;
+right: 5px;
+top:12px;
+}
