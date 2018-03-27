@@ -20,12 +20,12 @@ p {
 }
 
 body {
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2db4e8+35,4aeecd+100 */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2db4e8+0,4efcf0+100 */
 background: #2db4e8; /* Old browsers */
-background: -moz-linear-gradient(-45deg, #2db4e8 35%, #4aeecd 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg, #2db4e8 35%,#4aeecd 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg, #2db4e8 35%,#4aeecd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2db4e8', endColorstr='#4aeecd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+background: -moz-linear-gradient(left, #2db4e8 0%, #4efcf0 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #2db4e8 0%,#4efcf0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #2db4e8 0%,#4efcf0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2db4e8', endColorstr='#4efcf0',GradientType=1 ); /* IE6-9 */
 }
 
 
@@ -115,14 +115,14 @@ display: none;
 
 
 .text .title {
-    padding-left: 85px;
+    padding-left: 100px;
     width: 100%;
 }
 
 
 .text .title p {
-    font-size: 40px;
-    font-style: italic;
+    font-size: 37px;
+    font-style: italic;;
     color: white;
     letter-spacing: 3px;
 }
@@ -149,12 +149,11 @@ display: none;
 
 
 .text .way p {
-    font-size: 35px;
+    font-size: 28px;
     color: white;
     font-weight: 500;
     letter-spacing: 3px;
     line-height: 70px;
-    font-style: italic;
     display: inline-block;
 }
 
@@ -171,6 +170,13 @@ display: none;
 .text .blank {
     padding-left: 155px;
 }
+
+.text .blank2 {
+    padding-left: 125px;
+}
+
+
+
 
 
 
@@ -282,14 +288,15 @@ display: block;
 
 
 .text .title p {
-    font-size: 25px;
+    font-size: 24px;
+    letter-spacing: 1px;
 }
 
 
 
 .text .content-phone,
 .text .way {
-    padding-left: 40px;
+    padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
     padding-bottom: 50px;
@@ -297,13 +304,13 @@ display: block;
 
 
 .text .content-phone p {
-    font-size: 19px;
+    font-size: 18px;
     color: white;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 0px;
-    line-height: 35px;
+    line-height: 40px;
     text-align: justify;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .text .content-phone .before{
@@ -319,9 +326,9 @@ padding-top:10px;
 
 
 .text .way p {
-    font-size: 18px;
+    font-size: 17px;
     color: white;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 1px;
     line-height: 35px;
     text-align: justify;
@@ -335,7 +342,7 @@ padding-top:10px;
 .text .way .img {
 	display: block;
  text-align: center;
- margin-bottom: 0px;
+ margin: 20px;
 
 }
 
@@ -478,14 +485,13 @@ cursor: pointer;
 .vote-area .title-boy p {
     padding: 10px 0;
     font-size: 30px;
-    color: white;
+    color: #73dadf;
     font-weight: 600;
     letter-spacing: 3px;
     text-align: center;
         padding: 15px;
-    background-color: #79d6ed;
+    background-color: white;
     border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(86,179,183,1);
 }
 
 .vote-area .title-boy p::before{
@@ -494,12 +500,6 @@ cursor: pointer;
     padding-right: 20px;
     font-size: 35px;
     }
-
-
-.vote-area .title-girl p {
-    background-color: #73dadf;
-     
-}
 
 
 
@@ -523,7 +523,7 @@ display: none;
 }
 
 .vote-area .send-out p:hover{
-	 background-color: #13a49f;
+	 background-color: #17c1cc;
 	 color: white;
 	 cursor: pointer;
 
@@ -645,13 +645,24 @@ font-weight: 600;
 .vote-area .vote-box .button-box p.selected,
 .vote-area .vote-box .button-box p:hover{
 cursor: pointer;
-background-color: #13a49f;
+background-color: #17c1cc;
 color: white;
 }
 
 
 /* go-top */
 
+
+#gotop img {
+    display: block;
+    position:fixed;
+    bottom: 55px;
+    right:0;
+}
+
+
+
+@media (max-width: 767px) {
 
 #gotop img {
 	display: block;
@@ -661,7 +672,7 @@ color: white;
 }
 
 
-
+}
 
 
 
