@@ -101,11 +101,12 @@ width: 100%;
 .navbar-right p{
     font-size: 16px;
         padding-top: 17px;
+text-decoration: none;
 }
 
 .navbar-right p::before{
     font-size: 25px;
-
+text-decoration: none;
 }
 
 
