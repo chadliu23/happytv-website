@@ -102,11 +102,13 @@ width: 100%;
     font-size: 16px;
         padding-top: 17px;
 text-decoration: none;
+outline: none;
 }
 
 .navbar-right p::before{
     font-size: 25px;
 text-decoration: none;
+outline: none;
 }
 
 
