@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="快樂,快樂直播,快樂app,快樂官網,直播,明星直播,快樂下載,快樂直播下載,快樂app下載,全民直播,美女直播,高顏值直播">
+    <meta name="description" content="快樂直播,實事、高清、快捷、流暢的視頻直播平臺,中國全新的視頻社交媒體,明星大咖、網路紅人、時尚娛樂、高顏值、視頻交友等盡在快樂直播app">
+    <meta name="apple-mobile-web-app-title" content="快樂電視官網">
+    <meta property="og:tilte" content="享受精采賽事，盡在快樂電視!!!">
+    <meta property="og:image" content="images/h_mata_img.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome-webfont.ttf">
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-84079620-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <!--header-->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a class="navbar-brand" href="hbl-vote.html"><img src="images/happy-tv-logo.png"></a>
+        </div>
+        <div class="navbar-right">
+            <p onclick="openPopup()">登入</p>
+        </div>
+        <div id="openModal" class="modalDialog">
+            <div>
+                <div onclick="closePopup()" title="Close" class="close">X</div>
+                <a href="#"><img src="images/fb-button.png"></a>
+            </div>
+        </div>
+    </nav>
+    <div class="banner">
+        <img src="images/banner.png">
+    </div>
+
+<!--for-phone-->
+
+    <div class="banner-phone">
+        <img src="images/banner-phone.png">
+    </div>
+
+
+    <div class="middle-bar">
+ <a href="winner.html"><img src="images/index-button_01.png"></a>
+        <a href="favorite-star.html"><img src="images/index-button_02.png"></a>
+        <a href="https://www.happytv.com.tw/hbl-power.html"><img src="images/index-button_03.png"></a>
+        <a href="https://www.happytv.com.tw/hbl-star.html"> <img src="images/index-button_04.png"></a>
+        <a href="https://www.happytv.com.tw/hbl-walk.html"> <img src="images/index-button_05.png"></a>
+    </div>
+</div>
+    <!--footer-->
+    <div id="footer">
+        <div class="footer container-fluid">
+            <p>Copyright © HAPPY TV 2018 All Rights Reserved.</p>
+        </div>
+    </div>
+    <!--modal-js-->
+    <script type="text/javascript">
+    function openPopup() {
+        $('#openModal').css({ 'display': 'block' });
+        setTimeout(function() {
+            $('#openModal').css({ 'opacity': '1', 'pointer-events': 'auto' });
+        }, 500);
+    }
+
+    function closePopup() {
+        $('#openModal').css({ 'opacity': '0', 'pointer-events': 'none' });
+        setTimeout(function() {
+            $('#openModal').css({ 'display': 'none' });
+        }, 500);
+    };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

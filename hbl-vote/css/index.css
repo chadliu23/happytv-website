@@ -1,0 +1,336 @@
+@charset "utf-8";
+
+
+/* CSS Document */
+
+/*---------font----------*/
+
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600');
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+
+body {
+    padding-top: 70px;
+background-color: #ebebeb !important;
+overflow-x: none;
+}
+
+p {
+    font-weight: 800;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+    *, *:before, *:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+/*------- top-bar-------*/
+
+.navbar {
+     width: 100%;
+    height: 70px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top:0;
+    z-index: 99999;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d80000+0,c60000+44,911b1b+100 */
+background: #d80000; /* Old browsers */
+background: -moz-linear-gradient(left, #d80000 0%, #c60000 44%, #911b1b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #d80000 0%,#c60000 44%,#911b1b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #d80000 0%,#c60000 44%,#911b1b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d80000', endColorstr='#911b1b',GradientType=1 ); /* IE6-9 */
+   
+}
+
+
+.navbar-left {
+    float: left;
+    padding-left: 25px;
+    padding-top:5px;
+}
+
+.navbar-right {
+    float:right;
+    color: white;
+     padding-right: 25px;
+}
+
+
+.navbar-right p{
+    color: black;
+    padding-top: 20px;
+    letter-spacing: 2px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.navbar-right p::before{
+    font-family: 'FontAwesome';
+    content: '\f090';
+    font-size: 25px;
+    padding-right: 18px;
+    position: relative;
+    top:3px;
+}
+
+
+
+@media (max-width: 767px) {
+
+
+.navbar {
+    height: 60px;
+}
+
+    .navbar-left {
+        padding-left: 10px;
+    padding-top:8px;
+}
+
+
+.navbar-left img{
+width: 80%;
+}
+
+
+.navbar-right p{
+    font-size: 16px;
+        padding-top: 17px;
+}
+
+.navbar-right p::before{
+    font-size: 25px;
+
+}
+
+
+
+}
+
+
+
+
+/*------- banner-------*/
+
+
+.banner {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.banner img{
+    width: 100%;
+    height: auto;
+}
+
+.banner-phone {
+    display: none;
+}
+
+@media (max-width: 767px) {
+
+.banner {
+display: none;
+}
+
+
+.banner-phone {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+
+}
+
+
+
+
+
+/*------- middle-bar-------*/
+
+
+.middle-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+
+.middle-bar img {
+    width: 20%;
+    height: auto;
+    float: left;
+
+}
+
+
+.middle-bar img:hover{
+opacity: 0.7;
+
+}
+
+
+
+@media (max-width: 767px) {
+
+
+
+.middle-bar {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.middle-bar img {
+    width: 100%;
+    height: auto;
+    float: left;
+
+}
+
+}
+
+
+/* view effect */
+
+
+/*------------modal--------------*/
+
+
+.modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 99999999;
+    opacity: 0;
+    display: none;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    position: absolute;
+    width: 470px;
+    height: 200px;
+ 
+    border-radius: 10px;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    margin-left: -235px;
+    margin-top: -250px;
+ 
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+ 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+ 
+    margin-right: -50%;
+    padding: 5px;
+ 
+    background: #fff;
+ 
+    -webkit-box-shadow: 0 0 18px 3px rgba(0, 0, 0, .07);
+    -moz-box-shadow: 0 0 18px 3px rgba(0, 0, 0, .07);
+    box-shadow: 0 0 18px 3px rgba(0, 0, 0, .07);
+}
+.modalDialog > div > p {
+    margin: 5px;
+}
+ 
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    cursor: pointer;
+}
+ 
+.close:hover {
+    background: #0088dd;
+}
+
+#openModal img {
+padding:60px 75px;
+}
+
+
+#openModal img:hover{
+opacity: 0.8;
+}
+
+
+
+
+/*----------------footer-----------------*/
+
+.footer {
+background: #000;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border: 0;
+        position: fixed;
+    bottom: 0;
+
+}
+
+.footer p {
+    font-family: 'Raleway', sans-serif;
+    color: #f3f3f3;
+    text-align: center;
+    padding-top: 22px;
+    letter-spacing: 3px;
+    font-size:13px;
+    font-weight: 1500;
+}
+
+
+
+@media (max-width: 767px) {
+
+.footer {
+}
+
+
+.footer p {
+    font-family: 'Raleway', sans-serif;
+    color: #f3f3f3;
+    text-align: center;
+    padding-top: 22px;
+    letter-spacing: 0px;
+    font-size:12px;
+    font-weight: 1500;
+}
+
+}
