@@ -71,6 +71,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2db4e8', end
 }
 
 
+
 @media (max-width: 767px) {
 
     .banner {
@@ -80,7 +81,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2db4e8', end
 
     .banner-phone {
         display: block;
-        width: 100%;
+        max-width: 100%;
         height: auto;
         text-align: center;
         position: relative;
@@ -120,7 +121,7 @@ display: none;
 
 
 .text .title p {
-    font-size: 45px;
+    font-size: 40px;
     font-style: italic;
     color: white;
     letter-spacing: 3px;
@@ -138,17 +139,17 @@ display: none;
 
 
 .text .content p {
-    font-size: 30px;
+    font-size: 29px;
     color: white;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 3px;
-    line-height: 50px;
+    line-height: 55px;
 }
 
 
 
 .text .way p {
-    font-size: 37px;
+    font-size: 35px;
     color: white;
     font-weight: 500;
     letter-spacing: 3px;
@@ -334,14 +335,18 @@ padding-top:10px;
 .text .way .img {
 	display: block;
  text-align: center;
- margin-bottom: 10px;
+ margin-bottom: 0px;
+
+}
+
+
 }
 
 }
 
+.fb-like {
+    padding-left: 20px;
 }
-
-
 
 /* fb-button */
 
@@ -651,7 +656,7 @@ color: white;
 #gotop img {
 	display: block;
 	position:fixed;
-	bottom: 55px;
+	bottom: 5px;
 	right:0;
 }
 
@@ -687,6 +692,22 @@ background: #000;
 
 
 @media (max-width: 767px) {
+
+
+
+.footer {
+background: #000;
+    height: 50px;
+    max-width: 100%;
+    margin-top: 0px;
+    border: 0;
+        position: relative;
+        top:20px;
+    bottom: 0;
+    left:0;
+    clear: both;
+
+}
 
 
 .footer p {

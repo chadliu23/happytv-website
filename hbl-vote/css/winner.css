@@ -118,7 +118,7 @@ display: none;
 
 
 .text .title p {
-    font-size: 40px;
+    font-size: 35px;
     font-style: italic;
     color: black;
     letter-spacing: 3px;
@@ -138,9 +138,10 @@ display: none;
 .text .content p {
     font-size: 25px;
     color: black;
-    font-weight: 1000;
+    font-weight: 800;
     letter-spacing: 4px;
     line-height: 50px;
+    font-style: italic;
 }
 
 
@@ -166,7 +167,7 @@ display: none;
 }
 
 .text .blank {
-    padding-left: 155px;
+    padding-left: 130px;
 }
 
 
@@ -647,7 +648,7 @@ color: black;
 #gotop img {
 	display: block;
 	position:fixed;
-	bottom: 55px;
+	bottom: 5px;
 	right:0;
 }
 
@@ -685,6 +686,20 @@ background: #000;
 @media (max-width: 767px) {
 
 
+.footer {
+background: #000;
+    height: 50px;
+    max-width: 100%;
+    margin-top: 0px;
+    border: 0;
+        position: relative;
+        top:20px;
+    bottom: 0;
+    left:0;
+    clear: both;
+
+}
+
 .footer p {
     font-family: 'Raleway', sans-serif;
     color: #f3f3f3;
@@ -695,4 +710,10 @@ background: #000;
     font-weight: 1500;
 }
 
+}
+
+
+
+.fb-like {
+    padding-left: 20px;
 }

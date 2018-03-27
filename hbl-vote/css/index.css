@@ -50,7 +50,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d80000', end
 .navbar-left {
     float: left;
     padding-left: 25px;
-    padding-top:5px;
+    padding-top:10px;
 }
 
 .navbar-right {
@@ -62,9 +62,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d80000', end
 
 .navbar-right p{
     color: black;
-    padding-top: 20px;
+    padding-top: 21px;
     letter-spacing: 2px;
-    font-size: 20px;
+    font-size: 19px;
     cursor: pointer;
 }
 
@@ -94,7 +94,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d80000', end
 
 
 .navbar-left img{
-width: 80%;
+width: 100%;
 }
 
 
@@ -135,18 +135,31 @@ width: 80%;
 
 @media (max-width: 767px) {
 
-.banner {
-display: none;
-}
+
+@media (max-width: 767px) {
+
+    .banner {
+        display: none;
+    }
 
 
-.banner-phone {
-    display: block;
-    max-width: 100%;
+    .banner-phone {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        text-align: center;
+        position: relative;
+        top:-10px;
+      
+    }
+
+
+
+.banner-phone img {
+    width: 100%;
     height: auto;
-    text-align: center;
 }
-
+}
 
 }
 
@@ -320,8 +333,18 @@ background: #000;
 @media (max-width: 767px) {
 
 .footer {
-}
+background: #000;
+    height: 50px;
+    max-width: 100%;
+    margin-top: 0px;
+    border: 0;
+        position: relative;
+        top:20px;
+    bottom: 0;
+    left:0;
+    clear: both;
 
+}
 
 .footer p {
     font-family: 'Raleway', sans-serif;
