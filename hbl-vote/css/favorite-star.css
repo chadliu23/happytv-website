@@ -30,6 +30,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2db4e8', end
 
 
 
+.stay {
+    text-align: center;
+}
+
+.stay p {
+    font-size: 30px;
+    color: white;
+    letter-spacing: 3px;
+}
+
+
+
 
 /* top-bar */
 
