@@ -628,6 +628,12 @@ font-weight: 500;
      font-style: initial;
 }
 
+.vote-area .vote-box .button-box p.selected{
+cursor: pointer;
+background-color: red;
+color: black;
+}
+
 .vote-area .vote-box .button-box p:hover{
 cursor: pointer;
 background-color: red;

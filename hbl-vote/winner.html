@@ -3,13 +3,23 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="快樂,快樂直播,快樂app,快樂官網,直播,明星直播,快樂下載,快樂直播下載,快樂app下載,全民直播,美女直播,高顏值直播">
+    <meta name="keywords" content="happy tv,快樂,快樂直播,快樂app,快樂官網,直播,明星直播,快樂下載,快樂直播下載,快樂app下載,全民直播,美女直播,高顏值直播,HBL,HBL乙級,HBL乙級賽事,HBL票選,票選,票選活動,冠軍隊伍">
     <meta name="description" content="快樂直播,實事、高清、快捷、流暢的視頻直播平臺,中國全新的視頻社交媒體,明星大咖、網路紅人、時尚娛樂、高顏值、視頻交友等盡在快樂直播app">
-    <meta name="apple-mobile-web-app-title" content="快樂電視官網">
-    <meta property="og:tilte" content="享受精采賽事，盡在快樂電視!!!">
-    <meta property="og:image" content="images/h_mata_img.jpg">
+    <meta name="copyright" content="Copyright © HAPPY TV 2018 All Rights Reserved.">
+    <meta property="og:tilte" content="【 HBL乙級 】 票選心目中的冠軍隊伍">
+    <meta property="og:image" content="images/banner_03.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="all" name="robots" />
+    
+    <title>【 HBL乙級 】 票選心目中的冠軍隊伍</title>
+    
+    <link rel="apple-touch-icon" href="/images/Icon@2.png" /> <!-- 57×57px -->
+    <link rel="apple-touch-icon" sizes="72×72" href="/images/Icon@2.png" /> <!-- 72×72px ipad-->
+    <link rel="apple-touch-icon" sizes="114×114" href="/images/Icon@2.png" />
+    <link rel="icon" href="/images/favicon.ico" type="image/png" />
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/winner.css">
@@ -39,13 +49,17 @@
         <div class="navbar-left">
             <a class="navbar-brand" href="hbl-vote.html"><img src="images/happy-tv-logo.png"></a>
         </div>
-        <div class="navbar-right">
-            <p onclick="openPopup()">登入</p>
-        </div>
+        <ul class="navbar-right">
+            <li class="" id='member-tag' style="display: none">
+            </li>
+            <li id='login-tag' class='' style="display: inline-block;">
+                <p  onclick="openPopup()" >登入</p>
+            </li>
+        </ul>
         <div id="openModal" class="modalDialog">
             <div>
                 <div onclick="closePopup()" title="Close" class="close">X</div>
-                <a href="#"><img src="images/fb-button.png"></a>
+                <a href="#" onclick='loginFacebook()'><img src="images/fb-button.png"></a>
             </div>
         </div>
     </nav>
@@ -87,23 +101,25 @@
             <div class="way">
                 <p>Step 1. HappyTV 粉絲專頁按讚追蹤</p>
                 <div class="img">
-                    <img src="images/fb_01.png">
+                    <div class="fb-like" data-href="https://www.facebook.com/happytv.com.tw/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
                 </div>
                 <p>Step 2. HappyTV YouTube 追蹤+開鈴鐺</p>
                 <div class="img">
-                    <img src="images/youtube_01.png">
+                    <a href="http://www.youtube.com/channel/UCvKez7HK8fOyCMPh2TN0hvQ?sub_confirmation=1" target='_blank'>
+                        <img src="images/youtube_01.png">
+                    </a>
                 </div>
                 <p>Step 3. 點選自己喜歡的隊伍 並按下送出，即完成投票步驟</p>
             </div>
         </div>
 
 
-<div class="fb-button">
+<div class="fb-button" onclick='loginFacebook()'>
 <p>登入facebook</p>
 </div>
 
 
-        <div class="vote-area">
+        <div class="vote-area" style="display: none">
             <div class="title-boy">
                 <p>男生組</p>
             </div>
@@ -118,8 +134,8 @@
                     <p>1. 台東高中</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("男生組","台東高中")'>分享</p>
+                    <p id='boy-winner-1' class='boy-winner ' onclick='selectWinner("boy",1);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
@@ -130,8 +146,8 @@
                     <p>2. 立仁高中</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("男生組","立仁高中")'>分享</p>
+                    <p id='boy-winner-2'  class='boy-winner ' onclick='selectWinner("boy",2);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
@@ -142,68 +158,68 @@
                     <p>3. 成功高中</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("男生組","成功高中")'>分享</p>
+                    <p id='boy-winner-3'  class='boy-winner ' onclick='selectWinner("boy",3);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
                 <div class="img-box">
-                    <img src="images/winner-boy_04.JPG">
+                    <img src="http://via.placeholder.com/600x400">
                 </div>
                 <div class="text-wrapper">
                     <p>4. 海星高中</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("男生組","海星高中")'>分享</p>
+                    <p id='boy-winner-4'  class='boy-winner ' onclick='selectWinner("boy",4);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
                 <div class="img-box">
-                    <img src="images/winner-boy_05.JPG">
+                    <img src="http://via.placeholder.com/600x400">
                 </div>
                 <div class="text-wrapper">
                     <p>5. 慧燈高中</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("男生組","慧燈高中")'>分享</p>
+                    <p id='boy-winner-5'  class='boy-winner ' onclick='selectWinner("boy",5);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
                 <div class="img-box">
-                    <img src="images/winner-boy_06.JPG">
+                    <img src="http://via.placeholder.com/600x400">
                 </div>
                 <div class="text-wrapper">
                     <p>6. 興華高中</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("男生組","興華高中")'>分享</p>
+                    <p id='boy-winner-6' class='boy-winner ' onclick='selectWinner("boy",6);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
                 <div class="img-box">
-                    <img src="images/winner-boy_07.JPG">
+                    <img src="http://via.placeholder.com/600x400">
                 </div>
                 <div class="text-wrapper">
                     <p>7. 醒吾高中</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("男生組","醒吾高中")'>分享</p>
+                    <p id='boy-winner-7' class='boy-winner ' onclick='selectWinner("boy",7);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
                 <div class="img-box">
-                    <img src="images/winner-boy_08.JPG">
+                    <img src="http://via.placeholder.com/600x400">
                 </div>
                 <div class="text-wrapper">
                     <p>8. 善化高中</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("男生組","善化高中")'>分享</p>
+                    <p id='boy-winner-8'  class='boy-winner ' onclick='selectWinner("boy", 8);'>集氣投票</p>
                 </div>
             </div>
 
@@ -216,7 +232,7 @@
         <br>
         <br>
         <br>
-        <div class="vote-area">
+        <div class="vote-area" style="display: none">
             <div class="title-boy title-girl">
                 <p>女生組</p>
             </div>
@@ -229,8 +245,8 @@
                     <p>1. 台南高商</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("女生組","台南高商")'>分享</p>
+                    <p id='girl-winner-1'  class='girl-winner ' onclick='selectWinner("girl", 1);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
@@ -241,8 +257,8 @@
                     <p>2. 四維高中</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("女生組","四維高中")'>分享</p>
+                    <p id='girl-winner-2'  class='girl-winner ' onclick='selectWinner("girl", 2);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
@@ -253,20 +269,20 @@
                     <p>3. 屏東高工</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("女生組","屏東高工")'>分享</p>
+                    <p id='girl-winner-3'  class='girl-winner ' onclick='selectWinner("girl", 3);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
                 <div class="img-box">
-                    <img src="images/winner-girl_04.jpg">
+                    <img src="http://via.placeholder.com/600x400">
                 </div>
                 <div class="text-wrapper">
                     <p>4. 桃市陽明</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("女生組","桃市陽明")'>分享</p>
+                    <p id='girl-winner-4'  class='girl-winner ' onclick='selectWinner("girl", 4);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
@@ -277,8 +293,8 @@
                     <p>5. 能仁家商</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("女生組","能仁家商")'>分享</p>
+                    <p id='girl-winner-5'  class='girl-winner ' onclick='selectWinner("girl", 5);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
@@ -289,20 +305,20 @@
                     <p>6. 壽山高中</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("女生組","壽山高中")'>分享</p>
+                    <p id='girl-winner-6'  class='girl-winner ' onclick='selectWinner("girl", 6);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
                 <div class="img-box">
-                    <img src="images/winner-girl_07.jpg">
+                    <img src="http://via.placeholder.com/600x400">
                 </div>
                 <div class="text-wrapper">
                     <p>7. 小港高中</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("女生組","小港高中")'>分享</p>
+                    <p id='girl-winner-7'  class='girl-winner ' onclick='selectWinner("girl", 7);'>集氣投票</p>
                 </div>
             </div>
                         <div class="vote-box">
@@ -313,12 +329,13 @@
                     <p>8. 立仁高商</p>
                 </div>
                 <div class="button-box">
-                    <p>分享</p>
-                    <p>集氣投票</p>
+                    <p onclick='share2FB("女生組","立仁高商")'>分享</p>
+                    <p id='girl-winner-8'  class='girl-winner ' onclick='selectWinner("girl", 8);'>集氣投票</p>
                 </div>
             </div>
+
             <div class="title-boy send-out">
-                <p>選定送出</p>
+                <p onclick='submitWinner()'>選定送出</p>
             </div>
         </div>
         <!--footer-->
@@ -330,7 +347,13 @@
         <!--go-top-->
         <div id="gotop" style='text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;'><a title="" target=""><img src="images/go-top_02.png"></a></div>
         <!--go-top-js-->
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="/js/js.cookie.js" ></script>
+        <script src="/js/hbl-vote/fb-login.js"></script>
+        <script src="/js/hbl-vote/login.js"></script>
+
         <script type="text/javascript">
         $(function() {
             $("#gotop").click(function() {
@@ -363,8 +386,6 @@
             }, 500);
         };
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>

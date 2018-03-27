@@ -14,5 +14,53 @@ $(document).ready(function(){
         if ($('#username') !== undefined){
             $('#username').html(Cookies.get('member_nickname') + ' ( ID: ' + Cookies.get('member_id')+ ')');
         }
+      $('.fb-button').css('display', 'none');
+      $('.vote-area').css('display', 'block');
   }
 });
+
+var boyWinner = undefined;
+var girlWinner = undefined;
+
+function selectWinner(category,id){
+  $('.'+category+'-winner').removeClass('selected');
+  $('#' + category +'-winner-' + id).addClass('selected');
+
+  if (category ==='boy'){
+    boyWinner = id;
+  }
+  if (category === 'girl'){
+    girlWinner = id;
+  }
+}
+
+function submitWinner(){
+  if (boyWinner === undefined){
+    alert('請選擇男生組冠軍隊伍');
+    return;
+  }
+  if (girlWinner === undefined){
+    alert('請選擇女生組冠軍隊伍');
+    return;
+  }
+  $.ajax({
+    type: 'PUT',
+    dataType: 'json',
+    url: 'https://api-product.happytv.com.tw/api/v3/2017HBLB/winner/boy/'+ boyWinner+'/girl/'+ girlWinner +
+      '/member/'+ Cookies.get('member_id')
+  }).done((data) => {
+    alert('感謝投票')
+  }).fail((data) => {
+    alert('一天只能投一次')
+  })
+}
+
+function share2FB(category, team){
+  FB.ui({
+    method: 'share',
+    href: 'https://www.happytv.com.tw/hbl-vote/winner.html',
+    quote: team + "一定會拿下HBL乙級" + category + "全國冠軍",
+    hashtag: '#happytv',
+    mobile_iframe: true
+  }, function(response){});
+}
