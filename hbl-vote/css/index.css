@@ -69,7 +69,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d80000', end
 }
 
 
-.navbar-right p::before{
+#login-tag p::before{
     font-family: 'FontAwesome';
     content: '\f090';
     font-size: 25px;
