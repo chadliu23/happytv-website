@@ -64,3 +64,33 @@ function share2FB(category, team){
     mobile_iframe: true
   }, function(response){});
 }
+function share2FBStar(category, team, name){
+  FB.ui({
+    method: 'share',
+    href: 'https://www.happytv.com.tw/hbl-vote/favorite-star.html',
+    quote: "HBL乙級" + category+"【" + team +'  '+ name + "】是我的天菜",
+    hashtag: '#happytv',
+    mobile_iframe: true
+  }, function(response){});
+}
+
+function submitStar(){
+  if (boyWinner === undefined){
+    alert('請選擇男生組天菜');
+    return;
+  }
+  if (girlWinner === undefined){
+    alert('請選擇女生組天菜');
+    return;
+  }
+  $.ajax({
+    type: 'PUT',
+    dataType: 'json',
+    url: 'https://api-product.happytv.com.tw/api/v3/2017HBLB/star/boy/'+ boyWinner+'/girl/'+ girlWinner +
+      '/member/'+ Cookies.get('member_id')
+  }).done((data) => {
+    alert('感謝投票')
+  }).fail((data) => {
+    alert('一天只能投一次')
+  })
+}

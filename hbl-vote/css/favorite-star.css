@@ -637,7 +637,7 @@ font-weight: 600;
 	 	 transition: 0.5s ease-in;
 	 transition: 0.5s ease-out;
 }
-
+.vote-area .vote-box .button-box p.selected,
 .vote-area .vote-box .button-box p:hover{
 cursor: pointer;
 background-color: #13a49f;
