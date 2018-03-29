@@ -48,3 +48,54 @@ position: absolute;
 right: 5px;
 top:12px;
 }
+
+
+
+.name {
+	margin: 0 150px;
+	padding: 30px 0;
+}
+
+
+.name h3{
+	text-align: left;
+	font-size: 15px;
+	line-height: 35px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	color: black;
+	background-color: #ebebeb;
+	padding: 15px 20px;
+}
+
+
+
+.name h3::before{
+display: none;
+}
+
+
+
+
+
+@media (max-width: 767px) {
+
+
+.name h3{
+	text-align: left;
+	font-size: 15px;
+	letter-spacing: 1px;
+	color: black;
+	background-color: #ebebeb;
+	padding: 20px 20px;
+}
+
+
+.name {
+	margin: 0 5px;
+	padding: 5px 0;
+}
+
+
+
+}
