@@ -20,9 +20,12 @@ p {
 }
 
 body {
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2db4e8+35,4aeecd+100 */
-background: #8a0003!important; /* Old browsers */
-
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ef0000+0,000000+72 */
+background: #ef0000; /* Old browsers */
+background: -moz-linear-gradient(-45deg, #ef0000 0%, #000000 72%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, #ef0000 0%,#000000 72%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, #ef0000 0%,#000000 72%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef0000', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 
@@ -30,22 +33,6 @@ background: #8a0003!important; /* Old browsers */
 
 
 /* top-bar */
-
-.navbar {
-    background: #000;
-
-}
-
-
-.navbar-right {
-    color: white;
-}
-
-
-.navbar-right p {
-    color: white;
-    font-size: 16px;
-}
 
 
 
@@ -113,15 +100,18 @@ display: none;
 
 
 .text .title {
+    padding-top:100px;
     padding-left: 100px;
     width: 100%;
 }
 
 
+
+
 .text .title p {
     font-size: 35px;
     font-style: italic;
-    color: black;
+    color: yellow;
     letter-spacing: 3px;
 }
 
@@ -138,7 +128,7 @@ display: none;
 
 .text .content p {
     font-size: 25px;
-    color: black;
+    color: #fff;
     font-weight: 800;
     letter-spacing: 4px;
     line-height: 50px;
@@ -149,7 +139,7 @@ display: none;
 
 .text .way p {
     font-size: 30px;
-    color: black;
+    color: #fff;
     font-weight: 1000;
     letter-spacing: 3px;
     line-height: 70px;
@@ -303,6 +293,7 @@ display: block;
     text-align: justify;
     margin-bottom: 10px;
     font-style: italic;
+    color: white;
 }
 
 .text .content-phone .before{
@@ -477,12 +468,12 @@ cursor: pointer
 .vote-area .title-boy p {
     padding: 10px 0;
     font-size: 25px;
-    color: red;
+    color: black;
     font-weight: 600;
     letter-spacing: 3px;
     text-align: center;
         padding: 15px;
-    background-color: black;
+    background-color: #b80004;
 }
 
 .vote-area .title-boy p::before{
@@ -499,8 +490,8 @@ cursor: pointer
 
 .vote-area .send-out p {
 	margin:80px 0 200px 0;
-	 background-color: black;
-	 color:red;
+	 background-color:#b80004;
+	 color:black;
 	 	 transition: 0.5s ease-in;
 	 transition: 0.5s ease-out;
 	 font-weight:600;
@@ -516,7 +507,6 @@ display: none;
 
 .vote-area .send-out p:hover{
 	 background-color: red;
-	 color: black;
 	 cursor: pointer;
 
 }
@@ -584,7 +574,7 @@ display: none;
 .vote-area .vote-box img{
     width: 100%;
     height: 100%;
-    border: 2px solid black;
+    border: 2px solid #b80004;
 padding: 5px;
 }
 
@@ -598,7 +588,7 @@ padding: 40px 10px 20px 10px;
    font-size: 17px;
    letter-spacing: 3px;
    font-style: italic;
-   color: white;
+   color: #fff;
    font-weight: 600;
 line-height: 40px;
 }
@@ -618,12 +608,12 @@ text-align: center;
 
 .vote-area .vote-box .button-box p{
 	display: inline-block;
-background-color: black;
+background-color: #b80004;
 border: none;
 padding:5px 25px;
 outline: none;
 margin: 0 5px;
-color: red;
+color: black;
 font-size:18px;
 letter-spacing: 3px;
 font-weight: 500;
@@ -640,8 +630,8 @@ color: black;
 
 .vote-area .vote-box .button-box p:hover{
 cursor: pointer;
-background-color: red;
-color: black;
+background-color:red;
+color: white;
 }
 
 

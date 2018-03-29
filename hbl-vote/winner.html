@@ -110,7 +110,7 @@
         <div class="fb-button" onclick='loginFacebook()'>
             <p>登入facebook</p>
         </div>
-        <div class="vote-area" style="display: block">
+        <div class="vote-area" style="display: none">
             <div class="title-boy">
                 <p>男生組</p>
             </div>
@@ -123,7 +123,7 @@
                 </div>
                 <div class="button-box">
                     <p onclick='share2FB("男生組","台東高中")'>分享</p>
-                    <p id='boy-winner-1' class='boy-winner ' onclick='selectWinner("boy",1);'>集氣投票</p>
+                  <a href="#hbl-vote-girl">  <p id='boy-winner-1' class='boy-winner ' onclick='selectWinner("boy",1);'>集氣投票</p></a>
                 </div>
             </div>
             <div class="vote-box">
@@ -135,7 +135,7 @@
                 </div>
                 <div class="button-box">
                     <p onclick='share2FB("男生組","立仁高中")'>分享</p>
-                    <p id='boy-winner-2' class='boy-winner ' onclick='selectWinner("boy",2);'>集氣投票</p>
+                    <a href="#hbl-vote-girl"> <p id='boy-winner-2' class='boy-winner ' onclick='selectWinner("boy",2);'>集氣投票</p></a>
                 </div>
             </div>
             <div class="vote-box">
@@ -147,7 +147,7 @@
                 </div>
                 <div class="button-box">
                     <p onclick='share2FB("男生組","成功高中")'>分享</p>
-                    <p id='boy-winner-3' class='boy-winner ' onclick='selectWinner("boy",3);'>集氣投票</p>
+                   <a href="#hbl-vote-girl"> <p id='boy-winner-3' class='boy-winner ' onclick='selectWinner("boy",3);'>集氣投票</p></a>
                 </div>
             </div>
             <div class="vote-box">
@@ -159,7 +159,7 @@
                 </div>
                 <div class="button-box">
                     <p onclick='share2FB("男生組","海星高中")'>分享</p>
-                    <p id='boy-winner-4' class='boy-winner ' onclick='selectWinner("boy",4);'>集氣投票</p>
+                  <a href="#hbl-vote-girl">  <p id='boy-winner-4' class='boy-winner ' onclick='selectWinner("boy",4);'>集氣投票</p></a>
                 </div>
             </div>
             <div class="vote-box">
@@ -171,7 +171,7 @@
                 </div>
                 <div class="button-box">
                     <p onclick='share2FB("男生組","慧燈高中")'>分享</p>
-                    <p id='boy-winner-5' class='boy-winner ' onclick='selectWinner("boy",5);'>集氣投票</p>
+                   <a href="#hbl-vote-girl"> <p id='boy-winner-5' class='boy-winner ' onclick='selectWinner("boy",5);'>集氣投票</p></a>
                 </div>
             </div>
             <div class="vote-box">
@@ -183,7 +183,7 @@
                 </div>
                 <div class="button-box">
                     <p onclick='share2FB("男生組","興華高中")'>分享</p>
-                    <p id='boy-winner-6' class='boy-winner ' onclick='selectWinner("boy",6);'>集氣投票</p>
+                  <a href="#hbl-vote-girl">  <p id='boy-winner-6' class='boy-winner ' onclick='selectWinner("boy",6);'>集氣投票</p></a>
                 </div>
             </div>
             <div class="vote-box">
@@ -195,7 +195,7 @@
                 </div>
                 <div class="button-box">
                     <p onclick='share2FB("男生組","醒吾高中")'>分享</p>
-                    <p id='boy-winner-7' class='boy-winner ' onclick='selectWinner("boy",7);'>集氣投票</p>
+                  <a href="#hbl-vote-girl">  <p id='boy-winner-7' class='boy-winner ' onclick='selectWinner("boy",7);'>集氣投票</p></a>
                 </div>
             </div>
             <div class="vote-box">
@@ -207,20 +207,29 @@
                 </div>
                 <div class="button-box">
                     <p onclick='share2FB("男生組","善化高中")'>分享</p>
-                    <p id='boy-winner-8' class='boy-winner ' onclick='selectWinner("boy", 8);'>集氣投票</p>
+                  <a href="#hbl-vote-girl">  <p id='boy-winner-8' class='boy-winner ' onclick='selectWinner("boy", 8);'>集氣投票</p></a>
                 </div>
             </div>
         </div>
+
+          <div id="hbl-vote-girl">
+      </div>  
         <br>
         <br>
         <br>
         <br>
         <br>
         <br>
-        <div class="vote-area" style="display: block">
+
+
+        <div class="vote-area" style="display: none">
+          
             <div class="title-boy title-girl">
                 <p>女生組</p>
             </div>
+
+
+
             <div class="vote-box">
                 <div class="img-box">
                     <img src="images/winner-girl_01.jpg">
@@ -351,6 +360,32 @@
             });
         });
         </script>
+
+
+    <!--slide-js-->
+
+  <script type="text/javascript">
+        $(document).ready(function() {
+            $("a").click(function() {
+                console.log($(this).attr("href"))
+
+                var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+
+                $body.animate({
+                    scrollTop: $($(this).attr("href")).offset().top + "px"
+                }, {
+                    duration: 500,
+                    easing: "swing"
+                });
+
+                return false;
+            });
+
+        });
+
+    </script>
+
+
         <!--modal-js-->
         <script type="text/javascript">
         function openPopup() {
