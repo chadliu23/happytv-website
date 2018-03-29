@@ -44,6 +44,11 @@ line-height: 35px;
 }
 
 
+.center2 {
+	text-align: left;
+}
+
+
 @media (max-width: 767px) {
 
 
@@ -70,6 +75,9 @@ line-height: 35px;
 padding: 0 10px;
 }
 
+.center2 {
+	text-align: center;
+}
 
 
 }
