@@ -119,4 +119,23 @@ img {
 
 
 
+.content {
+	margin: 0 5px;
+	padding: 5px 0;
+}
+
+
+p {
+
+	text-align: justify;
+	font-size: 15px;
+	line-height: 50px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	color: black;
+	padding: 20px 0;
+
+}
+
+
 }
