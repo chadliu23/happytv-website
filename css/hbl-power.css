@@ -74,7 +74,28 @@ top:12px;
 display: none;
 }
 
+.content {
+	margin: 0 150px;
+	padding: 0px 0;
+}
 
+
+p {
+
+	text-align: justify;
+	font-size: 15px;
+	line-height: 50px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	color: black;
+	padding: 20px 0;
+
+}
+
+
+img {
+	margin: 0 auto;
+}
 
 
 
