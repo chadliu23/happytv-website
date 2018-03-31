@@ -144,7 +144,7 @@ display: none;
 .text .title p {
     font-size: 37px;
     font-style: italic;;
-    color: white;
+    color: #000;
     letter-spacing: 3px;
 }
 
@@ -161,7 +161,7 @@ display: none;
 
 .text .content p {
     font-size: 29px;
-    color: white;
+    color: #000;
     font-weight: 500;
     letter-spacing: 3px;
     line-height: 55px;
@@ -171,7 +171,7 @@ display: none;
 
 .text .way p {
     font-size: 28px;
-    color: white;
+    color: #000;
     font-weight: 500;
     letter-spacing: 3px;
     line-height: 70px;
@@ -631,7 +631,7 @@ padding: 40px 10px 20px 10px;
 .vote-area .vote-box p {
    text-align: center;
    font-size: 19px;
-   color: white;
+   color: #000;
    font-weight: 600;
 line-height: 40px;
 }
