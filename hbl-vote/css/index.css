@@ -28,6 +28,11 @@ p {
         box-sizing: border-box;
     }
 
+
+a:visited {
+    text-decoration: none;
+}
+
 /*------- top-bar-------*/
 
 .navbar {
@@ -360,3 +365,5 @@ background: #000;
 }
 
 }
+
+
