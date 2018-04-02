@@ -325,11 +325,11 @@ display: block;
 
 
 .text .content-phone p {
-    font-size: 18px;
-    color: white;
+    font-size: 17px;
+    color: #000;
     font-weight: 600;
     letter-spacing: 0px;
-    line-height: 40px;
+    line-height: 35px;
     text-align: justify;
     margin-bottom: 10px;
 }
@@ -348,7 +348,7 @@ padding-top:10px;
 
 .text .way p {
     font-size: 17px;
-    color: white;
+    color: #000;
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 35px;
