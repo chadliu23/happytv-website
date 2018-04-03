@@ -38,15 +38,22 @@ function list(id, targetid) {
     url: "https://api-product.happytv.com.tw/api/v3/hbl/record/date/" + id
   }).done((data) => {
 
-    let url = 'https://tw.piliapp.com/generator/qr-code/apps/?iphone=https%3A%2F%2Fitunes.apple.com%2Ftw%2Fapp%2F%25E5%25BF%25AB%25E6%25A8%2582%25E9%259B%25BB%25E8%25A6%2596%2Fid1166854716%3Fmt%3D8%26ign-mpt%3Duo%253D4&ipad=https%3A%2F%2Fitunes.apple.com%2Ftw%2Fapp%2F%25E5%25BF%25AB%25E6%25A8%2582%25E9%259B%25BB%25E8%25A6%2596%2Fid1166854716%3Fmt%3D8%26ign-mpt%3Duo%253D4&android=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.happytvtw.happtvlive';
+    let url = 'http://onelink.to/happytv';
     let hide = 'style="display:none"';
     let todayString = moment(new Date()).format('YYYY-MM-DD');
-    if (id === todayString || (new Date() > new Date('2018-03-03') && id === '2018-02-26'  ) ){
+    if (id === todayString || (new Date() > new Date('2018-03-03') && id === '2018-03-02' )
+    ||  (new Date() > new Date('2018-04-21') && id === '2018-04-20' )  ){
       hide = '';
     }
     $('#'+todayString + '-tag').addClass('active');
     if ( new Date() > new Date('2018-03-03') ){
-      $('#2018-02-26-tag').addClass('active');
+      $('#2018-03-02-tag').addClass('active');
+    }
+    if ( new Date() < new Date('2018-04-16') ){
+      $('#2018-04-16-tag').addClass('active');
+    }
+    if ( new Date() > new Date('2018-04-21') ){
+      $('#2018-04-20-tag').addClass('active');
     }
     let element = ' <table id="' +id+'" class="table table-bordered record-table" '+hide+' >';
     element += '<thead>';
@@ -89,37 +96,6 @@ function list(id, targetid) {
     element += '</table>';
     $("#" + targetid).append(element);
 
-    // let today = new Date();
-    // const date = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0);
-    // const date1 = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1, 0, 0, 0);
-    // const date2 = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2, 0, 0, 0);
-    // let dateMap = {};
-    // dateMap[Date.parse(date)] = '#today' + index + '';
-    // dateMap[Date.parse(date1)] = '#secondDay' + index + '';
-    // dateMap[Date.parse(date2)] = '#thirdDay' + index + '';
-    // let dateBSMap = {};
-    // dateBSMap[Date.parse(date)] = '#BStoday' + index + '';
-    // dateBSMap[Date.parse(date1)] = '#BSsecond' + index + '';
-    // dateBSMap[Date.parse(date2)] = '#BSthird' + index + '';
-
-
-    //   for (let i = 1; i < data.result.program.length - 1; i++) {
-    //     let channel = data.result.program[i];
-    //     let startDate = data.result.program[i].startTime;
-    //     let endDate = data.result.program[i].endTime;
-    //     $(dateMap[Date.parse(data.result.program[i].date)]).text(data.result.program[i].date);
-    //     $(dateBSMap[Date.parse(data.result.program[i].date)]).append('<div class="col-md-12 col-sm-12 col-xs-12">' +
-    //       '<div class="panel panel-t col-md-12 col-sm-12 col-xs-12">' +
-    //       '<div class="panel-timetable col-md-4 col-sm-6 col-xs-6">' +
-    //       '<img class="img-responsive" src=' + image + '>' +
-    //       '</div>' +
-    //       '<div class="panel-tbody col-md-8 col-sm-6 col-xs-6">' +
-    //       '<p class="text-t"><i class="fa " aria-hidden="true"></i>' + startDate + " ~ " + endDate +  '</p>' +
-    //       '<h5 class="media-t">'  + channel.name + '</h5>' +
-    //       '<p class="text-t">' + channel.remark + '</p>' +
-    //       '</div>' +
-    //       '</div>');
-    //   }
   }).fail((data) => {
     console.log('error');
   });
