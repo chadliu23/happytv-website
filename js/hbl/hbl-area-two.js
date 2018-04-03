@@ -1,6 +1,6 @@
-function showProgramsInChannel(attr) {
+function showProgramsInChannel(attr, index) {
   id = attr.split("#")[1];
-  $('.record-table').hide();
+  $('.record-table' + index).hide();
   $('#' + id).show();
 
 }
@@ -29,7 +29,7 @@ function showGame( items, index){
   return element;
 }
 
-function list(id, targetid) {
+function list(id, targetid, index) {
   $.ajax({
     type: 'GET',
     headers: {
@@ -41,21 +41,23 @@ function list(id, targetid) {
     let url = 'http://onelink.to/happytv';
     let hide = 'style="display:none"';
     let todayString = moment(new Date()).format('YYYY-MM-DD');
-    if (id === todayString || (new Date() > new Date('2018-03-03') && id === '2018-03-02' )
-    ||  (new Date() > new Date('2018-04-21') && id === '2018-04-20' )  ){
+    if (id === todayString 
+      ||  (new Date() > new Date('2018-03-03') && id === '2018-03-02' )
+      ||  (new Date() > new Date('2018-04-21') && id === '2018-04-20' ) 
+      ||  (new Date() < new Date('2018-04-16') && id === '2018-04-16' )   ){
       hide = '';
     }
     $('#'+todayString + '-tag').addClass('active');
-    if ( new Date() > new Date('2018-03-03') ){
+    if ( new Date() >= new Date('2018-03-03') ){
       $('#2018-03-02-tag').addClass('active');
     }
-    if ( new Date() < new Date('2018-04-16') ){
+    if ( new Date() <= new Date('2018-04-16') ){
       $('#2018-04-16-tag').addClass('active');
     }
-    if ( new Date() > new Date('2018-04-21') ){
+    if ( new Date() >= new Date('2018-04-21') ){
       $('#2018-04-20-tag').addClass('active');
     }
-    let element = ' <table id="' +id+'" class="table table-bordered record-table" '+hide+' >';
+    let element = ' <table id="' +id+'" class="table table-bordered record-table'+index +'" '+hide+' >';
     element += '<thead>';
     element += '<tr>';
     element += '<th>地點</th>';
