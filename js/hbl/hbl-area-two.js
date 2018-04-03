@@ -29,7 +29,7 @@ function showGame( items, index){
   return element;
 }
 
-function list(id) {
+function list(id, targetid) {
   $.ajax({
     type: 'GET',
     headers: {
@@ -87,7 +87,7 @@ function list(id) {
     element += '</tbody>';
     element += '</thead>';
     element += '</table>';
-    $("#tableContent").append(element);
+    $("#" + targetid).append(element);
 
     // let today = new Date();
     // const date = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0);
