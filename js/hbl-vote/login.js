@@ -51,7 +51,7 @@ function submitWinner(){
   }).done((data) => {
     alert('感謝投票')
   }).fail((data) => {
-    alert('一天只能投一次')
+    alert('1天只能投5次')
   })
 }
 
