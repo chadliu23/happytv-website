@@ -3,15 +3,33 @@
 
 
 #home td,
-#home th{
+#home th,
+	#menu2 td,
+	#menu2 th {
 vertical-align:middle;
 text-align: center;
 }
 
-#home img {
-border: none;
+
+#home,
+#menu2 {
+width: 100%;
+height: auto;
 }
 
+#home img{
+border: none;
+max-width: 100%;
+height: auto;
+}
+
+
+#menu2 img{
+border: none;
+max-width: 50%;
+height: auto;
+margin: 0 auto;
+}
 
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
