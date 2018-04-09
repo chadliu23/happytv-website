@@ -62,5 +62,17 @@ margin: 0 auto;
 	}
 	.phone {
 		display:block;
+		
 	}
+
+
+#home .phone img{
+border: none;
+width: 100%;
+height: auto;
+}
+
+
+
+
 }
