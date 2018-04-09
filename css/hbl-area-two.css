@@ -4,32 +4,25 @@
 
 #home td,
 #home th,
-	#menu2 td,
-	#menu2 th {
+	#home2 td,
+	#home2 th {
 vertical-align:middle;
 text-align: center;
 }
 
 
 #home,
-#menu2 {
-width: 100%;
-height: auto;
+#home2 {
+  width: 100%;
+  height: auto;
 }
-
+#home2 img,
 #home img{
-border: none;
-max-width: 100%;
-height: auto;
+  border: none;
+  max-width: 100%;
+  height: auto;
 }
 
-
-#menu2 img{
-border: none;
-max-width: 50%;
-height: auto;
-margin: 0 auto;
-}
 
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
