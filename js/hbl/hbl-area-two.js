@@ -76,13 +76,13 @@ function list(id, targetid, index) {
 
       element += '<td rowspan="'+ items.length +'" class="live">';
       if (items[0].channel_id !== ''){
-        element += '<div class="web">APP Download</div><a href="'+url+'"><img class="web" src="/images/hbl/happy-tv-logo.png "><img class="phone" src="/images/hbl/happy-tv-logo-phone.png"></a><br><br>';
+        element += '<div class="web">APP Download</div><a href="'+url+'" target="_blank" ><img class="web" src="/images/hbl/happy-tv-logo.png "><img class="phone" src="/images/hbl/happy-tv-logo-phone.png"></a><br><br>';
       }
       if (items[0].facebook !== ''){
-        element += '<div class="web">粉絲團直播</div><a href="'+items[0].facebook+'"><img class="web" src="/images/hbl/facebook-logo.png "><img class="phone" src="/images/hbl/facebook-logo-phone.png"></a><br><br>';
+        element += '<div class="web">粉絲團直播</div><a href="'+items[0].facebook+'" target="_blank" ><img class="web" src="/images/hbl/facebook-logo.png "><img class="phone" src="/images/hbl/facebook-logo-phone.png"></a><br><br>';
       }
       if (items[0].youtube !== ''){
-        element += '<div class="web">Youtube 直播</div><a href="'+items[0].youtube+'"><img class="web" src="/images/hbl/youtube-logo.png "><img class="phone" src="/images/hbl/youtube-logo-phone.png"></a>';
+        element += '<div class="web">Youtube 直播</div><a href="'+items[0].youtube+'" target="_blank" ><img class="web" src="/images/hbl/youtube-logo.png "><img class="phone" src="/images/hbl/youtube-logo-phone.png"></a>';
       }
       element += '</td>';
       element += '</tr>';
