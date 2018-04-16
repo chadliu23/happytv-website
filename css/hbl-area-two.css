@@ -2,6 +2,28 @@
 /* CSS Document */
 
 
+.container .table {
+    width: 92%;
+    border: 1px solid #dedede;
+}
+
+
+#home h2{
+ color: #f06600;
+ letter-spacing: 1px;
+ font-size: 30px;
+}
+
+
+#home h2:before{
+    display: inline-block;
+    font-family: 'FontAwesome';
+    content: '\f101';
+    padding-right: 15px;
+font-size: 35px;
+}
+
+
 #home td,
 #home th,
 	#home2 td,
@@ -31,7 +53,7 @@ text-align: center;
   background-color: #f06600;
 }
 .team-cloumn {
-   min-width: 75px
+   min-width: 75px;
 }
 .girl {
     color: red;
@@ -49,23 +71,25 @@ text-align: center;
 	display: block;
 	margin:auto;
 }
+
 @media (max-width: 767px) {
-	.web {
-		display: none;
-	}
+
+
 	.phone {
 		display:block;
-		
 	}
 
+	.web {
+display: none;
 
-#home .phone img{
-border: none;
-width: 100%;
-height: auto;
+	}
+	.live {
+		min-width: 80px;
+	}
+
+body {
+	overflow-x: hidden;
 }
-
-
 
 
 }
