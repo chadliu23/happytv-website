@@ -6,6 +6,8 @@
 
 /* Global Styles */
 
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
 html,
 body {
     height: 100%;
@@ -91,5 +93,139 @@ footer {
         height: 70%;
     }
 }
+
+
+
+
+/* 0417add */
+
+
+.txtBox h2{
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 30px;
+    border: none;
+    color: black;
+    letter-spacing: 2px;
+ font-family: 'Noto Sans TC', sans-serif;
+}
+
+
+ .txtBox h1{
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border: none;
+    color: black;
+        letter-spacing: 2px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+
+.txtBox p {
+    line-height: 25px;
+    text-align: justify;
+    padding: 10px 50px 30px 50px;
+    font-weight: bold;
+}
+
+
+
+
+.txtBox li {
+    line-height: 30px;
+    padding-left: 10px;
+      font-family: 'Noto Sans TC', sans-serif;
+       font-weight: bold;
+}
+
+
+.well p {
+    line-height: 25px;
+    padding:20px;
+    text-align: center;
+}
+
+
+.well .button {
+      margin-top:20px;
+      border-radius: none;
+}
+
+
+.panel-heading h3 {
+        font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border: none;
+    color: orange;
+        letter-spacing: 2px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.panel-body a {
+    margin: 20px;
+    padding: 15px 100px;
+}
+
+
+
+.carousel-inner {
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+}
+
+.img{
+transition: 0.5s;
+  border: 1px solid #cfcfcf;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+.img:hover{
+opacity: 0.6;
+}
+
+
+@media(max-width:767px) {
+    .txtBox p {
+      padding: 0px;
+}
+
+.panel-body a {
+    margin: 20px 0;
+    padding: 10px 80px;
+}
+
+
+.panel-body p {
+    line-height: 25px;
+    padding:0px;
+    text-align: center;
+}
+
+
+.txtBox h2{
+    padding-bottom: 30px;
+}
+
+
+ .txtBox h1{
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border: none;
+    color: black;
+        letter-spacing: 2px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+
+
+  }
 
 
