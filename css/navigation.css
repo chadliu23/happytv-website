@@ -1,3 +1,22 @@
 .nav>li>a {
     cursor: pointer;
 }
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+
+.navbar {
+	text-align: center;
+	margin: 0 auto;
+	background-color: 
+}
+
+
+a {
+	    font-size: 14px;
+    font-weight:bold;
+        letter-spacing: 1px;
+     transition: 0.7s;
+}
+
+
