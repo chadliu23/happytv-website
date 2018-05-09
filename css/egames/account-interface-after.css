@@ -90,7 +90,7 @@
 }
 
 
-#account .table .text-input {
+#account .table .text-input.for-display {
     width: 160px;
     height: 40px;
     font-size: 15px;
@@ -113,9 +113,9 @@
 }
 
 
-
 .for-display {
 }
+
 
 .for-input {
     display: none;

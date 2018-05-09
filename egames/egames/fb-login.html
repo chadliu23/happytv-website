@@ -34,7 +34,7 @@
 <body>
     <!--header-->
     <div id="header">
-       
+
         <div class="banner">
             <div class="jumbotron-fluid">
                 <div class="container-fluid">
@@ -44,20 +44,32 @@
         </div>
     </div>
 
-    <div id="fb-login">
-        <div class="fb-login">
+    <div id="check-correct" style="display: inline;">
+        <div class="check-correct">
             <div class="container">
-                <p>請務必登入facebook，以完成報名資料登錄。</p>
-               <img src="/images/egames/fb-button.png">
+                <input class="correct-input" type="button" name="認證中..." value="認證中...">
+                <br>
             </div>
         </div>
     </div>
+
+    <div id="fb-login" style="display: none;">
+        <div class="fb-login">
+            <div class="container">
+                <p>請務必登入facebook，以完成報名資料登錄。</p>
+                <a href="#" onclick='loginFacebook()'><img src="/images/egames/fb-button.png"></a>
+               <!-- <img src="/images/egames/fb-button.png"> -->
+            </div>
+        </div>
+    </div>
+
     <!--modal-js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/config/configVar.js"></script>
     <script src="/js/js.cookie.js" ></script>
     <script src="/js/egames/login.js" ></script>
     <script src='/js/egames/fb-login.js'></script>
-   
+
 </body>
 
 </html>

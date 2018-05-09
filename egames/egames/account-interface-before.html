@@ -54,7 +54,7 @@
                             <a class="dropdown-toggle login" data-toggle="dropdown" href="#" role="button">
                                 <p onclick="openPopup()">登入</p>
                             </a>
-                            
+
                         </li>
                     </ul>
                 </div>
@@ -121,22 +121,22 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input id="team_name" type="text" class="text-input" placeholder="(必填)">
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input id="account_name" type="text" class="text-input" placeholder="(必填)">
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input id="account_bank" type="text" class="text-input" placeholder="(必填)">
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input">
+                                        <input id="account_branch" type="text" class="text-input" placeholder="">
                                     </td>
                                     <td>
-                                        <input type="tel" class="text-input">
+                                        <input id="account_num" type="tel" class="text-input" placeholder="(必填)">
                                     </td>
                                     <td>
-                                        <input type="text" class="text-input" placeholder="yyyy/mm/dd">
+                                        <input id="transfer_date" type="text" class="text-input" placeholder="yyyy/mm/dd">
                                     </td>
                                 </tr>
                             </tbody>
@@ -162,7 +162,7 @@
             <div class="container">
                 <img onclick="openPopup2()" src="/images/egames/qa-button.png">
                 <img src="/images/egames/edit-button.png">
-                <img src="/images/egames/send-button.png">
+                <img id="create_account_btn" src="/images/egames/send-button.png">
             </div>
         </div>
     </div>
@@ -186,8 +186,12 @@
         </a>
     </div>
     <!--go-top-js-->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="/js/config/configVar.js"></script>
+    <script src="/js/js.cookie.js" ></script>
+    <script src="/js/egames/login.js" ></script>
+    <script src='/js/egames/account-interface-before.js'></script>
 
     <script type="text/javascript">
     $(function() {
@@ -237,7 +241,7 @@
         }, 500);
     };
     </script>
-    
+
 </body>
 
 </html>
