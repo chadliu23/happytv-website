@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/egames/e-games.css">
     <link rel="stylesheet" href="/css/egames/register-interface-before.css">
-    <link rel="stylesheet" href="/css/egames/register-interface-after.css">
+    <link rel="stylesheet" href="/css/egames/account-interface-after.css">
     <link rel="stylesheet" href="/css/egames/account-interface-before.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script>
@@ -55,7 +55,7 @@
                             <a class="dropdown-toggle login" data-toggle="dropdown" href="#" role="button">
                                 <p onclick="openPopup()">登入</p>
                             </a>
-                            
+
                         </li>
                     </ul>
                 </div>
@@ -123,27 +123,33 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <input type="button" class="button-input text-input" value="快樂電視隊">
+                                    <input id="team_name_lable" type="button" class="button-input text-input for-display" value="">
+                                    <input id="team_name_input" type="text" class="text-input for-input" value="">
                                     <input style="display: none" type="text" class="text-input">
                                 </td>
                                 <td>
-                                    <input type="button" class="button-input text-input" value="陳儀潔">
+                                    <input id="account_name_lable" type="button" class="button-input text-input for-display" value="">
+                                    <input id="account_name_input" type="text" class="text-input for-input" value="">
                                     <input style="display: none" type="text" class="text-input">
                                 </td>
                                 <td>
-                                    <input type="button" class="button-input text-input" value="玉山銀行">
+                                    <input id="account_bank_lable" type="button" class="button-input text-input for-display" value="">
+                                    <input id="account_bank_input" type="text" class="text-input for-input" value="">
                                     <input style="display: none" type="text" class="text-input">
                                 </td>
                                 <td>
-                                    <input type="button" class="button-input text-input" value="忠孝分行">
+                                    <input id="account_branch_lable" type="button" class="button-input text-input for-display" value="">
+                                    <input id="account_branch_input" type="text" class="text-input for-input" value="">
                                     <input style="display: none" type="text" class="text-input">
                                 </td>
                                 <td>
-                                    <input type="button" class="button-input text-input" value="1111-0000-1111-9">
-                                    <input style="display: none" type="tel" class="text-input">
+                                    <input id="account_num_lable" type="button" class="button-input text-input for-display" value="">
+                                    <input id="account_num_input" type="text" class="text-input for-input" value="">
+                                    <input style="display: none" type="text" class="text-input">
                                 </td>
                                 <td>
-                                    <input type="button" class="button-input text-input" value="2017/09/09">
+                                    <input id="transfer_date_lable" type="button" class="button-input text-input for-display" value="">
+                                    <input id="transfer_date_input" type="text" class="text-input for-input" value="">
                                     <input style="display: none" type="text" class="text-input" placeholder="yyyy/mm/dd">
                                 </td>
                             </tr>
@@ -169,8 +175,8 @@
         <div class="bottom-button">
             <div class="container">
                 <img onclick="openPopup2()" src="/images/egames/qa-button.png">
-                <img src="/images/egames/edit-button.png">
-                <img src="/images/egames/send-button.png">
+                <img id="edit-button" class="for-display" src="/images/egames/edit-button.png">
+                <img id="update-account-btn" class="for-input" src="/images/egames/send-button.png">
             </div>
         </div>
     </div>
@@ -195,7 +201,12 @@
     </div>
     <!--go-top-js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="/js/config/configVar.js"></script>
+    <script src="/js/js.cookie.js" ></script>
+    <script src="/js/egames/login.js" ></script>
+    <script src='/js/egames/account-interface-after.js'></script>
+
     <script type="text/javascript">
     $(function() {
         $("#gotop").click(function() {

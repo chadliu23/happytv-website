@@ -16,16 +16,19 @@ $(document).ready(function(){
       $.ajax({
         type: 'PUT',
         dataType: 'json',
-        url: 'https://api-product.happytv.com.tw/api/v3/egame/2018-01/verify/email/'+ getParameterByName('email') +
-          '/requestcode/' +getParameterByName('requestcode') + 
+        url: happyApiHost + '/api/v3/egame/2018-01/verify/email/'+ getParameterByName('email') +
+          '/requestcode/' +getParameterByName('requestcode') +
           '/member/'+ Cookies.get('member_id')
       }).done((data) => {
-        window.location.replace('register-interface-after.html');
+        window.location.replace('register-interface-after.html?message=認證成功! 帳號已與報名資料連結');
       }).fail((data) => {
         window.location.replace('check-fault.html');
       })
     }else{
       window.location.replace('check-fault.html');
     }
+  } else {
+    $('#check-correct').css('display', 'none');
+    $('#fb-login').css('display', 'inline');
   }
 });

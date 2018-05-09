@@ -56,7 +56,7 @@
                             <a class="dropdown-toggle login" data-toggle="dropdown" href="#" role="button">
                                 <p onclick="openPopup()">登入</p>
                             </a>
-                            
+
                         </li>
                     </ul>
                 </div>
@@ -87,7 +87,7 @@
             </div>
         </div>
     </div>
-    <form action='https://api-product.happytv.com.tw/api/v3/egame/2018-01/update' method='post' enctype="multipart/form-data" >
+    <form id="update-form" method='post' enctype="multipart/form-data">
     <input id='row_id_0' name='row_id_0' type="text" class="text-input" hidden="true">
     <input id='row_id_1' name='row_id_1' type="text" class="text-input" hidden="true">
     <input id='row_id_2' name='row_id_2' type="text" class="text-input" hidden="true">
@@ -149,7 +149,7 @@
                                         <input id='phone_input_0' name='phone_0'  type="tel" class="for-input text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input id='email_label_0' type="button" class="for-display button-input text-input" value="">
+                                        <input id='email_label_0' type="button" class="for-display button-input text-input email-label" value="">
                                         <input id='email_input_0' name='email_0'  type="text" class="for-input text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                     <td>
@@ -157,7 +157,7 @@
                                         <input id='email_unverify_0' type="button" class="for-display button-input" style='display: none' value="尚未驗證">
                                     </td>
                                     <td>
-                                        <input id='email_verify_again_0' type="button" class="for-display button-input text-input" style='display: none' value="重寄認證信">
+                                        <input id='email_verify_again_0' type="button" class="for-display button-input text-input email-verify-again" style='display: none' value="重寄認證信">
                                     </td>
                                 </tr>
                                 <tr>
@@ -183,7 +183,7 @@
                                         <input id='phone_input_1' name='phone_1'  type="tel" class="for-input text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input id='email_label_1' type="button" class="for-display button-input text-input" value="">
+                                        <input id='email_label_1' type="button" class="for-display button-input text-input email-label" value="">
                                         <input id='email_input_1' name='email_1'  type="text" class="for-input text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                     <td>
@@ -191,7 +191,7 @@
                                         <input id='email_unverify_1' type="button" class="for-display button-input" value="尚未驗證" style='display: none'>
                                     </td>
                                     <td>
-                                        <input id='email_verify_again_1' type="button" class="for-display button-input text-input" value="重寄認證信" style='display: none'>
+                                        <input id='email_verify_again_1' type="button" class="for-display button-input text-input email-verify-again" value="重寄認證信" style='display: none'>
                                     </td>
                                 </tr>
                                 <tr>
@@ -217,7 +217,7 @@
                                         <input id='phone_input_2' name='phone_2'  type="tel" class="for-input text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input id='email_label_2' type="button" class="for-display button-input text-input" value="">
+                                        <input id='email_label_2' type="button" class="for-display button-input text-input email-label" value="">
                                         <input id='email_input_2' name='email_2'  type="text" class="for-input text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                     <td>
@@ -225,7 +225,7 @@
                                         <input id='email_unverify_2' type="button" class="for-display button-input" value="尚未驗證" style='display: none'>
                                     </td>
                                     <td>
-                                        <input id='email_verify_again_2' type="button" class="for-display button-input text-input" value="重寄認證信" style='display: none'>
+                                        <input id='email_verify_again_2' type="button" class="for-display button-input text-input email-verify-again" value="重寄認證信" style='display: none'>
                                     </td>
                                 </tr>
                                 <tr>
@@ -251,7 +251,7 @@
                                         <input id='phone_input_3' name='phone_3' type="tel" class="for-input text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input id='email_label_3' type="button" class="for-display button-input text-input" value="">
+                                        <input id='email_label_3' type="button" class="for-display button-input text-input email-label" value="">
                                         <input id='email_input_3' name='email_3' type="text" class="for-input text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                     <td>
@@ -259,7 +259,7 @@
                                         <input id='email_unverify_3' type="button" class="for-display button-input" value="尚未驗證" style='display: none'>
                                     </td>
                                     <td>
-                                        <input id='email_verify_again_3' type="button" class="for-display button-input text-input" value="重寄認證信" style='display: none'>
+                                        <input id='email_verify_again_3' type="button" class="for-display button-input text-input email-verify-again" value="重寄認證信" style='display: none'>
                                     </td>
                                 </tr>
                                 <tr>
@@ -285,7 +285,7 @@
                                         <input id='phone_input_4' name='phone_4' type="tel" class="for-input text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input id='email_label_4' type="button" class="for-display button-input text-input" value="">
+                                        <input id='email_label_4' type="button" class="for-display button-input text-input email-label" value="">
                                         <input id='email_input_4' name='email_4' type="text" class="for-input text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                     <td>
@@ -293,7 +293,7 @@
                                         <input id='email_unverify_4' type="button" class="for-display button-input" value="尚未驗證" style='display: none'>
                                     </td>
                                     <td>
-                                        <input id='email_verify_again_4' type="button" class="for-display button-input text-input" value="重寄認證信" style='display: none'>
+                                        <input id='email_verify_again_4' type="button" class="for-display button-input text-input email-verify-again" value="重寄認證信" style='display: none'>
                                     </td>
                                 </tr>
                                 <tr>
@@ -319,15 +319,15 @@
                                         <input id='phone_input_5' name='phone_5' type="tel" class="for-input text-input" placeholder='0912345678' maxlength="10"  pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input id='email_label_5' type="button" class="for-display button-input text-input" value="">
-                                        <input id='email_input_5' name='email_input_5' type="text" class="for-input text-input"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                        <input id='email_label_5' type="button" class="for-display button-input text-input email-label" value="">
+                                        <input id='email_input_5' name='email_5' type="text" class="for-input text-input"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                     <td>
                                         <input id='email_verify_success_5' type="button" class="for-display button-input" value="驗證成功" style='display: none'>
                                         <input id='email_unverify_5' type="button" class="for-display button-input" value="尚未驗證" style='display: none'>
                                     </td>
                                     <td>
-                                        <input id='email_verify_again_5' type="button" class="for-display button-input text-input" value="重寄認證信" style='display: none'>
+                                        <input id='email_verify_again_5' type="button" class="for-display button-input text-input email-verify-again" value="重寄認證信" style='display: none'>
                                     </td>
                                 </tr>
                                 <tr>
@@ -353,7 +353,7 @@
                                         <input id='phone_input_6' name='phone_6' type="tel" class="for-input text-input" placeholder='0912345678' maxlength="10"  pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input id='email_label_6' type="button" class="for-display button-input text-input" value="">
+                                        <input id='email_label_6' type="button" class="for-display button-input text-input email-label" value="">
                                         <input id='email_input_6' name='email_6' type="text" class="for-input text-input"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                                     </td>
                                     <td>
@@ -361,7 +361,7 @@
                                         <input id='email_unverify_6' type="button" class=" for-display button-input" value="尚未驗證" style='display: none'>
                                     </td>
                                     <td>
-                                        <input id='email_verify_again_6' type="button" class="for-display button-input text-input" value="重寄認證信" style='display: none'>
+                                        <input id='email_verify_again_6' type="button" class="for-display button-input text-input email-verify-again" value="重寄認證信" style='display: none'>
                                     </td>
                                 </tr>
                             </tbody>
@@ -408,7 +408,7 @@
         </div>
 
 
-                
+
         <div class="student-upload">
             <div class="container">
                 <span>隊長</span>
@@ -428,7 +428,7 @@
                 <input type="file" name='id_back_photo_1' style="display: none"  class="for-input file-input form-control" accept="image/*">
             </div>
         </div>
-        
+
         <div class="student-upload" >
             <div class="container">
                 <span>隊員2</span>
@@ -438,7 +438,7 @@
                 <input type="file" name='id_back_photo_2' style="display: none" class="for-input file-input form-control" accept="image/*">
             </div>
         </div>
-        
+
         <div class="student-upload" >
             <div class="container">
                 <span>隊員3</span>
@@ -448,7 +448,7 @@
                 <input type="file" name='id_back_photo_3' style="display: none"  class="for-input file-input form-control" accept="image/*">
             </div>
         </div>
-       
+
         <div class="student-upload">
             <div class="container">
                 <span>隊員4</span>
@@ -458,7 +458,7 @@
                 <input type="file" name='id_back_photo_4' style="display: none"  class="for-input file-input form-control" accept="image/*">
             </div>
         </div>
-        
+
         <div class="student-upload" >
             <div class="container">
                 <span>後補5</span>
@@ -468,7 +468,7 @@
                 <input type="file" name='id_back_photo_5' style="display: none"  class="for-input file-input form-control" accept="image/*">
             </div>
         </div>
-       
+
         <div class="student-upload" >
             <div class="container">
                 <span>後補6</span>
@@ -478,7 +478,7 @@
                 <input type="file" name='id_back_photo_6' style="display: none"  class="for-input file-input form-control" accept="image/*">
             </div>
         </div>
-        
+
     </div>
 
     <div id="bottom-button">
@@ -486,7 +486,8 @@
             <div class="container">
                 <img onclick="openPopup2()" style='float:left' src="/images/egames/qa-button.png">
                 <img id='edit-button' class='for-display' src="/images/egames/edit-button.png">
-                <button type='submit'> <img class='for-input' src="/images/egames/send-button.png"></button>
+                <img id="update-egame-btn" class='for-input' src="/images/egames/send-button.png">
+                <!-- <button type='submit'> <img src="/images/egames/send-button.png"> </button> -->
             </div>
         </div>
     </div>
@@ -513,6 +514,7 @@
     <!--go-top-js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="/js/config/configVar.js"></script>
     <script src="/js/js.cookie.js" ></script>
     <script src="/js/egames/login.js" ></script>
     <script src='/js/egames/register-interface-after.js'></script>
@@ -564,7 +566,7 @@
         }, 500);
     };
     </script>
-    
+
 </body>
 
 </html>

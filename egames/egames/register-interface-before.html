@@ -55,7 +55,7 @@
                             <a class="dropdown-toggle login" data-toggle="dropdown" href="#" role="button">
                                 <p onclick="openPopup()">登入</p>
                             </a>
-                            
+
                         </li>
                     </ul>
                 </div>
@@ -87,8 +87,9 @@
             </div>
         </div>
     </div>
-    <form action='https://api-product.happytv.com.tw/api/v3/egame/2018-01/create' method='post' enctype="multipart/form-data" >
-        <input id='member_id' name='member_id' type="number" class="text-input" hidden="true">
+    <form method='post' enctype="multipart/form-data" >
+    <!-- <form> -->
+        <input id='member_id' name='member_id' type="number" value="" class="text-input" hidden="true">
     <div id="register">
         <div class="register-button-img">
             <div class="container">
@@ -99,7 +100,7 @@
         <div class="register">
             <div class="container">
                 <h2>隊伍名稱</h2>
-                <input type="text" class="team-name" name="team_name" placeholder="限中、英、數字" maxlength="16" required>
+                <input id="team_name" type="text" class="team-name" name="team_name" placeholder="限中、英、數字" maxlength="16" required>
                 <p>(最多16字)</p>
                 <div class="table">
                     <div class="container">
@@ -354,7 +355,8 @@
         <div class="bottom-button">
             <div class="container">
                 <img onclick="openPopup2()" src="/images/egames/qa-button.png">
-                <button type='submit'> <img src="/images/egames/send-button.png"> </button>
+                <img id="create-egame-btn" src="/images/egames/send-button.png">
+                <!-- <button type='submit'> <img src="/images/egames/send-button.png"> </button> -->
             </div>
         </div>
     </div>
@@ -378,6 +380,7 @@
     <!--go-top-js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script src="/js/config/configVar.js"></script>
     <script src="/js/js.cookie.js" ></script>
     <script src="/js/egames/login.js" ></script>
     <script src='/js/egames/register-interface-before.js'></script>

@@ -1,0 +1,1 @@
+var happyApiHost = 'http://localhost';
