@@ -5,9 +5,9 @@
         popup();
     });
 
-    function menu_load(){
-        $('.header').load('_header.html');
-    };
+    // function menu_load(){
+    //     $('.header').load('_header.html');
+    // };
 
     function popup(){
         $('.btn_popup').on('click', function(e){

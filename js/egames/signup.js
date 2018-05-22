@@ -1,17 +1,17 @@
 $(document).ready(function(){
-  $.blockUI({
-    message: 'loading...',
-    css: {
-      border: 'none',
-      padding: '15px',
-      backgroundColor: '#000',
-      '-webkit-border-radius': '10px',
-      '-moz-border-radius': '10px',
-      opacity: .5,
-      color: '#fff',
-      message: 'Loading...'
-    }
-  });
+  // $.blockUI({
+  //   message: 'loading...',
+  //   css: {
+  //     border: 'none',
+  //     padding: '15px',
+  //     backgroundColor: '#000',
+  //     '-webkit-border-radius': '10px',
+  //     '-moz-border-radius': '10px',
+  //     opacity: .5,
+  //     color: '#fff',
+  //     message: 'Loading...'
+  //   }
+  // });
 
   let message = getParameterByName('message');
   if (message !== undefined && message !== null) {
@@ -37,7 +37,7 @@ $(document).ready(function(){
       console.log('失敗')
     });
   } else {
-    $.unblockUI()
+    //$.unblockUI()
 
     var a = $('#openModal')
     console.log(a.length)
