@@ -12,9 +12,7 @@ $(document).ready(function(){
       message: 'Loading...'
     }
   });
-})
 
-window.onload = function() {
   let message = getParameterByName('message');
   if (message !== undefined && message !== null) {
     alert(message);
@@ -33,12 +31,13 @@ window.onload = function() {
       $.unblockUI()
     });
   } else {
+    $.unblockUI()
     $('#openModal').css({ 'display': 'block' });
     setTimeout(function() {
         $('#openModal').css({ 'opacity': '1', 'pointer-events': 'auto' });
     }, 500);
   }
-};
+});
 
 function putInData(data) {
   if (data.retCode === 0 && data.result) {

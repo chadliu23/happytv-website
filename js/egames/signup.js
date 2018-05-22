@@ -12,10 +12,7 @@ $(document).ready(function(){
       message: 'Loading...'
     }
   });
-})
 
-
-window.onload=function(){
   let message = getParameterByName('message');
   if (message !== undefined && message !== null) {
     alert(message);
@@ -40,6 +37,8 @@ window.onload=function(){
       console.log('失敗')
     });
   } else {
+    $.unblockUI()
+
     var a = $('#openModal')
     console.log(a.length)
     $('#openModal').css({ 'display': 'block' });
@@ -47,7 +46,7 @@ window.onload=function(){
         $('#openModal').css({ 'opacity': '1', 'pointer-events': 'auto' });
     }, 500);
   }
-}
+})
 
 
 function putInData(data) {
@@ -215,6 +214,7 @@ $("#sign-up-form").submit(function (e) {
   }).done((data) => {
     window.location.replace('signup.html?message=' + successMsg);
   }).fail((xhr, textStatus, error) => {
+    alert('錯誤, 請填寫正確信箱以及檢查資料是否重複')
     window.location.replace('signup.html');
     console.log('error')
     console.log(error, textStatus, error);
