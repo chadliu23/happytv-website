@@ -22,7 +22,69 @@ $(document).ready(function(){
 //   return
 // })
 
+// // 使用form來做ajax
+$("#create-form").submit(function (e) {
+  e.preventDefault();
+  return
+  var member_id = Cookies.get('member_id');
+  var form = $(this)[0];
+  var formData = new FormData(form);
+
+  formData.append('member_id', member_id)
+
+  $.ajax({
+    type: 'POST',
+    headers: {
+      "accesskey": "accessKey_eb3604bd21a3176806f29607d47b069f17956cba",
+    },
+    //dataType: 'json',
+    data: formData,
+    processData: false,  // tell jQuery not to process the data
+    contentType: false,   // tell jQuery not to set contentType
+    url: happyApiHost + '/api/v3/egame/2018-01/update'
+  }).done((data) => {
+    window.location.replace('register-interface-after.html?message=修改成功!');
+  }).fail((xhr, textStatus, error) => {
+    console.log('error')
+    console.log(error, textStatus, error);
+  });
+})
+
+
+$(document).on('change', '.member-5-input', async function(e) {
+  var a = $(this).val()
+  var member5Inputs = $('.member-5-input')
+  var allStr = ""
+
+  member5Inputs.each(function(key, member5Input){
+    allStr = allStr + $(member5Input).val()
+  })
+
+  if(allStr.trim() === "") {
+    $('.member-5-input').removeAttr("required")
+  } else {
+    $('.member-5-input').attr("required", "required")
+  }
+})
+
+$(document).on('change', '.member-6-input', async function(e) {
+  var a = $(this).val()
+  var member6Inputs = $('.member-6-input')
+  var allStr = ""
+
+  member6Inputs.each(function(key, member5Input){
+    allStr = allStr + $(member6Input).val()
+  })
+
+  if(allStr.trim() === "") {
+    $('.member-6-input').removeAttr("required")
+  } else {
+    $('.member-6-input').attr("required", "required")
+  }
+})
+
 $(document).on('click', '#create-egame-btn', async function(e) {
+  return
   var member_id = Cookies.get('member_id');
   var team_name = $('#team_name').val();
   var data = {

@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta property="og:description" content="" />
+<meta property="og:title" content=""/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content=""/>
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="" />
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/egames/account-interface.css" />
+</head>
+
+<body>
+    <div class="header">
+        <!--
+        <h1><a href="">Yo!Show</a></h1>
+        <ul class="menu">
+            <li>
+                <a href="">活動內容<span></span></a>
+                <ul class="sub_menu">
+                    <li><a href="index.html">活動內容</a></li>
+                    <li><a href="e-games_2.html">選手資格</a></li>
+                    <li><a href="e-games_3.html">賽事獎金</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">報名方式<span></span></a>
+                <ul class="sub_menu">
+                    <li><a href="way.html">報名方式</a></li>
+                    <li><a href="#" class="on">戰隊報名</a></li>
+                    <li><a href="#">上傳學生證</a></li>
+                    <li><a href="#">匯款資訊</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">賽事規章<span></span></a>
+                <ul class="sub_menu">
+                    <li><a href="#">比賽規章</a></li>
+                    <li><a href="#">賽制規劃</a></li>
+                    <li><a href="#">斷線處理</a></li>
+                    <li><a href="#">約戰處理</a></li>
+                    <li><a href="#">違規處分</a></li>
+                    <li><a href="#">領獎方法</a></li>
+                    <li><a href="#">注意事項</a></li>
+                </ul>
+            </li>
+            <li><a href="">賽程表<span></span></a></li>
+            <li>
+                <a href="">線上約戰<span></span></a>
+                <ul class="sub_menu">
+                    <li><a href="#">線上約戰說明</a></li>
+                    <li><a href="#">線上約戰</a></li>
+                </ul>
+            </li>
+            <li><a href="">參賽戰隊<span></span></a></li>
+            <li><a href="">場地資訊<span></span></a></li>
+        </ul>
+        -->
+    </div>
+    <div id="main" class="main e-games">
+        <div class="box">
+            <ul class="tab">
+                <li><a href="way.html#main">報名方式</a></li>
+                <li><a href="signup.html#main">戰隊報名</a></li>
+                <li><a href="upload_student_card.html#main">上傳學生證</a></li>
+                <li><a href="remittance.html#main" class="on">匯款資訊</a></li>
+                <li><a href="" class="btn_popup">問題回報</a></li>
+            </ul>
+            <div class="content">
+                <form id="account-form">
+                    <h2>利用郵局轉帳、銀行匯款及各項方式匯款至下列帳號即可</h2>
+                    <ul class="remittance">
+                        <li>戶名：快樂科技股份有限公司</li>
+                        <li>分行名稱：忠孝分行</li>
+                        <li>帳號：0875-940-119028</li>
+                    </ul>
+                    <p>※參加完所有賽事，將退還保證金</p>
+                    <div class="returns">
+                        <h2>帳戶資訊回報</h2>
+                        <table class="interface">
+                            <thead>
+                                <tr class="table-title">
+                                    <th>戰隊名稱</th>
+                                    <th>帳戶名稱</th>
+                                    <th>銀行名稱(郵局)</th>
+                                    <th>分行名稱</th>
+                                    <th>帳號</th>
+                                    <th>匯款日期</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input id="team_name_input" type="text" class="text-input for-input" placeholder="(必填)">
+                                        <div id="team_name_label" class="for-display"></div>
+                                    </td>
+                                    <td>
+                                        <input id="account_name_input" type="text" class="text-input for-input" placeholder="(必填)">
+                                        <div id="account_name_label" class="for-display"></div>
+                                    </td>
+                                    <td>
+                                        <input id="account_bank_input" type="text" class="text-input for-input" placeholder="(必填)">
+                                        <div id="account_bank_label" class="for-display"></div>
+                                    </td>
+                                    <td>
+                                        <input id="account_branch_input" type="text" class="text-input for-input" placeholder="">
+                                        <div id="account_branch_label" class="for-display"></div>
+                                    </td>
+                                    <td>
+                                        <input id="account_num_input" type="tel" class="text-input for-input" placeholder="(必填)">
+                                        <div id="account_num_label" class="for-display"></div>
+                                    </td>
+                                    <td>
+                                        <input id="transfer_date_input" type="text" class="text-input for-input" placeholder="yyyy/mm/dd">
+                                        <div id="transfer_date_label" class="for-display"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h2>注意事項：</h2>
+                    <ol>
+                        <li>保證金將分兩階段退還，如有調整依公告為主。
+                            <ul>
+                                <li>第一波：線上賽事結束－發放時間為8/10起，陸續發放。</li>
+                                <li>第二波：線下賽事結束－發放時間為8/26現場發放。</li>
+                                <li>保證金請於6/26 23:59前繳交，如沒有在期限內繳交，則視同報名失敗。</li>
+                                <li>每戰隊只需一位成員填寫即可</li>
+                                <li>請確實填寫資料，以免造成退款錯誤。</li>
+                                <li>因個人填寫錯誤導致退款失敗因而造成損失，主辦單位一概不負責</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <input id='form-type' type="text" class="text-input" hidden="true" value="create">
+                    <button type="button" class="btn_edit" style="display: none;"></button>
+                    <button type='submit' class="btn_send"></button>
+
+                </form>
+            </div>
+        </div>
+        <div class="bg"></div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='/js/egames/jquery.blockUI.js'></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script src='/js/egames/account-interface.js'></script>
+</body>
+</html>

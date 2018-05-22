@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta property="og:description" content="" />
+<meta property="og:title" content=""/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content=""/>
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="" />
+<title></title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+
+<body>
+    <div class="header">
+        <!--
+        <h1><a href="">Yo!Show</a></h1>
+        <ul class="menu">
+            <li>
+                <a href="">活動內容<span></span></a>
+                <ul class="sub_menu">
+                    <li><a href="index.html">活動內容</a></li>
+                    <li><a href="e-games_2.html">選手資格</a></li>
+                    <li><a href="e-games_3.html">賽事獎金</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">報名方式<span></span></a>
+                <ul class="sub_menu">
+                    <li><a href="way.html">報名方式</a></li>
+                    <li><a href="#" class="on">戰隊報名</a></li>
+                    <li><a href="#">上傳學生證</a></li>
+                    <li><a href="#">匯款資訊</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">賽事規章<span></span></a>
+                <ul class="sub_menu">
+                    <li><a href="#">比賽規章</a></li>
+                    <li><a href="#">賽制規劃</a></li>
+                    <li><a href="#">斷線處理</a></li>
+                    <li><a href="#">約戰處理</a></li>
+                    <li><a href="#">違規處分</a></li>
+                    <li><a href="#">領獎方法</a></li>
+                    <li><a href="#">注意事項</a></li>
+                </ul>
+            </li>
+            <li><a href="">賽程表<span></span></a></li>
+            <li>
+                <a href="">線上約戰<span></span></a>
+                <ul class="sub_menu">
+                    <li><a href="#">線上約戰說明</a></li>
+                    <li><a href="#">線上約戰</a></li>
+                </ul>
+            </li>
+            <li><a href="">參賽戰隊<span></span></a></li>
+            <li><a href="">場地資訊<span></span></a></li>
+        </ul>
+        -->
+    </div>
+    <div id="main" class="main e-games">
+        <div class="box">
+            <ul class="tab">
+                <li><a href="way.html#main">報名方式</a></li>
+                <li><a href="signup.html#main" class="on">戰隊報名</a></li>
+                <li><a href="upload_student_card.html#main">上傳學生證</a></li>
+                <li><a href="remittance.html#main">匯款資訊</a></li>
+                <li><a href="" class="btn_popup">問題回報</a></li>
+            </ul>
+            <div class="content">
+                <form id="sign-up-form">
+                    <input id='row_id_0' name='row_id_0' type="text" class="text-input" hidden="true">
+                    <input id='row_id_1' name='row_id_1' type="text" class="text-input" hidden="true">
+                    <input id='row_id_2' name='row_id_2' type="text" class="text-input" hidden="true">
+                    <input id='row_id_3' name='row_id_3' type="text" class="text-input" hidden="true">
+                    <input id='row_id_4' name='row_id_4' type="text" class="text-input" hidden="true">
+                    <input id='row_id_5' name='row_id_5' type="text" class="text-input" hidden="true">
+                    <input id='row_id_6' name='row_id_6' type="text" class="text-input" hidden="true">
+                    <input id='team_id' name='team_id' type="text" class="text-input" hidden="true">
+
+                    <h2>隊伍名稱</h2>
+                    <div class="team_title">
+                        <input id="team-name-input" class="for-input" type="text" name="team_name" placeholder="限中、英、數字" maxlength="16" required>
+                        <span class="for-input">(最多16字)</span>
+                        <div id="team-name-label" class="for-display"></div>
+                    </div>
+                    <div class="team_member final">
+                        <ul class="signup_from">
+                            <li>擔任</li>
+                            <li>召喚師名稱</li>
+                            <li>姓名</li>
+                            <li>學校名稱</li>
+                            <li>學號</li>
+                            <li>手機電話</li>
+                            <li>E-MAIL</li>
+                            <li>E-MAIL認證</li>
+                        </ul>
+                        <ul class="signup_from">
+                            <li>隊長</li>
+                            <li class="for-input"><input id="summoner_input_0" name='summoner_0' type="text" required></li>
+                            <li id="summoner_label_0" class="for-display" style="display: none"></li>
+                            <li class="for-input"><input id="member_name_input_0" class="for-input" name='name_0' type="text" required></li>
+                            <li id="member_name_label_0" class="for-display"></li>
+                            <li class="for-input"><input id="school_name_input_0" class="for-input" name='school_name_0'  type="text" required></li>
+                            <li id="school_name_label_0" class="for-display"></li>
+                            <li class="for-input"><input id="student_id_input_0" class="for-input" name='student_id_0'  type="text" required></li>
+                            <li id="student_id_label_0" class="for-display"></li>
+                            <li class="for-input"><input id="phone_input_0" class="for-input" name='phone_0'  type="tel" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'></li>
+                            <li id="phone_label_0" class="for-display"></li>
+                            <li class="for-input"><input id="email_input_0" class="for-input" name='email_0' type="text" required pattern="^[a-zA-Z0-9._%+-]+@(?![hH][oO][tT][mM][aA][iI][lL])([a-zA-Z0-9.-])+\.[a-zA-Z]{2,4}" title='請填寫正確信箱, 且不可填寫hotmail之信箱'></li>
+                            <li id="email_label_0" class="email-label for-display"></li>
+                            <li id='email_verify_success_0' class="for-display about-verify" style="display: none">驗證成功</li>
+                            <li id='email_unverify_0' class="for-display about-verify" style="display: none">尚未認證</li>
+                            <li id="email_verify_again_0" class="for-display about-verify" style="display: none"><button type="button" class="btn_resend">重寄認證信</button></li>
+                        </ul>
+                        <ul class="signup_from">
+                            <li>隊員1</li>
+                            <li class="for-input"><input id="summoner_input_1" class="for-input" name='summoner_1' type="text" required></li>
+                            <li id="summoner_label_1" class="for-display"></li>
+                            <li class="for-input"><input id="member_name_input_1" class="for-input" name='name_1' type="text" required></li>
+                            <li id="member_name_label_1" class="for-display"></li>
+                            <li class="for-input"><input id="school_name_input_1" class="for-input" name='school_name_1'  type="text" required></li>
+                            <li id="school_name_label_1" class="for-display"></li>
+                            <li class="for-input"><input id="student_id_input_1" class="for-input" name='student_id_1'  type="text" required></li>
+                            <li id="student_id_label_1" class="for-display"></li>
+                            <li class="for-input"><input id="phone_input_1" class="for-input" name='phone_1'  type="tel" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'></li>
+                            <li id="phone_label_1" class="for-display"></li>
+                            <li class="for-input"><input id="email_input_1" class="for-input" name='email_1'  type="text" required pattern="^[a-zA-Z0-9._%+-]+@(?![hH][oO][tT][mM][aA][iI][lL])([a-zA-Z0-9.-])+\.[a-zA-Z]{2,4}" title='請填寫正確信箱, 且不可填寫hotmail之信箱'></li>
+                            <li id="email_label_1" class="email-label for-display"></li>
+                            <li id='email_verify_success_1' class="for-display about-verify" style="display: none">驗證成功</li>
+                            <li id='email_unverify_1' class="for-display about-verify" style="display: none">尚未認證</li>
+                            <li id="email_verify_again_1" class="for-display about-verify" style="display: none"><button type="button" class="btn_resend about-verify">重寄認證信</button></li>
+
+
+
+                        </ul>
+                        <ul class="signup_from">
+                            <li>隊員2</li>
+                            <li class="for-input"><input id="summoner_input_2" class="for-input" name='summoner_2' type="text" required></li>
+                            <li id="summoner_label_2" class="for-display"></li>
+                            <li class="for-input"><input id="member_name_input_2" class="for-input" name='name_2' type="text" required></li>
+                            <li id="member_name_label_2" class="for-display"></li>
+                            <li class="for-input"><input id="school_name_input_2" class="for-input" name='school_name_2'  type="text" required></li>
+                            <li id="school_name_label_2" class="for-display"></li>
+                            <li class="for-input"><input id="student_id_input_2" class="for-input" name='student_id_2'  type="text" required></li>
+                            <li id="student_id_label_2" class="for-display"></li>
+                            <li class="for-input"><input id="phone_input_2" class="for-input" name='phone_2'  type="tel" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'></li>
+                            <li id="phone_label_2" class="for-display"></li>
+                            <li class="for-input"><input id="email_input_2" class="for-input" name='email_2'  type="text" required pattern="^[a-zA-Z0-9._%+-]+@(?![hH][oO][tT][mM][aA][iI][lL])([a-zA-Z0-9.-])+\.[a-zA-Z]{2,4}" title='請填寫正確信箱, 且不可填寫hotmail之信箱'></li>
+                            <li id="email_label_2" class="email-label for-display"></li>
+                            <li id='email_verify_success_2' class="for-display about-verify" style="display: none">驗證成功</li>
+                            <li id='email_unverify_2' class="for-display about-verify" style="display: none">尚未認證</li>
+                            <li id="email_verify_again_2" class="for-display about-verify" style="display: none"><button type="button" class="btn_resend about-verify">重寄認證信</button></li>
+                        </ul>
+                        <ul class="signup_from">
+                            <li>隊員3</li>
+                            <li class="for-input"><input id="summoner_input_3" class="for-input" name='summoner_3' type="text" required></li>
+                            <li id="summoner_label_3" class="for-display"></li>
+                            <li class="for-input"><input id="member_name_input_3" class="for-input" name='name_3' type="text" required></li>
+                            <li id="member_name_label_3" class="for-display"></li>
+                            <li class="for-input"><input id="school_name_input_3" class="for-input" name='school_name_3'  type="text" required></li>
+                            <li id="school_name_label_3" class="for-display"></li>
+                            <li class="for-input"><input id="student_id_input_3" class="for-input" name='student_id_3'  type="text" required></li>
+                            <li id="student_id_label_3" class="for-display"></li>
+                            <li class="for-input"><input id="phone_input_3" class="for-input" name='phone_3'  type="tel" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'></li>
+                            <li id="phone_label_3" class="for-display"></li>
+                            <li class="for-input"><input id="email_input_3" class="for-input" name='email_3'  type="text" required pattern="^[a-zA-Z0-9._%+-]+@(?![hH][oO][tT][mM][aA][iI][lL])([a-zA-Z0-9.-])+\.[a-zA-Z]{2,4}" title='請填寫正確信箱, 且不可填寫hotmail之信箱'></li>
+                            <li id="email_label_3" class="email-label for-display"></li>
+                            <li id='email_verify_success_3' class="for-display about-verify" style="display: none">驗證成功</li>
+                            <li id='email_unverify_3' class="for-display about-verify" style="display: none">尚未認證</li>
+                            <li id="email_verify_again_3" class="for-display about-verify" style="display: none"><button type="button" class="btn_resend about-verify">重寄認證信</button></li>
+                        </ul>
+                        <ul class="signup_from">
+                            <li>隊員4</li>
+                            <li class="for-input"><input id="summoner_input_4" class="for-input" name='summoner_4' type="text" required></li>
+                            <li id="summoner_label_4" class="for-display"></li>
+                            <li class="for-input"><input id="member_name_input_4" class="for-input" name='name_4' type="text" required></li>
+                            <li id="member_name_label_4" class="for-display"></li>
+                            <li class="for-input"><input id="school_name_input_4" class="for-input" name='school_name_4'  type="text" required></li>
+                            <li id="school_name_label_4" class="for-display"></li>
+                            <li class="for-input"><input id="student_id_input_4" class="for-input" name='student_id_4'  type="text" required></li>
+                            <li id="student_id_label_4" class="for-display"></li>
+                            <li class="for-input"><input id="phone_input_4" class="for-input" name='phone_4'  type="tel" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'></li>
+                            <li id="phone_label_4" class="for-display"></li>
+                            <li class="for-input"><input id="email_input_4" class="for-input" name='email_4'  type="text" required pattern="^[a-zA-Z0-9._%+-]+@(?![hH][oO][tT][mM][aA][iI][lL])([a-zA-Z0-9.-])+\.[a-zA-Z]{2,4}" title='請填寫正確信箱, 且不可填寫hotmail之信箱'></li>
+                            <li id="email_label_4" class="email-label for-display"></li>
+                            <li id='email_verify_success_4' class="for-display about-verify" style="display: none">驗證成功</li>
+                            <li id='email_unverify_4' class="for-display about-verify" style="display: none">尚未認證</li>
+                            <li id="email_verify_again_4" class="for-display about-verify" style="display: none"><button type="button" class="btn_resend about-verify">重寄認證信</button></li>
+                        </ul>
+                        <ul class="signup_from">
+                            <li>候補5</li>
+                            <li class="for-input"><input id="summoner_input_5" class="for-input member-5-input" name='summoner_5' type="text"></li>
+                            <li id="summoner_label_5" class="for-display"></li>
+                            <li class="for-input"><input id="member_name_input_5" class="for-input member-5-input" name='name_5' type="text"></li>
+                            <li id="member_name_label_5" class="for-display"></li>
+                            <li class="for-input"><input id="school_name_input_5" class="for-input member-5-input" name='school_name_5'  type="text"></li>
+                            <li id="school_name_label_5" class="for-display"></li>
+                            <li class="for-input"><input id="student_id_input_5" class="for-input member-5-input" name='student_id_5'  type="text"></li>
+                            <li id="student_id_label_5" class="for-display"></li>
+                            <li class="for-input"><input id="phone_input_5" class="for-input member-5-input" name='phone_5'  type="tel" placeholder='0912345678' maxlength="10" pattern="\d{10}" title='純數字，例如:0912345678'></li>
+                            <li id="phone_label_5" class="for-display"></li>
+                            <li class="for-input"><input id="email_input_5" class="for-input member-5-input" name='email_5'  type="text" pattern="^[a-zA-Z0-9._%+-]+@(?![hH][oO][tT][mM][aA][iI][lL])([a-zA-Z0-9.-])+\.[a-zA-Z]{2,4}" title='請填寫正確信箱, 且不可填寫hotmail之信箱'></li>
+                            <li id="email_label_5" class="email-label for-display"></li>
+                            <li id='email_verify_success_5' class="for-display about-verify" style="display: none">驗證成功</li>
+                            <li id='email_unverify_5' class="for-display about-verify" style="display: none">尚未認證</li>
+                            <li id="email_verify_again_5" class="for-display about-verify" style="display: none"><button type="button" class="btn_resend about-verify">重寄認證信</button></li>
+                        </ul>
+                        <ul class="signup_from">
+                            <li>候補67</li>
+                            <li class="for-input"><input id="summoner_input_6" class="for-input member-6-input" name='summoner_6' type="text"></li>
+                            <li id="summoner_label_6" class="for-display"></li>
+                            <li class="for-input"><input id="member_name_input_6" class="for-input member-6-input" name='name_6' type="text"></li>
+                            <li id="member_name_label_6" class="for-display"></li>
+                            <li class="for-input"><input id="school_name_input_6" class="for-input member-6-input" name='school_name_6'  type="text"></li>
+                            <li id="school_name_label_6" class="for-display"></li>
+                            <li class="for-input"><input id="student_id_input_6" class="for-input member-6-input" name='student_id_6'  type="text"></li>
+                            <li id="student_id_label_6" class="for-display"></li>
+                            <li class="for-input"><input id="phone_input_6" class="for-input member-6-input" name='phone_6'  type="tel" placeholder='0912345678' maxlength="10" pattern="\d{10}" title='純數字，例如:0912345678'></li>
+                            <li id="phone_label_6" class="for-display"></li>
+                            <li class="for-input"><input id="email_input_6" class="for-input member-6-input" name='email_6'  type="text" pattern="^[a-zA-Z0-9._%+-]+@(?![hH][oO][tT][mM][aA][iI][lL])([a-zA-Z0-9.-])+\.[a-zA-Z]{2,4}" title='請填寫正確信箱, 且不可填寫hotmail之信箱'></li>
+                            <li id="email_label_6" class="email-label for-display"></li>
+                            <li id='email_verify_success_6' class="for-display about-verify" style="display: none">驗證成功</li>
+                            <li id='email_unverify_6' class="for-display about-verify" style="display: none">尚未認證</li>
+                            <li id="email_verify_again_6" class="for-display about-verify" style="display: none"><button type="button" class="btn_resend about-verify">重寄認證信</button></li>
+                        </ul>
+                    </div>
+                    <h2>注意事項</h2>
+                    <ol>
+                        <li>須完整填寫召喚師名稱。</li>
+                        <li>召喚師、姓名、學校名稱、學號、手機號碼、Email為“必填”格式。</li>
+                        <li>注意事項2中每個資訊僅可被登錄到一個戰隊。</li>
+                    </ol>
+                    <!-- <a href="" class="btn_send">送出</a> -->
+                    <input id='form-type' type="text" class="text-input" hidden="true" value="create">
+                    <button type="button" class="btn_edit" style="display: none;">編輯</button>
+                    <button type='submit' class="btn_send"></button>
+                </form>
+            </div>
+        </div>
+        <div class="bg"></div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='/js/egames/jquery.blockUI.js'></script>
+<script type="text/javascript" src="js/common.js"></script>
+<!-- <script src="/js/config/configVar.js"></script>
+<script src="/js/js.cookie.js" ></script>
+<script src="js/login.js" ></script> -->
+
+<script src='/js/egames/signup.js'></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta property="og:description" content="" />
+<meta property="og:title" content=""/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content=""/>
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="" />
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <!--
+        <h1><a href="">Yo!Show</a></h1>
+        <ul class="menu">
+            <li>
+                <a href="">活動內容<span></span></a>
+                <ul class="sub_menu">
+                    <li><a href="index.html">活動內容</a></li>
+                    <li><a href="e-games_2.html">選手資格</a></li>
+                    <li><a href="e-games_3.html">賽事獎金</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">報名方式<span></span></a>
+                <ul class="sub_menu">
+                    <li><a href="way.html">報名方式</a></li>
+                    <li><a href="#" class="on">戰隊報名</a></li>
+                    <li><a href="#">上傳學生證</a></li>
+                    <li><a href="#">匯款資訊</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">賽事規章<span></span></a>
+                <ul class="sub_menu">
+                    <li><a href="#">比賽規章</a></li>
+                    <li><a href="#">賽制規劃</a></li>
+                    <li><a href="#">斷線處理</a></li>
+                    <li><a href="#">約戰處理</a></li>
+                    <li><a href="#">違規處分</a></li>
+                    <li><a href="#">領獎方法</a></li>
+                    <li><a href="#">注意事項</a></li>
+                </ul>
+            </li>
+            <li><a href="">賽程表<span></span></a></li>
+            <li>
+                <a href="">線上約戰<span></span></a>
+                <ul class="sub_menu">
+                    <li><a href="#">線上約戰說明</a></li>
+                    <li><a href="#">線上約戰</a></li>
+                </ul>
+            </li>
+            <li><a href="">參賽戰隊<span></span></a></li>
+            <li><a href="">場地資訊<span></span></a></li>
+        </ul>
+        -->
+    </div>
+    <div id="main" class="main e-games">
+        <div class="box">
+            <ul class="tab">
+                <li><a href="way.html#main">報名方式</a></li>
+                <li><a href="signup.html#main">戰隊報名</a></li>
+                <li><a href="upload_student_card.html#main" class="on">上傳學生證</a></li>
+                <li><a href="remittance.html#main">匯款資訊</a></li>
+                <li><a href="" class="btn_popup">問題回報</a></li>
+            </ul>
+
+            <div class="content">
+                <form id="upload-form">
+                    <h2>範例</h2>
+                    <ul class="upload_example">
+                        <li>
+                            <img src="images/student-card-ex.png">
+                            <span>正面</span>
+                        </li>
+                        <li>
+                            <img src="images/student-card-ex-back.png">
+                            <span>反面</span>
+                        </li>
+                    </ul>
+                    <h2>上傳</h2>
+                    <div class="upload_box">
+                        <div class="student-upload member_0" style="display: none;">
+                            <div class="container ">
+                                <span>隊長</span>
+                                <div class="card">
+                                    <div class="student-img-div"><img id='id_front_photo_label_0' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                    <input type="file" name='id_front_photo_0' class="file-input form-control" accept="image/*">
+                                </div>
+                                <div class="card">
+                                    <div class="student-img-div"><img id='id_back_photo_label_0' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                    <input type="file" name='id_back_photo_0'  class="file-input form-control" accept="image/*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="student-upload member_1" style="display: none;">
+                            <div class="container">
+                                <span>隊員1</span>
+                                <div class="card">
+                                    <div class="student-img-div"><img id='id_front_photo_label_1' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                    <input type="file" name='id_front_photo_1' class="file-input form-control" accept="image/*">
+                                </div>
+                                <div class="card">
+                                    <div class="student-img-div"><img id='id_back_photo_label_1' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                    <input type="file" name='id_back_photo_1'  class="file-input form-control" accept="image/*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="student-upload member_2" style="display: none;">
+                            <div class="container">
+                                <span>隊員2</span>
+                                <div class="card">
+                                    <div class="student-img-div"><img id='id_front_photo_label_2' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                    <input type="file" name='id_front_photo_2' class="file-input form-control" accept="image/*">
+                                </div>
+                                <div class="card">
+                                    <div class="student-img-div"><img id='id_back_photo_label_2' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                    <input type="file" name='id_back_photo_2'  class="file-input form-control" accept="image/*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="student-upload member_3" style="display: none;">
+                            <div class="container">
+                                <span>隊員3</span>
+                                <div class="card">
+                                    <div class="student-img-div"><img id='id_front_photo_label_3' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                    <input type="file" name='id_front_photo_3' class="file-input form-control" accept="image/*">
+                                </div>
+                                <div class="card">
+                                    <div class="student-img-div"><img id='id_back_photo_label_3' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                    <input type="file" name='id_back_photo_3'  class="file-input form-control" accept="image/*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="student-upload member_4" style="display: none;">
+                            <div class="container">
+                                <span>隊員4</span>
+                                <div class="card">
+                                     <div class="student-img-div"><img id='id_front_photo_label_4' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                     <input type="file" name='id_front_photo_4' class="file-input form-control" accept="image/*">
+                                </div>
+                                <div class="card">
+                                    <div class="student-img-div"><img id='id_back_photo_label_4' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                    <input type="file" name='id_back_photo_4'  class="file-input form-control" accept="image/*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="student-upload member_5" style="display: none;">
+                            <div class="container">
+                                <span>後補5</span>
+                                <div class="card">
+                                     <div class="student-img-div"><img id='id_front_photo_label_5' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                      <input type="file" name='id_front_photo_5' class="file-input form-control" accept="image/*">
+                                </div>
+                                <div class="card">
+                                    <div class="student-img-div"><img id='id_back_photo_label_5' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                    <input type="file" name='id_back_photo_5'  class="file-input form-control" accept="image/*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="student-upload member_6" style="display: none;">
+                            <div class="container">
+                                <span>後補6</span>
+                                <div class="card">
+                                    <div class="student-img-div"><img id='id_front_photo_label_6' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                    <input type="file" name='id_front_photo_6' class="file-input form-control" accept="image/*">
+                                </div>
+                                <div class="card">
+                                    <div class="student-img-div"><img id='id_back_photo_label_6' src="https://fakeimg.pl/350x200/000000/FFF/?text=img+placeholder"></div>
+                                    <input type="file" name='id_back_photo_6'  class="file-input form-control" accept="image/*">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input id='row_id_0' name='row_id_0' type="text" class="text-input" hidden="true">
+                    <input id='row_id_1' name='row_id_1' type="text" class="text-input" hidden="true">
+                    <input id='row_id_2' name='row_id_2' type="text" class="text-input" hidden="true">
+                    <input id='row_id_3' name='row_id_3' type="text" class="text-input" hidden="true">
+                    <input id='row_id_4' name='row_id_4' type="text" class="text-input" hidden="true">
+                    <input id='row_id_5' name='row_id_5' type="text" class="text-input" hidden="true">
+                    <input id='row_id_6' name='row_id_6' type="text" class="text-input" hidden="true">
+                    <input id='team_id' name='team_id' type="text" class="text-input" hidden="true">
+                    <!-- <a href="" class="btn_send">送出</a> -->
+                    <button type='submit' class="btn_send"></button>
+                </form>
+            </div>
+        </div>
+        <div class="bg"></div>
+    </div>
+<script src='/js/egames/upload_student_card.js'></script>
+</body>
+</html>
