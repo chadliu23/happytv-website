@@ -1,7 +1,7 @@
 (function($){
 
     $(function(){
-        menu_load();
+        //menu_load();
         popup();
     });
 
