@@ -36,6 +36,7 @@ window.onload=function(){
       // insertData
       //window.location.replace('signup-after.html');
     }).fail((data) => {
+      $.unblockUI()
       console.log('失敗')
     });
   } else {
@@ -200,6 +201,7 @@ $("#sign-up-form").submit(function (e) {
   }).done((data) => {
     window.location.replace('signup.html?message=' + successMsg);
   }).fail((xhr, textStatus, error) => {
+    window.location.replace('signup.html');
     console.log('error')
     console.log(error, textStatus, error);
   });

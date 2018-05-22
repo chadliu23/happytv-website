@@ -30,7 +30,7 @@ window.onload = function() {
       putInData(data)
       //window.location.replace('account-interface-after.html');
     }).fail((data) =>{
-
+      $.unblockUI()
     });
   } else {
     $('#openModal').css({ 'display': 'block' });
