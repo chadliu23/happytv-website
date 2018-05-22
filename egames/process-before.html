@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta property="og:description" content="" />
+<meta property="og:title" content=""/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content=""/>
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="" />
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="login_box">
+            <a href="" class="user" id='member-tag' style="display: none"><span class="caret"></span></a>
+
+            <a href="#" id='login-tag' class="btn_login" onclick="openPopup()">登入</a>
+        </div>
+        <div id="openModal" class="modalDialog">
+            <div>
+                <div onclick="closePopup()" title="Close" class="close">X</div>
+                <a href="#" onclick='loginFacebook()'><img src="/images/egames/fb-button.png"></a>
+            </div>
+        </div>
+    </div>
+    <div id="main" class="main e-games">
+        <div class="box">
+            <ul class="process_tab">
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+                <li><a href="">A區</a></li>
+            </ul>
+            <div class="content">
+                <h2>賽程表</h2>
+                <table class="process_table">
+                    <tbody>
+                        <tr>
+                            <td class="up-load">
+                                <span class="tick"></span><!-- 上傳完成的勾勾 -->
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td>
+                                <input type="button" class="team-button purple" value="紫隊名字超長怎麼辦怎麼辦">
+                                <input type="button" class="team-button blue" value="藍隊">
+                            </td>
+                            <td rowspan="2" class="line">
+                                <img src="images/small-line.png"></td>
+                            <td rowspan="2" class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td rowspan="2">
+                                <input type="button" class="team-button purple lose" value="輸掉了輸掉了">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                            <td rowspan="4" class="line"><img src="images/middle-line.png"></td>
+                            <td rowspan="4" class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td rowspan="4">
+                                <input type="button" class="team-button purple" value="隊伍A">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                            <td rowspan="8" class="line"><img src="images/large-line.png"></td>
+                            <td rowspan="8" class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td rowspan="8">
+                                <input type="button" class="team-button purple" value="隊伍A">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td>
+                                <input type="button" class="team-button purple" value="隊伍A">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td>
+                                <input type="button" class="team-button purple" value="隊伍A">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                            <td rowspan="2" class="line"><img src="images/small-line.png"></td>
+                            <td rowspan="2" class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td rowspan="2">
+                                <input type="button" class="team-button purple" value="隊伍A">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td>
+                                <input type="button" class="team-button purple" value="隊伍A">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td>
+                                <input type="button" class="team-button purple" value="隊伍A">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                            <td rowspan="2" class="line"><img src="images/small-line.png"></td>
+                            <td rowspan="2" class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td rowspan="2">
+                                <input type="button" class="team-button purple" value="隊伍A">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                            <td rowspan="4" class="line"><img src="images/middle-line.png"></td>
+                            <td rowspan="4" class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td rowspan="4">
+                                <input type="button" class="team-button purple" value="隊伍A">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td>
+                                <input type="button" class="team-button purple" value="隊伍A">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td>
+                                <input type="button" class="team-button purple" value="隊伍A">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                            <td rowspan="2" class="line"><img src="images/small-line.png"></td>
+                            <td rowspan="2" class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td rowspan="2">
+                                <input type="button" class="team-button purple" value="隊伍A">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="up-load">
+                                <p>戰報上傳</p>
+                                <input type="file" class="up-load-button">
+                            </td>
+                            <td>
+                                <input type="button" class="team-button purple" value="隊伍A">
+                                <input type="button" class="team-button blue" value="隊伍B">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+        </div>
+        <div class="bg"></div>
+    </div>
+
+</body>
+</html>

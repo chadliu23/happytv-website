@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta property="og:description" content="" />
+<meta property="og:title" content=""/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content=""/>
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="" />
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script src="/js/config/configVar.js"></script>
+<script src="/js/js.cookie.js" ></script>
+<script src="/js/egames/login.js" ></script>
+<script type="text/javascript" src="js/common.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="login_box">
+            <a href="" class="user" id='member-tag' style="display: none"><span class="caret"></span></a>
+
+            <a href="#" id='login-tag' class="btn_login" onclick="openPopup()">登入</a>
+        </div>
+        <div id="openModal" class="modalDialog">
+            <div>
+                <div onclick="closePopup()" title="Close" class="close">X</div>
+                <a href="#" onclick='loginFacebook()'><img src="/images/egames/fb-button.png"></a>
+            </div>
+        </div>
+    </div>
+    <div id="main" class="main e-games">
+        <div class="box">
+            <ul class="tab_regulation">
+                <li><a href="regulation_1.html#main">比賽規章</a></li>
+                <li><a href="regulation_2.html#main" class="on">賽制規劃</a></li>
+                <li><a href="regulation_3.html#main">斷線處理</a></li>
+                <li><a href="regulation_4.html#main">約戰處理</a></li>
+                <li><a href="regulation_5.html#main">違規處分</a></li>
+                <li><a href="regulation_6.html#main">領獎方法</a></li>
+                <li><a href="regulation_7.html#main">注意事項</a></li>
+            </ul>
+            <div class="content">
+                <h2>賽制規畫</h2>
+                <p>《2018 Yo!Show全國高中職LOL擂台挑戰賽》線上賽將依參賽隊伍平均分為數個賽區，若無法平均分配，將隨機抽出種子隊，並進行為期三到五週的線上賽制。每場對戰皆採取單局勝制（Best of one，後稱BO1），隊長於每周約戰時間內自行約戰並在約定時間內由藍方開啟對戰房。</p>
+                <table class="system_table">
+                    <tr>
+                        <th></th>
+                        <th>日期</th>
+                        <th>賽事</th>
+                        <th>賽制</th>
+                        <th>備註</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">線上賽</td>
+                        <td>7/3（二）~ 7/8（日）</td>
+                        <td>線上初賽 - 第一輪</td>
+                        <td>BO1</td>
+                        <td rowspan="5">前8名之隊伍獲得進入線下賽之資格。</td>
+                    </tr>
+                    <tr>
+                        <td>7/10（二）~ 7/15（日）</td>
+                        <td>線上初賽 - 第二輪</td>
+                        <td>BO1</td>
+                    </tr>
+                    <tr>
+                        <td>7/17（二）~ 7/22（日）</td>
+                        <td>線上初賽 - 第三輪</td>
+                        <td>BO1</td>
+                    </tr>
+                    <tr>
+                        <td>7/24（二）~ 7/29（日）</td>
+                        <td>線上初賽 - 第四輪</td>
+                        <td>BO1</td>
+                    </tr>
+                    <tr>
+                        <td>7/31（二）~ 8/5（日）</td>
+                        <td>線上複賽（16取8）</td>
+                        <td>BO1</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">線下賽</td>
+                        <td>8/24</td>
+                        <td>複賽 （8取4）</td>
+                        <td>BO1</td>
+                        <td>10:00開幕式、11:00抽籤、12:00開賽</td>
+                    </tr>
+                    <tr>
+                        <td>8/25</td>
+                        <td>準決賽 （4取2）</td>
+                        <td>BO3</td>
+                        <td>12:00開打</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">8/26</td>
+                        <td>季軍賽</td>
+                        <td> BO3</td>
+                        <td rowspan="2">10:00開打、閉幕頒獎、媒體採訪</td>
+                    </tr>
+                    <tr>
+                        <td>冠軍賽</td>
+                        <td> BO5</td>
+                    </tr>
+                </table>
+                <p>將於7/2 起，每週一公佈下一輪之對戰資料。</p>
+                <p>※線上賽之賽程將依參賽隊伍多寡而調整。</p>
+            </div>
+        </div>
+        <div class="footer">
+        </div>
+        <div class="bg"></div>
+    </div>
+
+</body>
+</html>

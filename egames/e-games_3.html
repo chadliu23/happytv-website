@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta property="og:description" content="" />
+<meta property="og:title" content=""/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content=""/>
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="" />
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="login_box">
+            <a href="" class="user" id='member-tag' style="display: none"><span class="caret"></span></a>
+
+            <a href="#" id='login-tag' class="btn_login" onclick="openPopup()">登入</a>
+        </div>
+        <div id="openModal" class="modalDialog">
+            <div>
+                <div onclick="closePopup()" title="Close" class="close">X</div>
+                <a href="#" onclick='loginFacebook()'><img src="/images/egames/fb-button.png"></a>
+            </div>
+        </div>
+    </div>
+    <div id="main" class="main e-games">
+        <div class="box">
+            <ul class="tab">
+                <li><a href="index.html#main">活動內容</a></li>
+                <li><a href="e-games_2.html#main">選手資格</a></li>
+                <li><a href="e-games_3.html#main" class="on">賽事獎金</a></li>
+            </ul>
+            <div class="content">
+                <h2>賽事獎金</h2>
+                <p>將取最終前四名頒發獎金以資鼓勵，並於日後可優先於快樂電視舉辦之電競賽事中參賽。</p>
+                <ul class="gift">
+                    <li>第一名：<span>200,000</span>元+獎品</li>
+                    <li>第二名：<span>60,000</span>元+獎品</li>
+                    <li>第三名：<span>30,000</span>元+獎品</li>
+                    <li>第四名：<span>10,000</span>元+獎品</li>
+                </ul>
+                <p><span class="yellow">※獎品不可轉讓、不可兌換現金及不設退還。</span></p>
+                <a href="signup.html" class="btn_signup">立即線上報名</a>
+            </div>
+        </div>
+        <div class="footer">
+            <ul>
+                <li><span>主辦單位</span><img src="images/logo_happytv.png" class="happytv">快樂科技股份有限公司、<img src="images/logo_uctp.png" class="uctp">臺北城市科技大學電腦與通訊工程系</li>
+                <li><span>指導單位</span><img src="images/logo_ctesa.png" class="ctesa">中華民國電子競技運動</li>
+                <li><span>轉播單位</span><img src="images/logo_yoshow.png" class="yoshow">Yo!Show</li>
+            </ul>
+        </div>
+        <div class="footer">
+        </div>
+        <div class="bg"></div>
+    </div>
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script src="/js/config/configVar.js"></script>
+<script src="/js/js.cookie.js" ></script>
+<script src="/js/egames/login.js" ></script>
+<script type="text/javascript" src="js/common.js"></script>
+</body>
+</html>

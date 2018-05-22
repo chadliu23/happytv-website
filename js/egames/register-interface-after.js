@@ -124,12 +124,13 @@ $(document).on('click', '#update-egame-btn', async function(e) {
     data: form_data,
     processData: false,  // tell jQuery not to process the data
     contentType: false,   // tell jQuery not to set contentType
-    url: happyApiHost + '/api/v3/egame/2018-01/update'
+    url: happyApiHost + '/api/v3/egame/2018-01/update',
+    error: function (xhr) { console.log('hi er:', JSON.stringify(xhr))},
   }).done((data) => {
     window.location.replace('register-interface-after.html?message=修改成功!');
   }).fail((xhr, textStatus, error) => {
     alert('修改錯誤')
-    console.log('error')
+    console.log('error:', JSON.stringify(xhr), JSON.stringify(textStatus), JSON.stringify(error))
     console.log(error, textStatus, error);
   });
 })

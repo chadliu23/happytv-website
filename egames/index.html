@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta property="og:description" content="" />
+<meta property="og:title" content=""/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content=""/>
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="" />
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script src="/js/config/configVar.js"></script>
+<script src="/js/js.cookie.js" ></script>
+<script src="/js/egames/login.js" ></script>
+<script type="text/javascript" src="js/common.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="login_box">
+            <a href="" class="user" id='member-tag' style="display: none"><span class="caret"></span></a>
+
+            <a href="#" id='login-tag' class="btn_login" onclick="openPopup()">登入</a>
+        </div>
+        <div id="openModal" class="modalDialog">
+            <div>
+                <div onclick="closePopup()" title="Close" class="close">X</div>
+                <a href="#" onclick='loginFacebook()'><img src="/images/egames/fb-button.png"></a>
+            </div>
+        </div>
+    </div>
+    <div id="main" class="main e-games">
+        <div class="box">
+            <ul class="tab">
+                <li><a href="index.html#main" class="on">活動內容</a></li>
+                <li><a href="e-games_2.html#main">選手資格</a></li>
+                <li><a href="e-games_3.html#main">賽事獎金</a></li>
+            </ul>
+            <div class="content">
+                <h2>活動內容</h2>
+                <ol>
+                    <li>主辦單位：快樂科技股份有限公司 / 臺北城市科技大學電腦與通訊工程系</li>
+                    <li>指導單位：中華民國電子競技運動協會</li>
+                    <li>報名時間：5月22日～6月21日</li>
+                    <li>比賽日期：線上賽：7月3日～8月5日（7/2 公佈對戰資訊） / 線下賽：8月24日～8月26日</li>
+                    <li>比賽地點：線上賽：各自約戰；線下賽：另行公告</li>
+                    <li>參加對象：全國高中職已註冊106學年度完畢之學生，且無簽署任何經紀約均可報名。</li>
+                    <li>隊伍條件：可跨校組隊報名</li>
+                    <li>報名方式：線上報名</li>
+                </ol>
+                <a href="signup.html" class="btn_signup">立即線上報名</a>
+            </div>
+        </div>
+        <div class="footer">
+            <ul>
+                <li><span>主辦單位</span><img src="images/logo_happytv.png" class="happytv">快樂科技股份有限公司、<img src="images/logo_uctp.png" class="uctp">臺北城市科技大學電腦與通訊工程系</li>
+                <li><span>指導單位</span><img src="images/logo_ctesa.png" class="ctesa">中華民國電子競技運動協會</li>
+                <li><span>轉播單位</span><img src="images/logo_yoshow.png" class="yoshow">Yo!Show</li>
+            </ul>
+        </div>
+        <div class="bg"></div>
+    </div>
+
+</body>
+</html>

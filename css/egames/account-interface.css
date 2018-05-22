@@ -1,0 +1,13 @@
+.interface tbody input {
+	text-align:center;
+}
+
+.interface tbody div {
+	text-align:center;
+}
+
+.for-display {
+	display: none;
+	margin: 10px 50px 10px 50px
+}
+

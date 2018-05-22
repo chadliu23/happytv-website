@@ -1,0 +1,269 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* common
+============================================*/
+html, body { width:100%; height:100%; min-width:1600px; min-height: 700px; /*background: url(../images/br_repeat.jpg) center top repeat-y;*/}
+body { background:#030b32 url(../images/banner.jpg) center 70px no-repeat; font-family:"微軟正黑體"; font-size:20px; color:#fff;}
+.header { position:fixed; top: 0; left: 0; width: 100%; height: 69px; background: url(../images/bg_header.png) center top no-repeat; z-index: 5;}
+.header h1 { display:block; position:absolute; top:10px; left:30px; z-index: 2;}
+.header h1 a { display: block; width:99px;  height:43px; background:url(../images/logo.png) no-repeat; text-indent:-9999px;}
+.header .menu { display:block; position:absolute; top:0; left:140px; width: 100%; height:100%; /*text-align: center;*/}
+.header .menu li { display:inline-block; position:relative; margin:0 1%;-webkit-transition:all 0.5s ease;  -moz-transition:all 0.5s ease;  -o-transition:all 0.5s ease;  -ms-transition:all 0.5s ease;  transition:all 0.5s ease;}
+.header .menu li a { display:block; line-height:69px; font-size:19px; font-weight:bold; letter-spacing:5px; color:#b9b9b9; cursor: pointer;}
+.header .menu li a span { display:block; position:absolute; bottom:0; left:50%; width:0; height:7px; background:url(../images/bg_menu_hover.png) center bottom; -webkit-transition:all 0.5s ease;  -moz-transition:all 0.5s ease;  -o-transition:all 0.5s ease;  -ms-transition:all 0.5s ease;  transition:all 0.5s ease;}
+.header .menu li:hover a { color: #ffc600;}
+.header .menu li:hover span { left:0; width:calc(100%);}
+.header .menu li .sub_menu { display: block; position: absolute; top: 65px; left: -27px; visibility: hidden; opacity: 0; -webkit-transition:all 0.5s ease;  -moz-transition:all 0.5s ease;  -o-transition:all 0.5s ease;  -ms-transition:all 0.5s ease;  transition:all 0.5s ease;}
+.header .menu li .sub_menu li { margin: 0;}
+.header .menu li .sub_menu li a { display: block; padding: 10px; width: 150px; background: #000; line-height: 30px; font-size: 16px; letter-spacing: 3px; text-align: center; color: #b9b9b9; box-sizing: border-box;}
+.header .menu li .sub_menu li a:hover { color: #ffc600;}
+.header .menu li:hover .sub_menu { top: 70px; visibility: visible; opacity: 1;}
+.header .menu li:last-child a { color: #ffc600;}
+.header .login_box { position: absolute; top: 0; right: 30px; height: 100%; line-height: 69px; overflow: hidden;}
+.header .login_box .user { display: block; float: left; margin: 0 20px 0 0; color: #fff;}
+.header .login_box .user a { color: #fff;}
+.header .login_box .user .caret { display: inline-block; width: 0; height: 0; margin-left: 2px; vertical-align: middle; border-top: 4px dashed; border-top: 4px solid\9; border-right: 4px solid transparent; border-left: 4px solid transparent;}
+.header .login_box .btn_login { display: block; float: left; font-size: 19px; color: #fff;}
+.header .login_box .btn_login:before{ font-family: 'FontAwesome'; content: '\f08b'; font-size: 20px; padding: 0 10px 0 0;}
+.header .login_box .btn_login a { color: #fff;}
+.main { position: absolute; top: 850px; left: 0; width: 100%; padding-top: 80px; margin-top: -80px;}
+.main .bg { position: absolute; bottom: 0; left: 0; width: 100%; height: 145px; background: url(../images/bg_bottom.png) center bottom no-repeat; z-index: 1;}
+input[type="text"], input[type="tel"] { padding: 5px 10px; border-radius: 5px; border: none; background: #fff; font-family:"微軟正黑體"; font-size: 18px; color: #333; box-sizing: border-box;}
+button { border: 0;}
+/*.for-display { display: none; width: 0px; height: 0px; }
+.for-input { display: inline; }*/
+.footer { position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 2;}
+.footer li { display: inline-block; margin: 0 25px 0 0; line-height: 24px; font-size: 18px;}
+.footer li span { display: inline-block; margin: 0 10px 0 0; padding: 0 7px; font-size: 16px; line-height: 20px; border: #fff 1px solid; border-radius: 5px;}
+.footer li img.happytv { margin: 0 3px -3px 0;}
+.footer li img.uctp { margin: 0 3px -3px 0;}
+.footer li img.ctesa { margin: 0 3px -6px 0;}
+.footer li img.yoshow { margin: 0 3px -2px 0;}
+.yellow { color: #ffc600;}
+a:focus, a:hover { text-decoration: none;}
+
+/* e-games
+============================================*/
+.e-games { min-width: 1600px; min-height: 920px; background: url(../images/bg_e-games.jpg) center top no-repeat;}
+.e-games .box { position: relative; width: 1516px; min-height: 820px; margin: 0 auto; padding: 100px 0 70px 0; z-index: 2;}
+.e-games .tab { display: block; position: absolute; top: 16px; left: 20px;}
+.e-games .tab li { display: block; float: left; margin: 0 30px 0 0;}
+.e-games .tab li a { display: block; width: 237px; height: 68px; padding: 0 0 0 30px; background: url(../images/bg_tab.png) center center no-repeat; font-size: 24px; font-weight: bold; letter-spacing: 3px; line-height: 68px; color: #fff; box-sizing: content-box; text-decoration: none;}
+.e-games .tab li a:hover, .e-games .tab li a.on { background: url(../images/bg_tab_hover.png) center center no-repeat;}
+.e-games .btn_signup { display: block; width: 275px; height: 100px; margin: 50px auto 0 auto; background: url(../images/btn_signup.png) no-repeat; text-indent: -9999px;}
+.e-games .btn_signup:hover { background: url(../images/btn_signup_hover.png) no-repeat;}
+.e-games .content { position: relative; padding: 50px;}
+.e-games .content h2 { display: inline-block; margin: 0 auto 30px auto; padding: 0 0 15px 0; border-bottom: #fff 2px solid; font-size: 30px; font-weight: bold; letter-spacing: 5px;  color: #fff;}
+.e-games .content ol { margin: 0 0 40px 31px; list-style: cjk-ideographic outside;}
+.e-games .content ol li { padding: 0 0 20px 0; font-size: 20px; line-height: 1.5em;}
+.e-games .content ol li:last-child { padding: 0;}
+.e-games .content ul { margin: 0 0 40px 31px; list-style: square outside;}
+.e-games .content ul li { padding: 0 0 20px 0; font-size: 20px; line-height: 1.5em;}
+.e-games .content ul li:last-child { padding: 0;}
+.e-games .content ol li > ul { margin: 20px 0 0 24px; list-style: square outside;}
+.e-games .content p { font-size: 20px; line-height: 2em;}
+.e-games .content .gift { margin: 0 0 20px 0; padding: 15px 0;}
+.e-games .content .gift li { padding: 0 0 20px 0; font-size: 20px; line-height: 1.5em;}
+.e-games .content .gift li:before{ font-family: 'FontAwesome'; content: '\f091'; font-size: 20px; padding: 0 18px 0 0;}
+.e-games .content .gift li span { margin: 0 5px 0 0; font-size: 30px;}
+
+
+/* signup
+============================================*/
+h3.title { margin: 0 0 30px 0; color: #f10a6a;}
+.team_title { display: inline-block; margin: 0 0 0 20px; vertical-align: middle;}
+.team_title input { width: 400px;}
+.team_title span { margin: 0 0 0 10px; font-size: 16px;}
+.team_member { margin: 20px 0 30px 0;}
+.signup_from { display: block; word-wrap: break-word; word-break: break-all; overflow: hidden;}
+.signup_from li { display: inline-block; float: left; width: 15.28%; padding: 15px 0; text-align: center;}
+.signup_from li:first-child { width: 8.28%;}
+.signup_from li input { margin: 0 5%; width: 90%;}
+.final .signup_from li { width: 11.5%;}
+.final .signup_from li:first-child { width: 6%;}
+.upload_example { display: block; padding: 0 55px 50px 0; text-align: center;}
+.upload_example li { display: inline-block; margin: 0 30px;}
+.upload_example li span { display: block; clear: both; text-align: center;}
+.upload_box { }
+.upload_box .container { display: block; /*max-width: 1400px; padding: 20px 0 10px 0;*/ text-align: center;}
+.upload_box .student-upload { margin: 10px 0;}
+.upload_box .student-upload span { display: inline-block; width: 100px; margin: 15px 0 0 0; vertical-align: top; text-align: center;}
+.upload_box .student-upload .file-input { width: 400px; font-size: 15px; letter-spacing: 2px; opacity: 1; background-color: rgba(0, 0, 0, 0.4); color: white; border: none; outline: none; border-radius: 5px; padding: 15px; display: inline; margin-left: 15px; vertical-align: middle;}
+.returns { padding: 50px 0;}
+.remittance { margin: 0 0 20px 24px; list-style: square outside;}
+.remittance li { padding: 0 0 20px 0; font-size: 20px; line-height: 1.5em;}
+.remittance li:last-child { padding: 0;}
+.interface th {  padding: 0 0 15px 0;}
+.interface td { width: 15.66%;}
+.btn_send { display: block; width: 275px; height: 100px; margin: 50px auto 0 auto; background: url(../images/btn_send.png) no-repeat; text-indent: -9999px;}
+.btn_send:hover { background: url(../images/btn_send_hover.png) no-repeat;}
+.btn_edit { display: block; width: 275px; height: 100px; margin: 50px auto 0 auto; background: url(../images/btn_edit.png) no-repeat; text-indent: -9999px;}
+.btn_edit:hover { background: url(../images/btn_edit_hover.png) no-repeat;}
+.btn_resend { background: #259ee9; border: 0; padding: 5px 20px; border-radius: 5px; font-family: "微軟正黑體"; font-size: 18px; color: #fff;}
+.card { display: inline-block;}
+.student-img-div { display: block; position: relative; width: 350px; height: 200px; margin: 0 auto 5px auto; text-align: center;}
+.student-img-div img { position: absolute; top: 0; bottom: 0; left: 0; right: 0; max-width: 350px; max-height: 200px; margin: auto;}
+
+
+/* regulation
+============================================*/
+.tab_regulation { display: block; width: 100%; text-align: center;}
+.tab_regulation li { display: inline-block; margin: 0 10px; padding: 0 20px 0 0; background: url(../images/bg_line.png) right center no-repeat;}
+.tab_regulation li:last-child { padding: 0; background: none;}
+.tab_regulation li a { display: block; font-size: 24px; font-weight: bold; line-height: 65px; color: #fff;}
+.tab_regulation li a:hover, .tab_regulation li a.on { color: #f10a6a;}
+.system_table { margin: 30px 0; border: #fff 1px solid;}
+.system_table th, .system_table td { padding: 10px 20px; border: #fff 1px solid; vertical-align: middle;}
+
+
+/* process
+============================================*/
+.process_tab { display: block; padding: 0 50px; overflow: hidden;}
+.process_tab li { display: block; float: left; margin: 0 5px 13px 5px;}
+.process_tab li a { display: block; width: 160px; height: 40px; padding: 0 10px; background-image: url(../images/bg_process_table_orange.png); background-size: cover; font-size: 20px; font-weight: bold; line-height: 40px; text-align: center; color: #fff;}
+.process_table { border: none; margin:0 auto; margin-top:30px; margin-bottom:60px; text-align: center;}
+.process_table img { vertical-align: middle;}
+.process_table tr td{ width: 240px; height: 80px; border: none;}
+.process_table .line{ width: 180px; border: none;}
+.process_table .up-load{ width: 200px; border: none;}
+.process_table .up-load p{ font-size: 15px;}
+.process_table .team-button{ display:inline-block; width: 180px; height: 40px; background: transparent; background-size: cover; border: none; margin:0 10px 10px 10px; outline: none; cursor: initial; font-family:"微軟正黑體"; font-size: 16px; color: #fff;}
+.process_table .team-button.purple { background-image: url(../images/bg_process_table_purple.png);}
+.process_table .team-button.blue { background-image: url(../images/bg_process_table_blue.png);}
+.process_table .team-button.lose { background-image: url(../images/bg_process_table_gray.png);}
+.process_table .up-load-button { display: inline-block; width: 60px; height: 20px; background-color: rgba(0,0,0,0); border: none; margin:0 10px 10px 10px; outline: none; cursor: initial; font-family:"微軟正黑體"; font-size: 12px;}
+.tick { display: block;}
+.tick:before { font-family: 'FontAwesome'; content: '\f058'; font-size: 30px; color: #ffff00}
+
+
+/* search
+============================================*/
+.search_bar { position: absolute; top: 30px; left: 50%; width: 838px; height: 116px; margin: 0 0 0 -416px; background: url(../images/bg_searchbar.png) no-repeat;}
+.search_bar .search { position: absolute; top: 25px; left: 58px; width: 660px; height: 50px; background: none; font-size: 24px;}
+.search_bar .btn_search { display: block; position: absolute; top: 25px; right: 63px; width: 50px; height: 50px;}
+.search_show { position: relative; width: 712px; height: 1099px; margin: 50px auto 0 auto; padding: 0 0 30px 0; background: url(../images/bg_search_show.png) no-repeat;}
+.main .search_show p { display: block; position: absolute; font-size: 24px; font-weight: bold; line-height: 57px; text-align: center; color: #333; white-space:nowrap; overflow: hidden;}
+.main .search_show p span { display: block; margin: 15px 0; line-height: 30px;}
+.search_show .team_title { top: 112px; left: 70px; width: 570px; margin: 0;}
+.search_show .zone { top: 257px; left: 70px; width: 570px;}
+.search_show .summoner_0 { top: 401px; left: 70px; width: 570px; height: 106px;}
+.search_show .summoner_1 { top: 570px; left: 70px; width: 265px; height: 112px;}
+.search_show .summoner_2 { top: 570px; left: 374px; width: 265px; height: 112px;}
+.search_show .summoner_3 { top: 749px; left: 70px; width: 265px; height: 112px;}
+.search_show .summoner_4 { top: 749px; left: 374px; width: 265px; height: 112px;}
+.search_show .summoner_5 { top: 921px; left: 70px; width: 265px; height: 112px;}
+.search_show .summoner_6 { top: 921px; left: 374px; width: 265px; height: 112px;}
+
+
+/* fighting
+============================================*/
+.fighting_flow { margin: 30px 0 0 0;}
+.fighting_flow h3 { display: table; margin: 0 0 10px 0; padding: 10px; background: #259ee9; border-radius: 10px;}
+.fighting_flow span { color: #FFFF00;}
+.fighting_flow img { display: block; margin: 10px 0;}
+.fighting_flow .flow { margin: 0 0 30px 0; overflow: hidden;}
+.fighting_flow .flow .float { float: left; width: 50%;}
+.fighting { width: 100%;}
+
+
+/* site
+============================================*/
+.map { width: 100%; height: 500px; background: #fff;}
+.site h3 { display: table; margin: 30px 0 10px 0; padding: 10px; background: #259ee9; border-radius: 10px;}
+.site p { line-height: 1.5em;}
+
+
+/* certification
+============================================*/
+.certification { position: relative; width: 100%; height: 100%; background: url(../images/bg_certification.jpg) center top no-repeat;}
+.certification .message {position: absolute;top: 590px;left: 50%;width: 200px;margin: 0 0 0 -165px;padding: 20px 50px;background: rgba(255, 0, 0, 0.7);border-radius: 10px;text-align: center;}
+.certification .fb { position: absolute; top: 590px; left: 50%; margin: 0 0 0 -180px; padding: 20px 0px; border-radius: 10px;}
+
+
+/*------------modal--------------*/
+
+
+.modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 99999999;
+    opacity: 0;
+    display: none;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    position: absolute;
+    width: 470px;
+    height: 200px;
+
+    border-radius: 10px;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    margin-left: -235px;
+    margin-top: -250px;
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    margin-right: -50%;
+    padding: 5px;
+
+    background: #fff;
+
+    -webkit-box-shadow: 0 0 18px 3px rgba(0, 0, 0, .07);
+    -moz-box-shadow: 0 0 18px 3px rgba(0, 0, 0, .07);
+    box-shadow: 0 0 18px 3px rgba(0, 0, 0, .07);
+}
+.modalDialog > div > p {
+    margin: 5px;
+}
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    cursor: pointer;
+}
+
+.close:hover {
+    background: #0088dd;
+}
+
+#openModal img {
+padding:60px 75px;
+}
+
+#openModal img:hover{
+opacity: 0.8;
+}

@@ -87,7 +87,7 @@
             </div>
         </div>
     </div>
-    <form method='post' enctype="multipart/form-data" >
+    <form id="create-form" method='post' enctype="multipart/form-data" >
     <!-- <form> -->
         <input id='member_id' name='member_id' type="number" value="" class="text-input" hidden="true">
     <div id="register">
@@ -135,7 +135,7 @@
                                         <input name='phone_0'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input name='email_0'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                        <input name='email_0'  type="text" class="text-input" required pattern="^[a-zA-Z0-9._%+-]+@(?![hH][oO][tT][mM][aA][iI][lL])([a-zA-Z0-9.-])+\.[a-zA-Z]{2,4}" title='請填寫正確信箱, 且不可填寫hotmail之信箱'>
                                     </td>
                                 </tr>
                                 <tr>
@@ -156,7 +156,7 @@
                                         <input name='phone_1'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}"  title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input name='email_1'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                        <input name='email_1'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title='請填寫正確信箱, 且不可填寫hotmail之信箱'>
                                     </td>
                                 </tr>
                                 <tr>
@@ -177,7 +177,7 @@
                                         <input name='phone_2'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input name='email_2'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                        <input name='email_2'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title='請填寫正確信箱, 且不可填寫hotmail之信箱'>
                                     </td>
                                 </tr>
                                 <tr>
@@ -198,7 +198,7 @@
                                         <input name='phone_3'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input name='email_3'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                        <input name='email_3'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title='請填寫正確信箱, 且不可填寫hotmail之信箱'>
                                     </td>
                                 </tr>
                                 <tr>
@@ -219,49 +219,49 @@
                                         <input name='phone_4'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" required pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input name='email_4'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                        <input name='email_4'  type="text" class="text-input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title='請填寫正確信箱, 且不可填寫hotmail之信箱'>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="table-title">後補5</td>
                                     <td>
-                                        <input name='summoner_5' type="text" class="text-input" >
+                                        <input name='summoner_5' type="text" class="text-input member-5-input" >
                                     </td>
                                     <td>
-                                        <input name='name_5' type="text" class="text-input" >
+                                        <input name='name_5' type="text" class="text-input member-5-input" >
                                     </td>
                                     <td>
-                                        <input name='school_name_5'  type="text" class="text-input" >
+                                        <input name='school_name_5'  type="text" class="text-input member-5-input" >
                                     </td>
                                     <td>
-                                        <input name='student_id_5'  type="text" class="text-input" >
+                                        <input name='student_id_5'  type="text" class="text-input member-5-input" >
                                     </td>
                                     <td>
-                                        <input name='phone_5'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" pattern="\d{10}" title='純數字，例如:0912345678'>
+                                        <input name='phone_5'  type="tel" class="text-input member-5-input" placeholder='0912345678' maxlength="10" pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input name='email_5'  type="text" class="text-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                        <input name='email_5'  type="text" class="text-input member-5-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title='請填寫正確信箱, 且不可填寫hotmail之信箱'>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="table-title">後補6</td>
                                     <td>
-                                        <input name='summoner_6' type="text" class="text-input">
+                                        <input name='summoner_6' type="text" class="text-input member-6-input">
                                     </td>
                                     <td>
-                                        <input name='name_6' type="text" class="text-input" >
+                                        <input name='name_6' type="text" class="text-input member-6-input" >
                                     </td>
                                     <td>
-                                        <input name='school_name_6'  type="text" class="text-input" >
+                                        <input name='school_name_6'  type="text" class="text-input member-6-input" >
                                     </td>
                                     <td>
-                                        <input name='student_id_6'  type="text" class="text-input" >
+                                        <input name='student_id_6'  type="text" class="text-input member-6-input" >
                                     </td>
                                     <td>
-                                        <input name='phone_6'  type="tel" class="text-input" placeholder='0912345678' maxlength="10" pattern="\d{10}" title='純數字，例如:0912345678'>
+                                        <input name='phone_6'  type="tel" class="text-input member-6-input" placeholder='0912345678' maxlength="10" pattern="\d{10}" title='純數字，例如:0912345678'>
                                     </td>
                                     <td>
-                                        <input name='email_6'  type="text" class="text-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                        <input name='email_6'  type="text" class="text-input member-6-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title='請填寫正確信箱, 且不可填寫hotmail之信箱'>
                                     </td>
                                 </tr>
                             </tbody>
@@ -355,8 +355,8 @@
         <div class="bottom-button">
             <div class="container">
                 <img onclick="openPopup2()" src="/images/egames/qa-button.png">
-                <img id="create-egame-btn" src="/images/egames/send-button.png">
-                <!-- <button type='submit'> <img src="/images/egames/send-button.png"> </button> -->
+                <!-- <img id="create-egame-btn" src="/images/egames/send-button.png"> -->
+                <button type='submit'> <img src="/images/egames/send-button.png"> </button>
             </div>
         </div>
     </div>
