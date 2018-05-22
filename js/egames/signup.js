@@ -153,6 +153,20 @@ $("#sign-up-form").submit(function (e) {
     successMsg = '修改成功!'
 
     for(var i=0; i<=6; i++) {
+      if (i === 5) {
+        var hasValue = $('.member-5-input').attr("required")
+        if(!hasValue) {
+          continue;
+        }
+      }
+
+      if (i === 6) {
+        var hasValue = $('.member-6-input').attr("required")
+        if(!hasValue) {
+          continue;
+        }
+      }
+
       data['row_id_' + i] = $("[name='row_id_" + i + "']").val();
       data['summoner_' + i] = $("[name='summoner_" + i + "']").val();
       data['name_' + i] = $("[name='name_" + i + "']").val();
