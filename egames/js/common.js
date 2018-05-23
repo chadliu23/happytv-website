@@ -1,14 +1,17 @@
 (function($){
 
     $(function(){
-        //menu_load();
+        menu_load();
         footer_load();
         popup();
     });
 
-    // function menu_load(){
-    //     $('.header').load('_header.html');
-    // };
+    function menu_load(){
+        $.get("_header.html", function(result){
+            $('.header').prepend(result);
+        });
+        //$('.header').load('_header.html');
+    };
 
     function footer_load () {
         $('.footer').load('_footer.html');

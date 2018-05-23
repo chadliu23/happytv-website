@@ -1,5 +1,5 @@
 
-window.onload=function(){
+$(document).ready(function() {
   let message = getParameterByName('message');
   if (message !== undefined && message !== null) {
     alert(message);
@@ -14,14 +14,16 @@ window.onload=function(){
     }).done((data) => {
       if (data.result.length === 0) {
       	alert('請先報名戰隊')
-      	window.location.replace('signup?message=' + successMsg);
+        window.location.replace('signup.html');
         return
       }
       putInData(data)
       // insertData
       //window.location.replace('signup-after.html');
     }).fail((data) => {
-
+      alert('請先報名戰隊')
+      window.location.replace('signup.html');
+      return
     });
   } else {
     var a = $('#openModal')
@@ -31,7 +33,7 @@ window.onload=function(){
         $('#openModal').css({ 'opacity': '1', 'pointer-events': 'auto' });
     }, 500);
   }
-}
+});
 
 
 function putInData(data) {
