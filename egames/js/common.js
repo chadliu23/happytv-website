@@ -2,6 +2,7 @@
 
     $(function(){
         //menu_load();
+        footer_load();
         popup();
     });
 
@@ -9,10 +10,14 @@
     //     $('.header').load('_header.html');
     // };
 
+    function footer_load () {
+        $('.footer').load('_footer.html');
+    };
+
     function popup(){
         $('.btn_popup').on('click', function(e){
             e.preventDefault();
-            alert('如有報名上問題，無法自行解決，請隊長加入官方賴群告知（於上班時間內會即時處理）');
+            alert('如有報名上問題，無法自行解決，請隊長加入官方Line @jdh4282l告知(客服人員將會於上班時間內盡速為您處理)');
         });
     }
 

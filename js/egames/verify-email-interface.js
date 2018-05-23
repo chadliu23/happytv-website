@@ -21,7 +21,7 @@ $(document).ready(function(){
       }).done((data) => {
         $('.message').html('認證成功');
         alert('認證成功! 帳號已與報名資料連結, 將導回活動頁面')
-        window.location.replace('index.html');
+        window.location.replace('signup.html');
       }).fail((data) => {
         $('.message').html('認證失敗');
         alert('認證失敗, 請確認是否為正確的信箱中驗證網址')

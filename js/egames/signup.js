@@ -1,25 +1,29 @@
-$(document).ready(function(){
-  // $.blockUI({
-  //   message: 'loading...',
-  //   css: {
-  //     border: 'none',
-  //     padding: '15px',
-  //     backgroundColor: '#000',
-  //     '-webkit-border-radius': '10px',
-  //     '-moz-border-radius': '10px',
-  //     opacity: .5,
-  //     color: '#fff',
-  //     message: 'Loading...'
-  //   }
-  // });
+function setLoadingBlock() {
+  $.blockUI({
+    message: 'loading...',
+    css: {
+      border: 'none',
+      padding: '15px',
+      backgroundColor: '#000',
+      '-webkit-border-radius': '10px',
+      '-moz-border-radius': '10px',
+      opacity: .5,
+      color: '#fff',
+      message: 'Loading...'
+    }
+  });
+}
 
-  let message = getParameterByName('message');
-  if (message !== undefined && message !== null) {
-    alert(message);
-  }
+$(document).ready(function(){
+
+  // let message = getParameterByName('message');
+  // if (message !== undefined && message !== null) {
+  //   alert(message);
+  // }
 
   if (Cookies.get("member_token") !== undefined) {
-    console.log(Cookies.get("member_token"))
+    setLoadingBlock()
+
     $.ajax({
       type: 'GET',
       dataType: 'json',
@@ -37,10 +41,7 @@ $(document).ready(function(){
       console.log('失敗')
     });
   } else {
-    //$.unblockUI()
-
     var a = $('#openModal')
-    console.log(a.length)
     $('#openModal').css({ 'display': 'block' });
     setTimeout(function() {
         $('#openModal').css({ 'opacity': '1', 'pointer-events': 'auto' });
@@ -107,6 +108,9 @@ function putInData(data) {
     // }
   }
 
+  set5InputRequired()
+  set6InputRequired()
+
   // 解除
   $.unblockUI()
 };
@@ -132,8 +136,6 @@ $("#sign-up-form").submit(function (e) {
   // formData.append('member_id', member_id)
 
   // console.log('formdata:' , formData)
-
-  console.log($('#form-type').val())
 
   var member_id = Cookies.get('member_id');
   var team_id = $('#team_id').val();
@@ -196,6 +198,41 @@ $("#sign-up-form").submit(function (e) {
     }
   }
 
+  var summonerHasDup = false;
+  var schoolAndIdHasDup = false;
+  var emailHasDup = false;
+  for(var i=0; i<=6; i++) {
+    if(data['summoner_' + i] === null || data['summoner_' + i] === '') {
+      continue;
+    }
+    if(data['school_name_' + i] === null || data['school_name_' + i] === '') {
+      continue;
+    }
+    if(data['student_id_' + i] === null || data['student_id_' + i] === '') {
+      continue;
+    }
+    if(data['email_' + i] === null || data['email_' + i] === '') {
+      continue;
+    }
+
+    for(var j=0; j<=6; j++) {
+      if(i === j) {continue}
+      if (data['summoner_' + i] === data['summoner_' + j]) {
+        summonerHasDup = true
+      }
+      if (data['school_name_' + i] + data['student_id_' + i] === data['school_name_' + j] + data['student_id_' + j]) {
+        schoolAndIdHasDup = true
+      }
+      if (data['email_' + i] === data['email_' + j]) {
+        emailHasDup = true
+      }
+    }
+  }
+
+  if(summonerHasDup) { return alert('召喚師資料重複, 請檢查資料是否正確') }
+  if(schoolAndIdHasDup) { return alert('同學校的學號資料重複, 請檢查資料是否正確') }
+  if(emailHasDup) { return alert('信箱資料重複, 請檢查資料是否正確') }
+
   var formData = new FormData();
   for ( var key in data ) {
       formData.append(key, data[key]);
@@ -212,7 +249,8 @@ $("#sign-up-form").submit(function (e) {
     contentType: false,   // tell jQuery not to set contentType
     url: happyApiHost + ajaxUrl
   }).done((data) => {
-    window.location.replace('signup.html?message=' + successMsg);
+    alert(successMsg)
+    window.location.replace('signup.html');
   }).fail((xhr, textStatus, error) => {
     alert('錯誤, 請填寫正確信箱以及檢查資料是否重複')
     window.location.replace('signup.html');
@@ -223,7 +261,14 @@ $("#sign-up-form").submit(function (e) {
 
 
 $(document).on('change', '.member-5-input', async function(e) {
-  var a = $(this).val()
+  set5InputRequired()
+})
+
+$(document).on('change', '.member-6-input', async function(e) {
+  set6InputRequired()
+})
+
+function set5InputRequired() {
   var member5Inputs = $('.member-5-input')
   var allStr = ""
 
@@ -236,14 +281,13 @@ $(document).on('change', '.member-5-input', async function(e) {
   } else {
     $('.member-5-input').attr("required", "required")
   }
-})
+}
 
-$(document).on('change', '.member-6-input', async function(e) {
-  var a = $(this).val()
+function set6InputRequired() {
   var member6Inputs = $('.member-6-input')
   var allStr = ""
 
-  member6Inputs.each(function(key, member5Input){
+  member6Inputs.each(function(key, member6Input){
     allStr = allStr + $(member6Input).val()
   })
 
@@ -252,7 +296,7 @@ $(document).on('change', '.member-6-input', async function(e) {
   } else {
     $('.member-6-input').attr("required", "required")
   }
-})
+}
 
 $(document).on('click', '.btn_resend', function(e) {
   var email = $(this).parent().siblings('li.email-label').html()

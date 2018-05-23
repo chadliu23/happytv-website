@@ -97,8 +97,8 @@
 
                     <h2>隊伍名稱</h2>
                     <div class="team_title">
-                        <input id="team-name-input" class="for-input" type="text" name="team_name" placeholder="限中、英、數字" maxlength="16" required>
-                        <span class="for-input">(最多16字)</span>
+                        <input id="team-name-input" class="for-input" type="text" name="team_name" placeholder="限中、英、數字" maxlength="10" required>
+                        <span class="for-input">(最多10字)</span>
                         <div id="team-name-label" class="for-display"></div>
                     </div>
                     <div class="team_member final">
@@ -108,7 +108,7 @@
                             <li>姓名</li>
                             <li>學校名稱</li>
                             <li>學號</li>
-                            <li>手機電話</li>
+                            <li>手機號碼</li>
                             <li>E-MAIL</li>
                             <li>E-MAIL認證</li>
                         </ul>
@@ -224,7 +224,7 @@
                             <li id="email_verify_again_5" class="for-display about-verify" style="display: none"><button type="button" class="btn_resend about-verify">重寄認證信</button></li>
                         </ul>
                         <ul class="signup_from">
-                            <li>候補67</li>
+                            <li>候補6</li>
                             <li class="for-input"><input id="summoner_input_6" class="for-input member-6-input" name='summoner_6' type="text"></li>
                             <li id="summoner_label_6" class="for-display"></li>
                             <li class="for-input"><input id="member_name_input_6" class="for-input member-6-input" name='name_6' type="text"></li>
@@ -247,6 +247,8 @@
                         <li>須完整填寫召喚師名稱。</li>
                         <li>召喚師、姓名、學校名稱、學號、手機號碼、Email為“必填”格式。</li>
                         <li>注意事項2中每個資訊僅可被登錄到一個戰隊。</li>
+                        <li>所有隊員驗證成功後請點選上傳學生證及填寫匯款資訊，以完成報名。</li>
+                        <li>召喚師名稱、學號、Email不能重複</li>
                     </ol>
                     <!-- <a href="" class="btn_send">送出</a> -->
                     <input id='form-type' type="text" class="text-input" hidden="true" value="create">
@@ -254,6 +256,8 @@
                     <button type='submit' class="btn_send"></button>
                 </form>
             </div>
+        </div>
+        <div class="footer">
         </div>
         <div class="bg"></div>
     </div>
