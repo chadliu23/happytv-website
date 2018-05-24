@@ -1,1 +1,1 @@
-var happyApiHost = 'http://localhost';
+var happyApiHost = 'https://api-product.happytv.com.tw';
