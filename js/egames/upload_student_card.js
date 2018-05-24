@@ -7,6 +7,7 @@ $(document).ready(function() {
 
   if (Cookies.get("member_token") !== undefined) {
     console.log(Cookies.get("member_token"))
+    $('#main').css({ 'display': 'block' });
     $.ajax({
       type: 'GET',
       dataType: 'json',
@@ -29,6 +30,16 @@ $(document).ready(function() {
     var a = $('#openModal')
     console.log(a.length)
     $('#openModal').css({ 'display': 'block' });
+    $(document).keyup(function(e) {
+      if ($('#openModal').is(':visible') &&  e.keyCode === 27) {
+        window.location.href= '/egames/way.html#main';
+      }
+    })
+    $('#openModal').click(function(){
+      if ($('#openModal').is(':visible') ) {
+        window.location.href= '/egames/way.html#main';
+      }
+    });
     setTimeout(function() {
         $('#openModal').css({ 'opacity': '1', 'pointer-events': 'auto' });
     }, 500);

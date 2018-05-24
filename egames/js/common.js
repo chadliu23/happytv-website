@@ -38,10 +38,14 @@ function openPopup() {
     }, 500);
 }
 
-function closePopup() {
+function closePopup(href) {
     $('#openModal').css({ 'opacity': '0', 'pointer-events': 'none' });
     setTimeout(function() {
         $('#openModal').css({ 'display': 'none' });
+        if (href !== undefined){
+            window.location.href=href;
+        }
+        
     }, 500);
 };
 

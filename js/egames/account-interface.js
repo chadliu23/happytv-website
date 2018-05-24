@@ -22,6 +22,7 @@ $(document).ready(function(){
   }
 
   if (Cookies.get("member_token") !== undefined){
+    $('#main').css({ 'display': 'block' });
     return loadTeamId()
 
     function loadTeamId () {
@@ -35,7 +36,7 @@ $(document).ready(function(){
           window.location.replace('signup.html');
           return
         }
-
+        
         // 抓team_id
         team_id = data.result[0].team_id;
         team_name = data.result[0].team_name;
@@ -66,6 +67,16 @@ $(document).ready(function(){
   } else {
     $.unblockUI()
     $('#openModal').css({ 'display': 'block' });
+    $(document).keyup(function(e) {
+      if ($('#openModal').is(':visible') &&  e.keyCode === 27) {
+        window.location.href= '/egames/way.html#main';
+      }
+    })
+    $('#openModal').click(function(){
+      if ($('#openModal').is(':visible') ) {
+        window.location.href= '/egames/way.html#main';
+      }
+    });
     setTimeout(function() {
         $('#openModal').css({ 'opacity': '1', 'pointer-events': 'auto' });
     }, 500);

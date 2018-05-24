@@ -22,8 +22,8 @@ $(document).ready(function(){
   // }
 
   if (Cookies.get("member_token") !== undefined) {
+    $('#main').css({ 'display': 'block' });
     setLoadingBlock()
-
     $.ajax({
       type: 'GET',
       dataType: 'json',
@@ -33,6 +33,7 @@ $(document).ready(function(){
         $.unblockUI()
         return
       }
+      
       putInData(data)
       // insertData
       //window.location.replace('signup-after.html');
@@ -43,6 +44,16 @@ $(document).ready(function(){
   } else {
     var a = $('#openModal')
     $('#openModal').css({ 'display': 'block' });
+    $(document).keyup(function(e) {
+      if ($('#openModal').is(':visible') &&  e.keyCode === 27) {
+        window.location.href= '/egames/way.html#main';
+      }
+    })
+    $('#openModal').click(function(){
+      if ($('#openModal').is(':visible') ) {
+        window.location.href= '/egames/way.html#main';
+      }
+    });
     setTimeout(function() {
         $('#openModal').css({ 'opacity': '1', 'pointer-events': 'auto' });
     }, 500);
