@@ -28,7 +28,7 @@ $(document).ready(function(){
         $.unblockUI()
         return
       }
-      
+
       putInData(data)
       // insertData
       //window.location.replace('signup-after.html');
@@ -44,7 +44,7 @@ $(document).ready(function(){
         window.location.href= '/egames/way.html#main';
       }
     })
-    
+
     setTimeout(function() {
         $('#openModal').css({ 'opacity': '1', 'pointer-events': 'auto' });
     }, 500);
@@ -279,11 +279,28 @@ $("#sign-up-form").submit(function (e) {
     contentType: false,   // tell jQuery not to set contentType
     url: happyApiHost + ajaxUrl
   }).done((data) => {
+    if(data.retCode === 0 && data.retMessage === "duplicate data summoner") {
+      return alert('隊伍中已有被登錄過的召喚師名稱，請重新核對隊員資料後再行登錄')
+    }
+
+    if(data.retCode === 0 && data.retMessage === "duplicate data email") {
+      return alert('隊伍中已有被登錄過的email，請重新核對隊員資料後再行登錄')
+    }
+
+    if(data.retCode === 0 && data.retMessage === "duplicate data schoolAndId") {
+      return alert('隊伍中已有被登錄過的同學校同學號參賽者，請重新核對隊員資料後再行登錄')
+    }
+
+    if(data.retCode === 0 && data.retMessage === "send email error") {
+      alert('資料中有不正確的信箱，請修正後盡快修改重新驗證')
+      return window.location.replace('signup.html');
+    }
+
     alert(successMsg)
     window.location.replace('signup.html');
   }).fail((xhr, textStatus, error) => {
-    alert('錯誤, 請填寫正確信箱且不可重複報名')
-    window.location.replace('signup.html');
+    alert('錯誤, 若報名仍不成功, 請加入官方Line @JDH4282L 告知')
+    // window.location.replace('signup.html');
     console.log('error')
     console.log(error, textStatus, error);
   });
