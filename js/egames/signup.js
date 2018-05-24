@@ -232,16 +232,16 @@ $("#sign-up-form").submit(function (e) {
   var schoolAndIdHasDup = false;
   var emailHasDup = false;
   for(var i=0; i<=6; i++) {
-    if(data['summoner_' + i] === null || data['summoner_' + i] === '') {
+    if(data['summoner_' + i] === null || data['summoner_' + i] === '' || data['summoner_' + i] === undefined) {
       continue;
     }
-    if(data['school_name_' + i] === null || data['school_name_' + i] === '') {
+    if(data['school_name_' + i] === null || data['school_name_' + i] === '' || data['school_name_' + i] === undefined) {
       continue;
     }
-    if(data['student_id_' + i] === null || data['student_id_' + i] === '') {
+    if(data['student_id_' + i] === null || data['student_id_' + i] === '' || data['student_id_' + i] === undefined) {
       continue;
     }
-    if(data['email_' + i] === null || data['email_' + i] === '') {
+    if(data['email_' + i] === null || data['email_' + i] === '' || data['email_' + i] === undefined) {
       continue;
     }
 
@@ -288,21 +288,28 @@ $("#sign-up-form").submit(function (e) {
     }
 
     if(data.retCode === 0 && data.retMessage === "duplicate data schoolAndId") {
-      return alert('隊伍中已有被登錄過的同學校同學號參賽者，請重新核對隊員資料後再行登錄')
+      return alert('隊伍中已有學號被重複登錄(相同學校)，請重新核對隊員資料後再行登錄')
     }
 
     if(data.retCode === 0 && data.retMessage === "send email error") {
-      alert('資料中有不正確的信箱，請修正後盡快修改重新驗證')
+      alert('請務必通知各隊員前往信箱認證')
       return window.location.replace('signup.html');
     }
 
     alert(successMsg)
     window.location.replace('signup.html');
   }).fail((xhr, textStatus, error) => {
-    alert('錯誤, 若報名仍不成功, 請加入官方Line @JDH4282L 告知')
-    // window.location.replace('signup.html');
-    console.log('error')
-    console.log(error, textStatus, error);
+    if(formType == 'edit') {
+      alert('修改錯誤, 若修改仍不成功, 請加入官方Line @JDH4282L 告知')
+      console.log('error')
+      console.log(error, textStatus, error);
+    }
+    if(formType == 'create') {
+      alert('錯誤, 若報名仍不成功, 請加入官方Line @JDH4282L 告知')
+      console.log('error')
+      console.log(error, textStatus, error);
+    }
+
   });
 })
 
