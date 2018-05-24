@@ -90,6 +90,7 @@ function putInData(data) {
 
     if (member.member_id !== null){
       $('#email_verify_success_' + member.member_role).css('display', '');
+      $('#member_id_' + member.member_role).html(member.member_id);
     }else{
       $('#email_unverify_' + member.member_role).css('display', '');
       $('#email_verify_again_' + member.member_role).css('display', '');
@@ -121,8 +122,35 @@ $(document).on('click', '.btn_edit', async function(e) {
   $('.btn_send').css("display", "block");
 
   // 輸入框
-  $('.for-input').css("display", "inline");
-  $('.for-display').css("display", "none");
+  // $('.for-input').css("display", "inline");
+  // $('.for-display').css("display", "none");
+
+  // 為了不讓已經驗證過的修改
+  for(var i=0; i<=6; i++) {
+    if($('#member_id_' + i).html()) {
+    } else {
+      $('#summoner_label_' + i).css("display", "none");
+      $('#member_name_label_' + i).css("display", "none");
+      $('#school_name_label_' + i).css("display", "none");
+      $('#student_id_label_' + i).css("display", "none");
+      $('#phone_label_' + i).css("display", "none");
+      $('#email_label_' + i).css("display", "none");
+
+      $('#summoner_input_' + i).css("display", "inline");
+      $('#summoner_input_' + i).parent('li').css("display", "inline");
+      $('#member_name_input_' + i).css("display", "inline");
+      $('#member_name_input_' + i).parent('li').css("display", "inline");
+      $('#school_name_input_' + i).css("display", "inline");
+      $('#school_name_input_' + i).parent('li').css("display", "inline");
+      $('#student_id_input_' + i).css("display", "inline");
+      $('#student_id_input_' + i).parent('li').css("display", "inline");
+      $('#phone_input_' + i).css("display", "inline");
+      $('#phone_input_' + i).parent('li').css("display", "inline");
+      $('#email_input_' + i).css("display", "inline");
+      $('#email_input_' + i).parent('li').css("display", "inline");
+    }
+  }
+
 })
 
 // // 使用form來做ajax
