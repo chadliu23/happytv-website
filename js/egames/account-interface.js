@@ -111,7 +111,7 @@ function putInData(data) {
     $('#account_bank_input').val(data.result.account_bank);
     $('#account_branch_input').val(data.result.account_branch);
     $('#account_num_input').val(data.result.account_num);
-    $('#transfer_date_input').val(date.toLocaleDateString());
+    $('#transfer_date_input').val( moment(date).format( 'YYYY-MM-DD') );
   }
 
   $.unblockUI()
