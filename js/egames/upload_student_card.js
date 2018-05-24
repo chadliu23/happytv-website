@@ -117,6 +117,13 @@ function ValidateSingleInput(oInput) {
                 oInput.value = "";
                 return false;
             }
+            let filekb =  (Math.round(oInput.files[0].size/ 1024 *100) /100);
+            if (filekb > (3*1024)) {
+              alert("單張照片限制3MB");
+              oInput.value = "";
+              return false;
+            }
+
         }
     }
     return true;
