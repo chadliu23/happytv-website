@@ -2,6 +2,14 @@ var team_id = ''
 var team_name = ''
 
 $(document).ready(function(){
+  $("transfer_date_input").on("change", function() {
+    this.setAttribute(
+        "data-date",
+        moment(this.value, "YYYY-MM-DD")
+        .format( this.getAttribute("data-date-format") )
+    )
+  }).trigger("change");
+
   $.blockUI({
     message: 'loading...',
     css: {
