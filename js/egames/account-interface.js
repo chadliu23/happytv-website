@@ -1,3 +1,6 @@
+var team_id = ''
+var team_name = ''
+
 $(document).ready(function(){
   $.blockUI({
     message: 'loading...',
@@ -19,17 +22,47 @@ $(document).ready(function(){
   }
 
   if (Cookies.get("member_token") !== undefined){
-    console.log(Cookies.get('member_id'), '   go')
-    $.ajax({
-      type: 'GET',
-      dataType: 'json',
-      url: happyApiHost + '/api/v3/egame/2018-01/account/' + Cookies.get('member_id')
-    }).done((data) => {
-      putInData(data)
-      //window.location.replace('account-interface-after.html');
-    }).fail((data) =>{
-      $.unblockUI()
-    });
+    return loadTeamId()
+
+    function loadTeamId () {
+      $.ajax({
+        type: 'GET',
+        dataType: 'json',
+        url: happyApiHost + '/api/v3/egame/2018-01/member_id/' + Cookies.get('member_id')
+      }).done((data) => {
+        if (data.result.length === 0) {
+          alert('請先報名戰隊')
+          window.location.replace('signup.html');
+          return
+        }
+
+        // 抓team_id
+        team_id = data.result[0].team_id;
+        team_name = data.result[0].team_name;
+        $('#team_name_label').css("display", "block");
+        $('#team_name_label').html(team_name);
+
+        return loadAccount()
+      }).fail((data) => {
+        alert('請先報名戰隊')
+        window.location.replace('signup.html');
+        return
+      });
+
+    }
+
+    function loadAccount() {
+      $.ajax({
+        type: 'GET',
+        dataType: 'json',
+        url: happyApiHost + '/api/v3/egame/2018-01/account/' + team_id
+      }).done((data) => {
+        putInData(data)
+        //window.location.replace('account-interface-after.html');
+      }).fail((data) =>{
+        $.unblockUI()
+      });
+    }
   } else {
     $.unblockUI()
     $('#openModal').css({ 'display': 'block' });
@@ -52,7 +85,6 @@ function putInData(data) {
     $('#form-type').val('edit');
 
     // 標籤給值
-    $('#team_name_label').html(data.result.team_name);
     $('#account_name_label').html(data.result.account_name);
     $('#account_bank_label').html(data.result.account_bank);
     $('#account_branch_label').html(data.result.account_branch);
@@ -60,7 +92,7 @@ function putInData(data) {
     var date = new Date(data.result.transfer_date)
     $('#transfer_date_label').html(date.toLocaleDateString());
     // 輸入框給值
-    $('#team_name_input').val(data.result.team_name);
+    $('#team_name_input').val(team_name);
     $('#account_name_input').val(data.result.account_name);
     $('#account_bank_input').val(data.result.account_bank);
     $('#account_branch_input').val(data.result.account_branch);
@@ -80,7 +112,7 @@ $("#account-form").submit(function (e) {
   var data = {}
 
   var formType = $('#form-type').val();
-  var team_name = $('#team_name_input').val();
+  // var team_name = team_name;
   var account_name = $('#account_name_input').val();
   var account_bank = $('#account_bank_input').val();
   var account_branch = $('#account_branch_input').val();
@@ -89,10 +121,9 @@ $("#account-form").submit(function (e) {
 
   if(formType === 'edit') {
     ajaxType = 'PUT'
-    ajaxUrl = '/api/v3/egame/2018-01/account/' + member_id
+    ajaxUrl = '/api/v3/egame/2018-01/account/' + team_id
 
     data = {
-      team_name: team_name,
       account_name: account_name,
       account_bank: account_bank,
       account_branch: account_branch,
@@ -107,6 +138,7 @@ $("#account-form").submit(function (e) {
 
     data = {
       member_id: member_id,
+      team_id: team_id,
       team_name: team_name,
       account_name: account_name,
       account_bank: account_bank,
@@ -115,33 +147,6 @@ $("#account-form").submit(function (e) {
       transfer_date: transfer_date
     }
   }
-
-
-  // var member_id = Cookies.get('member_id')
-  // var team_name = $('#team_name_input').val();
-  // var account_name = $('#account_name_input').val();
-  // var account_bank = $('#account_bank_input').val();
-  // var account_branch = $('#account_branch_input').val();
-  // var account_num = $('#account_num_input').val();
-  // var transfer_date = $('#transfer_date_input').val();
-  // var data = {
-  //   team_name: team_name,
-  //   account_name: account_name,
-  //   account_bank: account_bank,
-  //   account_branch: account_branch,
-  //   account_num: account_num,
-  //   transfer_date: transfer_date
-  // }
-
-  // $.ajax({
-  //   type: 'PUT',
-  //   headers: {
-  //     "accesskey": "accessKey_eb3604bd21a3176806f29607d47b069f17956cba",
-  //   },
-  //   dataType: 'json',
-  //   data: data,
-  //   url: 'http://localhost/api/v3/egame/2018-01/account/' + member_id
-  // ___
 
   $.ajax({
     type: ajaxType,
@@ -154,7 +159,7 @@ $("#account-form").submit(function (e) {
   }).done((data) => {
     window.location.replace('remittance.html');
   }).fail((xhr, textStatus, error) => {
-    alert('新增錯誤')
+    alert('匯款帳號修改錯誤')
     console.log(error, textStatus, error);
   });
 
@@ -168,6 +173,7 @@ $(document).on('click', '.btn_edit', async function(e) {
   // 輸入框
   $('.for-input').css("display", "inline");
   $('.for-display').css("display", "none");
+  $('#team_name_label').css("display", "block");
 })
 
 
@@ -199,7 +205,6 @@ $(document).on('click', '#create_account_btn', async function(e) {
     data: data,
     url: happyApiHost + '/api/v3/egame/2018-01/account'
   }).done((data) => {
-    console.log(data)
     window.location.replace('remittance.html');
   }).fail((xhr, textStatus, error) => {
     alert('新增錯誤')
