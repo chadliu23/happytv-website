@@ -30,7 +30,7 @@ $(document).ready(function() {
     }).done((data) => {
       if (data.result.length === 0) {
       	alert('請先報名戰隊')
-        window.location.replace('signup.html');
+        window.location.replace('signup.html#main');
         return
       }
       putInData(data)
@@ -38,7 +38,7 @@ $(document).ready(function() {
       //window.location.replace('signup-after.html');
     }).fail((data) => {
       alert('請先報名戰隊')
-      window.location.replace('signup.html');
+      window.location.replace('signup.html#main');
       return
     });
   } else {
