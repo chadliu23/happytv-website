@@ -49,11 +49,7 @@ $(document).ready(function(){
         window.location.href= '/egames/way.html#main';
       }
     })
-    $('#openModal').click(function(){
-      if ($('#openModal').is(':visible') ) {
-        window.location.href= '/egames/way.html#main';
-      }
-    });
+    
     setTimeout(function() {
         $('#openModal').css({ 'opacity': '1', 'pointer-events': 'auto' });
     }, 500);
