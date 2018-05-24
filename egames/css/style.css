@@ -104,7 +104,9 @@ h3.title { margin: 0 0 30px 0; color: #f10a6a;}
 .card { display: inline-block;}
 .student-img-div { display: block; position: relative; width: 350px; height: 200px; margin: 0 auto 5px auto; text-align: center;}
 .student-img-div img { position: absolute; top: 0; bottom: 0; left: 0; right: 0; max-width: 350px; max-height: 200px; margin: auto;}
-
+.btn_fb { display: block; float: left; margin: 30px 30px 0 0; padding: 0 10px 0 55px; background: url(../images/icon_fb.png) 5px center no-repeat; background-size: 40px auto; border: #777 1px solid; border-radius: 10px; line-height: 50px; color: #fff;}
+.btn_line { display: block; float: left; margin: 30px 0 0 0; padding: 0 10px 0 55px; background: url(../images/icon_line.png) 5px center no-repeat; background-size: 40px auto; border: #777 1px solid; border-radius: 10px; line-height: 50px; color: #fff;}
+.btn_fb:hover, .btn_line:hover { background-color: #222; border: #fff 1px solid;}
 
 /* regulation
 ============================================*/
