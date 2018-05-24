@@ -12,14 +12,14 @@ body { background:#030b32 url(../images/banner.jpg) center 70px no-repeat; font-
 .header .menu li { display:inline-block; position:relative; margin:0 1%;-webkit-transition:all 0.5s ease;  -moz-transition:all 0.5s ease;  -o-transition:all 0.5s ease;  -ms-transition:all 0.5s ease;  transition:all 0.5s ease;}
 .header .menu li a { display:block; line-height:69px; font-size:19px; font-weight:bold; letter-spacing:5px; color:#b9b9b9; cursor: pointer;}
 .header .menu li a span { display:block; position:absolute; bottom:0; left:50%; width:0; height:7px; background:url(../images/bg_menu_hover.png) center bottom; -webkit-transition:all 0.5s ease;  -moz-transition:all 0.5s ease;  -o-transition:all 0.5s ease;  -ms-transition:all 0.5s ease;  transition:all 0.5s ease;}
-.header .menu li:hover a { color: #ffc600;}
+.header .menu li:hover a { color:#F5A200;}
 .header .menu li:hover span { left:0; width:calc(100%);}
 .header .menu li .sub_menu { display: block; position: absolute; top: 65px; left: -27px; visibility: hidden; opacity: 0; -webkit-transition:all 0.5s ease;  -moz-transition:all 0.5s ease;  -o-transition:all 0.5s ease;  -ms-transition:all 0.5s ease;  transition:all 0.5s ease;}
 .header .menu li .sub_menu li { margin: 0;}
 .header .menu li .sub_menu li a { display: block; padding: 10px; width: 150px; background: #000; line-height: 30px; font-size: 16px; letter-spacing: 3px; text-align: center; color: #b9b9b9; box-sizing: border-box;}
-.header .menu li .sub_menu li a:hover { color: #ffc600;}
+.header .menu li .sub_menu li a:hover { color:#F5A200;}
 .header .menu li:hover .sub_menu { top: 70px; visibility: visible; opacity: 1;}
-.header .menu li:last-child a { color: #ffc600;}
+.header .menu li:last-child a { color:#F5A200;}
 .header .login_box { position: absolute; top: 0; right: 30px; height: 100%; line-height: 69px; overflow: hidden;}
 .header .login_box .user { display: block; float: left; margin: 0 20px 0 0; color: #fff;}
 .header .login_box .user a { color: #fff;}
@@ -40,7 +40,7 @@ button { border: 0;}
 .footer li img.uctp { margin: 0 3px -3px 0;}
 .footer li img.ctesa { margin: 0 3px -6px 0;}
 .footer li img.yoshow { margin: 0 3px -2px 0;}
-.yellow { color: #ffc600;}
+.yellow { color:#F5A200;}
 a:focus, a:hover { text-decoration: none;}
 
 /* e-games
