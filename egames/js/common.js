@@ -20,7 +20,7 @@
     function popup(){
         $('.btn_popup').on('click', function(e){
             e.preventDefault();
-            alert('如有報名上問題，無法自行解決，請隊長加入官方Line @jdh4282l告知(客服人員將會於上班時間內盡速為您處理)');
+            alert('如有報名上問題，無法自行解決，請加入官方Line @JDH4282L告知(客服人員將會於上班時間內盡速為您處理)');
         });
     }
 
@@ -49,6 +49,9 @@ function closePopup(href) {
     }, 500);
 };
 
+$(document).on('click', '.not-open', function(e) {
+    alert('尚未開放')
+})
 
 //$(document).ready(function(){
 //

@@ -1,3 +1,18 @@
+function setLoadingBlock() {
+  $.blockUI({
+    message: 'loading...',
+    css: {
+      border: 'none',
+      padding: '15px',
+      backgroundColor: '#000',
+      '-webkit-border-radius': '10px',
+      '-moz-border-radius': '10px',
+      opacity: .5,
+      color: '#fff',
+      message: 'Loading...'
+    }
+  });
+}
 
 $(document).ready(function() {
   let message = getParameterByName('message');
@@ -88,6 +103,8 @@ function putInData(data) {
 $("#upload-form").submit(function (e) {
   e.preventDefault();
 
+  setLoadingBlock()
+
   var member_id = Cookies.get('member_id');
   var team_id = $('#team_id').val();
   // var team_name = $('#team-name-input').val();
@@ -132,9 +149,11 @@ $("#upload-form").submit(function (e) {
     contentType: false,   // tell jQuery not to set contentType
     url: happyApiHost + ajaxUrl
   }).done((data) => {
+    $.unblockUI()
     window.location.replace('upload_student_card.html?message=' + successMsg);
   }).fail((xhr, textStatus, error) => {
-    alert('上傳失敗, 每次上傳檔案請小於1MB')
+    $.unblockUI()
+    alert('上傳有誤, 請檢查是否已看到學生證上傳\r並且每張圖片上傳檔案需小於3MB')
     console.log('error')
     console.log(error, textStatus, error);
   });
