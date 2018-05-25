@@ -19,7 +19,6 @@ body { background:#030b32 url(../images/banner.jpg) center 70px no-repeat; font-
 .header .menu li .sub_menu li a { display: block; padding: 10px; width: 150px; background: #000; line-height: 30px; font-size: 16px; letter-spacing: 3px; text-align: center; color: #b9b9b9; box-sizing: border-box;}
 .header .menu li .sub_menu li a:hover { color:#F5A200;}
 .header .menu li:hover .sub_menu { top: 70px; visibility: visible; opacity: 1;}
-.header .menu li:last-child a { color:#F5A200;}
 .header .login_box { position: absolute; top: 0; right: 30px; height: 100%; line-height: 69px; overflow: hidden;}
 .header .login_box .user { display: block; float: left; margin: 0 20px 0 0; color: #fff;}
 .header .login_box .user a { color: #fff;}
