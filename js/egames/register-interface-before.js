@@ -5,9 +5,9 @@ $(document).ready(function(){
       type: 'GET',
       dataType: 'json',
       url: happyApiHost + '/api/v3/egame/2018-01/member_id/' + Cookies.get('member_id')
-    }).done((data) => {
+    }).done(function(data)  {
      window.location.replace('register-interface-after.html');
-    }).fail((data) =>{
+    }).fail(function(data) {
 
     });
   }else{
@@ -42,9 +42,9 @@ $("#create-form").submit(function (e) {
     processData: false,  // tell jQuery not to process the data
     contentType: false,   // tell jQuery not to set contentType
     url: happyApiHost + '/api/v3/egame/2018-01/update'
-  }).done((data) => {
+  }).done(function(data)  {
     window.location.replace('register-interface-after.html?message=修改成功!');
-  }).fail((xhr, textStatus, error) => {
+  }).fail(function(xhr, textStatus, error)  {
     console.log('error')
     console.log(error, textStatus, error);
   });
@@ -109,9 +109,9 @@ $(document).on('click', '#create-egame-btn', async function(e) {
     dataType: 'json',
     data: data,
     url: happyApiHost + '/api/v3/egame/2018-01/create'
-  }).done((data) => {
+  }).done(function(data)  {
     window.location.replace('register-interface-after.html?message=成功登記隊伍!請記得EMAIL認證');
-  }).fail((xhr, textStatus, error) => {
+  }).fail(function(xhr, textStatus, error) {
     alert('修改錯誤')
     console.log(error, textStatus, error);
   });

@@ -27,7 +27,7 @@ $(document).ready(function() {
       type: 'GET',
       dataType: 'json',
       url: happyApiHost + '/api/v3/egame/2018-01/member_id/' + Cookies.get('member_id')
-    }).done((data) => {
+    }).done(function(data)  {
       if (data.result.length === 0) {
       	alert('請先報名戰隊')
         window.location.replace('signup.html#main');
@@ -36,7 +36,7 @@ $(document).ready(function() {
       putInData(data)
       // insertData
       //window.location.replace('signup-after.html');
-    }).fail((data) => {
+    }).fail(function(data) {
       alert('請先報名戰隊')
       window.location.replace('signup.html#main');
       return
@@ -177,10 +177,10 @@ $("#upload-form").submit(function (e) {
     processData: false,  // tell jQuery not to process the data
     contentType: false,   // tell jQuery not to set contentType
     url: happyApiHost + ajaxUrl
-  }).done((data) => {
+  }).done(function(data) {
     $.unblockUI()
     window.location.replace('upload_student_card.html?message=' + successMsg);
-  }).fail((xhr, textStatus, error) => {
+  }).fail(function(xhr, textStatus, error)  {
     $.unblockUI()
     alert('上傳有誤, 請檢查是否已看到學生證上傳\r並且每張圖片上傳檔案需小於3MB')
     console.log('error')

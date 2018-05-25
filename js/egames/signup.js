@@ -23,7 +23,7 @@ $(document).ready(function(){
       type: 'GET',
       dataType: 'json',
       url: happyApiHost + '/api/v3/egame/2018-01/member_id/' + Cookies.get('member_id')
-    }).done((data) => {
+    }).done(function(data)  {
       if (data.result.length === 0) {
         $.unblockUI()
         return
@@ -32,7 +32,7 @@ $(document).ready(function(){
       putInData(data)
       // insertData
       //window.location.replace('signup-after.html');
-    }).fail((data) => {
+    }).fail(function(data) {
       $.unblockUI()
       console.log('失敗')
     });
@@ -278,7 +278,7 @@ $("#sign-up-form").submit(function (e) {
     processData: false,  // tell jQuery not to process the data
     contentType: false,   // tell jQuery not to set contentType
     url: happyApiHost + ajaxUrl
-  }).done((data) => {
+  }).done(function(data)  {
     if(data.retCode === 0 && data.retMessage === "duplicate data summoner") {
       return alert('隊伍中已有被登錄過的召喚師名稱，請重新核對隊員資料後再行登錄')
     }
@@ -298,7 +298,7 @@ $("#sign-up-form").submit(function (e) {
 
     alert(successMsg)
     window.location.replace('signup.html');
-  }).fail((xhr, textStatus, error) => {
+  }).fail(function(xhr, textStatus, error)  {
     if(formType == 'edit') {
       alert('修改錯誤, 若修改仍不成功, 請加入官方Line @JDH4282L 告知')
       console.log('error')
@@ -367,10 +367,10 @@ $(document).on('click', '.btn_resend', function(e) {
     },
     dataType: 'json',
     url: happyApiHost + '/api/v3/egame/2018-01/resend/email/' + email
-  }).done((data) => {
+  }).done(function(data)  {
     alert('發送成功!')
     //window.location.replace('register-interface-after.html?message=修改成功!');
-  }).fail((xhr, textStatus, error) => {
+  }).fail(function(xhr, textStatus, error) {
     alert('發送錯誤')
     console.log('error')
     console.log(error, textStatus, error);
@@ -403,9 +403,9 @@ $(document).on('click', '#create-egame-btn', async function(e) {
     dataType: 'json',
     data: data,
     url: happyApiHost + '/api/v3/egame/2018-01/create'
-  }).done((data) => {
+  }).done(function(data) {
     window.location.replace('register-interface-after.html?message=成功登記隊伍!請記得EMAIL認證');
-  }).fail((xhr, textStatus, error) => {
+  }).fail(function(xhr, textStatus, error)  {
     alert('修改錯誤')
     console.log(error, textStatus, error);
   });

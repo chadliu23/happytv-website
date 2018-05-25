@@ -19,9 +19,9 @@ $(document).ready(function(){
         url: happyApiHost + '/api/v3/egame/2018-01/verify/email/'+ getParameterByName('email') +
           '/requestcode/' +getParameterByName('requestcode') +
           '/member/'+ Cookies.get('member_id')
-      }).done((data) => {
+      }).done(function(data)  {
         window.location.replace('register-interface-after.html?message=認證成功! 帳號已與報名資料連結');
-      }).fail((data) => {
+      }).fail(function(data)  {
         window.location.replace('check-fault.html');
       })
     }else{

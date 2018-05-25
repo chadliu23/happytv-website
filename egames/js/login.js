@@ -41,10 +41,10 @@
             dataType: 'json',
             data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
             url: 'http://localhost/happytvmember/login?source=facebook&mode=homepage'
-          }).done((data) => {
+          }).done(function(data)  {
             console.log('登入成功的data:', data)
             succuessLogin(data);
-          }).fail((data) =>{
+          }).fail(function(data) {
             console.log('失敗data', data)
             // bootstrap_alert.warning('This Facebook account as not register.');
             FB.logout(function(response) {

@@ -41,9 +41,9 @@
             dataType: 'json',
             data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
             url: 'https://api-product.happytv.com.tw/happytvmember/login?source=facebook&mode=homepage'
-          }).done((data) => {
+          }).done(function(data) {
             succuessLogin(data);
-          }).fail((data) =>{
+          }).fail(function(data) {
             // bootstrap_alert.warning('This Facebook account as not register.');
             FB.logout(function(response) {
             });
