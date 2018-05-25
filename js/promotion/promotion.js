@@ -43,7 +43,7 @@
             dataType: 'json',
             data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
             url: 'https://api-product.happytv.com.tw/happytvmember/login?source=facebook&mode=homepage'
-          }).done((data) => {
+          }).done(function(data) {
             if (data.retCode === 0){
               succuessLogin(data);
             }else{
@@ -52,7 +52,7 @@
               });
             }
             
-          }).fail((data) =>{
+          }).fail(function(data){
             onsole.log('Login fail ');
             FB.logout(function(response) {
             });
@@ -141,10 +141,10 @@ function checkstatus(){
       },
       dataType: 'json',
       url: 'https://api-product.happytv.com.tw/api/v3/promotion/event/' + getParameterByName("event")
-    }).done((data) => {
+    }).done(function(data) {
       $('#promotion-code-area').css('display', 'block');
       $('#promotion-code' ).html(data.result.promotion_code);
-    }).fail((data) =>{
+    }).fail(function(data) {
       $('#no-more-promotion-code').css('display', 'block');
     });
 

@@ -10,7 +10,7 @@ $(function() {
         'accesskey': 'accessKey_eb3604bd21a3176806f29607d47b069f17956cba'
       },
       url: "https://api-product.happytv.com.tw/api/v3/hbl/record/date/" + selected
-    }).done((data) => {
+    }).done(function(data) {
       recordByDate = data;
       $('#location').empty();
       $('#event_id').empty();
@@ -19,7 +19,7 @@ $(function() {
       for(let location in recordByDate.result){
         $('#location').append($('<option>', {value:location, text:location.replace(/\d/, '')}));
       }
-    }).fail((data) => {
+    }).fail(function(data)  {
       console.log('error');
     });
 
@@ -62,10 +62,10 @@ $(function() {
       },
       url: "https://api-product.happytv.com.tw/api/v3/hbl/record/id/" + $('#hbl_id').val(),
       data: data
-    }).done((data) => {
+    }).done(function(data)  {
        alert('Update Success')
        location.reload();
-    }).fail((data) => {
+    }).fail(function(data)  {
       alert('Update Fail')
     });
 

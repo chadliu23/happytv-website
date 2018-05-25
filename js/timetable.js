@@ -12,7 +12,7 @@ function list(index, image, link) {
       'accesskey': 'accessKey_eb3604bd21a3176806f29607d47b069f17956cba'
     },
     url: "https://api-product.happytv.com.tw/api/v3/epg/channel/" + link
-  }).done((data) => {
+  }).done(function(data)  {
     let today = new Date();
     const date = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0);
     const date1 = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1, 0, 0, 0);
@@ -44,7 +44,7 @@ function list(index, image, link) {
           '</div>' +
           '</div>');
       }
-  }).fail((data) => {
+  }).fail(function(data)  {
     console.log('error');
   });
 }

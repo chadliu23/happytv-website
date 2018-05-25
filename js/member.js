@@ -1,5 +1,5 @@
 
-$(document).ready((callback) =>{
+$(document).ready(function(callback) {
     if (Cookies.get("member_token") === undefined){
         window.location('/login.html');
         return;
@@ -12,10 +12,10 @@ $(document).ready((callback) =>{
         },
         dataType: 'json',
         url: 'https://api-product.happytv.com.tw/api/v3/billing/provider/GASH/items'
-      }).done((data) => {
+      }).done(function(data)  {
         for ( let key in data.result){
             $('<div/>').loadTemplate($("#hpoint-template"), data.result[key]).appendTo("#item_list");
-            $("#" + data.result[key].hpoint_item_id).on('click', (event) =>{
+            $("#" + data.result[key].hpoint_item_id).on('click', function(event){
                  $.ajax({
                     type: 'POST',
                     headers: {
@@ -25,7 +25,7 @@ $(document).ready((callback) =>{
                     },
                     dataType: 'json',
                     url: 'https://api-product.happytv.com.tw/api/v3/billing/provider/GASH/place_order/' + event.currentTarget.id
-                  }).done((data) => {
+                  }).done(function(data)  {
                     var input = $("<input>")
                                    .attr("type", "hidden")
                                    .attr("name", "data")
@@ -36,14 +36,14 @@ $(document).ready((callback) =>{
                         .html(input).submit();
                     
 
-                  }).fail((data) =>{
+                  }).fail(function(data) {
                     console.log('cannot get member point');
                   });
 
                 
             })
         }
-      }).fail((data) =>{
+      }).fail(function(data) {
         console.log('cannot get gash items');
       });
       $.ajax({
@@ -55,9 +55,9 @@ $(document).ready((callback) =>{
         },
         dataType: 'json',
         url: 'https://api-product.happytv.com.tw/api/v3/billing/getBalance'
-      }).done((data) => {
+      }).done(function(data)  {
         $('#memberPoint').prepend(data.result);
-      }).fail((data) =>{
+      }).fail(function(data) {
         console.log('cannot get member point');
       });
 });

@@ -42,7 +42,7 @@
             dataType: 'json',
             data: { "fb_id": data.id, "nick_name": data.name, "fb_token": response.authResponse.accessToken },
             url: 'https://api-product.happytv.com.tw/happytvmember/login?source=facebook'
-          }).done((data) => {
+          }).done(function(data) {
             if (data.retCode === 0){
               succuessLogin(data);
             }else{
@@ -51,7 +51,7 @@
               });
             }
             
-          }).fail((data) =>{
+          }).fail(function(data) {
             console.log('Login fail ');
           });
         });
@@ -138,10 +138,10 @@ function checkstatus(){
 
 $(document).ready(function(){
   checkstatus();
-  $('#facebook-button').on('click', (event) => {
+  $('#facebook-button').on('click', function(event) {
     loginFacebook();
   });
-  $('#start-button').on('click', (event) => {
+  $('#start-button').on('click', function(event)  {
     $.ajax({
       type: 'PUT',
       headers: {
@@ -151,11 +151,11 @@ $(document).ready(function(){
       },
       dataType: 'json',
       url: 'https://api-product.happytv.com.tw/api/v3/promotion/event/' + getParameterByName("event")
-    }).done((data) => {
+    }).done(function(data)  {
       $('#promotion-code-area').css('display', 'block');
       $('#start-button').css('display', 'none');
       $('#event-image-area').css('display', 'block');
-    }).fail((data) =>{
+    }).fail(function(data) {
       $('#promotion-code-area').css('display', 'block');
       $('#start-button').css('display', 'none');
       $('#event-image-area').css('display', 'block');

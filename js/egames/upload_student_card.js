@@ -58,7 +58,7 @@ $(document).ready(function() {
 
 
 function putInData(data) {
-  // $('#edit-button').on('click', (event) => {
+  // $('#edit-button').on('click', function(event)  {
   //   $('.for-display').css('display', 'none');
   //   $('.for-input').css('display', 'inline');
   // })

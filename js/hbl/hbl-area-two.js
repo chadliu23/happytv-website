@@ -36,7 +36,7 @@ function list(id, targetid, index) {
       'accesskey': 'accessKey_eb3604bd21a3176806f29607d47b069f17956cba'
     },
     url: "https://api-product.happytv.com.tw/api/v3/hbl/record/date/" + id
-  }).done((data) => {
+  }).done(function(data)  {
 
     let url = 'http://onelink.to/happytv';
     let hide = 'style="display:none"';
@@ -98,7 +98,7 @@ function list(id, targetid, index) {
     element += '</table>';
     $("#" + targetid).append(element);
 
-  }).fail((data) => {
+  }).fail(function(data)  {
     console.log('error');
   });
 }

@@ -42,7 +42,7 @@
             dataType: 'json',
             data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
             url: 'https://api.happytv.com.tw/happytvmember/login?source=facebook'
-          }).done((data) => {
+          }).done(function(data) {
             if (data.retCode === 0){
               succuessLogin(data);
             }else{
@@ -51,7 +51,7 @@
               });
             }
             
-          }).fail((data) =>{
+          }).fail(function(data) {
             onsole.log('Login fail ');
             FB.logout(function(response) {
             });

@@ -39,9 +39,9 @@
                 },
                 url: 'https://api-product.happytv.com.tw/happytvmember/login?source=accountkit&mode=homepage'
 
-              }).done((data) => {
+              }).done(function(data) {
                 succuessLogin(data)
-              }).fail((data) =>{
+              }).fail(function(data) {
                 bootstrap_alert.warning('Phone number fails to register.');
               });
 
@@ -97,9 +97,9 @@
             dataType: 'json',
             data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
             url: 'https://api-product.happytv.com.tw/happytvmember/login?source=facebook&mode=homepage'
-          }).done((data) => {
+          }).done(function(data) {
             succuessLogin(data);
-          }).fail((data) =>{
+          }).fail(function(data) {
             bootstrap_alert.warning('This Facebook account as not register.');
             FB.logout(function(response) {
             });
@@ -203,9 +203,9 @@ function logout() {
         dataType: 'json',
         data: { "google_id_token": user.getAuthResponse().id_token, "google_access_token": user.getAuthResponse().access_token  },
         url: 'https://api-product.happytv.com.tw/happytvmember/login?source=google&mode=homepage'
-      }).done((data) => {
+      }).done(function(data) {
         succuessLogin(data);
-      }).fail((data) =>{
+      }).fail(function(data) {
         bootstrap_alert.warning('This Google account as not register.');
         GoogleAuth.signOut();
       });
@@ -282,9 +282,9 @@ if ($('#loginbutton')){
       dataType: 'json',
       data: { "email": email, "password": password.toString(CryptoJS.enc.Hex) },
       url: 'https://api-product.happytv.com.tw/happytvmember/login?source=email&mode=homepage'
-    }).done((data) => {
+    }).done(function(data) {
       succuessLogin(data);
-    }).fail((data) =>{
+    }).fail(function(data) {
       bootstrap_alert.warning('Login fail');
     });
     event.preventDefault();
@@ -314,9 +314,9 @@ $(document).ready(function(){
       dataType: 'json',
       data: { "line_access_token": line_access_token, "line_id": line_id },
       url: 'https://api-product.happytv.com.tw/happytvmember/login?source=line&mode=homepage'
-    }).done((data) => {
+    }).done(function(data) {
       succuessLogin(data);
-    }).fail((data) =>{
+    }).fail(function(data) {
       bootstrap_alert.warning('Login fail');
     });
   }

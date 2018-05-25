@@ -6,9 +6,9 @@ $(document).ready(function(){
       type: 'GET',
       dataType: 'json',
       url: happyApiHost + '/api/v3/egame/2018-01/account/' + Cookies.get('member_id')
-    }).done((data) => {
+    }).done(function(data)  {
       window.location.replace('account-interface-after.html');
-    }).fail((data) =>{
+    }).fail(function(data) {
 
     });
   } else {
@@ -19,7 +19,7 @@ $(document).ready(function(){
   }
 });
 
-$(document).on('click', '#create_account_btn', async function(e) {
+$(document).on('click', '#create_account_btn',  function(e) {
   var member_id = Cookies.get('member_id')
   var team_name = $('#team_name').val();
   var account_name = $('#account_name').val();
@@ -46,10 +46,10 @@ $(document).on('click', '#create_account_btn', async function(e) {
     dataType: 'json',
     data: data,
     url: happyApiHost + '/api/v3/egame/2018-01/account'
-  }).done((data) => {
+  }).done(function(data)  {
     console.log(data)
     window.location.replace('account-interface-after.html');
-  }).fail((xhr, textStatus, error) => {
+  }).fail(function(xhr, textStatus, error) {
     alert('新增錯誤')
     console.log(error, textStatus, error);
   });

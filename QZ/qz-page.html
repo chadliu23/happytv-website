@@ -458,7 +458,7 @@
         function validateForm(){
             return checkPhone($('#phone')[0].value);
         }
-        $( document ).ready( () => {
+        $( document ).ready( function()  {
             $( "#location" ).change(function(event) {
                 if (event.target.value == 18){
                     $('#location-other').css('display', 'block');

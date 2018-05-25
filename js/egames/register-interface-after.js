@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-  $('#edit-button').on('click', (event) => {
+  $('#edit-button').on('click', function(event)  {
     $('.for-display').css('display', 'none');
     $('.for-input').css('display', 'inline');
   })
@@ -10,7 +10,7 @@ $(document).ready(function(){
         type: 'GET',
         dataType: 'json',
         url: happyApiHost + '/api/v3/egame/2018-01/member_id/' + Cookies.get('member_id')
-      }).done((data) => {
+      }).done(function(data)  {
         if (data.result.length >0){
           $('#team-name-label').val(data.result[0].team_name);
           $('#team-name-input').val(data.result[0].team_name);
@@ -49,7 +49,7 @@ $(document).ready(function(){
         if (message !==undefined && message !== null){
           alert(message);
         }
-      }).fail((data) =>{
+      }).fail(function(data) {
         window.location.replace('register-interface-before.html');
       });
 
@@ -76,10 +76,10 @@ $(document).on('click', '.email-verify-again', function(e) {
     },
     dataType: 'json',
     url: happyApiHost + '/api/v3/egame/2018-01/resend/email/' + email
-  }).done((data) => {
+  }).done(function(data)  {
     alert('發送成功!')
     //window.location.replace('register-interface-after.html?message=修改成功!');
-  }).fail((xhr, textStatus, error) => {
+  }).fail(function(xhr, textStatus, error)  {
     alert('發送錯誤')
     console.log('error')
     console.log(error, textStatus, error);
@@ -88,7 +88,7 @@ $(document).on('click', '.email-verify-again', function(e) {
 
 
 // 使用jquery直接抓取資料
-$(document).on('click', '#update-egame-btn', async function(e) {
+$(document).on('click', '#update-egame-btn',  function(e) {
   var member_id = Cookies.get('member_id');
   var team_id = $('#team_id').val();
   var team_name = $('#team-name-input').val();
@@ -126,9 +126,9 @@ $(document).on('click', '#update-egame-btn', async function(e) {
     contentType: false,   // tell jQuery not to set contentType
     url: happyApiHost + '/api/v3/egame/2018-01/update',
     error: function (xhr) { console.log('hi er:', JSON.stringify(xhr))},
-  }).done((data) => {
+  }).done(function(data)  {
     window.location.replace('register-interface-after.html?message=修改成功!');
-  }).fail((xhr, textStatus, error) => {
+  }).fail(function(xhr, textStatus, error)  {
     alert('修改錯誤')
     console.log('error:', JSON.stringify(xhr), JSON.stringify(textStatus), JSON.stringify(error))
     console.log(error, textStatus, error);
@@ -155,9 +155,9 @@ $(document).on('click', '#update-egame-btn', async function(e) {
 //     processData: false,  // tell jQuery not to process the data
 //     contentType: false,   // tell jQuery not to set contentType
 //     url: happyApiHost + '/api/v3/egame/2018-01/update'
-//   }).done((data) => {
+//   }).done(function(data)  {
 //     window.location.replace('register-interface-after.html?message=修改成功!');
-//   }).fail((xhr, textStatus, error) => {
+//   }).fail(function(xhr, textStatus, error)  {
 //     console.log('error')
 //     console.log(error, textStatus, error);
 //   });

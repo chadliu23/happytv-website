@@ -18,11 +18,11 @@ $(document).ready(function(){
         url: happyApiHost + '/api/v3/egame/2018-01/verify/email/'+ getParameterByName('email') +
           '/requestcode/' +getParameterByName('requestcode') +
           '/member/'+ Cookies.get('member_id')
-      }).done((data) => {
+      }).done(function(data)  {
         $('.message').html('認證成功');
         alert('認證成功! 帳號已與報名資料連結, 將導回活動頁面')
         window.location.replace('signup.html');
-      }).fail((data) => {
+      }).fail(function(data) {
         $('.message').html('認證失敗');
         alert('認證失敗, 請確認是否為正確的信箱中驗證網址, 且已認證成功之帳號不可重複認證')
       })

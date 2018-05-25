@@ -48,9 +48,9 @@ function submitWinner(){
     dataType: 'json',
     url: 'https://api-product.happytv.com.tw/api/v3/2017HBLB/winner/boy/'+ boyWinner+'/girl/'+ girlWinner +
       '/member/'+ Cookies.get('member_id')
-  }).done((data) => {
+  }).done(function(data)  {
     alert('感謝投票')
-  }).fail((data) => {
+  }).fail(function(data)  {
     alert('1天只能投5次')
   })
 }
@@ -88,9 +88,9 @@ function submitStar(){
     dataType: 'json',
     url: 'https://api-product.happytv.com.tw/api/v3/2017HBLB/star/boy/'+ boyWinner+'/girl/'+ girlWinner +
       '/member/'+ Cookies.get('member_id')
-  }).done((data) => {
+  }).done(function(data)  {
     alert('感謝投票')
-  }).fail((data) => {
+  }).fail(function(data)  {
     alert('一天只能投一次')
   })
 }

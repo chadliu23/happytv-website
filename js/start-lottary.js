@@ -41,19 +41,19 @@ function getParameterByName(name, url) {
 
 $(document).ready(function(){
 
-  $('#start-button').on('click', (event) => {
+  $('#start-button').on('click', function(event)  {
     $.ajax({
       type: 'GET',
       dataType: 'json',
       url: 'https://api-product.happytv.com.tw/api/v3/promotion/event/' + getParameterByName("event") + '/number/' + $('#number')[0].value
-    }).done((data) => {
+    }).done(function(data) {
       $('#promotion-code-area').css('display', 'block');
       $('#promotion-click').css('display', 'none');
       $('#start-button').css('display', 'none');
       for (let i in data){
         $('#name').append('<ul class="name"><p>' +(Number(i)+1) + '. ' + data[i].nick_name + '</p></ul>');
       }
-    }).fail((data) =>{
+    }).fail(function(data) {
       $('#promotion-code-area').css('display', 'block');
       $('#start-button').css('display', 'none');
       console.log(data);

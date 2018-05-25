@@ -40,7 +40,7 @@ function loginFacebook(succuessLogin) {
           dataType: 'json',
           data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
           url: 'https://api-product.happytv.com.tw/happytvmember/login?source=facebook&mode=homepage'
-        }).done((data) => {
+        }).done(function(data)  {
           if (succuessLogin !== undefined){
             succuessLogin(data);
           }
@@ -54,7 +54,7 @@ function loginFacebook(succuessLogin) {
              { expires: 1 });
           window.location.reload();
 
-        }).fail((data) =>{
+        }).fail(function(data) {
           // bootstrap_alert.warning('This Facebook account as not register.');
           FB.logout(function(response) {
           });

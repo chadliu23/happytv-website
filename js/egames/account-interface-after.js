@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-  $('#edit-button').on('click', (event) => {
+  $('#edit-button').on('click', function(event)  {
     $('.for-display').css('display', 'none');
     $('.for-input').css('display', 'inline');
   })
@@ -10,7 +10,7 @@ $(document).ready(function(){
       type: 'GET',
       dataType: 'json',
       url: happyApiHost + '/api/v3/egame/2018-01/account/' + Cookies.get('member_id')
-    }).done((data) => {
+    }).done(function(data)  {
       if (data.retCode === 0 && data.result) {
         // 標籤給值
         $('#team_name_lable').val(data.result.team_name);
@@ -34,7 +34,7 @@ $(document).ready(function(){
       if (message !== undefined && message !== null) {
         alert(message);
       }
-    }).fail((data) =>{
+    }).fail(function(data) {
       window.location.replace('register-interface-before.html');
     });
   } else {
@@ -46,7 +46,7 @@ $(document).ready(function(){
 });
 
 
-$(document).on('click', '#update-account-btn', async function(e) {
+$(document).on('click', '#update-account-btn',  function(e) {
   var member_id = Cookies.get('member_id')
   var team_name = $('#team_name_input').val();
   var account_name = $('#account_name_input').val();
@@ -71,10 +71,10 @@ $(document).on('click', '#update-account-btn', async function(e) {
     dataType: 'json',
     data: data,
     url: 'http://localhost/api/v3/egame/2018-01/account/' + member_id
-  }).done((data) => {
+  }).done(function(data)  {
     console.log(data)
     window.location.replace('account-interface-after.html');
-  }).fail((xhr, textStatus, error) => {
+  }).fail(function(xhr, textStatus, error)  {
     alert('修改錯誤')
     console.log(error, textStatus, error);
   });

@@ -369,13 +369,13 @@
             data: form,
             url: 'https://api-product.happytv.com.tw/2018hbl-lottary'
 
-        }).done((data) => {
+        }).done(function(data) {
             if (data.status === 200) {
                 alert('感謝您的參與!');
             } else {
                 alert('您已經參加過了!');
             }
-        }).fail((data) => {
+        }).fail(function(data) {
             if (data.status === 200) {
                 alert('感謝您的參與!');
             } else {

@@ -38,7 +38,7 @@ $(document).ready(function(){
         type: 'GET',
         dataType: 'json',
         url: happyApiHost + '/api/v3/egame/2018-01/member_id/' + Cookies.get('member_id')
-      }).done((data) => {
+      }).done(function(data)  {
         if (data.result.length === 0) {
           alert('請先報名戰隊')
           window.location.replace('signup.html#main');
