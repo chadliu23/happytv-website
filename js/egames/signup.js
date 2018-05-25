@@ -377,8 +377,7 @@ $(document).on('click', '.btn_resend', function(e) {
   });
 })
 
-$(document).on('click', '#create-egame-btn', async function(e) {
-  return
+$(document).on('click', '#create-egame-btn', function(e) {
   var member_id = Cookies.get('member_id');
   var team_name = $('#team_name').val();
   var data = {
