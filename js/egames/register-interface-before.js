@@ -51,7 +51,7 @@ $("#create-form").submit(function (e) {
 })
 
 
-$(document).on('change', '.member-5-input', async function(e) {
+$(document).on('change', '.member-5-input',  function(e) {
   var a = $(this).val()
   var member5Inputs = $('.member-5-input')
   var allStr = ""
@@ -67,7 +67,7 @@ $(document).on('change', '.member-5-input', async function(e) {
   }
 })
 
-$(document).on('change', '.member-6-input', async function(e) {
+$(document).on('change', '.member-6-input',  function(e) {
   var a = $(this).val()
   var member6Inputs = $('.member-6-input')
   var allStr = ""
@@ -83,7 +83,7 @@ $(document).on('change', '.member-6-input', async function(e) {
   }
 })
 
-$(document).on('click', '#create-egame-btn', async function(e) {
+$(document).on('click', '#create-egame-btn',  function(e) {
   return
   var member_id = Cookies.get('member_id');
   var team_name = $('#team_name').val();

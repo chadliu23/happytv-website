@@ -52,7 +52,7 @@ $(document).ready(function(){
         $('#team_name_label').html(team_name);
 
         return loadAccount()
-      }).fail((data) => {
+      }).fail(function(data)  {
         alert('請先報名戰隊')
         window.location.replace('signup.html#main');
         return
@@ -179,7 +179,7 @@ $("#account-form").submit(function (e) {
 
 })
 
-$(document).on('click', '.btn_edit', async function(e) {
+$(document).on('click', '.btn_edit',  function(e) {
   // 編輯 送出按鈕
   $('.btn_edit').css("display", "none");
   $('.btn_send').css("display", "block");
@@ -191,7 +191,7 @@ $(document).on('click', '.btn_edit', async function(e) {
 })
 
 
-$(document).on('click', '#create_account_btn', async function(e) {
+$(document).on('click', '#create_account_btn',  function(e) {
   var member_id = Cookies.get('member_id')
   var team_name = $('#team_name').val();
   var account_name = $('#account_name').val();
