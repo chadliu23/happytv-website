@@ -118,7 +118,7 @@ function putInData(data) {
   $.unblockUI()
 };
 
-$(document).on('click', '.btn_edit', async function(e) {
+$(document).on('click', '.btn_edit',  function(e) {
   // 編輯 送出按鈕
   $('.btn_edit').css("display", "none");
   $('.btn_send').css("display", "block");
@@ -314,11 +314,11 @@ $("#sign-up-form").submit(function (e) {
 })
 
 
-$(document).on('change', '.member-5-input', async function(e) {
+$(document).on('change', '.member-5-input',  function(e) {
   set5InputRequired()
 })
 
-$(document).on('change', '.member-6-input', async function(e) {
+$(document).on('change', '.member-6-input',  function(e) {
   set6InputRequired()
 })
 
@@ -378,6 +378,7 @@ $(document).on('click', '.btn_resend', function(e) {
 })
 
 $(document).on('click', '#create-egame-btn', function(e) {
+  return
   var member_id = Cookies.get('member_id');
   var team_name = $('#team_name').val();
   var data = {
