@@ -292,7 +292,7 @@ $("#sign-up-form").submit(function (e) {
     }
 
     if(data.retCode === 0 && data.retMessage === "send email error") {
-      alert('請務必通知各隊員前往信箱認證')
+      alert('【登錄的資料中有錯誤的Email】\r請向所有隊員確認是否收到認證信，請沒收到驗證信的隊員修正或變更Email後並『重寄驗證信』。')
       return window.location.replace('signup.html');
     }
 

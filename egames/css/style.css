@@ -8,9 +8,9 @@ body { background:#030b32 url(../images/banner.jpg) center 70px no-repeat; font-
 .header { position:fixed; top: 0; left: 0; width: 100%; height: 69px; background: url(../images/bg_header.png) center top no-repeat; z-index: 5;}
 .header h1 { display:block; position:absolute; top:10px; left:30px; z-index: 2;}
 .header h1 a { display: block; width:99px;  height:43px; background:url(../images/logo.png) no-repeat; text-indent:-9999px;}
-.header .menu { display:block; position:absolute; top:0; left:140px; width: 100%; height:100%; /*text-align: center;*/}
-.header .menu li { display:inline-block; position:relative; margin:0 1%;-webkit-transition:all 0.5s ease;  -moz-transition:all 0.5s ease;  -o-transition:all 0.5s ease;  -ms-transition:all 0.5s ease;  transition:all 0.5s ease;}
-.header .menu li a { display:block; line-height:69px; font-size:19px; font-weight:bold; letter-spacing:5px; color:#b9b9b9; cursor: pointer;}
+.header .menu { display:block; position:absolute; top:0; left:140px; width: 100%; height:100%; /*text-align: center;*/ overflow: hidden;}
+.header .menu li { display:block; float: left; position:relative; margin:0 0.7%; -webkit-transition:all 0.5s ease;  -moz-transition:all 0.5s ease;  -o-transition:all 0.5s ease;  -ms-transition:all 0.5s ease;  transition:all 0.5s ease;}
+.header .menu li a { display:block; line-height:69px; font-size:16px; font-weight:bold; letter-spacing:3px; color:#b9b9b9; cursor: pointer;}
 .header .menu li a span { display:block; position:absolute; bottom:0; left:50%; width:0; height:7px; background:url(../images/bg_menu_hover.png) center bottom; -webkit-transition:all 0.5s ease;  -moz-transition:all 0.5s ease;  -o-transition:all 0.5s ease;  -ms-transition:all 0.5s ease;  transition:all 0.5s ease;}
 .header .menu li:hover a { color:#F5A200;}
 .header .menu li:hover span { left:0; width:calc(100%);}
@@ -27,6 +27,8 @@ body { background:#030b32 url(../images/banner.jpg) center 70px no-repeat; font-
 .header .login_box .btn_login { display: block; float: left; font-size: 19px; color: #fff;}
 .header .login_box .btn_login:before{ font-family: 'FontAwesome'; content: '\f08b'; font-size: 20px; padding: 0 10px 0 0;}
 .header .login_box .btn_login a { color: #fff;}
+.header .btn_menu_fb { display: block; float: left; width: 35px; height: auto; background: url(../images/icon_fb.png) center center no-repeat; background-size: 35px auto; text-indent: -9999px;}
+.header .btn_menu_line { display: block; float: left; width: 35px; height: auto; background: url(../images/icon_line.png) center center no-repeat; background-size: 35px auto; text-indent: -9999px;}
 .main { position: absolute; top: 850px; left: 0; width: 100%; padding-top: 80px; margin-top: -80px;}
 .main .bg { position: absolute; bottom: 0; left: 0; width: 100%; height: 145px; background: url(../images/bg_bottom.png) center bottom no-repeat; z-index: 1;}
 input[type="text"], input[type="tel"],input[type="date"] { padding: 5px 10px; border-radius: 5px; border: none; background: #fff; font-family:"微軟正黑體"; font-size: 18px; color: #333; box-sizing: border-box;}
