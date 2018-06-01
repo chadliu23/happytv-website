@@ -36,12 +36,16 @@
     <title>2018 Yo!Show全國高中職LOL擂台挑戰賽-參賽隊伍</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script src='/js/egames/jquery.blockUI.js'></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="/js/config/configVar.js"></script>
     <script src="/js/js.cookie.js" ></script>
     <script src="/js/egames/login.js" ></script>
     <script type="text/javascript" src="js/common.js"></script>
+    <script src="/js/egames/search.js" ></script>
     <script>
         (function(i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -83,39 +87,42 @@
             <div class="content">
                 <h2>參賽戰隊</h2>
                 <div class="search_bar">
-                    <input type="text" class="search" placeholder="隊伍搜尋...">
-                    <a href="" class="btn_search"></a>
+                    <form id="search-form">
+                        <input id="team_name_search" type="text" class="search" placeholder="隊名搜尋...">
+                        <a href="#main" class="btn_search"></a>
+                        <button type="submit" style="display: none;"></a>
+                    </form>
                 </div>
                 <div class="search_show">
-                    <p class="team_title">戰隊名稱戰隊名稱</p>
-                    <p class="zone">A區</p>
-                    <p class="summoner_0">
-                        <span class="name">唐老鴨</span>
-                        <span class="school">台中一中</span>
+                    <p id="team_name_p" class="team_title"></p>
+                    <p id="zone_p" class="zone"></p>
+                    <p id="summoner_0_p" class="summoner_0">
+                        <span class="name"></span>
+                        <span class="school"></span>
                     </p>
-                    <p class="summoner_1">
-                        <span class="name">唐老鴨</span>
-                        <span class="school">台中一中</span>
+                    <p id="summoner_1_p" class="summoner_1">
+                        <span class="name"></span>
+                        <span class="school"></span>
                     </p>
-                    <p class="summoner_2">
-                        <span class="name">唐老鴨</span>
-                        <span class="school">台中一中</span>
+                    <p id="summoner_2_p" class="summoner_2">
+                        <span class="name"></span>
+                        <span class="school"></span>
                     </p>
-                    <p class="summoner_3">
-                        <span class="name">唐老鴨</span>
-                        <span class="school">台中一中</span>
+                    <p id="summoner_3_p" class="summoner_3">
+                        <span class="name"></span>
+                        <span class="school"></span>
                     </p>
-                    <p class="summoner_4">
-                        <span class="name">唐老鴨</span>
-                        <span class="school">台中一中</span>
+                    <p id="summoner_4_p" class="summoner_4">
+                        <span class="name"></span>
+                        <span class="school"></span>
                     </p>
-                    <p class="summoner_5">
-                        <span class="name">唐老鴨</span>
-                        <span class="school">台中一中</span>
+                    <p id="summoner_5_p" class="summoner_5">
+                        <span class="name"></span>
+                        <span class="school"></span>
                     </p>
-                    <p class="summoner_6">
-                        <span class="name">唐老鴨</span>
-                        <span class="school">台中一中</span>
+                    <p id="summoner_6_p" class="summoner_6">
+                        <span class="name"></span>
+                        <span class="school"></span>
                     </p>
                 </div>
             </div>
