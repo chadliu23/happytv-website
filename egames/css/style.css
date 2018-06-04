@@ -161,21 +161,23 @@ h3.title { margin: 0 0 30px 0; color: #f10a6a;}
 
 /* search
 ============================================*/
-.search_bar { position: absolute; top: 30px; left: 50%; width: 838px; height: 116px; margin: 0 0 0 -416px; background: url(../images/bg_searchbar.png) no-repeat;}
-.search_bar .search { position: absolute; top: 25px; left: 58px; width: 660px; height: 50px; background: none; font-size: 24px;}
-.search_bar .btn_search { display: block; position: absolute; top: 25px; right: 63px; width: 50px; height: 50px;}
-.search_show { position: relative; width: 712px; height: 1099px; margin: 50px auto 0 auto; padding: 0 0 30px 0; background: url(../images/bg_search_show.png) no-repeat;}
-.main .search_show p { display: block; position: absolute; font-size: 24px; font-weight: bold; line-height: 57px; text-align: center; color: #333; white-space:nowrap; overflow: hidden;}
-.main .search_show p span { display: block; margin: 15px 0; line-height: 30px;}
-.search_show .team_title { top: 112px; left: 70px; width: 570px; margin: 0;}
-.search_show .zone { top: 257px; left: 70px; width: 570px;}
-.search_show .summoner_0 { top: 401px; left: 70px; width: 570px; height: 106px;}
-.search_show .summoner_1 { top: 570px; left: 70px; width: 265px; height: 112px;}
-.search_show .summoner_2 { top: 570px; left: 374px; width: 265px; height: 112px;}
-.search_show .summoner_3 { top: 749px; left: 70px; width: 265px; height: 112px;}
-.search_show .summoner_4 { top: 749px; left: 374px; width: 265px; height: 112px;}
-.search_show .summoner_5 { top: 921px; left: 70px; width: 265px; height: 112px;}
-.search_show .summoner_6 { top: 921px; left: 374px; width: 265px; height: 112px;}
+.search_bar { position: absolute; top: 30px; left: 50%; width: 763px; height: auto; margin: 0 0 0 -380px; background: url(../images/bg_searchbar.png) no-repeat; background-size: contain;}
+.search_bar .search { position: absolute ;top: 21.55%; left: 3.14%; width: 85.84%; height: 43.96%; background: none; font-size: 24px;}
+.search_bar .btn_search { display: block; position: absolute; top: 21.55%; right: 2.88%; width: 8.25%; height: 43.96%;}
+.search_show { position: relative; width: 712px; height: auto; margin: 50px auto 30px auto; padding: 0; background: url(../images/bg_search_show.png) no-repeat; background-size: contain;}
+.search_bar img, .search_show img { max-width: 100%;}
+.main .search_show p { display: block; position: absolute; font-size: 24px; font-weight: bold; text-align: center; color: #333; white-space:nowrap; overflow: hidden;}
+.main .search_show p span { display: block; margin: 1% 0;}
+.main .search_show p .name, .main .search_show p .school { margin: 0;}
+.search_show .team_title { top: 10.37%; left: 11.79%; width: 75.84%; height: 4.91%; margin: 0;}
+.search_show .zone { top: 23.47%; left: 11.79%; width: 75.84%; height: 4.91%;}
+.search_show .summoner_0 { top: 36.57%; left: 11.79%; width: 75.84%; height: 9.64%;}
+.search_show .summoner_1 { top: 51.95%; left: 11.79%; width: 33.28%; height: 10.19%;}
+.search_show .summoner_2 { top: 51.95%; left: 54.8%; width: 33.28%; height: 10.19%;}
+.search_show .summoner_3 { top: 68.24%; left: 11.79%; width: 33.28%; height: 10.19%;}
+.search_show .summoner_4 { top: 68.24%; left: 54.8%; width: 33.28%; height: 10.19%;}
+.search_show .summoner_5 { top: 83.8%; left: 11.79%; width: 33.28%; height: 10.19%;}
+.search_show .summoner_6 { top: 83.8%; left: 54.8%; width: 33.28%; height: 10.19%;}
 
 
 /* fighting
@@ -272,6 +274,12 @@ h3.title { margin: 0 0 30px 0; color: #f10a6a;}
     .btn_fb, .btn_line { margin: 30px 20px 0 0; padding: 0 10px 0 45px; background-size: 30px auto; font-size: 16px; line-height: 40px;}
 }
 
+@media screen and (max-width: 763px) {
+    .search_bar { position: relative; top: auto; left: auto; width: 100%; margin: 0; box-sizing: border-box;}
+    .search_show { width: 100%; margin: 30px 0;}
+    .main .search_show p { font-size: 24px;}
+}
+
 @media screen and (max-width: 450px) {
     .e-games .tab li a {width: 103px; font-size: 15px;}
     .tab_regulation { margin: 0 0 30px 0;}
@@ -282,6 +290,8 @@ h3.title { margin: 0 0 30px 0; color: #f10a6a;}
     .footer { text-align: inherit;}
     .footer li { margin: 0 10px 5px 0;}
     .btn_line { margin: 30px 0 30px 0;}
+    .search_bar .search { font-size: 13px;}
+    .main .search_show p { font-size: 14px;}
 }
 
 @media screen and (max-width: 320px) {
