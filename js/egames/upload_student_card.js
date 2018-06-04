@@ -15,6 +15,11 @@ function setLoadingBlock() {
 }
 
 $(document).ready(function() {
+  if (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase())) {
+    alert('請使用電腦版網站報名')
+    history.go(-1)　
+  }
+
   let message = getParameterByName('message');
   if (message !== undefined && message !== null) {
     alert(message);
@@ -98,7 +103,7 @@ function putInData(data) {
 
 };
 
-var _validFileExtensions = [".jpg", ".png"];    
+var _validFileExtensions = [".jpg", ".png"];
 function ValidateSingleInput(oInput) {
     if (oInput.type == "file") {
         var sFileName = oInput.value;
@@ -111,7 +116,7 @@ function ValidateSingleInput(oInput) {
                     break;
                 }
             }
-             
+
             if (!blnValid) {
                 alert("請選擇" + _validFileExtensions.join("或")+ "的圖片");
                 oInput.value = "";

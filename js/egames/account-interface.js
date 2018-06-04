@@ -2,6 +2,11 @@ var team_id = ''
 var team_name = ''
 
 $(document).ready(function(){
+  if (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase())) {
+    alert('請使用電腦版網站報名')
+    history.go(-1)　
+  }
+
   $("transfer_date_input").on("change", function() {
     this.setAttribute(
         "data-date",
@@ -44,7 +49,7 @@ $(document).ready(function(){
           window.location.replace('signup.html#main');
           return
         }
-        
+
         // 抓team_id
         team_id = data.result[0].team_id;
         team_name = data.result[0].team_name;

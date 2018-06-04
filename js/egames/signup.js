@@ -15,6 +15,10 @@ function setLoadingBlock() {
 }
 
 $(document).ready(function(){
+  if (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase())) {
+    alert('請使用電腦版網站報名')
+    history.go(-1)　
+  }
 
   if (Cookies.get("member_token") !== undefined) {
     $('#main').css({ 'display': 'block' });
