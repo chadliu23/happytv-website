@@ -297,11 +297,21 @@ $("#sign-up-form").submit(function (e) {
     }
 
     if(data.retCode === 0 && data.retMessage === "send email error") {
-      alert('【登錄的資料中有錯誤的Email】\r請向所有隊員確認是否收到認證信，請沒收到驗證信的隊員修正或變更Email後並『重寄驗證信』。')
+      // 臨時公告
+      alert('訊息公告\n6/5 (二)\n08:30~14:00 因系統維護因素\n於此時段報名之選手將不會收到認證信\n'+
+        '請於14點過後至報名網站 手動重新發送認證信件\n造成您的不便 敬請見諒'
+      )
+      //alert('【登錄的資料中有錯誤的Email】\r請向所有隊員確認是否收到認證信，請沒收到驗證信的隊員修正或變更Email後並『重寄驗證信』。')
       return window.location.replace('signup.html');
     }
 
     alert(successMsg)
+
+    // 臨時公告
+    alert('訊息公告\n6/5 (二)\n08:30~14:00 因系統維護因素\n於此時段報名之選手將不會收到認證信\n'+
+      '請於14點過後至報名網站 手動重新發送認證信件\n造成您的不便 敬請見諒'
+    )
+
     window.location.replace('signup.html');
   }).fail(function(xhr, textStatus, error)  {
     if(formType == 'edit') {
@@ -358,6 +368,12 @@ function set6InputRequired() {
 }
 
 $(document).on('click', '.btn_resend', function(e) {
+  // 臨時維護
+  return alert('訊息公告\n6/5 (二)\n08:30~14:00 因系統維護因素\n於此時段報名之選手將不會收到認證信\n'+
+    '請於14點過後至報名網站 手動重新發送認證信件\n造成您的不便 敬請見諒'
+  )
+
+
   var email = $(this).parent().siblings('li.email-label').html()
 
   if(email === undefined || email === null || email === '') {
