@@ -17,6 +17,13 @@ function setLoadingBlock() {
 var teamIdMap = {}
 
 $(document).ready(function(){
+	if (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase())) {
+		$(".content").addClass("hide")
+		alert('請使用電腦版網站搜尋')
+		history.go(-1)　
+	}
+
+
 	$.ajax({
       type: 'GET',
       dataType: 'json',
