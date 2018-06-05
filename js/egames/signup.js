@@ -21,10 +21,6 @@ $(document).ready(function(){
     history.go(-1)　
   }
 
-  alert('訊息公告\n6/5 (二)\n08:30~14:00 因系統維護因素\n於此時段報名之選手將不會收到認證信\n'+
-    '請於14點過後至報名網站 手動重新發送認證信件\n造成您的不便 敬請見諒'
-  )
-
   if (Cookies.get("member_token") !== undefined) {
     $('#main').css({ 'display': 'block' });
     setLoadingBlock()
