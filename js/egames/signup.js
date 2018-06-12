@@ -219,7 +219,7 @@ $("#sign-up-form").submit(function (e) {
     data.member_id = member_id;
     data.team_name = team_name;
     ajaxUrl = '/api/v3/egame/2018-01/create'
-    successMsg = '您已成功登錄隊伍，請儘速完成下列事項：\rA、通知隊員進行Email認證\rB、上傳全隊學生證明文件\rC、3日內繳交保證金並回報'
+    successMsg = '您已成功登錄隊伍，請儘速完成下列事項：\rA、通知隊員進行Email認證\rB、上傳全隊學生證明文件'
 
     for(var i=0; i<=6; i++) {
       data['summoner_' + i] = $("[name='summoner_" + i + "']").val();
