@@ -137,7 +137,8 @@ h3.title { margin: 0 0 30px 0; color: #f10a6a;}
 .tab_regulation li a:hover, .tab_regulation li a.on { color: #f10a6a;}
 .system_table { margin: 30px 0; border: #fff 1px solid;}
 .system_table th, .system_table td { padding: 10px 20px; border: #fff 1px solid; vertical-align: middle;}
-
+.btn_download { display: inline-block; margin: 0 0 0 20px; padding: 10px 15px; background-color: #222; border: #999 1px solid; border-radius: 10px; vertical-align: middle; color: #fff;}
+.btn_download:after { font-family: 'FontAwesome'; content: '\f019'; margin: 0 0 0 10px; font-size: 18px; color: #fff;}
 
 /* process
 ============================================*/
@@ -150,6 +151,7 @@ h3.title { margin: 0 0 30px 0; color: #f10a6a;}
 .process_table .line{ width: 180px; border: none;}
 .process_table .up-load{ width: 200px; border: none;}
 .process_table .up-load p{ font-size: 15px;}
+.process_table .up-load.none p{ color: #777;}
 .process_table .team-button{ display:inline-block; width: 180px; height: 40px; background: transparent; background-size: cover; border: none; margin:0 10px 10px 10px; outline: none; cursor: initial; font-family:"微軟正黑體"; font-size: 16px; color: #fff;}
 .process_table .team-button.purple { background-image: url(../images/bg_process_table_purple.png);}
 .process_table .team-button.blue { background-image: url(../images/bg_process_table_blue.png);}
@@ -286,6 +288,7 @@ h3.title { margin: 0 0 30px 0; color: #f10a6a;}
     .tab_regulation li { margin: 0 5px 10px 5px; padding: 0; background: none;}
     .tab_regulation li a { padding: 0 10px; background: #333; font-size: 16px;line-height: 35px;}
     .tab_regulation li a:hover, .tab_regulation li a.on { background: #f10a6a; color: #fff;}
+    .btn_download { float: right; margin: 0; padding: 7px 15px;}
     .e-games .btn_signup, .btn_send, .btn_edit { width: 200px;}
     .footer { text-align: inherit;}
     .footer li { margin: 0 10px 5px 0;}
