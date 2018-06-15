@@ -1,15 +1,15 @@
 
 
-  var facebook_api_version = 'v2.12';
+  var facebook_api_version = 'v2.9';
 
   window.fbAsyncInit = function() {
       FB.init({
-        appId      : '186797928612077',
+        appId      : '1737378749850147',
         status     : true,
         cookie     : true,  // enable cookies to allow the server to access
                             // the session
         xfbml      : true,  // parse social plugins on this page
-        version    : 'v2.12' // use graph api version 2.8
+        version    : 'v2.8' // use graph api version 2.8
       });
   };
 
@@ -25,18 +25,8 @@
 
 
   function loginFacebook() {
-    // return FB.getLoginStatus(function(response) {
-    //   if (response.status === 'connected') {
-    //     FB.logout(function(response) {
-    //       window.location.reload();
-    //     });
-    //   }
-    // });
-
     FB.login(function(response){
-      console.log('hi', response)
       if (response.authResponse){
-        console.log('hi 2')
         $.get('https://graph.facebook.com/'+facebook_api_version+'/me?access_token='+ response.authResponse.accessToken, function(data){
           if (data.name === undefined){
               console.log('access token expired @ testAPI : ' + data);
@@ -50,9 +40,8 @@
             },
             dataType: 'json',
             data: { "fb_id": data.id, "fb_token": response.authResponse.accessToken },
-            url: 'http://localhost/happytvmember/login?source=facebook&mode=homepage'
+            url: 'https://api-product.happytv.com.tw/happytvmember/login?source=facebook&mode=homepage'
           }).done(function(data) {
-            console.log('哈哈, ', data)
             succuessLogin(data);
           }).fail(function(data) {
             // bootstrap_alert.warning('This Facebook account as not register.');
