@@ -29,24 +29,49 @@ $(document).ready(function() {
   if (Cookies.get("member_token") !== undefined) {
     console.log(Cookies.get("member_token"))
     $('#main').css({ 'display': 'block' });
-    $.ajax({
-      type: 'GET',
-      dataType: 'json',
-      url: happyApiHost + '/api/v3/egame/2018-01/member_id/' + Cookies.get('member_id')
-    }).done(function(data)  {
-      if (data.result.length === 0) {
-      	alert('請先報名戰隊')
+
+    return getIsRandomMatch()
+
+    function getIsRandomMatch() {
+      $.ajax({
+        type: 'GET',
+        dataType: 'json',
+        url: happyApiHost + '/api/v3/egame/2018-01/isRandomMatch/member_id/' + Cookies.get('member_id')
+      }).done(function(data)  {
+        if(data.result === 0) {
+          return getTeamData()
+        } else if(data.result === 1) {
+          alert('隨機組隊學生證上傳事務請加入官方Line @JDH4282L 告知')
+          return window.location.replace('signup.html#main');
+        }
+      }).fail(function(data) {
+        alert('請先報名戰隊')
         window.location.replace('signup.html#main');
         return
-      }
-      putInData(data)
-      // insertData
-      //window.location.replace('signup-after.html');
-    }).fail(function(data) {
-      alert('請先報名戰隊')
-      window.location.replace('signup.html#main');
-      return
-    });
+      });
+    }
+
+    function getTeamData() {
+      $.ajax({
+        type: 'GET',
+        dataType: 'json',
+        url: happyApiHost + '/api/v3/egame/2018-01/member_id/' + Cookies.get('member_id')
+      }).done(function(data)  {
+        if (data.result.length === 0) {
+          alert('請先報名戰隊')
+          window.location.replace('signup.html#main');
+          return
+        }
+        putInData(data)
+        // insertData
+        //window.location.replace('signup-after.html');
+      }).fail(function(data) {
+        alert('請先報名戰隊')
+        window.location.replace('signup.html#main');
+        return
+      });
+    }
+
   } else {
     var a = $('#openModal')
     console.log(a.length)
