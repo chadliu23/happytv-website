@@ -67,7 +67,7 @@ function getGameMadePageData (data) {
         // 第一次約戰
         if(!data.result.gameMade || !data.result.gameMade.first_date) {
           myCube = myCube + '<div class="lil-title">第一次約戰時間</div>' +
-          '<div><form id="form_date_made"><input type="datetime-local" name="made_time"><button type="submit">送出</button></form></div>'
+          '<div><form id="form_date_made"><input type="datetime-local" name="made_time"><button class="btn_fighting" type="submit">送出</button></form></div>'
           return
         }
 
@@ -79,8 +79,8 @@ function getGameMadePageData (data) {
           } else {
             opCube = myCube + '<div class="lil-title">第一次約戰時間</div><div>約戰時間：' + moment(data.result.gameMade.first_date).format('YYYY-MM-DD hh:mm:ss') + '</div>'
             myCube = '<div class="lil-title">第一次約戰時間確認</div>' +
-              '<div><button id="btn_confirm_ok">同意約戰時間</button></div>' +
-              '<div><button id="btn_confirm_no">無法配合該約戰時間</button></div>'
+              '<div><button id="btn_confirm_ok" class="btn_fighting">同意約戰時間</button></div>' +
+              '<div><button id="btn_confirm_no" class="btn_fighting">無法配合該約戰時間</button></div>'
             return
           }
         }
@@ -111,7 +111,7 @@ function getGameMadePageData (data) {
         // 加入第二次約戰input
         if(!data.result.gameMade.second_date) {
           myCube = myCube + '<div class="lil-title">第二次約戰時間</div>' +
-          '<div><form id="form_date_made"><input type="datetime-local" name="made_time"><button type="submit">送出</button></form></div>'
+          '<div><form id="form_date_made"><input type="datetime-local" name="made_time"><button class="btn_fighting" type="submit">送出</button></form></div>'
         }
 
         // 第二次約戰確認
@@ -121,8 +121,8 @@ function getGameMadePageData (data) {
           } else {
             opCube = opCube + '<div class="lil-title">第二次約戰時間</div><div>約戰時間：' + moment(data.result.gameMade.first_date).format('YYYY-MM-DD hh:mm:ss') + '</div>'
             myCube = myCube + '<div class="lil-title">第二次約戰時間確認</div>' +
-              '<div><button id="btn_confirm_ok">同意約戰時間</button></div>' +
-              '<div><button id="btn_confirm_no">無法配合該約戰時間</button></div>'
+              '<div><button id="btn_confirm_ok" class="btn_fighting">同意約戰時間</button></div>' +
+              '<div><button id="btn_confirm_no" class="btn_fighting">無法配合該約戰時間</button></div>'
               return
           }
         }
@@ -154,7 +154,7 @@ function getGameMadePageData (data) {
         // 加入第三次約戰input
         if(!data.result.gameMade.third_date) {
           myCube = myCube + '<div class="lil-title">第三次約戰時間</div>' +
-          '<div><form id="form_date_made"><input type="datetime-local" name="made_time"><button type="submit">送出</button></form></div>'
+          '<div><form id="form_date_made"><input type="datetime-local" name="made_time"><button class="btn_fighting" type="submit">送出</button></form></div>'
         }
 
         // 第三次約戰確認
@@ -164,8 +164,8 @@ function getGameMadePageData (data) {
           } else {
             opCube = opCube + '<div class="lil-title">第三次約戰時間</div><div>約戰時間：' + moment(data.result.gameMade.first_date).format('YYYY-MM-DD hh:mm:ss') + '</div>'
             myCube = myCube + '<div class="lil-title">第三次約戰時間確認</div>' +
-              '<div><button id="btn_confirm_ok">同意約戰時間</button></div>' +
-              '<div><button id="btn_confirm_no">無法配合該約戰時間</button></div>'
+              '<div><button id="btn_confirm_ok" class="btn_fighting">同意約戰時間</button></div>' +
+              '<div><button id="btn_confirm_no" class="btn_fighting">無法配合該約戰時間</button></div>'
               return
           }
         }
@@ -295,6 +295,11 @@ $(document).on('click', '#btn_confirm_no', function(e) {
 
 $(document).on('submit', '#form_date_made', function(e) {
   e.preventDefault();
+
+  var r = confirm("確定送出此約戰時間嗎?");
+  if (r != true) {
+    return
+  }
 
   var data = {};
   data.date = $(this).children('input[name="made_time"]').val()
