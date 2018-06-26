@@ -124,6 +124,8 @@ function putInData(data) {
 };
 
 $(document).on('click', '.btn_edit',  function(e) {
+  return alert('【報名已截止，如果有任何疑問，請加入官方Line @JDH4282L詢問】')
+
   // 編輯 送出按鈕
   $('.btn_edit').css("display", "none");
   $('.btn_send').css("display", "block");
@@ -163,6 +165,8 @@ $(document).on('click', '.btn_edit',  function(e) {
 // // 使用form來做ajax
 $("#sign-up-form").submit(function (e) {
   e.preventDefault();
+
+  return alert('【報名已截止，如果有任何疑問，請加入官方Line @JDH4282L詢問】')
 
   // var member_id = Cookies.get('member_id');
   // var form = $(this)[0];
@@ -358,6 +362,8 @@ function set6InputRequired() {
 }
 
 $(document).on('click', '.btn_resend', function(e) {
+  return alert('【報名已截止，如果有任何疑問，請加入官方Line @JDH4282L詢問】')
+
   var email = $(this).parent().siblings('li.email-label').html()
 
   if(email === undefined || email === null || email === '') {
