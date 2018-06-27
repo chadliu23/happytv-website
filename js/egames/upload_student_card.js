@@ -162,7 +162,7 @@ function ValidateSingleInput(oInput) {
 
 $("#upload-form").submit(function (e) {
   e.preventDefault();
-  return alert('【報名已截止，如果有任何疑問，請加入官方Line @JDH4282L詢問】')
+  //return alert('【報名已截止，如果有任何疑問，請加入官方Line @JDH4282L詢問】')
   setLoadingBlock()
 
   var member_id = Cookies.get('member_id');
