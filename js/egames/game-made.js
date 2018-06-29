@@ -34,6 +34,9 @@ function getGameMadePageData (data) {
       var blueCube = ''
       var redCube = ''
 
+      //要不要通知雙方line@聯絡官方
+      var alertLine = false
+
       // 我隊名, 敵隊名
       if(position === 'blue') {
         teamName = data.result.schedule.blue_name
@@ -202,6 +205,8 @@ function getGameMadePageData (data) {
             myCube = myCube + '<div class="lil-title">第三次約戰時間確認</div>' + '<div>『 您不同意 』</div>' + '<hr>'
             opCube = opCube + '<div class="lil-title">第三次約戰時間</div><div>約戰時間：' + moment(data.result.gameMade.third_date).format('YYYY-MM-DD HH:mm:ss') + '</div>' + '<hr>'
           }
+
+          alertLine = true;
         }
 
 
@@ -236,8 +241,12 @@ function getGameMadePageData (data) {
       $('.blue-cube').append(blueCube)
       $('.red-cube').append(redCube)
 
+      // 三次約戰失敗顯示alert
+      if(alertLine) {
+        alert('三次約戰皆失敗, 請聯絡官方Line @JDH4282L 由官方協助')
+      }
+
       // 設定date time picker
-      //jQuery('#date-pick').datetimepicker();
       var today = moment().format('MM.DD.YYYY')
       $.datetimepicker.setLocale('zh-TW');
       jQuery('#date-pick').datetimepicker({
