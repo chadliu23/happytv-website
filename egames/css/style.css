@@ -144,13 +144,13 @@ h3.title { margin: 0 0 30px 0; color: #f10a6a;}
 ============================================*/
 .process_tab { display: block; padding: 0 50px; overflow: hidden;}
 .process_tab li { display: block; float: left; margin: 0 5px 13px 5px;}
-.process_tab li a { display: block; width: 160px; height: 40px; padding: 0 10px; background-image: url(../images/bg_process_table_orange.png); background-size: cover; font-size: 20px; font-weight: bold; line-height: 40px; text-align: center; color: #fff;}
-.process_table { border: none; margin:0 auto; margin-top:30px; margin-bottom:60px; text-align: center;}
+.process_tab li a { display: block; width: 147px; height: 40px; padding: 0 10px; background-image: url(../images/bg_process_table_orange.png); background-size: cover; font-size: 20px; font-weight: bold; line-height: 40px; text-align: center; color: #fff;}
+.process_table { width: 1000px; border: none; margin:0 auto; /*margin-top:30px;*/ margin-bottom:60px; text-align: center;}
 .process_table img { vertical-align: middle;}
-.process_table tr td{ width: 240px; height: 80px; border: none;}
+.process_table tr td{ width: 240px; height: 120px; border: none; vertical-align: middle;}
 .process_table .line{ width: 180px; border: none;}
 .process_table .up-load{ width: 200px; border: none;}
-.process_table .up-load p{ font-size: 15px;}
+.process_table .up-load p{ font-size: 15px; min-width: 80px;}
 .process_table .up-load.none p{ color: #777;}
 .process_table .team-button{ display:inline-block; width: 180px; height: 40px; background: transparent; background-size: cover; border: none; margin:0 10px 10px 10px; outline: none; cursor: initial; font-family:"微軟正黑體"; font-size: 16px; color: #fff;}
 .process_table .team-button.purple { background-image: url(../images/bg_process_table_purple.png);}
@@ -159,6 +159,10 @@ h3.title { margin: 0 0 30px 0; color: #f10a6a;}
 .process_table .up-load-button { display: inline-block; width: 60px; height: 20px; background-color: rgba(0,0,0,0); border: none; margin:0 10px 10px 10px; outline: none; cursor: initial; font-family:"微軟正黑體"; font-size: 12px;}
 .tick { display: block;}
 .tick:before { font-family: 'FontAwesome'; content: '\f058'; font-size: 30px; color: #ffff00}
+.line_repeat { background: url(../images/bg-line.png) center center repeat-x;}
+.e-games .content ul.round { display: block; margin: 0 0 20px 60px;}
+.e-games .content ul.round li { display: inline-block; width: 25%; padding: 10px 0; text-align: center;}
+.e-games .content ul.round li span { padding: 0 10px; background: #000; border: #333 1px solid; border-radius: 30px;}
 
 
 /* search
@@ -191,6 +195,8 @@ h3.title { margin: 0 0 30px 0; color: #f10a6a;}
 .fighting_flow .flow { margin: 0 0 30px 0; overflow: hidden;}
 .fighting_flow .flow .float { float: left; width: 50%;}
 .fighting { width: 100%;}
+.btn_fighting { padding: 5px 10px; background-color: #222; border: #999 1px solid; border-radius: 10px; vertical-align: middle; color: #fff;}
+.btn_fighting:active { background: #333;}
 
 
 /* site

@@ -174,6 +174,7 @@ function getGameMadePageData (data) {
         if (data.result.gameMade.third_date && data.result.gameMade.third_date_confirm === null) {
           if (data.result.gameMade.third_date_made_by === position) {
             myCube = myCube + '<div class="lil-title">第三次約戰時間</div><div>約戰時間：' + moment(data.result.gameMade.third_date).format('YYYY-MM-DD HH:mm:ss') + '</div>'
+            return
           } else {
             opCube = opCube + '<div class="lil-title">第三次約戰時間</div><div>約戰時間：' + moment(data.result.gameMade.third_date).format('YYYY-MM-DD HH:mm:ss') + '</div>'
             myCube = myCube + '<div class="lil-title">第三次約戰時間確認</div>' +
@@ -205,11 +206,57 @@ function getGameMadePageData (data) {
             myCube = myCube + '<div class="lil-title">第三次約戰時間確認</div>' + '<div>『 您不同意 』</div>' + '<hr>'
             opCube = opCube + '<div class="lil-title">第三次約戰時間</div><div>約戰時間：' + moment(data.result.gameMade.third_date).format('YYYY-MM-DD HH:mm:ss') + '</div>' + '<hr>'
           }
-
-          alertLine = true;
         }
 
 
+        // 加入第四次約戰input
+        if(!data.result.gameMade.fourth_date && data.result.gameMade.third_date_made_by !== position) {
+          myCube = myCube + '<div class="lil-title">第四次約戰時間</div>' +
+          '<div><form id="form_date_made"><input id="date-pick" name="made_time"><button class="btn_fighting" type="submit">送出</button></form></div>'
+          return
+        } else if (!data.result.gameMade.fourth_date && data.result.gameMade.third_date_made_by === position) {
+          myCube = myCube + '<div class="lil-title">等待對手約戰</div>'
+          return
+        }
+
+        // 第四次約戰確認
+        if (data.result.gameMade.fourth_date && data.result.gameMade.fourth_date_confirm === null) {
+          if (data.result.gameMade.fourth_date_made_by === position) {
+            myCube = myCube + '<div class="lil-title">第四次約戰時間</div><div>約戰時間：' + moment(data.result.gameMade.fourth_date).format('YYYY-MM-DD HH:mm:ss') + '</div>'
+          } else {
+            opCube = opCube + '<div class="lil-title">第四次約戰時間</div><div>約戰時間：' + moment(data.result.gameMade.fourth_date).format('YYYY-MM-DD HH:mm:ss') + '</div>'
+            myCube = myCube + '<div class="lil-title">第四次約戰時間確認</div>' +
+              '<div><button id="btn_confirm_ok" class="btn_fighting">同意約戰時間</button></div>' +
+              '<div><button id="btn_confirm_no" class="btn_fighting">無法配合該約戰時間</button></div>'
+            return
+          }
+        }
+
+        // 第四次約戰成功
+        if(data.result.gameMade.fourth_date_confirm === 1) {
+          if (data.result.gameMade.fourth_date_made_by === position) {
+            opCube = opCube + '<div class="lil-title">第四次約戰時間確認</div>' + '<div>『 對手同意 』</div>' + '<hr>'
+            myCube = myCube + '<div class="lil-title">第四次約戰時間</div><div>約戰時間：' + moment(data.result.gameMade.fourth_date).format('YYYY-MM-DD HH:mm:ss') + '</div>' + '<hr>'
+          } else {
+            myCube = myCube + '<div class="lil-title">第四次約戰時間確認</div>' + '<div>『 您同意 』</div>' + '<hr>'
+            opCube = opCube + '<div class="lil-title">第四次約戰時間</div><div>約戰時間：' + moment(data.result.gameMade.fourth_date).format('YYYY-MM-DD HH:mm:ss') + '</div>' + '<hr>'
+          }
+
+          return
+        }
+
+        // 第四次約戰失敗
+        if(data.result.gameMade.fourth_date_confirm === 0) {
+          if (data.result.gameMade.fourth_date_made_by === position) {
+            opCube = opCube + '<div class="lil-title">第四次約戰時間確認</div>' + '<div>『 對手不同意 』</div>' + '<hr>'
+            myCube = myCube + '<div class="lil-title">第四次約戰時間</div><div>約戰時間：' + moment(data.result.gameMade.fourth_date).format('YYYY-MM-DD HH:mm:ss') + '</div>' + '<hr>'
+          } else {
+            myCube = myCube + '<div class="lil-title">第四次約戰時間確認</div>' + '<div>『 您不同意 』</div>' + '<hr>'
+            opCube = opCube + '<div class="lil-title">第四次約戰時間</div><div>約戰時間：' + moment(data.result.gameMade.fourth_date).format('YYYY-MM-DD HH:mm:ss') + '</div>' + '<hr>'
+          }
+
+          alertLine = true;
+        }
       }
 
 
@@ -243,7 +290,7 @@ function getGameMadePageData (data) {
 
       // 三次約戰失敗顯示alert
       if(alertLine) {
-        alert('三次約戰皆失敗, 請聯絡官方Line @JDH4282L 由官方協助')
+        alert('四次約戰皆失敗, 請聯絡官方Line @JDH4282L 由官方協助')
       }
 
       // 設定date time picker
@@ -367,8 +414,8 @@ $(document).on('submit', '#form_date_made', function(e) {
     return alert('※時段分別為：早【09:00-11:00】、中【15:00-17:00】、晚【19:00-24:00】')
   }
 
-  if(['0', '15', '30', '45'].indexOf(date.minutes().toString()) === -1) {
-    return alert('※請選擇0, 15, 30, 45這些分鐘')
+  if(['0'].indexOf(date.minutes().toString()) === -1) {
+    return alert('※請選擇整點時段')
   }
 
   var todayMoment = moment(moment().format('YYYY/MM/DD'), 'YYYY/MM/DD')
