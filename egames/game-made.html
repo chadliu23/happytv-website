@@ -63,8 +63,9 @@
         }
         .cubes {
             float: left;
-            margin-right: 5%;
-            min-width: 300px;
+            margin-right: 3%;
+            min-width: 250px;
+            max-width: 300px;
             text-align: center;
             font-weight: normal;
 
@@ -82,13 +83,24 @@
             font-size: x-large;
             font-weight: bold;
         }
+
         .cubes.cube-one {
-            clear: left
+            clear: left;
+            text-align: left;
         }
-        .cubes.cube-one table {
-            float: left;
-            margin-left: 10%;
+
+        .cubes.cube-four {
+            text-align: left;
         }
+
+        .cubes.cube-one p {
+            margin-left: 15%
+        }
+
+        .cubes.cube-four p {
+            margin-left: 15%
+        }
+
         .cubes.blue-cube div {
             padding-bottom: 20px;
         }
@@ -134,31 +146,16 @@
             <div class="content">
                 <h2 id="team-descript"">您的隊伍為「」, 此輪對戰隊伍為「」</h2>
                 <div class="cubes cube-one">
-                    <h2 id="op-team-list"">敵方隊伍名單</h2>
-                    <div class="table">
-                        <div class="container">
-                            <table class="system_table" align="center">
-                                <thead>
-                                    <tr class="table-title">
-                                        <th>隊長</th>
-                                        <th>召喚師名稱</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="enemy-tbody">
-                                    <tr>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    <h2 id="op-team-list"">藍方隊伍名單</h2>
                 </div>
                 <div class="cubes blue-cube">
                     <div class="big-title">藍方隊伍：</div>
-
                 </div>
                 <div class="cubes red-cube">
                     <div class="big-title">紫方隊伍：</div>
-
+                </div>
+                <div class="cubes cube-four">
+                    <h2 id="op-team-list"">紫方隊伍名單</h2>
                 </div>
             </div>
         </div>

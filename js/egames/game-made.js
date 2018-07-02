@@ -50,14 +50,38 @@ function getGameMadePageData (data) {
       var teamDescript = '您的隊伍為「' + teamName + '」, 此輪對戰隊伍為「' + opponentTeamName + '」';
       $('#team-descript').html(teamDescript)
 
-      // 敵隊名單
-      data.result.opponent_team.forEach(function(member){
+      // 藍方
+      data.result.opponent_team.forEach(function(member, i){
         var isTeamLeader = ''
         if(member.member_role === 0) {
-          isTeamLeader = '<i class="fas fa-check-circle"></i>'
+          isTeamLeader = ' (<span style="color: orange">隊長</span>)'
         }
-        var trStr = '<tr><td class="table-title">' + isTeamLeader + '</td><td class="table-title">' + member.summoner + '</td></tr>'
-        $('#enemy-tbody').append(trStr)
+
+        var num = i + 1
+        var trStr = '<p>' + num + '.' + member.summoner + isTeamLeader + '</p>'
+
+        if(position === 'red') {
+          $('.cube-one').append(trStr)
+        } else {
+          $('.cube-four').append(trStr)
+        }
+      })
+
+      // 紅方
+      data.result.our_team.forEach(function(member, i){
+        var isTeamLeader = ''
+        if(member.member_role === 0) {
+          isTeamLeader = ' (<span style="color: orange">隊長</span>)'
+        }
+
+        var num = i + 1
+        var trStr = '<p>' + num + '.' + member.summoner + isTeamLeader + '</p>'
+
+        if(position === 'red') {
+          $('.cube-four').append(trStr)
+        } else {
+          $('.cube-one').append(trStr)
+        }
       })
 
       var myCube = ''
