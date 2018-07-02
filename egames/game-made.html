@@ -63,15 +63,19 @@
         }
         .cubes {
             float: left;
-            margin-right: 3%;
+            /*margin-right: 3%;*/
             min-width: 250px;
             max-width: 300px;
             text-align: center;
             font-weight: normal;
 
         }
+        .blue-cube, .red-cube { margin: 0 2%;}
         .cubes .big-title{
             font-size: xx-large;
+        }
+        .cubes .side-title{
+            font-size: x-large;
         }
         .cubes.blue-cube .big-title{
             color: blue;
@@ -93,14 +97,6 @@
             text-align: left;
         }
 
-        .cubes.cube-one p {
-            margin-left: 15%
-        }
-
-        .cubes.cube-four p {
-            margin-left: 15%
-        }
-
         .cubes.blue-cube div {
             padding-bottom: 20px;
         }
@@ -119,6 +115,10 @@
             border-bottom: #fff 0px solid;
             margin-bottom: 0px;
         }
+        h2 {
+            font-size: medium;
+        }
+
 
     </style>
 </head>
@@ -146,16 +146,18 @@
             <div class="content">
                 <h2 id="team-descript"">您的隊伍為「」, 此輪對戰隊伍為「」</h2>
                 <div class="cubes cube-one">
-                    <h2 id="op-team-list"">藍方隊伍名單</h2>
+                    <div id="op-team-list" class="side-title">藍方隊伍名單</div>
                 </div>
                 <div class="cubes blue-cube">
-                    <div class="big-title">藍方隊伍：</div>
+                    <div class="big-title">藍方隊伍</div>
+                    <br />
                 </div>
                 <div class="cubes red-cube">
-                    <div class="big-title">紫方隊伍：</div>
+                    <div class="big-title">紫方隊伍</div>
+                    <br />
                 </div>
                 <div class="cubes cube-four">
-                    <h2 id="op-team-list"">紫方隊伍名單</h2>
+                    <div id="op-team-list" class="side-title">紫方隊伍名單</div>
                 </div>
             </div>
         </div>

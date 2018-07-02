@@ -306,8 +306,8 @@ function getGameMadePageData (data) {
       }
 
       // jquery 塞資料
-      $('.blue-cube .big-title').text('藍方隊伍：' + data.result.schedule.blue_name)
-      $('.red-cube .big-title').text('紫方隊伍：' + data.result.schedule.red_name)
+      $('.blue-cube .big-title').html('藍方隊伍<br />' + data.result.schedule.blue_name)
+      $('.red-cube .big-title').html('紫方隊伍<br />' + data.result.schedule.red_name)
 
       $('.blue-cube').append(blueCube)
       $('.red-cube').append(redCube)
