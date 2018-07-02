@@ -63,19 +63,21 @@
         }
         .cubes {
             float: left;
-            /*margin-right: 3%;*/
-            min-width: 250px;
+            margin-right: 10%;
+            /*min-width: 250px;*/
             max-width: 300px;
             text-align: center;
             font-weight: normal;
 
         }
-        .blue-cube, .red-cube { margin: 0 2%;}
+        /*.blue-cube { margin: 0 30px 0 0;}
+        .red-cube { margin: 0 100px 0 0;}*/
         .cubes .big-title{
             font-size: xx-large;
         }
         .cubes .side-title{
             font-size: x-large;
+            padding: 0 0 10px 0;
         }
         .cubes.blue-cube .big-title{
             color: blue;
@@ -118,7 +120,7 @@
         h2 {
             font-size: medium;
         }
-
+        .fighting_flow { clear: both; padding: 100px 0 0 0;}
 
     </style>
 </head>
@@ -143,7 +145,7 @@
     </div>
     <div id="main" class="main e-games">
         <div class="box">
-            <div class="content">
+            <div class="content" style="overflow: hidden;">
                 <h2 id="team-descript"">您的隊伍為「」, 此輪對戰隊伍為「」</h2>
                 <div class="cubes cube-one">
                     <div id="op-team-list" class="side-title">藍方隊伍名單</div>
@@ -159,6 +161,7 @@
                 <div class="cubes cube-four">
                     <div id="op-team-list" class="side-title">紫方隊伍名單</div>
                 </div>
+                <div class="fighting_flow"><p>為了<span>賽事直播</span>及約戰提醒，請各戰隊隊長"務必"加入Happy TV Line好友（HAPPYTV_TW），主辦單位將會邀請隊長進入約戰群，感謝配合！</p></div>
             </div>
         </div>
         <div class="footer"></div>
