@@ -65,7 +65,9 @@ $(document).on('submit', '#search-form',  function(e) {
 	var team_name = $( "#team_name_search" ).val()
 	var team_id = teamIdMap[team_name]
 
+
 	if(!team_id) {
+		alert('查無資料')
 		return
 	}
 
@@ -80,6 +82,11 @@ $(document).on('submit', '#search-form',  function(e) {
 		if (data.result.length === 0) {
 			$.unblockUI()
 			return
+		}
+		$("#team_name_p").html("")
+		for(var i=0; i<=6; i++) {
+				$("#summoner_" + i + "_p .name").html("")
+				$("#summoner_" + i + "_p .school").html("")
 		}
 
 		$("#team_name_p").html(data.result[0].team_name)
