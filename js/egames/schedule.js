@@ -16,11 +16,19 @@ function initPage() {
     if (data && data.result) {
       data.result.forEach((group) => {
         //var liHtml = '<li><a href="#main">' + group.group + '區</a></li>'
-        var liHtml = '<li><a href="/egames/process-before.html#main?group=' + group.group + '">' + group.group + '區</a></li>'
+        var liHtml = '<li><a id="group-tab-' + group.group + '" href="/egames/process-before.html#main?group=' + group.group + '"><span>' + group.group + '區</span></a></li>'
         //liHtml = $(liHtml).attr("onclick", "loadScheduleByGroup('" + group.group + "')")
         liHtml = $(liHtml).attr("onclick", "window.location.reload();")
         $('.process_tab').append(liHtml)
       })
+    }
+
+    let group = getParameterByName('group');
+
+    $('#group-tab-' + group).attr('style', 'color: orange; ')
+    //$('#group-tab-' + group).attr('class', 'active-tab')
+    if (group !== undefined && group !== null) {
+      loadScheduleByGroup(group);
     }
 
     $.unblockUI()
@@ -28,12 +36,6 @@ function initPage() {
     $.unblockUI()
     alert('資料讀取失敗', jqXHR, textStatus)
   });
-
-
-  let group = getParameterByName('group');
-  if (group !== undefined && group !== null) {
-    loadScheduleByGroup(group);
-  }
 }
 
 $(document).on('change', 'input[name="result_photo"]',  function(e) {
