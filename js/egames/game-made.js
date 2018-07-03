@@ -434,6 +434,10 @@ $(document).on('submit', '#form_date_made', function(e) {
     return alert('※不可選擇星期一')
   }
 
+  if(date.date() > 8 || date.date() < 3) {
+    return alert('※第一輪賽事請選擇3~8號')
+  }
+
   if(['9', '10', '11', '15', '16', '17', '19', '20', '21', '22', '23', '0'].indexOf(date.hours().toString()) === -1) {
     return alert('※時段分別為：早【09:00-11:00】、中【15:00-17:00】、晚【19:00-24:00】')
   }
@@ -481,7 +485,7 @@ $(document).on('submit', '#form_date_made', function(e) {
     if(result.retMessage === 'game made fail cause triple data in same hour') {
       var startTime =  moment(new Date(data.date)).format('YYYY/MM/DD HH') + ':00'
       var endTime =  moment(new Date(data.date)).add(1, 'hours').format('YYYY/MM/DD HH') + ':00'
-      alert('此約戰時間' + startTime + '~' + endTime + '已有三組以上約戰賽事排定轉播, 請選擇其他時段')
+      alert('此約戰時間' + startTime + '~' + endTime + '已有三組以上約戰賽事, 請選擇其他時段')
     }
 
     console.log(result)
