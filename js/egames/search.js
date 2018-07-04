@@ -89,7 +89,16 @@ $(document).on('submit', '#search-form',  function(e) {
 				$("#summoner_" + i + "_p .school").html("")
 		}
 
+		var group = ''
+		if(data.result[0].sa_group) {
+			group = data.result[0].sa_group
+		}
+		if(data.result[0].sb_group) {
+			group = data.result[0].sb_group
+		}
+
 		$("#team_name_p").html(data.result[0].team_name)
+		$("#zone_p").html(group)
 
 		for(var i=0; i<=6; i++) {
 			if(data.result[i]) {

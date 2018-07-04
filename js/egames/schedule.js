@@ -26,6 +26,7 @@ function initPage() {
     let group = getParameterByName('group');
 
     $('#group-tab-' + group).attr('style', 'color: orange; ')
+    $('#group-tab-' + group).attr('style', 'opacity: 1; ')
     //$('#group-tab-' + group).attr('class', 'active-tab')
     if (group !== undefined && group !== null) {
       loadScheduleByGroup(group);
@@ -133,6 +134,8 @@ function loadScheduleByGroup(group) {
           var scheduleTd = $('td.game_process_' + schedule.game_progress  + '.process_order_' + schedule.progress_order)
           scheduleTd.children('input.team-button.blue').val(schedule.blue_name)
           scheduleTd.children('input.team-button.purple').val(schedule.red_name)
+          scheduleTd.children('input.team-button.blue').attr('title', schedule.blue_name)
+          scheduleTd.children('input.team-button.purple').attr('title', schedule.red_name)
           if(schedule.winner === schedule.blue_id) {
             scheduleTd.children('input.team-button.purple').addClass('lose')
             scheduleTd.children('input.team-button.purple').val(schedule.red_name + '  (敗)')
