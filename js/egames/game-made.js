@@ -434,8 +434,8 @@ $(document).on('submit', '#form_date_made', function(e) {
     return alert('※不可選擇星期一')
   }
 
-  if(date.date() > 8 || date.date() < 3) {
-    return alert('※第一輪賽事請選擇3~8號')
+  if(date.date() > 15 || date.date() < 10) {
+    return alert('※第二輪賽事請選擇10~15號')
   }
 
   if(['9', '10', '11', '15', '16', '17', '19', '20', '21', '22', '23', '0'].indexOf(date.hours().toString()) === -1) {
