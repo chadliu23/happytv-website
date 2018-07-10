@@ -435,23 +435,39 @@ $(document).on('submit', '#form_date_made', function(e) {
   }
 
   var round = null
+  var now = moment()
+  now  = moment('2018/07/16 00:00', 'YYYY/MM/DD HH:mm')
 
-  if(moment().isBetween(moment('2018/07/10', 'YYYY/MM/DD'), moment('2018/07/15', 'YYYY/MM/DD'))) {
+  if(now.isBetween(moment('2018/07/10', 'YYYY/MM/DD'), moment('2018/07/15', 'YYYY/MM/DD'), null, '[]')) {
     round = 2
   }
 
-  if(moment().isBetween(moment('2018/07/16', 'YYYY/MM/DD'), moment('2018/07/22', 'YYYY/MM/DD'))) {
+  if(now.isBetween(moment('2018/07/16', 'YYYY/MM/DD'), moment('2018/07/22', 'YYYY/MM/DD'), null, '[]')) {
     round = 3
   }
 
-  if(moment().isBetween(moment('2018/07/23', 'YYYY/MM/DD'), moment('2018/07/29', 'YYYY/MM/DD'))) {
+  if(now.isBetween(moment('2018/07/23', 'YYYY/MM/DD'), moment('2018/07/29', 'YYYY/MM/DD'), null, '[]')) {
     round = 4
   }
 
-  return alert(round)
-
-  if(date.date() > 15 || date.date() < 10) {
-    return alert('※第二輪賽事請選擇10~15號')
+  switch(round) {
+    case 2:
+      if(date.date() > 15 || date.date() < 10) {
+        return alert('※第二輪賽事請選擇10~15號')
+      }
+      break;
+    case 3:
+      if(date.date() > 22 || date.date() < 17) {
+        return alert('※第三輪賽事請選擇17~22號')
+      }
+      break;
+    case 4:
+      if(date.date() > 29 || date.date() < 24) {
+        return alert('※第四輪賽事請選擇24~29號')
+      }
+      break;
+    default:
+      return alert('約戰日期無效')
   }
 
   if(['9', '10', '11', '15', '16', '17', '19', '20', '21', '22', '23', '0'].indexOf(date.hours().toString()) === -1) {
