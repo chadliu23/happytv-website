@@ -1,4 +1,8 @@
 $(document).ready(function(){
+  if (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase())) {
+    alert('請使用電腦版網站觀看賽程表')
+  }
+
   $('td.up-load').css('display', 'table-cell')
   //alert(css)
   setLoadingBlock()
