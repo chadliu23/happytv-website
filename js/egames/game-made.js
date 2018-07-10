@@ -434,6 +434,22 @@ $(document).on('submit', '#form_date_made', function(e) {
     return alert('※不可選擇星期一')
   }
 
+  var round = null
+
+  if(moment().isBetween(moment('2018/07/10', 'YYYY/MM/DD'), moment('2018/07/15', 'YYYY/MM/DD'))) {
+    round = 2
+  }
+
+  if(moment().isBetween(moment('2018/07/16', 'YYYY/MM/DD'), moment('2018/07/22', 'YYYY/MM/DD'))) {
+    round = 3
+  }
+
+  if(moment().isBetween(moment('2018/07/23', 'YYYY/MM/DD'), moment('2018/07/29', 'YYYY/MM/DD'))) {
+    round = 4
+  }
+
+  return alert(round)
+
   if(date.date() > 15 || date.date() < 10) {
     return alert('※第二輪賽事請選擇10~15號')
   }
