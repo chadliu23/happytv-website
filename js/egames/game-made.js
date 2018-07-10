@@ -5,6 +5,7 @@ tmp.blue_id = ''
 tmp.blue_name = ''
 tmp.red_id = ''
 tmp.red_name = ''
+tmp.game_progress = ''
 tmp.user_is_leader = false
 
 $(document).ready(function(){
@@ -301,6 +302,7 @@ function getGameMadePageData (data) {
       tmp.red_id = data.result.schedule.red_id
       tmp.red_name = data.result.schedule.red_name
       tmp.user_is_leader = data.result.is_leader
+      tmp.game_progress = data.result.schedule.game_progress
       if(data.result.gameMade) {
         tmp.game_made_id = data.result.gameMade.row_id
       }
@@ -467,6 +469,10 @@ $(document).on('submit', '#form_date_made', function(e) {
       break;
     default:
       return alert('約戰日期無效')
+  }
+
+  if(tmp.game_progress !== '' && tmp.game_progress != round) {
+    return alert('※現在只能約戰第' + round + '輪賽事')
   }
 
   if(['9', '10', '11', '15', '16', '17', '19', '20', '21', '22', '23', '0'].indexOf(date.hours().toString()) === -1) {
