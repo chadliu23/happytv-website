@@ -436,7 +436,6 @@ $(document).on('submit', '#form_date_made', function(e) {
 
   var round = null
   var now = moment()
-  now  = moment('2018/07/16 00:00', 'YYYY/MM/DD HH:mm')
 
   if(now.isBetween(moment('2018/07/10', 'YYYY/MM/DD'), moment('2018/07/15', 'YYYY/MM/DD'), null, '[]')) {
     round = 2
