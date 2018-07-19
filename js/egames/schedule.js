@@ -19,6 +19,13 @@ function initPage() {
   }).done((data) => {
     if (data && data.result) {
       data.result.forEach((group) => {
+        if (group.group === '八強') {
+          var liHtml = '<li><a id="group-tab-' + group.group + '" href="/egames/process-before-8.html#main?group=' + group.group + '"><span>' + group.group + '賽</span></a></li>'
+          liHtml = $(liHtml).attr("onclick", "window.location.reload();")
+          $('.process_tab').append(liHtml)
+          return
+        }
+
         //var liHtml = '<li><a href="#main">' + group.group + '區</a></li>'
         var liHtml = '<li><a id="group-tab-' + group.group + '" href="/egames/process-before.html#main?group=' + group.group + '"><span>' + group.group + '區</span></a></li>'
         //liHtml = $(liHtml).attr("onclick", "loadScheduleByGroup('" + group.group + "')")
@@ -117,7 +124,11 @@ function ValidateSingleInput(oInput) {
 }
 
 function loadScheduleByGroup(group) {
-  $('#schedule-title').html('賽程表 - ' + group + "區")
+  if (group === '八強') {
+    $('#schedule-title').html('賽程表 - ' + group + "賽")
+  } else {
+    $('#schedule-title').html('賽程表 - ' + group + "區")
+  }
 
   setLoadingBlock()
 
@@ -159,6 +170,15 @@ function loadScheduleByGroup(group) {
             //scheduleTd.prev('.up-load').children('.up-load-result-img').attr('src', 'http://localhost/images/egame/result/f1441939c3e629634123f04386d0fe76c9ba70d7.png')
             scheduleTd.prev('.up-load').children('input[type="file"]').css('display', 'inline-block')
             scheduleTd.prev('.up-load').children('input[name="row_id"]').val(schedule.row_id)
+          }
+
+          // 檢查是否有區冠軍(game_process=5)
+          if(schedule.game_progress == 5) {
+            var groupChampName = ''
+
+            groupChampName = schedule.blue_name ? schedule.blue_name : schedule.red_name
+
+            $('td.game_process_4.process_order_1').children('.group_winner').children('span').text(groupChampName)
           }
         })
       }
