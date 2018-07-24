@@ -169,6 +169,10 @@ td div.round { position: absolute; top: -50px; left: 140px; width: 62px; padding
 td div.dotted-line { position: absolute; top: -304px; left: -167px; width: 165px; height: 366px; background: url(../images/dotted-line.png) no-repeat;}
 .group_winner { display: table; position: absolute; top: 45px; left: -10px; width: 220px; height: 124px; padding: 52px 10px 10px 10px; background: url(../images/bg_winner.png) no-repeat; box-sizing: border-box;}
 .group_winner span { display: table-cell; vertical-align: middle; line-height: 1.2em; color: #fff000;}
+.e-games .content ul.round.stage3 { width: 600px; margin: 0 0 20px 420px;}
+.e-games .content ul.round.stage3 li { width: 50%;}
+.table_eight { width: 600px;}
+.process_table .team-button.team_four { width: 260px; height: 68px; background: url(../images/bg_process_table_red.png) no-repeat; background-size: cover; font-size: 20px;}
 
 
 /* search
