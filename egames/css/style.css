@@ -173,6 +173,25 @@ td div.dotted-line { position: absolute; top: -304px; left: -167px; width: 165px
 .e-games .content ul.round.stage3 li { width: 50%;}
 .table_eight { width: 600px;}
 .process_table .team-button.team_four { width: 260px; height: 68px; background: url(../images/bg_process_table_red.png) no-repeat; background-size: cover; font-size: 20px;}
+.process_final { position: relative; height: 600px; background: url(../images/bg_process_final.png) center bottom no-repeat; overflow: hidden;}
+.semi-final { position: relative; width: 40%; overflow: hidden;}
+.semi-final.left { float: left; background: url(../images/small-line-finals-l.png) 225px center no-repeat;}
+.semi-final.right { float: right; background: url(../images/small-line-finals-r.png) 289px center no-repeat;}
+.semi-final.left .team { float: left;}
+.semi-final.right .team { float: right;}
+.semi-final .team { clear: both; width: 180px; margin: 30px 0; padding: 20px 10px; background: rgba(0,0,0,0.7); border: #333 1px solid; border-radius: 10px; font-size: 16px; text-align: center;}
+.semi-final.left .finals { position: absolute; top: 50%; left: 300px; width: 230px; margin: -31px 0 0 0; font-size: 20px;}
+.semi-final.right .finals { position: absolute; top: 50%; right: 300px; width: 230px; margin: -31px 0 0 0; font-size: 20px;}
+.champion { display: table; position: absolute; top: 15px; left: 50%; width: 250px; height: 200px; margin: 0 0 0 -125px; padding: 20px 10px; background: rgba(0,0,0,0.7); border: #333 4px solid; border-radius: 10px; text-align: center; box-sizing: border-box; color: #fff;}
+.champion span { display: table-cell; padding: 0 20px; font-size: 30px; line-height: 40px; vertical-align: middle;}
+.champion img { position: absolute; bottom: -70px; left: 28px;}
+.other { position: relative; width: 50%; margin: 0 auto; padding-top: 100px; text-align: center; overflow: hidden;}
+.other .team { display: inline-block; position: relative; width: 180px; margin: 30px 0; padding: 20px 10px; background: rgba(0,0,0,0.7); border: #333 1px solid; border-radius: 10px; font-size: 16px; text-align: center; color: #fff;}
+.other .team:after { content: ""; position: absolute; top: -30px; left: 0; width: 100%; font-size: 20px; text-align: center; color: #fff;}
+.other .second:after { content: "亞軍";}
+.other .third:after { content: "季軍";}
+.other .fourth:after { content: "殿軍";}
+.team.win { background: #b10102;}
 
 
 /* search
