@@ -167,8 +167,8 @@ h3.title { margin: 0 0 30px 0; color: #f10a6a;}
 .e-games .content ul.round.stage2 li { width: 33.33%;}
 td div.round { position: absolute; top: -50px; left: 140px; width: 62px; padding: 0 10px; background: #000; border: #333 1px solid; border-radius: 30px; line-height: 1.5em;}
 td div.dotted-line { position: absolute; top: -304px; left: -167px; width: 165px; height: 366px; background: url(../images/dotted-line.png) no-repeat;}
-.group_winner { display: table; position: absolute; top: 45px; left: -10px; width: 220px; height: 124px; padding: 52px 10px 10px 10px; background: url(../images/bg_winner.png) no-repeat; box-sizing: border-box;}
-.group_winner span { display: table-cell; vertical-align: middle; line-height: 1.2em; color: #fff000;}
+.group_winner { display: table; position: absolute; top: 25px; left: -40px; width: 276px; height: 146px; padding: 52px 10px 10px 10px; background: url(../images/bg_winner.png) no-repeat; box-sizing: border-box;}
+.group_winner span { display: table-cell; vertical-align: middle; font-size: 30px; line-height: 1.2em; color: #fff000;}
 .e-games .content ul.round.stage3 { width: 600px; margin: 0 0 20px 420px;}
 .e-games .content ul.round.stage3 li { width: 50%;}
 .table_eight { width: 600px;}
