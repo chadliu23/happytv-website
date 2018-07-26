@@ -162,11 +162,15 @@ function loadScheduleByGroup(group) {
             scheduleTd.children('input.team-button.purple').addClass('lose')
             scheduleTd.children('input.team-button.purple').val(schedule.red_name + '  (敗)')
             scheduleTd.children('input.team-button.blue').val(schedule.blue_name + '  (勝)')
+            var winnerTd = $('td.game_process_2' + '.process_order_' + schedule.progress_order)
+            winnerTd.children('input.team-button.team_four').val(schedule.blue_name)
           }
           if(schedule.winner === schedule.red_id) {
             scheduleTd.children('input.team-button.blue').addClass('lose')
             scheduleTd.children('input.team-button.blue').val(schedule.blue_name + '  (敗)')
             scheduleTd.children('input.team-button.purple').val(schedule.red_name + '  (勝)')
+            var winnerTd = $('td.game_process_2' + '.process_order_' + schedule.progress_order)
+            winnerTd.children('input.team-button.team_four').val(schedule.red_name)
           }
 
           // 再加入只留一個上傳

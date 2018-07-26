@@ -42,6 +42,7 @@ function initPage() {
     }
 
     let group = getParameterByName('group');
+    group = '冠軍'
 
     $('#group-tab-' + group).attr('style', 'color: orange; ')
     $('#group-tab-' + group).attr('style', 'opacity: 1; ')
@@ -131,13 +132,16 @@ function ValidateSingleInput(oInput) {
 }
 
 function loadScheduleByGroup(group) {
-  if (group === '八強') {
+  if (group === '八強' || group === '冠軍') {
     $('#schedule-title').html('賽程表 - ' + group + "賽")
   } else {
     $('#schedule-title').html('賽程表 - ' + group + "區")
   }
 
   setLoadingBlock()
+
+  // 用八強來抓資料
+  group = '八強'
 
   var data = {
     group: group
@@ -153,20 +157,18 @@ function loadScheduleByGroup(group) {
       if (data && data.result) {
         data.result.forEach((schedule) => {
           console.log(schedule)
-          var scheduleTd = $('td.game_process_' + schedule.game_progress  + '.process_order_' + schedule.progress_order)
-          scheduleTd.children('input.team-button.blue').val(schedule.blue_name)
-          scheduleTd.children('input.team-button.purple').val(schedule.red_name)
-          scheduleTd.children('input.team-button.blue').attr('title', schedule.blue_name)
-          scheduleTd.children('input.team-button.purple').attr('title', schedule.red_name)
+          var scheduleTd = $('.game_process_' + schedule.game_progress  + '.process_order_' + schedule.progress_order)
+          scheduleTd.children('.blue').text(schedule.blue_name)
+          scheduleTd.children('.purple').text(schedule.red_name)
+          scheduleTd.children('.blue').attr('title', schedule.blue_name)
+          scheduleTd.children('.purple').attr('title', schedule.red_name)
           if(schedule.winner === schedule.blue_id) {
-            scheduleTd.children('input.team-button.purple').addClass('lose')
-            scheduleTd.children('input.team-button.purple').val(schedule.red_name + '  (敗)')
-            scheduleTd.children('input.team-button.blue').val(schedule.blue_name + '  (勝)')
+            scheduleTd.children('.blue').addClass('win')
+            scheduleTd.children('.finals').text(schedule.blue_name)
           }
           if(schedule.winner === schedule.red_id) {
-            scheduleTd.children('input.team-button.blue').addClass('lose')
-            scheduleTd.children('input.team-button.blue').val(schedule.blue_name + '  (敗)')
-            scheduleTd.children('input.team-button.purple').val(schedule.red_name + '  (勝)')
+            scheduleTd.children('.purple').addClass('win')
+            scheduleTd.children('.finals').text(schedule.red_name)
           }
 
           // 再加入只留一個上傳
