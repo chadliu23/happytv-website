@@ -451,6 +451,10 @@ $(document).on('submit', '#form_date_made', function(e) {
     round = 4
   }
 
+  if(now.isBetween(moment('2018/07/31', 'YYYY/MM/DD'), moment('2018/08/05', 'YYYY/MM/DD'), null, '[]')) {
+    round = '八強'
+  }
+
   switch(round) {
     case 2:
       if(date.date() > 15 || date.date() < 10) {
@@ -467,12 +471,17 @@ $(document).on('submit', '#form_date_made', function(e) {
         return alert('※第四輪賽事請選擇24~29號')
       }
       break;
+    case '八強':
+      if(!date.isBetween(moment('2018/07/31', 'YYYY/MM/DD'), moment('2018/08/05', 'YYYY/MM/DD'), null, '[]')) {
+        return alert('※八強賽事請選擇2018/07/31~2018/08/05號')
+      }
+      break;
     default:
       return alert('約戰日期無效')
   }
 
-  if(tmp.game_progress !== '' && tmp.game_progress != round) {
-    return alert('※現在只能約戰第' + round + '輪賽事')
+  if(tmp.game_progress !== '' && tmp.game_progress !== 1) {
+    return alert('※現在只能約戰八強賽事')
   }
 
   if(['9', '10', '11', '15', '16', '17', '19', '20', '21', '22', '23', '0'].indexOf(date.hours().toString()) === -1) {
