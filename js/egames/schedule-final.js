@@ -141,7 +141,7 @@ function loadScheduleByGroup(group) {
   setLoadingBlock()
 
   // 用八強來抓資料
-  group = '八強'
+  // group = '八強'
 
   var data = {
     group: group
